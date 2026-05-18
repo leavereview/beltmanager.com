@@ -1,6 +1,6 @@
 ---
 title: "MMA Gym Lead Generation Strategies"
-description: "Effective lead generation strategies for MMA gyms. Social media, local SEO, and proven tactics to attract new members to your gym."
+description: "Lead generation for MMA gyms that fills your intro slots. Social ads, partnerships, and the 5-step funnel that converts walk-ins to paying members."
 image: /images/blog-mma-training.jpg
 date: "2026-02-13"
 tags: ["Marketing", "MMA"]

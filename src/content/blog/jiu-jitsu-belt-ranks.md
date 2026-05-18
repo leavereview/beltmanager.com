@@ -1,6 +1,6 @@
 ---
 title: "Jiu Jitsu belt ranks"
-description: "Complete guide to BJJ belt ranks from white to black. Learn the belt order, typical progression timeline, and what's required at each level."
+description: "Jiu-Jitsu belt ranks white to black: typical 10-year timeline, stripe system, what each belt represents, and the testing requirements coaches use to promote."
 date: "2025-12-30"
 image: "/images/black-white-portrait-athlete-participating-olympic-championship-sports.jpg"
 tags: ["BJJ", "Belts"]

@@ -1,6 +1,6 @@
 ---
 title: "Martial Arts Retention Strategies"
-description: "Proven retention strategies for martial arts schools. Keep students longer with engagement tactics, communication strategies, and community building."
+description: "Martial arts retention strategies that work. Onboarding plays, communication cadences, and community tactics that lift retention 15-25% within 90 days."
 image: /images/blog-belt-ceremony.jpg
 date: "2026-02-13"
 tags: ["Membership", "Business"]

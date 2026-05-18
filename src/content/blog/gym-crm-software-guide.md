@@ -1,6 +1,6 @@
 ---
 title: "Gym CRM Software Guide"
-description: "Compare gym CRM software options for martial arts schools. Features to look for, questions to ask, and how to choose the right system."
+description: "Gym CRM software compared for martial arts schools: features that matter (lead tracking, retention alerts, communication), the 12 questions to ask before buying."
 image: /images/blog-instructor.jpg
 date: "2026-01-30"
 tags: ["Software"]

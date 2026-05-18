@@ -1,6 +1,6 @@
 ---
 title: "Gym Management Software Comparison"
-description: "Compare gym management software options for martial arts schools. Features, pricing, pros and cons of popular platforms to help you choose wisely."
+description: "Gym management software compared for martial arts schools: pricing, features, and trade-offs across 6 platforms. The 8 deal-breaker features to insist on."
 image: /images/blog-dojo-interior.jpg
 date: "2026-02-06"
 tags: ["Software"]

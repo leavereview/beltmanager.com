@@ -1,6 +1,6 @@
 ---
 title: "BJJ Blue Belt: Requirements & Tips"
-description: "Everything about earning your BJJ blue belt: requirements, timeline, techniques, and mindset for your first Jiu-Jitsu promotion."
+description: "BJJ blue belt requirements: typical 2-3 year timeline from white, what coaches actually look for, and how to handle the dunning-kruger plateau new blue belts hit."
 image: /images/blog-bjj.jpg
 date: "2026-01-23"
 tags: ["BJJ", "Belts", "Training"]
