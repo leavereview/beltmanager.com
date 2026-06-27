@@ -9,7 +9,7 @@ author: "MyDojo Team"
 
 How much can you actually earn owning a martial arts school? The answer varies dramatically based on location, size, business model, and operational efficiency. This guide provides realistic income expectations and the factors that determine whether a dojo generates modest supplemental income or substantial profit.
 
-Whether you're considering [opening a martial arts school](/blog/cost-to-open-gym/) or trying to increase your current income, understanding the economics helps you make informed decisions.
+Whether you're considering [opening a martial arts school](/blog/cost-to-open-gym/) or trying to increase your current income, understanding the economics helps you make informed decisions. One of the most effective ways to improve margins is reducing administrative overhead — [dojo management software](/dojo-management-software/) automates billing, attendance, and communications so owners can focus on growing revenue rather than running admin.
 
 ## Average Gym Owner Income
 

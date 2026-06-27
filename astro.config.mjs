@@ -13,7 +13,9 @@ export default defineConfig({
   },
   integrations: [
     tailwind(),
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.includes('/blog/tag/'),
+    }),
     compress({
       CSS: true,
       HTML: {

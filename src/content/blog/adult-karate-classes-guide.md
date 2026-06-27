@@ -9,7 +9,7 @@ author: "MyDojo Team"
 
 Thinking about starting karate as an adult? You're not alone. More adults than ever are taking up martial arts, whether for fitness, self-defense, stress relief, or simply because it's something they've always wanted to try.
 
-But starting something new as an adult comes with questions. Am I too old? Will I be the only beginner? Can I really learn to kick? This guide answers those questions honestly and helps you understand what adult karate classes actually involve.
+But starting something new as an adult comes with questions. Am I too old? Will I be the only beginner? Can I really learn to kick? This guide answers those questions honestly and helps you understand what adult karate classes actually involve. If you're a school owner looking to manage adult programmes more efficiently, [karate school software](/karate-school-software/) can help with grading tracking, class scheduling, and automated communications.
 
 ## Why Adults Start Karate
 

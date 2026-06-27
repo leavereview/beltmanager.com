@@ -9,7 +9,7 @@ author: "MyDojo Team"
 
 ## Running Belt Grading Events at Your Taekwondo School
 
-Belt grading days are among the most important events in your taekwondo school calendar. Well-run gradings build student confidence, showcase your school's standards, and create community moments that drive word-of-mouth referrals. [Martial arts scheduling software](/martial-arts-scheduling-software/) helps you plan grading events, send automated reminders, track attendance, and manage payment for grading fees — all in one place. Below is a complete breakdown of the taekwondo belt system, which underpins your grading structure.
+Belt grading days are among the most important events in your taekwondo school calendar. Well-run gradings build student confidence, showcase your school's standards, and create community moments that drive word-of-mouth referrals. [Martial arts scheduling software](/martial-arts-scheduling-software/) helps you plan grading events, send automated reminders, track attendance, and manage payment for grading fees — all in one place. For a complete platform covering belt tracking, student management, and billing alongside scheduling, see [karate school software](/karate-school-software/). Below is a complete breakdown of the taekwondo belt system, which underpins your grading structure.
 
 ## Taekwondo Belt Order and Colors: The Complete Guide to TKD Belt Ranks
 
