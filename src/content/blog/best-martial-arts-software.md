@@ -152,7 +152,7 @@ Smaller schools or those starting out need functional software without overwhelm
 
 | Platform | Starting Price | Per-Student | Transaction Fees |
 |----------|----------------|-------------|------------------|
-| MyDojo | £49/month | No | No |
+| MyDojo | Free | No | No |
 | Kicksite | £79/month | No | 2.9% |
 | RhinoFit | £57/month | No | 2.9% |
 | Zen Planner | £99/month | No | 2.5% |
@@ -400,7 +400,7 @@ Trial before committing. The best software is what you'll actually use effective
 
 ## Try MyDojo.Software
 
-See if our martial arts-focused approach fits your school. [Start your free trial](/contact/) and evaluate our belt tracking, scheduling, and billing features with your actual data.
+See if our martial arts-focused approach fits your school. [Get started free](/contact/) and evaluate our belt tracking, scheduling, and billing features with your actual data.
 
 ## Related Articles
 

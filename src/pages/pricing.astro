@@ -1,55 +1,26 @@
 ---
 // Pricing Page
+//
+// MyDojo is free while in early access. There is no subscription, no per-student
+// fee, and no free trial — there is nothing to trial, the product is free.
+// Paid monthly plans come later, with at least 30 days' notice.
+//
+// Deliberately makes NO commission claim. See
+// docs/superpowers/specs/2026-07-12-free-pricing-model-design.md for why.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
-// Pricing tiers
-const pricingTiers = [
-  {
-    name: 'Starter Plan',
-    description: 'Perfect for small dojos',
-    monthlyPrice: 49,
-    studentRange: '0-30 students',
-    perStudentCost: '$1.63',
-    popular: false
-  },
-  {
-    name: 'Growth Plan',
-    description: 'For growing academies',
-    monthlyPrice: 79,
-    studentRange: '31-75 students',
-    perStudentCost: '$1.05',
-    popular: true
-  },
-  {
-    name: 'Professional Plan',
-    description: 'For established schools',
-    monthlyPrice: 119,
-    studentRange: '76-150 students',
-    perStudentCost: '$0.79',
-    popular: false
-  }
-];
-
-// Offer schemas for each pricing tier
-const offerSchemas = pricingTiers.map((tier) => ({
+const offerSchema = {
   "@context": "https://schema.org",
   "@type": "Offer",
-  "@id": `https://mydojo.software/pricing/#${tier.name.toLowerCase().replace(/\s+/g, '-')}`,
-  "name": tier.name,
-  "description": `${tier.description} - ${tier.studentRange}. All features included.`,
-  "price": tier.monthlyPrice,
+  "@id": "https://mydojo.software/pricing/#free",
+  "name": "MyDojo — free while in early access",
+  "description": "MyDojo is free to use. No subscription, no setup fee, and no per-student charges. Every feature is included.",
+  "price": "0",
   "priceCurrency": "GBP",
-  "priceSpecification": {
-    "@type": "UnitPriceSpecification",
-    "price": tier.monthlyPrice,
-    "priceCurrency": "GBP",
-    "unitText": "month",
-    "billingIncrement": 1
-  },
-  "priceValidUntil": "2026-12-31",
   "availability": "https://schema.org/InStock",
-  "url": "https://mydojo.software/contact/",
+  "url": "https://mydojo.software/pricing/",
   "seller": {
     "@type": "Organization",
     "name": "MyDojo.Software"
@@ -60,76 +31,97 @@ const offerSchemas = pricingTiers.map((tier) => ({
     "applicationCategory": "BusinessApplication"
   },
   "additionalProperty": [
-    {
-      "@type": "PropertyValue",
-      "name": "Student Capacity",
-      "value": tier.studentRange
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Per Student Cost",
-      "value": tier.perStudentCost
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Free Trial",
-      "value": "30 days"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Setup Fee",
-      "value": "No"
-    }
-  ]
-}));
-
-// Free trial offer schema
-const freeTrialSchema = {
-  "@context": "https://schema.org",
-  "@type": "Offer",
-  "@id": "https://mydojo.software/pricing/#free-trial",
-  "name": "30-Day Free Trial",
-  "description": "Try MyDojo.Software free for 30 days with full access to all features. No credit card required.",
-  "price": "0",
-  "priceCurrency": "GBP",
-  "priceValidUntil": "2026-12-31",
-  "availability": "https://schema.org/InStock",
-  "url": "https://mydojo.software/contact/",
-  "eligibleRegion": {
-    "@type": "Place",
-    "name": "United Kingdom"
-  },
-  "itemOffered": {
-    "@type": "SoftwareApplication",
-    "name": "MyDojo.Software",
-    "applicationCategory": "BusinessApplication"
-  },
-  "additionalProperty": [
-    {
-      "@type": "PropertyValue",
-      "name": "Trial Duration",
-      "value": "30 days"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Credit Card Required",
-      "value": "No"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Full Feature Access",
-      "value": "Yes"
-    }
+    { "@type": "PropertyValue", "name": "Setup Fee", "value": "No" },
+    { "@type": "PropertyValue", "name": "Per-Student Fees", "value": "No" },
+    { "@type": "PropertyValue", "name": "Credit Card Required", "value": "No" }
   ]
 };
+
+const featureGroups = [
+  {
+    icon: '🥋',
+    title: 'Core Management',
+    features: ['Belt & rank tracking', 'Class scheduling', 'Attendance tracking', 'Unlimited locations', 'Unlimited staff users']
+  },
+  {
+    icon: '💳',
+    title: 'Billing & Payments',
+    features: ['Automated recurring billing', 'Family discounts', 'Failed payment recovery', 'Stripe integration', 'Payment reminders']
+  },
+  {
+    icon: '📱',
+    title: 'Student Experience',
+    features: ['Mobile student app', 'Parent portal (24/7 access)', 'Progress tracking', 'Schedule viewing', 'Belt promotion notifications']
+  },
+  {
+    icon: '📊',
+    title: 'Business Tools',
+    features: ['CRM & lead management', 'Automated follow-ups', 'Unlimited emails', 'Reporting & analytics', 'Revenue tracking']
+  },
+  {
+    icon: '✅',
+    title: 'Check-In Methods',
+    features: ['Tablet kiosk mode', 'Mobile check-in', 'QR code scanning', 'Manual attendance', 'Attendance reports']
+  },
+  {
+    icon: '🛟',
+    title: 'Support & Training',
+    features: ['Email support', 'Free onboarding', 'Training videos', 'Knowledge base', 'Help importing your students']
+  }
+];
+
+// FAQEnhanced generates the FAQPage JSON-LD from this array, so the rendered
+// questions and the structured data cannot drift apart.
+const faqs = [
+  {
+    question: "Is MyDojo really free?",
+    answer: "Yes. MyDojo is free while we're in early access — no subscription, no setup fee, no per-student charges, and no credit card. Every feature is included: we don't lock belt tracking, billing, or reporting behind a higher tier, because there are no tiers.",
+    links: [
+      { text: 'Get started', url: '/contact/' }
+    ]
+  },
+  {
+    question: "How do you make money?",
+    answer: "Right now, we don't. MyDojo is free while we're in early access. We'll introduce paid monthly plans in future, and we'll give you at least 30 days' notice before anything changes.",
+    links: [
+      { text: 'Read our terms', url: '/terms/' }
+    ]
+  },
+  {
+    question: "What's the catch?",
+    answer: "There isn't one, but there is a trade. We want martial arts schools actually running on MyDojo and telling us what's missing or broken before we launch paid plans. You get the software for nothing; we get honest feedback from real dojos. That's the deal.",
+    links: []
+  },
+  {
+    question: "Will you start charging me without warning?",
+    answer: "No. When we introduce paid monthly plans you'll get at least 30 days' notice before any charge, and you'll be able to decide then whether to continue. Nothing will start billing you by surprise.",
+    links: [
+      { text: 'Read our terms', url: '/terms/' }
+    ]
+  },
+  {
+    question: "How many students and locations can I have?",
+    answer: "Unlimited students, unlimited locations, and unlimited staff users. There are no capacity limits, because there are no plans to police — a school with 20 students and a multi-site academy with 400 get exactly the same software.",
+    links: [
+      { text: 'Compare features', url: '/martial-arts-software/' }
+    ]
+  },
+  {
+    question: "What happens to my data if I don't take a paid plan later?",
+    answer: "Your records are yours. If you decide not to continue when paid plans launch, get in touch and we'll help you get your student data out. We're not going to hold your dojo's records hostage.",
+    links: [
+      { text: 'Contact us', url: '/contact/' },
+      { text: 'Privacy policy', url: '/privacy-policy/' }
+    ]
+  }
+];
 ---
 
-<BaseLayout title="Pricing Plans for Martial Arts Schools" description="Martial arts software from $49/month — all features included, no per-student fees. 30-day free trial, no credit card. Built for schools from 25-500 students.">
-  <!-- Offer Schemas -->
-  {offerSchemas.map(offerSchema => (
-    <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
-  ))}
-  <script type="application/ld+json" set:html={JSON.stringify(freeTrialSchema)} />
+<BaseLayout
+  title="Pricing — Free Martial Arts School Software"
+  description="MyDojo is free — no subscription, no setup fee, no per-student charges. Belt tracking, scheduling, attendance and CRM all included. Get started free."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
 
   <!-- Breadcrumbs -->
   <div class="bg-gray-100 py-3">
@@ -148,230 +140,89 @@ const freeTrialSchema = {
     <div class="container-custom relative">
       <div class="max-w-3xl text-center mx-auto">
         <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Pricing</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Simple, Transparent Pricing</h1>
-        <p class="text-xl text-gray-300">All features included. No setup fees. No contracts. Just powerful martial arts management software.</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">MyDojo is free</h1>
+        <p class="text-xl text-gray-300 mb-8">
+          No subscription. No per-student fees. No setup cost. Free while we're in early access.
+        </p>
+        <a href="/contact/" class="btn-primary text-lg px-8 py-4">Get started free</a>
+        <p class="mt-4 text-sm text-gray-400">No credit card • No contract • Every feature included</p>
       </div>
     </div>
   </section>
 
+  <!-- The offer, stated plainly -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">One plan. It costs nothing.</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          Most martial arts software charges £50–£200 a month, and then charges you more as your school grows.
+          MyDojo doesn't. There are no tiers, no student caps, and no feature lockouts — a school with 20 students
+          and a multi-site academy with 400 get exactly the same software, for exactly the same price. Nothing.
+        </p>
+        <p class="text-lg text-gray-600">
+          This is early access, and we're being straight with you about what that means: MyDojo is free now, and
+          we'll introduce paid monthly plans in future. When we do, you'll get <strong>at least 30 days' notice</strong>
+          before any charge. Nothing will start billing you by surprise.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Everything included -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold text-brand-navy mb-4">Everything's included</h2>
+        <p class="text-lg text-gray-600">
+          No feature lockouts, no upsells, no "contact sales for that one". Every school gets the whole product.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {featureGroups.map(group => (
+          <div class="card">
+            <h3 class="text-xl font-bold text-brand-navy mb-4">
+              <span aria-hidden="true">{group.icon}</span> {group.title}
+            </h3>
+            <ul class="space-y-2">
+              {group.features.map(feature => (
+                <li class="flex items-start gap-2 text-gray-700">
+                  <span class="text-brand-red font-bold" aria-hidden="true">✓</span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs (FAQPage schema is generated from the same array that renders them) -->
   <section class="section bg-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <div class="prose max-w-none">
-<h2>Simple, Transparent Pricing</h2>
-
-<p>All features included. No setup fees. No contracts. Just powerful martial arts management software that grows with your school.</p>
-
-<p>✓ 30-Day Free Trial       ✓ No Credit Card Required       ✓ Cancel Anytime</p>
-
-<h3>Starter</h3>
-
-<p>0-30 students</p>
-
-<p>$49/month</p>
-
-<p>As low as $1.63/student</p>
-
-<a href="#trial" class="link">Start Free Trial</a>
-
-<p>MOST POPULAR</p>
-
-<h3>Growth</h3>
-
-<p>31-75 students</p>
-
-<p>$79/month</p>
-
-<p>As low as $1.05/student</p>
-
-<a href="#trial" class="link">Start Free Trial</a>
-
-<h3>Professional</h3>
-
-<p>76-150 students</p>
-
-<p>$119/month</p>
-
-<p>As low as $0.79/student</p>
-
-<a href="#trial" class="link">Start Free Trial</a>
-
-<h2>Everything You Need. Every Plan.</h2>
-
-<p>No feature lockouts. No surprises. Every tier gets full access to all MyDojo features.</p>
-
-<h3>🥋 Core Management</h3>
-
-<ul>
-<li>Belt & rank tracking</li>
-</ul>
-
-<ul>
-<li>Class scheduling</li>
-</ul>
-
-<ul>
-<li>Attendance tracking</li>
-</ul>
-
-<ul>
-<li>Unlimited locations</li>
-</ul>
-
-<ul>
-<li>Unlimited staff users</li>
-</ul>
-
-<h3>💳 Billing & Payments</h3>
-
-<ul>
-<li>Automated recurring billing</li>
-</ul>
-
-<ul>
-<li>Family discounts</li>
-</ul>
-
-<ul>
-<li>Failed payment recovery</li>
-</ul>
-
-<ul>
-<li>Stripe integration (no markup)</li>
-</ul>
-
-<ul>
-<li>Payment reminders</li>
-</ul>
-
-<h3>📱 Student Experience</h3>
-
-<ul>
-<li>Free mobile student app</li>
-</ul>
-
-<ul>
-<li>Parent portal (24/7 access)</li>
-</ul>
-
-<ul>
-<li>Progress tracking</li>
-</ul>
-
-<ul>
-<li>Schedule viewing</li>
-</ul>
-
-<ul>
-<li>Belt promotion notifications</li>
-</ul>
-
-<h3>📊 Business Tools</h3>
-
-<ul>
-<li>CRM & lead management</li>
-</ul>
-
-<ul>
-<li>Automated follow-ups</li>
-</ul>
-
-<ul>
-<li>Unlimited emails</li>
-</ul>
-
-<ul>
-<li>Reporting & analytics</li>
-</ul>
-
-<ul>
-<li>Revenue tracking</li>
-</ul>
-
-<h3>✅ Check-In Methods</h3>
-
-<ul>
-<li>Tablet kiosk mode</li>
-</ul>
-
-<ul>
-<li>Mobile check-in</li>
-</ul>
-
-<ul>
-<li>QR code scanning</li>
-</ul>
-
-<ul>
-<li>Manual attendance</li>
-</ul>
-
-<ul>
-<li>Attendance reports</li>
-</ul>
-
-<h3>🛟 Support & Training</h3>
-
-<ul>
-<li>Email support (all tiers)</li>
-</ul>
-
-<ul>
-<li>Free onboarding</li>
-</ul>
-
-<ul>
-<li>Training videos</li>
-</ul>
-
-<ul>
-<li>Knowledge base</li>
-</ul>
-
-<ul>
-<li>Priority support (Enterprise)</li>
-</ul>
-
-<h2>Frequently Asked Questions</h2>
-
-<h3>How does the 30-day free trial work?</h3>
-
-<p>Sign up and get instant access to all MyDojo features for 30 days. No credit card required. Explore the platform, import your students, and see if it's the right fit. If you love it, choose a plan. If not, no hard feelings.</p>
-
-<h3>What happens when I reach my student limit?</h3>
-
-<p>We'll notify you when you're approaching your plan's student capacity. You can easily upgrade to the next tier directly from your dashboard. Your billing adjusts automatically, and there's no interruption to your service.</p>
-
-<h3>Are there any setup fees or hidden costs?</h3>
-
-<p>No setup fees, ever. The price you see is the price you pay. Payment processing runs through Stripe at their standard rates (2.9% + $0.30 per transaction), with no markup from us. We don't take a cut of your revenue.</p>
-
-<h3>Can I cancel anytime?</h3>
-
-<p>Absolutely. There are no lock-in contracts. You can cancel your subscription at any time from your account settings. You'll continue to have access until the end of your current billing period.</p>
-
-<h3>Do you offer annual billing?</h3>
-
-<p>Yes! Pay annually and get 2 months free (16.7% discount). Contact us to set up annual billing for your account.</p>
-
-<h3>What counts as an "active student"?</h3>
-
-<p>Active students are those currently enrolled in your programs with an active or pending membership. Leads, prospects, and inactive/paused students don't count toward your limit.</p>
-
-<h3>Can I manage multiple locations?</h3>
-
-<p>Yes! All plans include unlimited locations. Perfect for schools expanding to multiple dojos or teaching at different facilities.</p>
-
-<h3>What if I have more than 200 students?</h3>
-
-<p>The Enterprise plan supports unlimited students beyond 151. If you're running a large operation with 300+ students, contact us for custom enterprise pricing and dedicated support.</p>
-
-<h2>Ready to Simplify Your School Management?</h2>
-
-<p>Join hundreds of martial arts schools using MyDojo to automate billing, track progress, and grow their student base.</p>
-
-<a href="#trial" class="link">Start Your Free 30-Day Trial</a>
-        </div>
+        <FAQEnhanced
+          faqs={faqs}
+          site="mydojo"
+          pageUrl="https://mydojo.software/pricing/"
+          initiallyExpanded={0}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="section bg-brand-navy text-white">
+    <div class="container-custom">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to simplify your school?</h2>
+        <p class="text-lg text-gray-300 mb-8">
+          Belt tracking, scheduling, attendance, and CRM — free while we're in early access.
+        </p>
+        <a href="/contact/" class="btn-primary text-lg px-8 py-4">Get started free</a>
+        <p class="mt-4 text-sm text-gray-400">No credit card • No contract</p>
       </div>
     </div>
   </section>

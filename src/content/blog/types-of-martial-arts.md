@@ -617,7 +617,7 @@ The best martial art is the one you'll train consistently in, with quality instr
 
 Whatever style interests you, quality instruction and consistent training matter more than style selection. Visit schools, try classes, talk to students and instructors, then choose the art and school where you'll enjoy training for years to come.
 
-For schools managing students across multiple martial arts disciplines, [MyDojo Software](/martial-arts-software/) handles diverse belt systems, class types, and student progression. [Start your free trial](/contact/) and focus on teaching while software handles administration.
+For schools managing students across multiple martial arts disciplines, [MyDojo Software](/martial-arts-software/) handles diverse belt systems, class types, and student progression. [Get started free](/contact/) and focus on teaching while software handles administration.
 
 ## Related Articles
 

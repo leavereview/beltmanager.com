@@ -343,7 +343,7 @@ Small improvements in retention have outsized impact on school profitability and
 
 [MyDojo.Software](/martial-arts-software/) provides tools to track attendance, monitor progress, communicate with students, and identify retention risks before they become cancellations.
 
-[Start your free trial](/contact/) and build a school with students who stay.
+[Get started free](/contact/) and build a school with students who stay.
 
 ## Related Articles
 

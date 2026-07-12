@@ -48,7 +48,7 @@ const faqSchema = {
       "name": "What should dojo software cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dojo management software typically costs £50-200 per month depending on student count and features. Smaller dojos (under 100 students) often find suitable options at £50-80 monthly. Mid-size schools (100-250 students) pay £80-120. Larger schools with advanced features or multiple locations may pay £120-200. Per-student pricing models charge £1-3 per active student. MyDojo offers £79/month flat-rate for unlimited students."
+        "text": "Dojo management software typically costs £50-200 per month depending on student count and features. Smaller dojos (under 100 students) often find suitable options at £50-80 monthly. Mid-size schools (100-250 students) pay £80-120. Larger schools with advanced features or multiple locations may pay £120-200. Per-student pricing models charge £1-3 per active student. MyDojo is free while we're in early access — no subscription and no per-student fees."
       }
     },
     {
@@ -148,7 +148,7 @@ const comparisonData = [
   },
   {
     label: 'Monthly Price',
-    values: ['£79', '£95', '£0']
+    values: ['Free', '£95', '£0']
   }
 ];
 
@@ -187,7 +187,7 @@ const faqItems = [
   },
   {
     question: "What should dojo software cost?",
-    answer: "Dojo management software typically costs £50-200 per month depending on student count and features. Smaller dojos (under 100 students) often find suitable options at £50-80 monthly. Mid-size schools (100-250 students) pay £80-120. Larger schools with advanced features or multiple locations may pay £120-200. Per-student pricing models charge £1-3 per active student. MyDojo offers £79/month flat-rate for unlimited students.",
+    answer: "Dojo management software typically costs £50-200 per month depending on student count and features. Smaller dojos (under 100 students) often find suitable options at £50-80 monthly. Mid-size schools (100-250 students) pay £80-120. Larger schools with advanced features or multiple locations may pay £120-200. Per-student pricing models charge £1-3 per active student. MyDojo is free while we're in early access — no subscription and no per-student fees.",
     links: [
       { text: 'View pricing', url: '/pricing/' },
       { text: 'Feature comparison', url: '/martial-arts-software/' }
@@ -229,7 +229,7 @@ const faqItems = [
     answer: "Most dojos complete implementation in 4-6 weeks. Week 1-2: Data collection (audit student records, document rank structure, map current operations). Week 3-4: System configuration (set up belt colors, curriculum checklists, testing criteria, pricing, import student data). Week 5: Staff training and parallel operation with existing systems. Week 6+: Full deployment with student onboarding. Smaller dojos (under 75 students) often launch in 3-4 weeks. Complex multi-location or multi-discipline schools may need 8 weeks.",
     links: [
       { text: 'Implementation guide', url: '/martial-arts-software/' },
-      { text: 'Start free trial', url: '/contact/' }
+      { text: 'Get started free', url: '/contact/' }
     ]
   }
 ];
@@ -237,7 +237,7 @@ const faqItems = [
 
 <BaseLayout
   title="Dojo Management Software (2026)"
-  description="Run your dojo without the admin chaos. Kyu/dan tracking, curriculum and family accounts, automated billing. Used by 2,000+ schools. Free 30-day trial."
+  description="Run your dojo without the admin chaos. Kyu/dan tracking, curriculum and family accounts, automated billing. Free while we're in early access."
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <!-- Breadcrumbs -->
@@ -450,10 +450,10 @@ const faqItems = [
           See how MyDojo respects dojo culture while streamlining operations with belt tracking, family management, and automated testing workflows.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact/" class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Start Free Trial</a>
+          <a href="/contact/" class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>
           <a href="/pricing/" class="btn-secondary-large border-white text-white hover:bg-white hover:bg-opacity-10">View Pricing</a>
         </div>
-        <p class="mt-6 text-sm opacity-90">No credit card required • 14-day free trial • Cancel anytime</p>
+        <p class="mt-6 text-sm opacity-90">Free while we're in early access • No credit card • No contract</p>
       </div>
     </div>
   </section>

@@ -256,7 +256,7 @@ General scheduling platforms used for martial arts.
 - Fewer third-party integrations
 - Newer to market
 
-**Pricing:** From £49/month
+**Pricing:** Free while in early access
 
 **Best for:** Schools wanting martial arts-focused simplicity.
 
@@ -270,7 +270,7 @@ General scheduling platforms used for martial arts.
 | RhinoFit | Partial | Basic | £57 | Budget-conscious |
 | Glofox | No | Limited | £100 | Modern tech preference |
 | WellnessLiving | No | Limited | £89 | Marketing-focused |
-| MyDojo.Software | Yes | Yes | £49 | Small-medium schools |
+| MyDojo.Software | Yes | Yes | Free | Small-medium schools |
 
 ## Making Your Decision
 
@@ -423,7 +423,7 @@ Most platforms offer free trials. Use them:
 4. Train staff on daily tasks
 5. Evaluate honestly
 
-[Start your free trial of MyDojo.Software](/contact/) to see if our martial arts-focused approach fits your school's needs.
+[Get started with MyDojo.Software — free](/contact/) to see if our martial arts-focused approach fits your school's needs.
 
 ## Related Articles
 

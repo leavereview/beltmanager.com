@@ -15,14 +15,13 @@ const softwareApplicationSchema = {
   "operatingSystem": "Web, iOS, Android",
   "offers": {
     "@type": "Offer",
-    "@id": "https://mydojo.software/#free-trial",
+    "@id": "https://mydojo.software/#free",
     "price": "0",
     "priceCurrency": "GBP",
-    "name": "14-Day Free Trial",
-    "description": "Try MyDojo.Software free for 14 days with full access to all features",
+    "name": "Free while in early access",
+    "description": "MyDojo.Software is free to use — no subscription, no setup fee, and no per-student charges. Every feature is included.",
     "availability": "https://schema.org/InStock",
-    "url": "https://mydojo.software/contact/",
-    "priceValidUntil": "2026-12-31"
+    "url": "https://mydojo.software/pricing/"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -55,18 +54,18 @@ const softwareApplicationSchema = {
   }
 };
 
-// Free Trial Offer Schema
+// Free Offer Schema — MyDojo is free while in early access. Paid monthly plans
+// come later, with at least 30 days' notice.
 const offerSchema = {
   "@context": "https://schema.org",
   "@type": "Offer",
-  "@id": "https://mydojo.software/#free-trial-offer",
-  "name": "14-Day Free Trial - MyDojo.Software",
-  "description": "Try MyDojo.Software free for 14 days with complete access to all features including class scheduling, billing, student management, and belt tracking. No credit card required.",
+  "@id": "https://mydojo.software/#free-offer",
+  "name": "MyDojo.Software — free while in early access",
+  "description": "MyDojo.Software is free to use, with complete access to all features including class scheduling, billing, student management, and belt tracking. No subscription, no setup fee, no per-student charges, and no credit card required.",
   "price": "0",
   "priceCurrency": "GBP",
-  "priceValidUntil": "2026-12-31",
   "availability": "https://schema.org/InStock",
-  "url": "https://mydojo.software/contact/",
+  "url": "https://mydojo.software/pricing/",
   "seller": {
     "@type": "Organization",
     "name": "MyDojo.Software"
@@ -83,8 +82,8 @@ const offerSchema = {
   "additionalProperty": [
     {
       "@type": "PropertyValue",
-      "name": "Trial Duration",
-      "value": "14 days"
+      "name": "Subscription Required",
+      "value": "No"
     },
     {
       "@type": "PropertyValue",
@@ -237,7 +236,7 @@ const stats = [
 ];
 ---
 
-<BaseLayout title="Home" description="Save 10+ hours weekly managing your dojo. Automate scheduling, billing & student tracking so you focus on teaching. 2,000+ martial arts schools enrolled. Try free 14 days.">
+<BaseLayout title="Home" description="Save 10+ hours weekly managing your dojo. Automate scheduling, billing & student tracking so you focus on teaching. Free while we're in early access — no subscription, no per-student fees.">
   <!-- Structured Data Schemas -->
   <script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
@@ -263,7 +262,7 @@ const stats = [
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="/contact/" class="btn-primary text-lg px-8 py-4">
-            Start Free Trial
+            Get started free
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -273,7 +272,7 @@ const stats = [
           </a>
         </div>
         <p class="mt-6 text-sm text-gray-400">
-          No credit card required • 14-day free trial • Cancel anytime
+          Free while we're in early access • No credit card • No contract
         </p>
       </div>
     </div>
@@ -596,18 +595,18 @@ const stats = [
         Ready to Transform Your Dojo?
       </h2>
       <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-        Start your free trial today and see how MyDojo can streamline your operations and grow your business.
+        MyDojo is free while we're in early access. See how it can streamline your operations and grow your school.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
-          Start Your Free Trial
+          Get started free
         </a>
         <a href="/pricing/" class="btn bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4">
           View Pricing
         </a>
       </div>
       <p class="mt-6 text-sm text-white/70">
-        No credit card required • Setup in 5 minutes
+        No credit card • Setup in 5 minutes
       </p>
     </div>
   </section>

@@ -383,7 +383,7 @@ Plan thoroughly, budget conservatively, and maintain reserves for the unexpected
 
 Once open, tracking members, payments, and expenses becomes critical. [MyDojo.Software](/dojo-management-software/) helps you manage memberships, automate billing, and keep your martial arts business financially healthy.
 
-[Start your free trial](/contact/) and see how proper systems make gym management easier.
+[Get started free](/contact/) and see how proper systems make gym management easier.
 
 ## Related Articles
 

@@ -2,15 +2,15 @@
 
 > Complete martial arts school management software for dojos, karate schools, BJJ academies, and MMA gyms.
 
-MyDojo helps martial arts school owners automate scheduling, billing, and student tracking — saving 10+ hours per week. 2,000+ martial arts schools enrolled. 14-day free trial, no credit card required.
+MyDojo helps martial arts school owners automate scheduling, billing, and student tracking — saving 10+ hours per week. MyDojo is free while we're in early access: no subscription, no setup fee, no per-student charges, and no credit card required. Paid monthly plans will be introduced in future, with at least 30 days' notice.
 
 ## Core Pages
 
-- [Home](https://mydojo.software/): Product overview, key features, testimonials, and free trial call to action
+- [Home](https://mydojo.software/): Product overview, key features, and how to get started free
 - [Dojo Management Software](https://mydojo.software/dojo-management-software/): Full product overview covering class scheduling, student management, belt tracking, and billing
-- [Pricing](https://mydojo.software/pricing/): Starter, Growth, and Professional plans with feature comparison
+- [Pricing](https://mydojo.software/pricing/): Free while in early access — no tiers, no subscription, no per-student fees, every feature included
 - [About](https://mydojo.software/about/): Founder story and product mission
-- [Contact](https://mydojo.software/contact/): Start a free trial or get in touch
+- [Contact](https://mydojo.software/contact/): Get started free or get in touch
 
 ## Feature Pages
 

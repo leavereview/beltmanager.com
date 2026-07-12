@@ -435,7 +435,7 @@ None of these require massive budgets—just consistent effort and attention.
 
 More leads means more members to track. [MyDojo.Software](/mma-gym-software/) helps you manage leads, memberships, and your entire martial arts business from one platform.
 
-[Start your free trial](/contact/) and see how much easier gym management can be.
+[Get started free](/contact/) and see how much easier gym management can be.
 
 ## Related Articles
 

@@ -56,7 +56,7 @@ const faqSchema = {
       "name": "How much does karate school software cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most karate software costs £50-150 per month depending on student count and features. Smaller schools (under 75 students) typically find options at £50-80 monthly. Mid-size schools (75-200 students) pay £80-120. Larger academies or multi-location operations pay £120-200. Pricing models include flat-rate (unlimited students) or per-student (£1-2 per active student). MyDojo offers £79/month flat-rate for unlimited students."
+        "text": "Most karate software costs £50-150 per month depending on student count and features. Smaller schools (under 75 students) typically find options at £50-80 monthly. Mid-size schools (75-200 students) pay £80-120. Larger academies or multi-location operations pay £120-200. Pricing models include flat-rate (unlimited students) or per-student (£1-2 per active student). MyDojo is free while we're in early access — no subscription and no per-student fees."
       }
     },
     {
@@ -149,7 +149,7 @@ const comparisonData = [
   },
   {
     label: 'Monthly Price',
-    values: ['£79', '£120', '£0']
+    values: ['Free', '£120', '£0']
   }
 ];
 
@@ -195,7 +195,7 @@ const faqItems = [
   },
   {
     question: "How much does karate school software cost?",
-    answer: "Most karate software costs £50-150 per month depending on student count and features. Smaller schools (under 75 students) typically find options at £50-80 monthly. Mid-size schools (75-200 students) pay £80-120. Larger academies or multi-location operations pay £120-200. Pricing models include flat-rate (unlimited students) or per-student (£1-2 per active student). MyDojo offers £79/month flat-rate for unlimited students.",
+    answer: "Most karate software costs £50-150 per month depending on student count and features. Smaller schools (under 75 students) typically find options at £50-80 monthly. Mid-size schools (75-200 students) pay £80-120. Larger academies or multi-location operations pay £120-200. Pricing models include flat-rate (unlimited students) or per-student (£1-2 per active student). MyDojo is free while we're in early access — no subscription and no per-student fees.",
     links: [
       { text: 'View pricing plans', url: '/pricing/' },
       { text: 'Compare features', url: '/martial-arts-software/' }
@@ -203,9 +203,9 @@ const faqItems = [
   },
   {
     question: "Can I try karate software before committing?",
-    answer: "Most karate school software providers offer free trials ranging from 14 to 30 days. This allows you to test features with your actual student data, train your staff on the platform, evaluate how well it fits your dojo operations, and assess whether students and parents adopt the system easily. MyDojo offers a 14-day trial with full feature access, no credit card required, and includes onboarding support.",
+    answer: "Most karate school software providers offer free trials ranging from 14 to 30 days. This allows you to test features with your actual student data, train your staff on the platform, evaluate how well it fits your dojo operations, and assess whether students and parents adopt the system easily. MyDojo is free while we're in early access, so there is nothing to trial — full feature access, no credit card, and onboarding support included.",
     links: [
-      { text: 'Start free trial', url: '/contact/' },
+      { text: 'Get started free', url: '/contact/' },
       { text: 'Setup guide', url: '/martial-arts-software/' }
     ]
   },
@@ -237,7 +237,7 @@ const faqItems = [
 
 <BaseLayout
   title="Karate School Software (2026)"
-  description="Run your karate school in half the time. Kyu/dan belt tracking, kata progression, scheduling, and automated billing built for karate dojos. Free trial."
+  description="Run your karate school in half the time. Kyu/dan belt tracking, kata progression, scheduling, and automated billing built for karate dojos. Free while we're in early access."
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <!-- Breadcrumbs -->
@@ -473,10 +473,10 @@ const faqItems = [
           See how MyDojo can transform your karate school operations with belt tracking, kata progress monitoring, and automated testing management.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact/" class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Start Free Trial</a>
+          <a href="/contact/" class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>
           <a href="/pricing/" class="btn-secondary-large border-white text-white hover:bg-white hover:bg-opacity-10">View Pricing</a>
         </div>
-        <p class="mt-6 text-sm opacity-90">No credit card required • 14-day free trial • Cancel anytime</p>
+        <p class="mt-6 text-sm opacity-90">Free while we're in early access • No credit card • No contract</p>
       </div>
     </div>
   </section>
