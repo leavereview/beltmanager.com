@@ -389,7 +389,7 @@ Good marketing combined with great instruction builds thriving schools.
 
 [MyDojo.Software](/martial-arts-software/) helps track leads, manage trials, and convert prospects into long-term students with integrated lead management and [CRM tools](/martial-arts-crm/).
 
-[Get started free](/contact/) and grow your student base efficiently.
+[Get started free](https://app.mydojo.software/signup) and grow your student base efficiently.
 
 ## Related Articles
 

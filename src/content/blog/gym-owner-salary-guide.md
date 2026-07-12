@@ -326,7 +326,7 @@ Realistic expectations help you plan properly, whether you're entering the indus
 
 Better systems mean more efficiency and higher margins. [MyDojo.Software](/dojo-management-software/) helps martial arts schools streamline operations, reduce administrative time, and focus on what generates revenue—great instruction.
 
-[Get started free](/contact/) and see how the right tools support your business goals.
+[Get started free](https://app.mydojo.software/signup) and see how the right tools support your business goals.
 
 ## Related Articles
 

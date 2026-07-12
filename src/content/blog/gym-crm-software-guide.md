@@ -375,7 +375,7 @@ Choose a system that fits your school's size, budget, and technical comfort leve
 
 [MyDojo.Software](/martial-arts-crm/) includes CRM functionality alongside member management, scheduling, and billing—everything you need in one system.
 
-[Get started free](/contact/) and see how integrated CRM helps you convert more leads to students.
+[Get started free](https://app.mydojo.software/signup) and see how integrated CRM helps you convert more leads to students.
 
 ## Related Articles
 

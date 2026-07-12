@@ -423,7 +423,7 @@ Most platforms offer free trials. Use them:
 4. Train staff on daily tasks
 5. Evaluate honestly
 
-[Get started with MyDojo.Software — free](/contact/) to see if our martial arts-focused approach fits your school's needs.
+[Get started with MyDojo.Software — free](https://app.mydojo.software/signup) to see if our martial arts-focused approach fits your school's needs.
 
 ## Related Articles
 

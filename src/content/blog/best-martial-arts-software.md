@@ -400,7 +400,7 @@ Trial before committing. The best software is what you'll actually use effective
 
 ## Try MyDojo.Software
 
-See if our martial arts-focused approach fits your school. [Get started free](/contact/) and evaluate our belt tracking, scheduling, and billing features with your actual data.
+See if our martial arts-focused approach fits your school. [Get started free](https://app.mydojo.software/signup) and evaluate our belt tracking, scheduling, and billing features with your actual data.
 
 ## Related Articles
 
