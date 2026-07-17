@@ -328,7 +328,7 @@ It's not about being "good" at BJJ—it's about having a solid foundation for th
 
 Tracking student progress toward blue belt and beyond requires organisation. [MyDojo.Software](/bjj-gym-software/) helps you monitor attendance, record technique proficiency, and manage promotions systematically.
 
-[Get started free](https://app.mydojo.software/signup) and see how much easier running a BJJ gym can be.
+[Get started free](https://app.mydojo.software/signin) and see how much easier running a BJJ gym can be.
 
 ## Related Articles
 
