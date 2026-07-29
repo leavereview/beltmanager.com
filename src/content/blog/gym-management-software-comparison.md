@@ -1,432 +1,129 @@
 ---
-title: "Gym Management Software Comparison"
-description: "Gym management software compared for martial arts schools: pricing, features, and trade-offs across 6 platforms. The 8 deal-breaker features to insist on."
+title: "Martial Arts Gym Management Software Comparison (2026)"
+description: "Should a dojo run general gym software or a martial-arts-specific platform? Six options compared on grading support, published pricing and lock-in. Verified July 2026."
 image: /images/blog-dojo-interior.jpg
+imageAlt: "Interior of a martial arts dojo showing training space and equipment"
 date: "2026-02-06"
+updatedDate: "2026-07-29"
 tags: ["Software"]
 author: "MyDojo Team"
+faqs:
+  - question: "Can I use general gym management software for a martial arts school?"
+    answer: "Yes, and plenty of schools do. The trade-off is rank. General gym platforms handle memberships, bookings and payments well but treat belt progression as a custom field you maintain manually. If grading drives your class structure and retention, that manual work recurs at every grading. If you run mixed fitness programming and rank is secondary, general gym software is often the better fit."
+  - question: "What is the difference between gym software and martial arts software?"
+    answer: "Martial arts software treats rank progression, grading events, time-in-grade and curriculum as built-in concepts. Gym software treats members, classes and payments as the core model, with rank bolted on if at all. Clubworx illustrates the gap precisely: it is gym software that sells martial arts grading events as a $10/month add-on."
+  - question: "Which gym management software is cheapest for a martial arts school?"
+    answer: "At under 20 active members, Clubworx's free tier costs nothing. Between 25 and 50 students, Kicksite ($49-$99/month) and Martialytics ($69/month) are the cheapest purpose-built options. Gymdesk starts at $75/month for up to 50 members. MyDojo is free during early access with no member cap. Verified July 2026."
+  - question: "Do I need martial arts software if I only teach one discipline?"
+    answer: "It depends on whether you grade. A single-discipline school that runs regular belt testing gets more from martial-arts-specific software than a multi-discipline gym that rarely grades. The number of arts you teach matters less than how central rank is to your student journey."
+  - question: "What should I check before switching gym management software?"
+    answer: "Three things: whether you can export your full student list and grading history, what the payment processing rate is on top of the subscription, and what your cancellation terms are. Processing margin and exit friction cost more than the subscription difference between most of these platforms."
 ---
 
-Choosing gym management software is a significant decision for any martial arts school. The wrong choice means wasted money, frustrated staff, and potentially lost students. This guide compares popular options and helps you understand what to look for.
-
-While we offer [martial arts software](/martial-arts-software/) ourselves, this comparison aims to help you make an informed decision based on your specific needs—not just push our solution.
+Most "gym management software comparison" articles are written for gyms. If you run a dojo, the comparison you actually need is a step earlier: **should you be buying gym software at all, or something built around rank?**
 
-## What to Look For
+That question decides more than which vendor you pick. We build [martial arts software](/martial-arts-software/), so we have an obvious bias — this guide is written to be useful even if you conclude general gym software is the right call for your school, which for some schools it genuinely is.
 
-### Essential Features for Martial Arts
+All pricing below was verified against vendor pricing pages in **July 2026**.
 
-**Student management:**
-- Contact information and family accounts
-- Belt rank and progression tracking
-- Attendance history
-- Communication preferences
+## The real dividing line: does it understand rank?
 
-**Belt/rank tracking:**
-- Multi-rank systems support
-- Time-in-rank requirements
-- Attendance prerequisites
-- Promotion scheduling
-- Multiple arts if applicable
+Every platform here manages members, classes, bookings and payments competently. That is table stakes and not worth choosing on. The dividing line is what happens at a grading.
 
-**Scheduling:**
-- Class scheduling and management
-- Private lesson booking
-- Instructor assignment
-- Capacity limits
+**Martial-arts-first platforms** treat rank as a core object. Time-in-grade, eligibility, curriculum requirements, grading events and promotion history are built in. When you run a grading, the system already knows who is eligible.
 
-**Billing:**
-- Recurring membership billing
-- Family accounts with discounts
-- Testing and seminar fees
-- Multiple payment methods
+**General gym platforms** treat rank as metadata. You can record a belt in a custom field, but nothing computes eligibility, nothing tracks time-in-grade, and generating a grading list means exporting to a spreadsheet and filtering by hand.
 
-### Nice-to-Have Features
+Clubworx makes the gap unusually visible: it is gym software that sells **martial arts grading events as a $10/month add-on** on its paid plans. That is an honest reflection of where rank sits in a gym-first product — useful, supported, but an extra.
 
-**Lead management:**
-- Trial class scheduling
-- Follow-up automation
-- Conversion tracking
+## Comparison table
 
-**Communication:**
-- Email and SMS capabilities
-- Automated reminders
-- Bulk messaging
+| Platform | Built for | Rank/grading | Entry price | Free tier |
+|---|---|---|---|---|
+| **Kicksite** | Martial arts | Core | $49/mo (0–25 students) | No |
+| **Martialytics** | Martial arts | Core | $69/mo (0–50 students) | No |
+| **MyDojo** | Martial arts | Core | Free (early access) | Yes, no cap |
+| **Clubworx** | Gyms/studios | $10/mo add-on | A$0 (≤20 members) | Yes, ≤20 |
+| **Gymdesk** | Gyms/studios | Not rank-first | $75/mo (≤50 members) | No |
+| **Zen Planner** | Fitness businesses | Not rank-first | $99/mo (Studio) | No |
 
-**Reporting:**
-- Attendance reports
-- Revenue analytics
-- Retention metrics
-- Custom reports
+Prices as published July 2026. Clubworx in AUD; others in USD.
 
-## Software Categories
+## Where each one fits
 
-### Martial Arts-Specific
+### Kicksite — martial arts, cheapest entry
 
-Platforms built specifically for martial arts operations.
+$49/month for up to 25 students, rising to $99 (26–50), $149 (51–100) and $199 (101+). Every feature is available at every tier, which removes the usual trap where growing past a member threshold also unlocks the feature you needed six months ago.
 
-**Advantages:**
-- Understand belt systems inherently
-- Martial arts terminology
-- Features designed for dojos
-- Often smaller, more personal support
+Best for small and mid-size schools that want martial-arts-native grading without negotiating over features. The bands step up faster than competitors, so it becomes comparatively expensive around the 100-student mark.
 
-**Disadvantages:**
-- Smaller vendor ecosystem
-- May have fewer integrations
-- Varying feature depth
+### Martialytics — martial arts, most consistent as you grow
 
-### General Fitness/Gym Software
+$69/month for up to 50 active students, then $99 (51–100), $129 (101–200) and $199 (200+). Leads and inactive students don't count toward your tier, which matters if you carry a long tail of lapsed members. States no payment-processing markup beyond standard Stripe rates.
 
-Platforms designed for gyms and fitness facilities, adapted for martial arts.
+Best for schools planning to grow, because the curve is flatter than Kicksite's across the mid range.
 
-**Advantages:**
-- Robust feature sets
-- Larger development resources
-- More third-party integrations
-- Extensive support resources
+### MyDojo — martial arts, free during early access
 
-**Disadvantages:**
-- Gym-focused terminology
-- Belt tracking often limited
-- May be over-featured for your needs
-- Higher pricing tiers
+Free while we're in early access: no subscription, no per-student charge, no cap on student numbers, with belt and rank progression built in rather than bolted on.
 
-### Appointment/Booking Software
+The honest caveat: we're newer than everything else here, and the integration ecosystem and body of community documentation are correspondingly smaller. If you need a mature third-party integration library, the established platforms have one and we don't yet.
 
-General scheduling platforms used for martial arts.
+### Clubworx — gym software with a free tier and a grading add-on
 
-**Advantages:**
-- Simple and focused
-- Lower costs
-- Easy to implement
-- Good for basic needs
+A free plan for up to 20 active members, then A$109 (≤100), A$149 (≤250) and A$169 (unlimited). Includes online booking, payments, SMS, a check-in kiosk and attendance tracking.
 
-**Disadvantages:**
-- No martial arts-specific features
-- Limited rank tracking
-- Separate billing required
-- Minimal reporting
+Best for very small schools who need something free from an established vendor. Two caveats: prices are in **Australian dollars**, and grading events cost **$10/month extra** on paid plans.
 
-## Popular Options Compared
+### Gymdesk — clean general-purpose gym software
 
-### Zen Planner
+$75/month for up to 50 active members, then $100 (51–100), $150 (101–200) and $200 (201–400). Includes a responsive website and unlimited staff accounts, month-to-month with no contracts. Frozen and cancelled members don't count toward your tier.
 
-**Overview:** Comprehensive fitness business platform used by many martial arts schools.
+Best for mixed academies running fitness programming alongside martial arts, where rank isn't the organising principle of the timetable.
 
-**Strengths:**
-- Robust feature set
-- Strong billing capabilities
-- Good reporting
-- Mobile app included
+### Zen Planner — the incumbent
 
-**Weaknesses:**
-- Designed primarily for fitness
-- Can be complex to set up
-- Higher price point
-- Learning curve
+$99/month Studio, $198 Essentials, $348 Ultimate. The most recognised product in this space and the most expensive to run at scale. Its Capterra listing shows no free trial and no free version, and records reviewer complaints about payment-processing fees, billing errors and charges tied to cancellation and merchant requirements.
 
-**Pricing:** From £99/month (varies by features and size)
+Best for larger multi-instructor operations that need the ecosystem and can absorb the cost. Price the processing fees and exit terms before you sign.
 
-**Best for:** Medium to large schools wanting comprehensive features.
+## The costs that don't appear on the pricing page
 
----
+**Payment processing.** The subscription is the visible cost; the processing rate is the recurring one. On a school collecting £8,000/month, a one-point difference in processing is £80/month — more than the gap between most of these platforms. Ask for the rate in writing.
 
-### Mindbody
+**Add-on modules.** Grading events on Clubworx. Marketing modules, websites and branded apps on the larger platforms. The base price is frequently not the running price.
 
-**Overview:** Major player in wellness software, used across fitness, spas, and martial arts.
+**Currency.** Clubworx prices in AUD and the rest in USD. For a UK school, a 10% currency move outweighs the difference between two competing products.
 
-**Strengths:**
-- Well-known brand
-- Marketplace exposure
-- Comprehensive features
-- Strong integrations
+**Migration time.** Getting student records, payment mandates and grading history into a new system is a week of someone's attention. Do it in a quiet period, never in the run-up to a grading.
 
-**Weaknesses:**
-- Expensive at scale
-- Complex pricing structure
-- Designed for general wellness
-- Some features unnecessary for martial arts
+## How to decide
 
-**Pricing:** From £129/month (can increase significantly)
+**Start with grading frequency.** If you grade regularly and eligibility rules matter, buy martial-arts-first software. The manual work of maintaining rank in a gym platform recurs forever and grows with your student count.
 
-**Best for:** Schools wanting brand recognition and marketplace visibility.
+**Then find your band.** Every platform prices by active students or members. Locate your number on each pricing page before comparing anything else — it eliminates half the shortlist immediately.
 
----
+**Then price the whole thing.** Subscription plus processing plus add-ons. A $49 platform with a rich processing margin can cost more annually than a $99 one without.
 
-### Kicksite
-
-**Overview:** Built specifically for martial arts schools.
-
-**Strengths:**
-- Martial arts-focused
-- Belt tracking included
-- Lead management
-- Reasonable pricing
-
-**Weaknesses:**
-- Smaller company
-- Fewer integrations
-- Interface can feel dated
-- Limited customisation
-
-**Pricing:** From £79/month
-
-**Best for:** Traditional martial arts schools wanting purpose-built software.
-
----
-
-### Member Solutions (RhinoFit)
-
-**Overview:** Membership management with martial arts features.
-
-**Strengths:**
-- Solid billing
-- Belt tracking available
-- Affordable pricing
-- Good customer service
-
-**Weaknesses:**
-- Limited advanced features
-- Basic reporting
-- Interface not modern
-- Mobile limitations
-
-**Pricing:** From £57/month
-
-**Best for:** Smaller schools focused on core functionality.
-
----
-
-### Glofox
-
-**Overview:** Modern fitness platform with growing martial arts adoption.
-
-**Strengths:**
-- Modern interface
-- Strong mobile app
-- Good marketing tools
-- Scalable
-
-**Weaknesses:**
-- Not martial arts-specific
-- Belt tracking limited
-- Higher pricing
-- May be over-featured
-
-**Pricing:** Custom pricing (typically £100+/month)
-
-**Best for:** Modern schools wanting polished technology.
-
----
-
-### WellnessLiving
-
-**Overview:** All-in-one business management for fitness and wellness.
-
-**Strengths:**
-- Comprehensive features
-- Good marketing tools
-- Rewards programme
-- Staff management
-
-**Weaknesses:**
-- Complex platform
-- Learning curve
-- Not martial arts-specific
-- Can be pricey
-
-**Pricing:** From £89/month
-
-**Best for:** Schools wanting marketing and rewards integration.
-
----
-
-### MyDojo.Software
-
-**Overview:** Purpose-built for martial arts schools (our platform).
-
-**Strengths:**
-- Martial arts terminology
-- Belt progression system
-- Grading management
-- Designed for dojos
-
-**Weaknesses:**
-- Smaller platform
-- Fewer third-party integrations
-- Newer to market
-
-**Pricing:** Free while in early access
-
-**Best for:** Schools wanting martial arts-focused simplicity.
-
-## Comparison Table
-
-| Platform | MA-Specific | Belt Tracking | Price From | Best For |
-|----------|-------------|---------------|------------|----------|
-| Zen Planner | Partial | Good | £99 | Medium-large schools |
-| Mindbody | No | Limited | £129 | Brand/marketplace value |
-| Kicksite | Yes | Yes | £79 | Traditional dojos |
-| RhinoFit | Partial | Basic | £57 | Budget-conscious |
-| Glofox | No | Limited | £100 | Modern tech preference |
-| WellnessLiving | No | Limited | £89 | Marketing-focused |
-| MyDojo.Software | Yes | Yes | Free | Small-medium schools |
-
-## Making Your Decision
-
-### Questions to Ask Yourself
-
-**About your school:**
-- How many students do you have?
-- Do you teach multiple martial arts?
-- How complex is your belt system?
-- Do you need lead management?
-- How important is mobile access?
-
-**About your budget:**
-- What can you afford monthly?
-- What's the cost of switching later?
-- Are transaction fees acceptable?
-- What features justify higher cost?
-
-**About your operations:**
-- Who will use the system daily?
-- How tech-savvy is your team?
-- What's currently working well?
-- What problems must be solved?
-
-### Questions to Ask Vendors
-
-**Features:**
-- Can you demonstrate belt rank tracking?
-- How does family billing work?
-- What reporting is available?
-- Can I customise the terminology?
-
-**Pricing:**
-- What's the all-in monthly cost?
-- Are there transaction fees?
-- What's included vs. extra cost?
-- Any setup or migration fees?
-
-**Support:**
-- What training is provided?
-- What support is available?
-- What's the response time?
-- Is there a knowledge base?
-
-**Technical:**
-- What data can I export?
-- What integrations are available?
-- What's the uptime guarantee?
-- How often do you update?
-
-### Red Flags
-
-**Be cautious of:**
-- Long contracts with exit penalties
-- Hidden fees revealed after signing
-- Poor reviews about support
-- Unclear data ownership
-- No free trial available
-- Pushy sales tactics
-
-## Implementation Considerations
-
-### Data Migration
-
-**Expect to migrate:**
-- Student contact information
-- Membership and billing details
-- Belt rank history
-- Attendance records
-
-**Migration challenges:**
-- Data format differences
-- Historical data completeness
-- Testing and verification time
-- Parallel running period
-
-### Training Requirements
-
-**Staff training needs:**
-- Front desk daily operations
-- Instructor attendance and mobile use
-- Owner reporting and management
-- Billing and payment handling
-
-### Transition Period
-
-**Plan for:**
-- 2-4 weeks minimum transition
-- Parallel running with old system
-- Student communication about changes
-- Extra support initially
-
-## Total Cost Considerations
-
-### Beyond Monthly Fees
-
-**Additional costs to factor:**
-- Setup or migration fees
-- Training costs
-- Transaction fees (per payment)
-- Add-on features
-- Hardware (tablets, kiosks)
-- Integration costs
-
-### Example Total Cost Calculation
-
-| Cost Element | Option A | Option B |
-|--------------|----------|----------|
-| Monthly fee | £99 | £59 |
-| Transaction fee (2%) on £10k | £200 | £0 |
-| Annual total | £1,388 | £708 |
-| 3-year total | £4,164 | £2,124 |
-| **Difference** | — | **£2,040 saved** |
-
-Transaction fees can significantly impact total cost at scale.
+**Then test with real data.** Import twenty real students and run one real grading. Vendor demos are built to look effortless; your school's edge cases are what actually break software.
 
 ## Summary
 
-Choosing gym management software depends on:
+If rank is central to how you run classes, the martial-arts-first platforms — Kicksite, Martialytics, MyDojo — will save you recurring manual work that general gym software will not.
 
-1. **Your specific needs** — Belt tracking, billing, scheduling requirements
-2. **Your budget** — Monthly fees plus all hidden costs
-3. **Your technical comfort** — Simple vs. feature-rich platforms
-4. **Your growth plans** — Scalability and flexibility
-5. **Vendor reliability** — Support, updates, longevity
+If you run mixed programming and grade infrequently, Gymdesk and Zen Planner are capable and you're not missing much.
 
-There's no universally "best" platform—only what's best for your particular school.
+If you have under 20 members and no budget, Clubworx's free tier and MyDojo's early access are the two genuinely free routes, and we've compared them properly in our guide to [free martial arts software](/free-martial-arts-software/).
 
-### Recommendations by School Type
+For the full buying comparison ranked by school size, see [best martial arts software 2026](/blog/best-martial-arts-software/).
 
-**Small traditional dojo (under 100 students):**
-Simple, martial arts-specific platform like Kicksite or MyDojo.Software
+## Try MyDojo
 
-**Medium school (100-250 students):**
-Balance of features and simplicity—Zen Planner, Kicksite, or MyDojo.Software
-
-**Large multi-location:**
-Robust platform like Zen Planner, Mindbody, or enterprise solutions
-
-**MMA/competition focus:**
-Modern platform with strong scheduling—Glofox, Zen Planner
-
-## Try Before You Commit
-
-Most platforms offer free trials. Use them:
-
-1. Set up your actual belt structure
-2. Add real student data
-3. Process test payments
-4. Train staff on daily tasks
-5. Evaluate honestly
-
-[Get started with MyDojo.Software — free](https://app.mydojo.software/signin) to see if our martial arts-focused approach fits your school's needs.
+MyDojo is free while we're in early access — no subscription, no per-student fee, no card required. [See what it does](/martial-arts-software/).
 
 ## Related Articles
 
-- [Martial Arts Software](/martial-arts-software/) — the leading management platform for UK dojos
-- [Best Martial Arts Software 2026](/blog/best-martial-arts-software/) — top platforms ranked and reviewed
-- [Gym CRM Software Guide](/blog/gym-crm-software-guide/) — choosing the right CRM for your school
+- [Best Martial Arts Software 2026](/blog/best-martial-arts-software/)
+- [Free Martial Arts Software](/free-martial-arts-software/)
+- [Martial Arts Software: Features & How to Choose](/martial-arts-software/)
+- [Dojo Management Software](/dojo-management-software/)

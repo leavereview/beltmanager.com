@@ -2,6 +2,11 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import compress from 'astro-compress';
+import { fileURLToPath } from 'node:url';
+import { dirname } from 'node:path';
+import { buildLastmodMap, lastmodSerializer } from '../scripts/sitemap-lastmod.mjs';
+
+const lastmod = buildLastmodMap(dirname(fileURLToPath(import.meta.url)));
 
 export default defineConfig({
   site: 'https://mydojo.software',
@@ -15,6 +20,7 @@ export default defineConfig({
     tailwind(),
     sitemap({
       filter: (page) => !page.includes('/blog/tag/'),
+      serialize: lastmodSerializer(lastmod),
     }),
     compress({
       CSS: true,

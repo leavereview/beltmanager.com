@@ -1,0 +1,325 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+
+const faqs = [
+  {
+    question: 'Is there genuinely free martial arts software?',
+    answer:
+      'Yes, from two directions. Clubworx publishes a permanently free plan for up to 20 active members that includes online booking, payment acceptance, attendance tracking and a self check-in kiosk. MyDojo is free while we are in early access, with no cap on student numbers. Most other platforms offer a 15 to 30 day trial rather than a free tier. Pricing verified July 2026.',
+  },
+  {
+    question: 'What is the catch with free martial arts software?',
+    answer:
+      'Usually a member cap. Clubworx free stops at 20 active members, and moving past it costs A$109/month. Free tiers also tend to exclude the martial-arts-specific features you came for — Clubworx charges $10/month extra for grading events even on paid plans. The other common catch is payment processing: free software can still take a margin on every payment you collect.',
+  },
+  {
+    question: 'Can I run a dojo entirely on free software?',
+    answer:
+      'Under about 20 students, yes. Above that you are choosing between paying for software and paying in admin time. The realistic threshold is when manual grading records and chasing payments starts costing you more than an hour a week — at typical UK class rates that hour is worth more than most subscriptions.',
+  },
+  {
+    question: 'Is free martial arts software safe for student data?',
+    answer:
+      'Judge it on the same basis as paid software, not a lower one. Ask where data is hosted, whether you can export your full student list and grading history at any time, and what happens to your data if you stop using the product. A free tier from an established vendor and a free tier from an unknown one are not equivalent risks.',
+  },
+  {
+    question: 'What does MyDojo cost after early access?',
+    answer:
+      'We have not set post-early-access pricing yet. What we have committed to is notice: we will not switch a free account to a paid one without telling you well in advance, and you will be able to export your students and grading records at any point.',
+  },
+  {
+    question: 'Is free software or a free trial better for a new school?',
+    answer:
+      'A trial is better if you already know you will pay and want to test the real product at full capability. A free tier is better if you genuinely cannot commit to a subscription yet, because a trial that expires mid-term leaves you migrating data during your busiest period.',
+  },
+];
+
+const title = 'Free Martial Arts Software: What the No-Cost Options Actually Cover';
+const description =
+  'Which martial arts software is genuinely free, where the free tiers stop, and what the catches are. Clubworx, MyDojo and the trial-only platforms compared. Verified July 2026.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  schemaType="WebPage"
+  publishedDate="2026-07-29"
+  modifiedDate="2026-07-29"
+>
+  <div class="bg-gray-50 py-4">
+    <div class="container-custom">
+      <BreadcrumbsEnhanced
+        site="mydojo"
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Martial Arts Software', href: '/martial-arts-software/' },
+          { label: 'Free Martial Arts Software' },
+        ]}
+      />
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+          Free Martial Arts Software
+        </h1>
+        <p class="text-xl text-gray-300 mb-8">
+          Two platforms are genuinely free. Everything else calls a trial "free" and hopes
+          you won't check. Here's exactly where each one stops, verified against vendor
+          pricing pages in July 2026.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://app.mydojo.software/signin" class="btn-primary text-lg px-8 py-4">Start Free — No Card</a>
+          <a href="/blog/best-martial-arts-software/" class="btn-secondary text-lg px-8 py-4">See the Full Comparison</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <FeaturedAnswer question="Is there genuinely free martial arts software?">
+          <p>
+            Yes, but only two options are free in the sense most school owners mean.
+            <strong>Clubworx</strong> offers a permanently free plan for up to 20 active
+            members. <strong>MyDojo</strong> is free during early access with no member cap.
+            Everything else in the category — Kicksite, Martialytics, Gymdesk, Zen Planner —
+            offers a time-limited trial, not a free tier.
+          </p>
+        </FeaturedAnswer>
+
+        <div class="prose prose-lg max-w-none mt-12">
+          <p>
+            "Free" is the most overloaded word in software pricing. It covers permanently
+            free plans, 30-day trials, freemium tiers that exclude the one feature you need,
+            and products that are free to license while taking a percentage of every payment
+            you collect. Those are four very different propositions.
+          </p>
+
+          <p>
+            This page separates them. If you want the full paid comparison including what
+            each platform costs as you grow, that's in our
+            <a href="/blog/best-martial-arts-software/">best martial arts software guide</a>,
+            and the category overview lives on our
+            <a href="/martial-arts-software/">martial arts software</a> page.
+          </p>
+
+          <h2>The two genuinely free options</h2>
+
+          <h3>Clubworx free plan — up to 20 active members</h3>
+          <p>
+            Clubworx publishes a free tier at <strong>A$0/month for up to 20 active
+            members</strong>. It is not a trial and does not expire. Included: one website,
+            online booking, payment acceptance, email and SMS, a self check-in kiosk, and
+            attendance tracking.
+          </p>
+          <p>
+            Two things to know before you build your school on it. First, the cap is on
+            <em>active</em> members, and 20 arrives quickly — the next tier up is
+            <strong>A$109/month</strong> for up to 100. Second, martial arts grading events
+            are a <strong>$10/month add-on</strong> even on the paid plans, so the feature
+            most likely to have brought you to martial arts software specifically is not part
+            of the free tier at all.
+          </p>
+          <p>
+            Note also that Clubworx prices in <strong>Australian dollars</strong>. For a UK
+            school the real cost moves with the exchange rate.
+          </p>
+
+          <h3>MyDojo — free during early access, no member cap</h3>
+          <p>
+            MyDojo is free while we're in early access: no subscription, no setup fee, no
+            per-student charge, and no cap on how many students you track. Belt and rank
+            progression, grading and attendance are built in as core concepts rather than
+            custom fields you maintain yourself.
+          </p>
+          <p>
+            The honest trade: we are newer than every other platform in this category, and
+            the surrounding ecosystem — third-party integrations, years of community
+            documentation, a large pool of staff who already know the interface — is smaller.
+            We have not set post-early-access pricing. What we have committed to is that we
+            won't move you onto a paid plan without substantial notice, and you can export
+            your students and grading history whenever you want.
+          </p>
+
+          <h2>What "free" means everywhere else</h2>
+          <p>
+            The rest of the category offers trials. Useful, but a different thing entirely —
+            a trial that expires mid-term means migrating student data during your busiest
+            weeks.
+          </p>
+
+          <div class="overflow-x-auto my-8">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b-2 border-gray-200">
+                  <th class="py-3 pr-4 font-bold text-brand-navy">Platform</th>
+                  <th class="py-3 pr-4 font-bold text-brand-navy">Free tier?</th>
+                  <th class="py-3 pr-4 font-bold text-brand-navy">Trial</th>
+                  <th class="py-3 font-bold text-brand-navy">Cost once free ends</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-700">
+                <tr class="border-b border-gray-100">
+                  <td class="py-3 pr-4 font-semibold">MyDojo</td>
+                  <td class="py-3 pr-4">Yes — no cap</td>
+                  <td class="py-3 pr-4">n/a</td>
+                  <td class="py-3">Not yet set</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-3 pr-4 font-semibold">Clubworx</td>
+                  <td class="py-3 pr-4">Yes — ≤20 members</td>
+                  <td class="py-3 pr-4">15 days (paid plans)</td>
+                  <td class="py-3">A$109/mo (≤100)</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-3 pr-4 font-semibold">Kicksite</td>
+                  <td class="py-3 pr-4">No</td>
+                  <td class="py-3 pr-4">30 days, via demo</td>
+                  <td class="py-3">$49/mo (≤25 students)</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-3 pr-4 font-semibold">Martialytics</td>
+                  <td class="py-3 pr-4">No</td>
+                  <td class="py-3 pr-4">30 days, no card</td>
+                  <td class="py-3">$69/mo (≤50 students)</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-3 pr-4 font-semibold">Gymdesk</td>
+                  <td class="py-3 pr-4">No</td>
+                  <td class="py-3 pr-4">30 days, no card</td>
+                  <td class="py-3">$75/mo (≤50 members)</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 font-semibold">Zen Planner</td>
+                  <td class="py-3 pr-4">No</td>
+                  <td class="py-3 pr-4">None listed</td>
+                  <td class="py-3">$99/mo (Studio)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-sm text-gray-500">
+            Published pricing, verified against vendor pricing pages July 2026. Clubworx in
+            AUD; others in USD.
+          </p>
+
+          <h2>The four catches worth checking</h2>
+
+          <h3>1. The member cap arrives sooner than you think</h3>
+          <p>
+            Twenty active members is one healthy kids' class. If you're growing at all, plan
+            for the paid tier rather than treating the free plan as permanent infrastructure.
+          </p>
+
+          <h3>2. Free rarely includes grading</h3>
+          <p>
+            Rank progression is the reason martial arts software exists as a category
+            separate from gym software. If a free tier treats grading as a paid add-on, it is
+            a gym product with a martial arts label.
+          </p>
+
+          <h3>3. Payment processing is where free software earns</h3>
+          <p>
+            Software that costs nothing can still take a margin on every payment you collect.
+            Across a year, a percentage on collections usually costs more than a subscription
+            would have. Ask what the processing rate is before you judge anything as free.
+          </p>
+
+          <h3>4. Data export is not guaranteed</h3>
+          <p>
+            The important question is not how you get in, it's how you get out. Confirm you
+            can export your full student list and grading history in a usable format before
+            you commit — and confirm it in writing, not from a feature page.
+          </p>
+
+          <h2>When free stops making sense</h2>
+          <p>
+            The switch point is not a student count, it's an admin-hours count. Once
+            maintaining grading records, chasing payments and rebuilding the class register
+            costs you more than an hour a week, a subscription is cheaper than your own time
+            at almost any UK class rate.
+          </p>
+          <p>
+            You can model that properly with our
+            <a href="/dojo-revenue-calculator/">dojo revenue calculator</a> — put in your
+            student numbers and fees and compare the monthly software cost against what an
+            hour of your week is actually worth.
+          </p>
+
+          <h2>Our recommendation</h2>
+          <p>
+            <strong>Under 20 students and testing the water:</strong> Clubworx's free tier is
+            the safest established option, as long as you don't need grading events.
+          </p>
+          <p>
+            <strong>Any size, and rank tracking matters:</strong> MyDojo is free during early
+            access with no member cap and martial-arts-native grading. The trade is product
+            maturity, and we'd rather you knew that upfront.
+          </p>
+          <p>
+            <strong>You know you'll pay eventually:</strong> skip the free tiers and use the
+            30-day trials on Martialytics or Kicksite with real student data. Better to test
+            the product you'll actually run than the cut-down version.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <FAQEnhanced
+          site="mydojo"
+          pageUrl="https://mydojo.software/free-martial-arts-software/"
+          title="Frequently Asked Questions About Free Martial Arts Software"
+          faqs={faqs}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-brand-red text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl font-bold mb-4">Free While We're in Early Access</h2>
+      <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+        No subscription, no per-student fee, no card required, and no cap on how many
+        students you track.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://app.mydojo.software/signin" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4 font-bold">Get Started Free</a>
+        <a href="/martial-arts-software/" class="btn border-2 border-white text-white hover:bg-white hover:text-brand-red text-lg px-8 py-4 font-bold">See What It Does</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="section">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <a href="/blog/best-martial-arts-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Best Martial Arts Software 2026</h3>
+          <p class="text-gray-600 text-sm">Six platforms compared on published pricing, rank tracking and contract terms</p>
+        </a>
+        <a href="/martial-arts-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Martial Arts Software</h3>
+          <p class="text-gray-600 text-sm">What the category does, which features matter, and how to choose</p>
+        </a>
+        <a href="/dojo-management-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Dojo Management Software</h3>
+          <p class="text-gray-600 text-sm">Running the day-to-day: registers, gradings, schedules and student records</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
