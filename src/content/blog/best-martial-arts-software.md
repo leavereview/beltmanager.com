@@ -9,9 +9,9 @@ tags: ["Software"]
 author: "MyDojo Team"
 faqs:
   - question: "What is the best martial arts software for a small dojo?"
-    answer: "For schools under 25 students, Kicksite ($49/month) and Martialytics ($69/month for up to 50) are the cheapest purpose-built options with full feature access. If budget is the binding constraint, Clubworx has a genuinely free tier for up to 20 active members, and MyDojo is free during early access. Verified July 2026."
+    answer: "For schools under 25 students, Kicksite ($49/month) and Martialytics ($69/month for up to 50) are the cheapest purpose-built options with full feature access. If budget is the binding constraint, Clubworx has a genuinely free tier for up to 20 active members, and MyDojo is free until 31 March 2027. Verified July 2026."
   - question: "Is there free martial arts software?"
-    answer: "Yes, but with limits. Clubworx offers a free plan for up to 20 active members including online booking, payments, attendance and a check-in kiosk. MyDojo is currently free with no student cap while in early access. Most other platforms offer 15-30 day trials rather than a free tier."
+    answer: "Yes, but with limits. Clubworx offers a free plan for up to 20 active members including online booking, payments, attendance and a check-in kiosk. MyDojo is currently free with no student cap until 31 March 2027. Most other platforms offer 15-30 day trials rather than a free tier."
   - question: "How much does martial arts software cost per month?"
     answer: "Published 2026 entry prices range from $49/month (Kicksite, up to 25 students) to $249/month (Spark Membership, flat rate). Most purpose-built platforms sit between $69 and $99/month for a school of 50 students. Zen Planner starts at $99/month and rises to $348/month for its Ultimate tier."
   - question: "Does martial arts software handle belt and rank tracking?"
@@ -48,7 +48,7 @@ Published monthly prices, verified July 2026. Currencies are as the vendor lists
 | **Zen Planner** | $99/mo (Studio) | Flat-rate tiers | No | None listed |
 | **Clubworx** | A$0 (≤20 members) | Tiered by members | **Yes, ≤20 members** | 15 days on paid plans |
 | **Spark Membership** | ~$249/mo | Flat rate, unlimited students | No | Promotional offers |
-| **MyDojo** | Free | Free during early access | **Yes, no student cap** | n/a — it's free |
+| **MyDojo** | Free | Free until 31 March 2027 | **Yes, no student cap** | n/a — it's free |
 
 Full published bands:
 
@@ -114,9 +114,9 @@ Reported add-ons include SMS credit packages and a done-for-you marketing module
 **Best for:** large schools where per-student pricing has become the dominant cost.
 **Watch for:** in-house merchant requirements and add-on costs on top of the flat fee.
 
-### MyDojo — free while in early access
+### MyDojo — free until 31 March 2027
 
-MyDojo is **free while we're in early access**: no subscription, no setup fee and no per-student charge, with no cap on student numbers. It's purpose-built for martial arts, so belt and rank progression, grading and attendance are core concepts rather than custom fields.
+MyDojo is **free until 31 March 2027**: no subscription, no setup fee and no per-student charge, with no cap on student numbers. It's purpose-built for martial arts, so belt and rank progression, grading and attendance are core concepts rather than custom fields.
 
 The honest positioning: it is newer than everything else on this page and the ecosystem around it is smaller. If you need a deep third-party integration library or a decade of community documentation, the established platforms have that and we don't yet. If you want martial-arts-native rank tracking at no cost while we build, that's the trade on offer.
 
@@ -143,7 +143,7 @@ Two genuinely free options exist, and they are free in different ways.
 
 **Clubworx free plan** caps at 20 active members but is a permanent free tier from an established vendor. When you pass 20 members you move to A$109/month, and grading events cost $10/month extra on top.
 
-**MyDojo** is free during early access with no member cap, because we're still building and would rather have your feedback than your money.
+**MyDojo** is free until 31 March 2027 with no member cap, because we're still building and would rather have your feedback than your money.
 
 Everything else on this page offers a trial, not a free tier: 30 days on Kicksite, Martialytics and Gymdesk, 15 days on Clubworx's paid plans, and nothing listed for Zen Planner.
 
@@ -185,7 +185,7 @@ Prices change. Every figure here was verified against the vendor's published pri
 
 ## Try MyDojo
 
-MyDojo is free while we're in early access — no subscription, no per-student fee, no card required. If rank tracking built for martial arts is what you're missing, [take a look at what it does](/martial-arts-software/).
+MyDojo is free until 31 March 2027 — no subscription, no per-student fee, no card required. If rank tracking built for martial arts is what you're missing, [take a look at what it does](/martial-arts-software/).
 
 ## Related Articles
 

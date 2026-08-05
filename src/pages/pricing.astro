@@ -1,9 +1,15 @@
 ---
 // Pricing Page
 //
-// MyDojo is free while in early access. There is no subscription, no per-student
+// MyDojo is free until 31 March 2027. There is no subscription, no per-student
 // fee, and no free trial — there is nothing to trial, the product is free.
-// Paid monthly plans come later, with at least 30 days' notice.
+// Paid monthly plans come after that date, with at least 30 days' notice.
+//
+// The DATE is the point. "Free while in early access" is open-ended, and an
+// open-ended free reads as a hobby project that might vanish — fatal when a
+// dojo owner is deciding where to keep their student records. A stated end
+// date says this is a business with a plan. Keep it in step with
+// FOUNDING_PLAN_EXPIRES_AT / planExpiresAt in the product app.
 //
 // Deliberately makes NO commission claim. See
 // docs/superpowers/specs/2026-07-12-free-pricing-model-design.md for why.
@@ -15,10 +21,14 @@ const offerSchema = {
   "@context": "https://schema.org",
   "@type": "Offer",
   "@id": "https://mydojo.software/pricing/#free",
-  "name": "MyDojo — free while in early access",
-  "description": "MyDojo is free to use. No subscription, no setup fee, and no per-student charges. Every feature is included.",
+  "name": "MyDojo — free until 31 March 2027",
+  "description": "MyDojo is free to use until 31 March 2027. No subscription, no setup fee, and no per-student charges. Every feature is included.",
   "price": "0",
   "priceCurrency": "GBP",
+  // Kept at 0 rather than removed: it is accurate, and it is what makes this
+  // page eligible for free-tier rich results. `priceValidUntil` is the
+  // structured-data expression of the same promise the copy makes.
+  "priceValidUntil": "2027-03-31",
   "availability": "https://schema.org/InStock",
   "url": "https://mydojo.software/pricing/",
   "seller": {
@@ -75,26 +85,26 @@ const featureGroups = [
 const faqs = [
   {
     question: "Is MyDojo really free?",
-    answer: "Yes. MyDojo is free while we're in early access — no subscription, no setup fee, no per-student charges, and no credit card. Every feature is included: we don't lock belt tracking, billing, or reporting behind a higher tier, because there are no tiers.",
+    answer: "Yes. MyDojo is free until 31 March 2027 — no subscription, no setup fee, no per-student charges, and no credit card. Every feature is included: we don't lock belt tracking, billing, or reporting behind a higher tier, because there are no tiers.",
     links: [
       { text: 'Get started free', url: 'https://app.mydojo.software/signin' }
     ]
   },
   {
     question: "How do you make money?",
-    answer: "Right now, we don't. MyDojo is free while we're in early access. We'll introduce paid monthly plans in future, and we'll give you at least 30 days' notice before anything changes.",
+    answer: "Right now, we don't. MyDojo is free until 31 March 2027. We'll introduce paid monthly plans after that, and we'll give you at least 30 days' notice before anything changes.",
     links: [
       { text: 'Read our terms', url: '/terms/' }
     ]
   },
   {
     question: "What's the catch?",
-    answer: "There isn't one, but there is a trade. We want martial arts schools actually running on MyDojo and telling us what's missing or broken before we launch paid plans. You get the software for nothing; we get honest feedback from real dojos. That's the deal.",
+    answer: "There isn't one, but there is a trade. We want martial arts schools actually running on MyDojo and telling us what's missing or broken before we launch paid plans, so it's free until 31 March 2027. You get the software for nothing; we get honest feedback from real dojos. That's the deal.",
     links: []
   },
   {
     question: "Will you start charging me without warning?",
-    answer: "No. When we introduce paid monthly plans you'll get at least 30 days' notice before any charge, and you'll be able to decide then whether to continue. Nothing will start billing you by surprise.",
+    answer: "No. MyDojo is free until 31 March 2027. When we introduce paid monthly plans after that you'll get at least 30 days' notice before any charge, and you'll be able to decide then whether to continue. Nothing will start billing you by surprise.",
     links: [
       { text: 'Read our terms', url: '/terms/' }
     ]
@@ -119,7 +129,7 @@ const faqs = [
 
 <BaseLayout
   title="Pricing — Free Martial Arts School Software"
-  description="MyDojo is free — no subscription, no setup fee, no per-student charges. Belt tracking, scheduling, attendance and CRM all included. Get started free."
+  description="MyDojo is free until 31 March 2027 — no subscription, no setup fee, no per-student charges. Belt tracking, scheduling, attendance and CRM all included."
 >
   <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
 
@@ -142,10 +152,10 @@ const faqs = [
         <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Pricing</span>
         <h1 class="text-4xl md:text-5xl font-bold mb-4">MyDojo is free</h1>
         <p class="text-xl text-gray-300 mb-8">
-          No subscription. No per-student fees. No setup cost. Free while we're in early access.
+          No subscription. No per-student fees. No setup cost. Free until 31 March 2027.
         </p>
         <a href="https://app.mydojo.software/signin" class="btn-primary text-lg px-8 py-4">Get started free</a>
-        <p class="mt-4 text-sm text-gray-400">No credit card • No contract • Every feature included</p>
+        <p class="mt-4 text-sm text-gray-400">Free until 31 March 2027 • No credit card • Every feature included</p>
       </div>
     </div>
   </section>
@@ -161,9 +171,10 @@ const faqs = [
           and a multi-site academy with 400 get exactly the same software, for exactly the same price. Nothing.
         </p>
         <p class="text-lg text-gray-600">
-          This is early access, and we're being straight with you about what that means: MyDojo is free now, and
-          we'll introduce paid monthly plans in future. When we do, you'll get <strong>at least 30 days' notice</strong>
-          before any charge. Nothing will start billing you by surprise.
+          This is early access, and we're being straight with you about what that means: MyDojo is
+          <strong>free until 31 March 2027</strong>, and we'll introduce paid monthly plans after that,
+          priced on how many active students you have. When we do, you'll get
+          <strong>at least 30 days' notice</strong> before any charge. Nothing will start billing you by surprise.
         </p>
       </div>
     </div>
@@ -219,10 +230,10 @@ const faqs = [
       <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4">Ready to simplify your school?</h2>
         <p class="text-lg text-gray-300 mb-8">
-          Belt tracking, scheduling, attendance, and CRM — free while we're in early access.
+          Belt tracking, scheduling, attendance, and CRM — free until 31 March 2027.
         </p>
         <a href="https://app.mydojo.software/signin" class="btn-primary text-lg px-8 py-4">Get started free</a>
-        <p class="mt-4 text-sm text-gray-400">No credit card • No contract</p>
+        <p class="mt-4 text-sm text-gray-400">Free until 31 March 2027 • No credit card • No contract</p>
       </div>
     </div>
   </section>
