@@ -79,6 +79,12 @@ export class SchemaGenerator {
         "@type": "Offer",
         "price": data.offers.price,
         "priceCurrency": data.offers.priceCurrency,
+        // `SoftwareApplicationSchema` has always declared this, but the builder
+        // dropped it silently — so a caller stating an expiry got structured
+        // data that quietly disagreed with the page copy. Emitted only when
+        // supplied: an absent expiry means the price has none, which is not the
+        // same as an expiry of undefined.
+        ...(data.offers.priceValidUntil ? { "priceValidUntil": data.offers.priceValidUntil } : {}),
         "availability": "https://schema.org/InStock"
       }
     };
