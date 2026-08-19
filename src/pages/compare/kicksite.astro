@@ -1,0 +1,230 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../../components/seo/FeaturedAnswer.astro';
+import ComparisonTable from '../../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../../components/seo/FAQEnhanced.astro';
+
+// Kicksite figures taken from kicksite.com/pricing, re-verified August 2026:
+// $49 (0-25 students) / $99 (26-50) / $149 (51-100) / $199 (101+),
+// all features included at every tier, 30-day free trial via a booked demo,
+// discounted annual pricing available on request.
+const comparisonRows = [
+  { label: 'Belt & rank progression built in', values: [true, true] },
+  { label: 'Price at 20 students', values: ['Free until 31 Mar 2027', '$49/mo'], highlight: true },
+  { label: 'Price at 60 students', values: ['Free until 31 Mar 2027', '$149/mo'], highlight: true },
+  { label: 'Price at 120 students', values: ['Free until 31 Mar 2027', '$199/mo'], highlight: true },
+  { label: 'Per-student pricing tiers', values: [false, true] },
+  { label: 'Self-serve sign-up (no demo call)', values: [true, false], highlight: true },
+  { label: 'Free trial', values: ['Free until 31 Mar 2027', '30 days, via demo'] },
+  { label: 'All features at every tier', values: [true, true] },
+  { label: 'Attendance tracking', values: [true, true] },
+  { label: 'Automated recurring billing', values: [true, true] },
+  { label: 'Class scheduling & booking', values: [true, true] },
+  { label: 'Parent / student portal', values: [true, true] },
+  { label: 'Prices in GBP', values: [true, false], highlight: true },
+  { label: 'Years in market', values: ['Newer platform', 'Long established'] },
+];
+
+const faqItems = [
+  {
+    question: 'How much does Kicksite cost compared to MyDojo?',
+    answer:
+      'Kicksite publishes four tiers by active student count: $49/month for 0–25 students, $99 for 26–50, $149 for 51–100 and $199 for 101 or more, with all features included at every tier and discounted annual pricing on request. MyDojo is free until 31 March 2027 while in early access, with no per-student charge at any school size and pricing announced well before that date. Note Kicksite prices in US dollars, so a UK school also carries the exchange rate. Verified against kicksite.com/pricing, August 2026.',
+    links: [{ text: 'MyDojo pricing', url: '/pricing/' }],
+  },
+  {
+    question: 'Is MyDojo better than Kicksite?',
+    answer:
+      'On cost today, yes — MyDojo is free until 31 March 2027 against Kicksite\'s $49–$199/month, and you can sign up yourself rather than booking a demo. On track record, no: Kicksite is a long-established martial arts platform with a large customer base, and we would rather you knew that than found out later. Both treat belt progression as a core concept rather than a bolt-on. If maturity matters more to you than price, Kicksite is a sound choice.',
+    links: [{ text: 'Get started free', url: 'https://app.mydojo.software/signin' }],
+  },
+  {
+    question: 'Does Kicksite charge more as my school grows?',
+    answer:
+      'Yes — that is the design of its pricing. Growing from 25 to 26 students moves you from $49 to $99/month, and passing 50 moves you to $149. The tiers are transparent and all features are included at each one, so there are no surprises, but the cost curve is steep for a school in a growth phase. MyDojo does not charge per student at all during early access, so a school going from 20 to 120 students pays the same.',
+    links: [],
+  },
+  {
+    question: 'Can I try Kicksite without talking to sales?',
+    answer:
+      'Not currently. Kicksite offers a 30-day free trial, but its site routes that through booking a demo first. That is a reasonable model and the demo is genuinely useful for a larger school, though it does mean you cannot evaluate the product on a Sunday evening. MyDojo is self-serve: you sign up and set your school up without speaking to anyone.',
+    links: [{ text: 'Get started free', url: 'https://app.mydojo.software/signin' }],
+  },
+  {
+    question: 'Where does Kicksite genuinely win?',
+    answer:
+      'Longevity and support. Kicksite has been serving martial arts schools for years, has a substantial installed base, and its per-student tiers are honest and easy to understand — you always know what the next tier costs. Its demo-led onboarding also means a larger school gets guided setup rather than a blank screen. If you are migrating a hundred students and want somebody on a call while you do it, that is a real advantage.',
+    links: [],
+  },
+  {
+    question: 'Can I move my student records from Kicksite to MyDojo?',
+    answer:
+      'Yes. Export your student list and current ranks to CSV and import it, then continue logging attendance and grading from your next class onward rather than backfilling years of history. Most schools are running live within a day or two. Confirm your Kicksite cancellation terms in writing before you migrate — that advice applies whichever direction you are moving.',
+    links: [{ text: 'Billing and payments', url: '/martial-arts-billing-software/' }],
+  },
+];
+
+const schemaMarkup = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'MyDojo vs Kicksite: Honest Comparison for Martial Arts Schools',
+  description:
+    'Side-by-side comparison of MyDojo and Kicksite — published pricing at every school size, belt tracking, trials, and which suits your dojo.',
+  author: { '@type': 'Organization', name: 'MyDojo.Software' },
+  publisher: { '@type': 'Organization', name: 'MyDojo.Software' },
+  datePublished: '2026-08-19',
+  dateModified: '2026-08-19',
+};
+---
+
+<BaseLayout
+  title="MyDojo vs Kicksite: Pricing & Features Compared"
+  description="MyDojo vs Kicksite for martial arts schools. Kicksite is $49–$199/month by student count; MyDojo is free until 31 March 2027. Verified August 2026."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+  <BreadcrumbsEnhanced
+    site="mydojo"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Compare', href: '/compare/' },
+      { label: 'vs Kicksite', href: '/compare/kicksite/' },
+    ]}
+  />
+
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
+    <div class="container-custom relative">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Platform Comparison</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">MyDojo vs Kicksite</h1>
+        <p class="text-xl text-gray-300 mb-8">
+          Both are built for martial arts schools, and both treat belt progression as a first-class concept. The real difference is how the price behaves as your school grows.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://app.mydojo.software/signin" class="btn-primary text-lg px-8 py-4">Try MyDojo Free</a>
+          <a href="#comparison" class="btn-secondary text-lg px-8 py-4">See Feature Table</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FeaturedAnswer question="How does MyDojo compare to Kicksite?">
+    Kicksite is an established martial arts platform priced by active student count: $49/month for 0–25 students, $99 for 26–50, $149 for 51–100 and $199 for 101 or more, with every feature included at each tier and a 30-day trial arranged through a demo. MyDojo is free until 31 March 2027 during early access, charges nothing per student at any size, and is self-serve. Kicksite is the more established platform; MyDojo is cheaper today and does not penalise growth. Verified against kicksite.com/pricing, August 2026.
+  </FeaturedAnswer>
+
+  <section class="section bg-white">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">The honest summary</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-6 border-t-4 border-gray-300">
+          <h3 class="font-bold text-brand-navy text-lg mb-3">Choose Kicksite if…</h3>
+          <ul class="space-y-2 text-gray-700 text-sm">
+            <li>Track record matters more to you than price — it has years of martial arts schools behind it.</li>
+            <li>You are migrating a large school and want guided onboarding on a call.</li>
+            <li>You want a per-student price you can predict tier by tier.</li>
+            <li>You are in the US, so USD pricing carries no exchange-rate cost.</li>
+          </ul>
+        </div>
+        <div class="card p-6 border-t-4 border-brand-red">
+          <h3 class="font-bold text-brand-navy text-lg mb-3">Choose MyDojo if…</h3>
+          <ul class="space-y-2 text-gray-700 text-sm">
+            <li>You want to try it tonight without booking a demo.</li>
+            <li>You are growing, and do not want the bill to step up every 25 students.</li>
+            <li>You are a UK school and would rather not pay in dollars.</li>
+            <li>Cost is the binding constraint right now — it is free until 31 March 2027.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="comparison" class="section bg-gray-50">
+    <div class="container-custom max-w-4xl">
+      <ComparisonTable
+        title="MyDojo vs Kicksite"
+        description="Kicksite figures taken from its own published pricing page and re-verified in August 2026."
+        headers={['Feature', 'MyDojo', 'Kicksite']}
+        rows={comparisonRows}
+      />
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">What the per-student model actually costs you</h2>
+      <p class="text-gray-700 mb-4">
+        Kicksite's pricing is refreshingly transparent, so it is easy to model. The thing worth noticing is that it is a step function, not a curve — the cost does not creep, it jumps.
+      </p>
+      <p class="text-gray-700 mb-4">
+        A school with 24 active students pays $49/month. Sign two more and you are on $99 — the price has doubled for two students. Cross 50 and it is $149. Cross 100 and it is $199, which is $2,388 a year before the exchange rate. None of this is hidden; it is published plainly on their pricing page. But it does mean that the month you succeed at recruitment is also the month your software bill rises, which is an odd incentive.
+      </p>
+      <p class="text-gray-700 mb-8">
+        MyDojo charges nothing per student during early access, so a school going from 20 to 120 students pays exactly the same. When we do introduce pricing — announced well before 31 March 2027 — we will publish it in pounds, because most of our schools are in the UK and paying a dollar price with a card fee on top is a worse deal than the headline number suggests.
+      </p>
+
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Where Kicksite is genuinely the safer pick</h2>
+      <p class="text-gray-700 mb-4">
+        We would rather be useful than flattering. Kicksite has been doing this a long time, and there are real situations where that is worth more than a lower price.
+      </p>
+      <p class="text-gray-700 mb-4">
+        If you are moving a school of 150 students with years of grading history, a guided migration with a person on the other end of a call is genuinely valuable, and Kicksite's demo-led onboarding provides that. MyDojo is self-serve, which is exactly what you want at 20 students and less reassuring at 150.
+      </p>
+      <p class="text-gray-700 mb-8">
+        If you are a US school, Kicksite's dollar pricing is simply its pricing, with none of the exchange-rate friction a UK school carries. And a long-established vendor carries a lower risk of the product changing direction underneath you — a fair thing to weigh against a newer platform, including ours.
+      </p>
+
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Where we think MyDojo is the better fit</h2>
+      <p class="text-gray-700 mb-4">
+        <strong>You can evaluate it without an appointment.</strong> Sign up, add your classes, add a few students and see whether it fits your week. No demo, no card, no sales sequence.
+      </p>
+      <p class="text-gray-700 mb-4">
+        <strong>Growth does not cost you.</strong> Belt progression, class scheduling,
+        <a href="/martial-arts-billing-software/" class="text-brand-red hover:underline">automated recurring billing</a> and
+        <a href="/martial-arts-crm/" class="text-brand-red hover:underline">lead and retention tracking</a> are all included at every school size, with no per-student tier to cross.
+      </p>
+      <p class="text-gray-700">
+        <strong>It is built for how UK schools actually run.</strong> Multiple styles, mixed kids and adults classes, and grading cycles that do not fit a US gym template. The
+        <a href="/martial-arts-software/" class="text-brand-red hover:underline">full platform overview</a> covers what that means in practice.
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-brand-navy text-white text-center">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold mb-3">Try MyDojo — Free Until 31 March 2027</h2>
+      <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">No subscription, no per-student fees, no demo call required.</p>
+      <a href="https://app.mydojo.software/signin" class="inline-block bg-brand-red text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-red-700 transition-colors">
+        Get started free &rarr;
+      </a>
+      <p class="text-white/50 text-sm mt-3">Free until 31 March 2027 &middot; No card required</p>
+    </div>
+  </section>
+
+  <FAQEnhanced
+    faqs={faqItems}
+    title="MyDojo vs Kicksite — Common Questions"
+    site="mydojo"
+    pageUrl="https://mydojo.software/compare/kicksite/"
+  />
+
+  <section class="section bg-gray-50">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Related comparisons</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/compare/zen-planner/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">vs Zen Planner</h3>
+          <p class="text-gray-600 text-sm">The established all-in-one, $99–$348/month</p>
+        </a>
+        <a href="/blog/best-martial-arts-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Full software roundup</h3>
+          <p class="text-gray-600 text-sm">Six named platforms on published 2026 pricing</p>
+        </a>
+        <a href="/free-martial-arts-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Free martial arts software</h3>
+          <p class="text-gray-600 text-sm">What the no-cost tiers actually cover</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

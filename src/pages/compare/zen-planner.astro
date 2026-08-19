@@ -1,0 +1,231 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../../components/seo/FeaturedAnswer.astro';
+import ComparisonTable from '../../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../../components/seo/FAQEnhanced.astro';
+
+// Zen Planner figures: $99/mo entry (Studio) rising to $348/mo (Ultimate), flat-rate
+// tiers, no free trial listed. Verified July 2026 as part of the martial arts software
+// roundup. Zen Planner's pricing page did not expose full tier detail on re-check in
+// August 2026, so nothing here has been revised upward or downward on guesswork.
+const comparisonRows = [
+  { label: 'Belt & rank progression', values: [true, true] },
+  { label: 'Published entry price', values: ['Free until 31 Mar 2027', '$99/mo (Studio)'], highlight: true },
+  { label: 'Top published tier', values: ['Free until 31 Mar 2027', '$348/mo (Ultimate)'], highlight: true },
+  { label: 'Free trial', values: ['Free until 31 Mar 2027', 'None listed'], highlight: true },
+  { label: 'Self-serve sign-up (no demo call)', values: [true, false], highlight: true },
+  { label: 'Class scheduling & booking', values: [true, true] },
+  { label: 'Automated recurring billing', values: [true, true] },
+  { label: 'Attendance tracking', values: [true, true] },
+  { label: 'Member / parent portal', values: [true, true] },
+  { label: 'Retail & point of sale', values: [false, true] },
+  { label: 'Workout / WOD tracking', values: [false, true] },
+  { label: 'Prices in GBP', values: [true, false], highlight: true },
+  { label: 'Breadth of platform', values: ['Focused on dojos', 'Very broad'] },
+  { label: 'Years in market', values: ['Newer platform', 'Long established'] },
+];
+
+const faqItems = [
+  {
+    question: 'How much does Zen Planner cost compared to MyDojo?',
+    answer:
+      'Zen Planner starts at $99/month for its Studio tier and rises to $348/month for Ultimate, on flat-rate tiers rather than per-student pricing, with no free trial listed on its site. MyDojo is free until 31 March 2027 while in early access, with no subscription and no per-student fees, and pricing announced well before that date. Zen Planner prices in US dollars, which adds exchange-rate cost for a UK school. Figures verified July 2026.',
+    links: [{ text: 'MyDojo pricing', url: '/pricing/' }],
+  },
+  {
+    question: 'Is MyDojo better than Zen Planner?',
+    answer:
+      'They are aimed at different schools. Zen Planner is a very broad platform covering gyms, boxes and martial arts academies, with retail, point of sale and workout tracking that MyDojo does not have. It is also long established. MyDojo is narrower on purpose: it does dojo management, and it is free until 31 March 2027 with self-serve sign-up. If you need retail and POS in the same system, Zen Planner wins outright. If you want dojo software rather than gym software, we think we fit better.',
+    links: [{ text: 'Get started free', url: 'https://app.mydojo.software/signin' }],
+  },
+  {
+    question: 'Does Zen Planner have a free trial?',
+    answer:
+      'Its site does not list one. Zen Planner is generally demo-led, meaning you arrange a call and a guided walkthrough rather than signing up and exploring on your own. For a larger academy migrating substantial data that is often the better experience, but it does mean you cannot evaluate it unaccompanied. MyDojo is self-serve and free until 31 March 2027, so trying it costs nothing but an evening.',
+    links: [{ text: 'Get started free', url: 'https://app.mydojo.software/signin' }],
+  },
+  {
+    question: 'What should I check before signing up to Zen Planner?',
+    answer:
+      'Cancellation and payment-processing terms specifically. Zen Planner is month-to-month with annual contracts available on request, and its Capterra listing carries reviewer complaints about charges tied to cancellation and merchant requirements. That is reviewer feedback rather than something we can verify directly, so treat it as a prompt to get the terms in writing rather than as a finding. Confirm cancellation terms before migrating student data, with any vendor.',
+    links: [],
+  },
+  {
+    question: 'Where does Zen Planner genuinely win?',
+    answer:
+      'Breadth and maturity. If your school also sells merchandise, runs a pro shop, or programmes workouts alongside classes, Zen Planner handles all of that in one system and MyDojo does not. It has a long track record, a large customer base and a support organisation to match. For a multi-discipline academy running retail and fitness programming alongside martial arts, it is the more complete product and we would rather say so.',
+    links: [],
+  },
+  {
+    question: 'Which is better for a small dojo?',
+    answer:
+      'MyDojo, on balance. Zen Planner\'s $99/month entry tier buys a great deal of capability a 30-student club will never open — retail, point of sale, workout programming — and $1,188 a year before exchange rates is a meaningful cost at that size. MyDojo is free until 31 March 2027, self-serve, and focused on the things a small dojo actually does: classes, attendance, gradings and getting fees collected without chasing.',
+    links: [{ text: 'Get started free', url: 'https://app.mydojo.software/signin' }],
+  },
+];
+
+const schemaMarkup = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'MyDojo vs Zen Planner: Honest Comparison for Martial Arts Schools',
+  description:
+    'Side-by-side comparison of MyDojo and Zen Planner — published pricing, breadth of platform, trials, and which suits small dojos versus multi-discipline academies.',
+  author: { '@type': 'Organization', name: 'MyDojo.Software' },
+  publisher: { '@type': 'Organization', name: 'MyDojo.Software' },
+  datePublished: '2026-08-19',
+  dateModified: '2026-08-19',
+};
+---
+
+<BaseLayout
+  title="MyDojo vs Zen Planner: Pricing & Features Compared"
+  description="MyDojo vs Zen Planner for martial arts schools. Zen Planner is $99–$348/month with no listed trial; MyDojo is free until 31 March 2027."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+  <BreadcrumbsEnhanced
+    site="mydojo"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Compare', href: '/compare/' },
+      { label: 'vs Zen Planner', href: '/compare/zen-planner/' },
+    ]}
+  />
+
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
+    <div class="container-custom relative">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Platform Comparison</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">MyDojo vs Zen Planner</h1>
+        <p class="text-xl text-gray-300 mb-8">
+          Zen Planner is a very broad gym platform that also serves martial arts. MyDojo is dojo software. Which is right depends on whether you want breadth or focus — and what you are willing to pay for the parts you will not use.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://app.mydojo.software/signin" class="btn-primary text-lg px-8 py-4">Try MyDojo Free</a>
+          <a href="#comparison" class="btn-secondary text-lg px-8 py-4">See Feature Table</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FeaturedAnswer question="How does MyDojo compare to Zen Planner?">
+    Zen Planner is a long-established, very broad platform serving gyms, fitness boxes and martial arts academies, with retail, point of sale and workout tracking alongside class management. It starts at $99/month for Studio and reaches $348/month for Ultimate, with no free trial listed. MyDojo is narrower by design — dojo management, belt progression, billing and retention — and is free until 31 March 2027 during early access with self-serve sign-up. Choose Zen Planner for breadth, MyDojo for focus and cost. Pricing verified July 2026.
+  </FeaturedAnswer>
+
+  <section class="section bg-white">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">The honest summary</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-6 border-t-4 border-gray-300">
+          <h3 class="font-bold text-brand-navy text-lg mb-3">Choose Zen Planner if…</h3>
+          <ul class="space-y-2 text-gray-700 text-sm">
+            <li>You sell merchandise or run a pro shop and want POS in the same system.</li>
+            <li>You programme workouts alongside martial arts classes.</li>
+            <li>You run a large, multi-discipline academy and want one platform for all of it.</li>
+            <li>You value a long track record and a large support organisation.</li>
+          </ul>
+        </div>
+        <div class="card p-6 border-t-4 border-brand-red">
+          <h3 class="font-bold text-brand-navy text-lg mb-3">Choose MyDojo if…</h3>
+          <ul class="space-y-2 text-gray-700 text-sm">
+            <li>You run a dojo, not a gym, and want software that assumes gradings exist.</li>
+            <li>You want to evaluate it yourself tonight, without a demo call.</li>
+            <li>You are in the UK and would rather not pay a dollar subscription.</li>
+            <li>You will never open the retail, POS or workout-programming modules.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="comparison" class="section bg-gray-50">
+    <div class="container-custom max-w-4xl">
+      <ComparisonTable
+        title="MyDojo vs Zen Planner"
+        description="Zen Planner pricing verified July 2026. Where its site does not publish a detail, this table says so rather than estimating."
+        headers={['Feature', 'MyDojo', 'Zen Planner']}
+        rows={comparisonRows}
+      />
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Paying for breadth you will not use</h2>
+      <p class="text-gray-700 mb-4">
+        Zen Planner is a genuinely capable platform, and most of the criticism it attracts is really a mismatch complaint: schools buy a system designed for a multi-discipline fitness business and then use a quarter of it.
+      </p>
+      <p class="text-gray-700 mb-4">
+        The $99/month Studio tier is $1,188 a year before you account for the exchange rate and any card fees on a dollar transaction. For an academy running retail, a pro shop and programmed workouts, that is straightforwardly good value — you are using the breadth. For a 40-student karate club whose software needs are a register, a grading record and a way to collect monthly fees without chasing, most of that spend buys modules that never get opened.
+      </p>
+      <p class="text-gray-700 mb-8">
+        There is also no free trial listed, which means the way you find out whether it fits is a demo call and then a commitment. That is a normal enterprise motion and it works for larger schools. It is a poor fit for an instructor who wants to try something on a Sunday evening between classes.
+      </p>
+
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Where Zen Planner genuinely wins</h2>
+      <p class="text-gray-700 mb-4">
+        <strong>Retail and point of sale.</strong> If you sell gis, gloves, pads or club merchandise, having stock and sales in the same system as memberships is real value. MyDojo has none of this and is not building it.
+      </p>
+      <p class="text-gray-700 mb-4">
+        <strong>Workout and WOD tracking.</strong> For academies running conditioning programmes alongside martial arts, Zen Planner handles both. MyDojo assumes you are running classes and gradings.
+      </p>
+      <p class="text-gray-700 mb-8">
+        <strong>Maturity.</strong> It has been in the market a long time, with the customer base and support depth that implies. MyDojo is newer. If low vendor risk is high on your list, that is a fair reason to choose them and no feature table changes it.
+      </p>
+
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Where we think MyDojo is the better fit</h2>
+      <p class="text-gray-700 mb-4">
+        <strong>Belt progression is the spine, not a module.</strong> Rank, stripes, grading eligibility and testing cycles are core objects, so eligibility for the next grading is computed rather than maintained by hand. See
+        <a href="/martial-arts-software/" class="text-brand-red hover:underline">martial arts management software</a> for how that works.
+      </p>
+      <p class="text-gray-700 mb-4">
+        <strong>Fees collect themselves.</strong>
+        <a href="/martial-arts-billing-software/" class="text-brand-red hover:underline">Automated recurring billing</a> with family discounts, contracts and testing fees — the part of running a school most instructors dislike most.
+      </p>
+      <p class="text-gray-700">
+        <strong>No cost while you decide.</strong> Free until 31 March 2027, self-serve, no card. Compare it against
+        <a href="/compare/kicksite/" class="text-brand-red hover:underline">Kicksite</a> too, or read the
+        <a href="/blog/best-martial-arts-software/" class="text-brand-red hover:underline">full roundup</a> before committing to anything.
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-brand-navy text-white text-center">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold mb-3">Try MyDojo — Free Until 31 March 2027</h2>
+      <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">No subscription, no per-student fees, no demo call required.</p>
+      <a href="https://app.mydojo.software/signin" class="inline-block bg-brand-red text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-red-700 transition-colors">
+        Get started free &rarr;
+      </a>
+      <p class="text-white/50 text-sm mt-3">Free until 31 March 2027 &middot; No card required</p>
+    </div>
+  </section>
+
+  <FAQEnhanced
+    faqs={faqItems}
+    title="MyDojo vs Zen Planner — Common Questions"
+    site="mydojo"
+    pageUrl="https://mydojo.software/compare/zen-planner/"
+  />
+
+  <section class="section bg-gray-50">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Related comparisons</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/compare/kicksite/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">vs Kicksite</h3>
+          <p class="text-gray-600 text-sm">Martial-arts-specific, $49–$199/month by student count</p>
+        </a>
+        <a href="/blog/best-martial-arts-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Full software roundup</h3>
+          <p class="text-gray-600 text-sm">Six named platforms on published 2026 pricing</p>
+        </a>
+        <a href="/compare/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">All comparisons</h3>
+          <p class="text-gray-600 text-sm">Every head-to-head we have published</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

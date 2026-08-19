@@ -42,10 +42,10 @@ Published monthly prices, verified July 2026. Currencies are as the vendor lists
 
 | Platform | Entry price | Pricing model | Free tier | Trial |
 |---|---|---|---|---|
-| **Kicksite** | $49/mo (0–25 students) | Tiered by students, all features at every tier | No | 30 days, via demo |
+| **[Kicksite](/compare/kicksite/)** | $49/mo (0–25 students) | Tiered by students, all features at every tier | No | 30 days, via demo |
 | **Martialytics** | $69/mo (0–50 students) | Tiered by active students | No | 30 days, no card |
 | **Gymdesk** | $75/mo (≤50 members) | Tiered by active members | No | 30 days, no card |
-| **Zen Planner** | $99/mo (Studio) | Flat-rate tiers | No | None listed |
+| **[Zen Planner](/compare/zen-planner/)** | $99/mo (Studio) | Flat-rate tiers | No | None listed |
 | **Clubworx** | A$0 (≤20 members) | Tiered by members | **Yes, ≤20 members** | 15 days on paid plans |
 | **Spark Membership** | ~$249/mo | Flat rate, unlimited students | No | Promotional offers |
 | **MyDojo** | Free | Free until 31 March 2027 | **Yes, no student cap** | n/a — it's free |

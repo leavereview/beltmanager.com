@@ -24,13 +24,6 @@ const softwareApplicationSchema = {
     "availability": "https://schema.org/InStock",
     "url": "https://mydojo.software/pricing/"
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "ratingCount": "127",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
   "featureList": [
     "Class Scheduling & Booking",
     "Student Management & Profiles",
@@ -46,8 +39,6 @@ const softwareApplicationSchema = {
     "Automated Reminders (SMS & Email)"
   ],
   "url": "https://mydojo.software",
-  "screenshot": "https://mydojo.software/images/dashboard-screenshot.jpg",
-  "softwareVersion": "2.0",
   "applicationSubCategory": "Martial Arts School Management",
   "audience": {
     "@type": "BusinessAudience",
@@ -101,85 +92,6 @@ const offerSchema = {
   ]
 };
 
-// Review Schemas from testimonials
-const reviewSchemas = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "@id": "https://mydojo.software/#review-1",
-    "itemReviewed": {
-      "@type": "SoftwareApplication",
-      "@id": "https://mydojo.software/#software",
-      "name": "MyDojo.Software"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Sensei Mike Thompson"
-    },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "reviewBody": "MyDojo transformed how we run our karate school. Attendance is up 30% since we started using the app.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Thompson Karate Academy"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "@id": "https://mydojo.software/#review-2",
-    "itemReviewed": {
-      "@type": "SoftwareApplication",
-      "@id": "https://mydojo.software/#software",
-      "name": "MyDojo.Software"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Sarah Chen"
-    },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "reviewBody": "The billing automation alone saves us 10+ hours every month. Best investment we've made.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Chen's MMA & BJJ"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "@id": "https://mydojo.software/#review-3",
-    "itemReviewed": {
-      "@type": "SoftwareApplication",
-      "@id": "https://mydojo.software/#software",
-      "name": "MyDojo.Software"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Master Kim"
-    },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "reviewBody": "Parents love being able to see their kids' progress. It's improved our retention significantly.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Kim's Taekwondo"
-    }
-  }
-];
-
 const features = [
   {
     icon: 'calendar',
@@ -213,39 +125,39 @@ const features = [
   }
 ];
 
+// Illustrative examples, representative of the feedback we hear from school owners.
+// Not attributed to real named customers — replace with genuine, attributable
+// testimonials (and only then consider Review schema) once we have them.
 const testimonials = [
   {
-    quote: "MyDojo transformed how we run our karate school. Attendance is up 30% since we started using the app.",
-    author: "Sensei Mike Thompson",
-    role: "Head Instructor, Thompson Karate Academy"
+    quote: "Grading admin used to eat a full evening every cycle. Now the belt records and eligibility are already there when I open the app.",
+    author: "Mike T.",
+    role: "Head Instructor, karate school"
   },
   {
-    quote: "The billing automation alone saves us 10+ hours every month. Best investment we've made.",
-    author: "Sarah Chen",
-    role: "Owner, Chen's MMA & BJJ"
+    quote: "Chasing monthly fees was the job I hated most. Setting up recurring billing took an afternoon and I have not chased a payment since.",
+    author: "Sarah C.",
+    role: "Owner, MMA & BJJ academy"
   },
   {
-    quote: "Parents love being able to see their kids' progress. It's improved our retention significantly.",
-    author: "Master Kim",
-    role: "Grandmaster, Kim's Taekwondo"
+    quote: "Parents can see where their child is up to without messaging me on a Sunday night. That alone has been worth it.",
+    author: "David K.",
+    role: "Instructor, taekwondo school"
   }
 ];
 
 const stats = [
   { number: 'Unlimited', label: 'Students & Classes' },
-  { number: '99.9%', label: 'Uptime Guarantee' },
-  { number: '10+ hrs', label: 'Saved Weekly' },
-  { number: '24/7', label: 'Support' }
+  { number: '£0', label: 'Until 31 March 2027' },
+  { number: 'All styles', label: 'Karate, BJJ, TKD, MMA' },
+  { number: '24/7', label: 'Self-Service Booking' }
 ];
 ---
 
-<BaseLayout title="Home" description="Save 10+ hours weekly managing your dojo. Automate scheduling, billing & student tracking so you focus on teaching. Free until 31 March 2027 — no subscription, no per-student fees.">
+<BaseLayout title="Home" description="Automate scheduling, billing and belt tracking so you can focus on teaching. Free until 31 March 2027 — no subscription, no per-student fees.">
   <!-- Structured Data Schemas -->
   <script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
-  {reviewSchemas.map(reviewSchema => (
-    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
-  ))}
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
@@ -494,6 +406,7 @@ const stats = [
         <p class="text-xl text-gray-300">
           See what school owners and instructors say about MyDojo.
         </p>
+        <p class="text-gray-400 text-sm mt-3">Illustrative examples, representative of the feedback we hear from martial arts school owners.</p>
       </div>
       
       <div class="grid md:grid-cols-3 gap-8">
