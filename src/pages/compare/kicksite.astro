@@ -16,8 +16,8 @@ const comparisonRows = [
   { label: 'Price at 120 students', values: ['Free until 31 Mar 2027', '$199/mo'], highlight: true },
   { label: 'Per-student pricing tiers', values: [false, true] },
   { label: 'Self-serve sign-up (no demo call)', values: [true, false], highlight: true },
-  { label: 'Free trial', values: ['Free until 31 Mar 2027', '30 days, via demo'] },
-  { label: 'All features at every tier', values: [true, true] },
+  { label: 'Free trial', values: ['Not needed — free until 31 Mar 2027', '30 days, via demo'] },
+  { label: 'All features included', values: [true, true] },
   { label: 'Attendance tracking', values: [true, true] },
   { label: 'Automated recurring billing', values: [true, true] },
   { label: 'Class scheduling & booking', values: [true, true] },
@@ -30,7 +30,7 @@ const faqItems = [
   {
     question: 'How much does Kicksite cost compared to MyDojo?',
     answer:
-      'Kicksite publishes four tiers by active student count: $49/month for 0–25 students, $99 for 26–50, $149 for 51–100 and $199 for 101 or more, with all features included at every tier and discounted annual pricing on request. MyDojo is free until 31 March 2027 while in early access, with no per-student charge at any school size and pricing announced well before that date. Note Kicksite prices in US dollars, so a UK school also carries the exchange rate. Verified against kicksite.com/pricing, August 2026.',
+      'Kicksite publishes four tiers by active student count: $49/month for 0–25 students, $99 for 26–50, $149 for 51–100 and $199 for 101 or more, with all features included at every tier and discounted annual pricing on request. MyDojo is free until 31 March 2027, with no subscription, no commission and no per-student charge at any school size; pricing for after that date will be announced with notice. Note Kicksite prices in US dollars, so a UK school also carries the exchange rate. Verified against kicksite.com/pricing, August 2026.',
     links: [{ text: 'MyDojo pricing', url: '/pricing/' }],
   },
   {
@@ -42,7 +42,7 @@ const faqItems = [
   {
     question: 'Does Kicksite charge more as my school grows?',
     answer:
-      'Yes — that is the design of its pricing. Growing from 25 to 26 students moves you from $49 to $99/month, and passing 50 moves you to $149. The tiers are transparent and all features are included at each one, so there are no surprises, but the cost curve is steep for a school in a growth phase. MyDojo does not charge per student at all during early access, so a school going from 20 to 120 students pays the same.',
+      'Yes — that is the design of its pricing. Growing from 25 to 26 students moves you from $49 to $99/month, and passing 50 moves you to $149. The tiers are transparent and all features are included at each one, so there are no surprises, but the cost curve is steep for a school in a growth phase. MyDojo does not charge per student, or anything else, until 31 March 2027; pricing for after that date will be announced with notice.',
     links: [],
   },
   {
@@ -160,7 +160,7 @@ const schemaMarkup = {
         A school with 24 active students pays $49/month. Sign two more and you are on $99 — the price has doubled for two students. Cross 50 and it is $149. Cross 100 and it is $199, which is $2,388 a year before the exchange rate. None of this is hidden; it is published plainly on their pricing page. But it does mean that the month you succeed at recruitment is also the month your software bill rises, which is an odd incentive.
       </p>
       <p class="text-gray-700 mb-8">
-        MyDojo charges nothing per student during early access, so a school going from 20 to 120 students pays exactly the same. When we do introduce pricing — announced well before 31 March 2027 — we will publish it in pounds, because most of our schools are in the UK and paying a dollar price with a card fee on top is a worse deal than the headline number suggests.
+        MyDojo charges nothing until 31 March 2027: no subscription, no commission and no per-student fee. Pricing for after that date hasn't been set, and will be announced with notice before any charge.
       </p>
 
       <h2 class="text-3xl font-bold text-brand-navy mb-6">Where Kicksite is genuinely the safer pick</h2>

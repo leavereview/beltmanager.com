@@ -113,7 +113,7 @@ If rank is central to how you run classes, the martial-arts-first platforms — 
 
 If you run mixed programming and grade infrequently, Gymdesk and Zen Planner are capable and you're not missing much.
 
-If you have under 20 members and no budget, Clubworx's free tier and MyDojo's early access are the two genuinely free routes, and we've compared them properly in our guide to [free martial arts software](/free-martial-arts-software/).
+If you have under 20 members and no budget, Clubworx's free tier and MyDojo (free until 31 March 2027) are the two genuinely free routes, and we've compared them properly in our guide to [free martial arts software](/free-martial-arts-software/).
 
 For the full buying comparison ranked by school size, see [best martial arts software 2026](/blog/best-martial-arts-software/).
 

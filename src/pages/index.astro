@@ -20,7 +20,7 @@ const softwareApplicationSchema = {
     "priceCurrency": "GBP",
     "priceValidUntil": "2027-03-31",
     "name": "Free until 31 March 2027",
-    "description": "MyDojo.Software is free to use until 31 March 2027 — no subscription, no setup fee, and no per-student charges. Every feature is included.",
+    "description": "MyDojo.Software is free to use until 31 March 2027 — no subscription, no commission, no setup fee, and no per-student charges. Every feature is included during the launch period.",
     "availability": "https://schema.org/InStock",
     "url": "https://mydojo.software/pricing/"
   },
@@ -46,15 +46,15 @@ const softwareApplicationSchema = {
   }
 };
 
-// Free Offer Schema — MyDojo is free until 31 March 2027. Paid monthly plans
-// come after that date, with at least 30 days' notice. `priceValidUntil`
+// Free Offer Schema — MyDojo is free until 31 March 2027 (no subscription, no
+// commission). Pricing after that date will be announced with notice. `priceValidUntil`
 // carries the same promise into structured data.
 const offerSchema = {
   "@context": "https://schema.org",
   "@type": "Offer",
   "@id": "https://mydojo.software/#free-offer",
   "name": "MyDojo.Software — free until 31 March 2027",
-  "description": "MyDojo.Software is free to use until 31 March 2027, with complete access to all features including class scheduling, billing, student management, and belt tracking. No subscription, no setup fee, no per-student charges, and no credit card required.",
+  "description": "MyDojo.Software is free to use until 31 March 2027, with complete access to all features including class scheduling, billing, student management, and belt tracking. No subscription, no commission, no setup fee, no per-student charges, and no credit card required.",
   "price": "0",
   "priceCurrency": "GBP",
   "priceValidUntil": "2027-03-31",
@@ -187,7 +187,7 @@ const stats = [
           </a>
         </div>
         <p class="mt-6 text-sm text-gray-400">
-          Free until 31 March 2027 • No credit card • No contract
+          Free until 31 March 2027 • No subscription • No commission • No credit card
         </p>
       </div>
     </div>
@@ -511,7 +511,7 @@ const stats = [
         Ready to Transform Your Dojo?
       </h2>
       <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-        MyDojo is free until 31 March 2027. See how it can streamline your operations and grow your school.
+        MyDojo is free until 31 March 2027 — no subscription, no commission. See how it can streamline your operations and grow your school.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="https://app.mydojo.software/signin" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">

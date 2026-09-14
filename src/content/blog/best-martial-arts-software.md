@@ -116,7 +116,7 @@ Reported add-ons include SMS credit packages and a done-for-you marketing module
 
 ### MyDojo — free until 31 March 2027
 
-MyDojo is **free until 31 March 2027**: no subscription, no setup fee and no per-student charge, with no cap on student numbers. It's purpose-built for martial arts, so belt and rank progression, grading and attendance are core concepts rather than custom fields.
+MyDojo is **free until 31 March 2027**: no subscription, no commission, no setup fee and no per-student charge, with no cap on student numbers. It's purpose-built for martial arts, so belt and rank progression, grading and attendance are core concepts rather than custom fields.
 
 The honest positioning: it is newer than everything else on this page and the ecosystem around it is smaller. If you need a deep third-party integration library or a decade of community documentation, the established platforms have that and we don't yet. If you want martial-arts-native rank tracking at no cost while we build, that's the trade on offer.
 
@@ -173,7 +173,7 @@ We've written a fuller breakdown of what the no-cost options actually cover, and
 
 ## The short version
 
-If you have **under 25 students and no budget**, Clubworx's free tier or MyDojo's early access are the only genuinely free routes.
+If you have **under 25 students and no budget**, Clubworx's free tier or MyDojo (free until 31 March 2027) are the only genuinely free routes.
 
 If you have **25–75 students**, Martialytics at $69–$99 is the most consistently priced purpose-built option, with Kicksite cheaper at the very bottom of the range.
 
