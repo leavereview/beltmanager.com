@@ -91,8 +91,11 @@ function isActive(href: string): boolean {
         ))}
       </div>
 
-      <!-- CTA Button -->
-      <div class="hidden md:block">
+      <!-- Login + CTA Button -->
+      <div class="hidden md:flex items-center gap-2">
+        <a href="https://app.mydojo.software/" class="px-4 py-2 rounded-lg font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-all duration-200">
+          Log in
+        </a>
         <a href="https://app.mydojo.software/signin" class="btn-primary text-sm">
           Get Started Free
         </a>
@@ -153,6 +156,9 @@ function isActive(href: string): boolean {
           )}
         </div>
       ))}
+      <a href="https://app.mydojo.software/" class="block px-4 py-3 rounded-lg font-medium text-gray-600 hover:bg-gray-50">
+        Log in
+      </a>
       <div class="mt-4 px-4">
         <a href="https://app.mydojo.software/signin" class="btn-primary w-full text-center">
           Get Started Free
