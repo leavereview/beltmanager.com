@@ -125,27 +125,6 @@ const features = [
   }
 ];
 
-// Illustrative examples, representative of the feedback we hear from school owners.
-// Not attributed to real named customers — replace with genuine, attributable
-// testimonials (and only then consider Review schema) once we have them.
-const testimonials = [
-  {
-    quote: "Grading admin used to eat a full evening every cycle. Now the belt records and eligibility are already there when I open the app.",
-    author: "Mike T.",
-    role: "Head Instructor, karate school"
-  },
-  {
-    quote: "Chasing monthly fees was the job I hated most. Setting up recurring billing took an afternoon and I have not chased a payment since.",
-    author: "Sarah C.",
-    role: "Owner, MMA & BJJ academy"
-  },
-  {
-    quote: "Parents can see where their child is up to without messaging me on a Sunday night. That alone has been worth it.",
-    author: "David K.",
-    role: "Instructor, taekwondo school"
-  }
-];
-
 const stats = [
   { number: 'Unlimited', label: 'Students & Classes' },
   { number: '£0', label: 'Until 31 March 2027' },
@@ -391,41 +370,6 @@ const stats = [
           <h3 class="font-bold text-brand-navy mb-1">Martial Arts Scheduling Software</h3>
           <p class="text-sm text-gray-600">Class timetables, bookings, and grading event management</p>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="section bg-brand-navy text-white">
-    <div class="container-custom">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">Testimonials</span>
-        <h2 class="text-3xl md:text-5xl font-bold mb-6">
-          Loved by Martial Arts Schools
-        </h2>
-        <p class="text-xl text-gray-300">
-          See what school owners and instructors say about BeltManager.
-        </p>
-        <p class="text-gray-400 text-sm mt-3">Illustrative examples, representative of the feedback we hear from martial arts school owners.</p>
-      </div>
-      
-      <div class="grid md:grid-cols-3 gap-8">
-        {testimonials.map((testimonial) => (
-          <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-            <div class="flex gap-1 mb-4">
-              {[1,2,3,4,5].map(() => (
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <p class="text-gray-300 mb-6 leading-relaxed">"{testimonial.quote}"</p>
-            <div>
-              <div class="font-semibold">{testimonial.author}</div>
-              <div class="text-sm text-gray-400">{testimonial.role}</div>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   </section>
