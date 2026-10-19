@@ -1,8 +1,8 @@
 {
-  "name": "mydojo-static",
+  "name": "beltmanager-static",
   "type": "module",
   "version": "1.0.0",
-  "description": "MyDojo.Software - Martial Arts Management Software",
+  "description": "BeltManager - Martial Arts Management Software",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

@@ -4,7 +4,7 @@ description: "Martial arts marketing that fills your intro classes: Google Busin
 image: /images/blog-kids-class.jpg
 date: "2026-02-13"
 tags: ["Marketing"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 ---
 
 Effective marketing fills your classes, but many martial arts school owners struggle with where to start or how to improve their efforts. This guide covers practical marketing strategies specifically for dojos and martial arts schools.
@@ -387,9 +387,9 @@ Good marketing combined with great instruction builds thriving schools.
 
 ## Manage Marketing Results
 
-[MyDojo.Software](/martial-arts-software/) helps track leads, manage trials, and convert prospects into long-term students with integrated lead management and [CRM tools](/martial-arts-crm/).
+[BeltManager](/martial-arts-software/) helps track leads, manage trials, and convert prospects into long-term students with integrated lead management and [CRM tools](/martial-arts-crm/).
 
-[Get started free](https://app.mydojo.software/signin) and grow your student base efficiently.
+[Get started free](https://app.beltmanager.com/signin) and grow your student base efficiently.
 
 ## Related Articles
 

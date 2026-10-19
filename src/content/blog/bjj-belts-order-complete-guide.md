@@ -4,7 +4,7 @@ description: "BJJ belts order from white to coral belt. Complete guide to Brazil
 date: "2026-01-13"
 image: "/images/karate-player-performing-karate-stance.jpg"
 tags: ["BJJ", "Belts"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 faqs:
   - question: "How long does it take to get each belt in BJJ?"
     answer: "The typical timeline for BJJ belts order progression is: White to Blue (1-3 years), Blue to Purple (2-3 years), Purple to Brown (2-3 years), and Brown to Black (3-5 years). However, individual progression varies significantly based on training frequency, natural ability, and life circumstances. Consistent training 3-4 times per week generally follows this timeline, while less frequent training extends the duration."
@@ -136,7 +136,7 @@ While not always required, competition results can influence promotion timelines
 
 ## Managing Belt Promotions in Your Academy
 
-For martial arts school owners and instructors, implementing a fair and consistent belt promotion system is crucial for student retention and academy reputation. Modern [martial arts software](https://mydojo.software/martial-arts-software/) can help track student progress, attendance, and readiness for promotion.
+For martial arts school owners and instructors, implementing a fair and consistent belt promotion system is crucial for student retention and academy reputation. Modern [martial arts software](https://beltmanager.com/martial-arts-software/) can help track student progress, attendance, and readiness for promotion.
 
 Key considerations for academy owners include:
 
@@ -150,7 +150,7 @@ Document specific requirements for each belt level, including:
 
 ### Tracking Student Progress
 
-Use [dojo management software](https://mydojo.software/dojo-management-software/) to monitor individual student development, noting technical improvements, class attendance, and milestone achievements. This data-driven approach ensures promotions are based on merit rather than favoritism.
+Use [dojo management software](https://beltmanager.com/dojo-management-software/) to monitor individual student development, noting technical improvements, class attendance, and milestone achievements. This data-driven approach ensures promotions are based on merit rather than favoritism.
 
 ### Creating Promotion Ceremonies
 
@@ -162,7 +162,7 @@ Understanding and properly implementing the **BJJ belts order** system has signi
 
 ### Improves Student Retention
 
-Clear progression paths and regular acknowledgment of improvement help maintain student motivation during challenging periods. [Martial arts CRM](https://mydojo.software/martial-arts-crm/) systems can help track student engagement and identify those who might benefit from additional support or recognition.
+Clear progression paths and regular acknowledgment of improvement help maintain student motivation during challenging periods. [Martial arts CRM](https://beltmanager.com/martial-arts-crm/) systems can help track student engagement and identify those who might benefit from additional support or recognition.
 
 ### Builds Academy Reputation
 
@@ -190,13 +190,13 @@ While the basic belt structure remains consistent, individual academies may have
 
 ## Technology and Modern Belt Tracking
 
-Contemporary academies increasingly rely on technology to manage their ranking systems effectively. [MMA gym software](https://mydojo.software/mma-gym-software/) and specialized [karate school software](https://mydojo.software/karate-school-software/) (which often includes BJJ functionality) help instructors:
+Contemporary academies increasingly rely on technology to manage their ranking systems effectively. [MMA gym software](https://beltmanager.com/mma-gym-software/) and specialized [karate school software](https://beltmanager.com/karate-school-software/) (which often includes BJJ functionality) help instructors:
 
 - Track individual student progress across multiple areas
 - Maintain consistent evaluation criteria
 - Generate progress reports for students and parents
 - Schedule and manage promotion testing
-- Handle [martial arts billing](https://mydojo.software/martial-arts-billing-software/) for testing fees and belt purchases
+- Handle [martial arts billing](https://beltmanager.com/martial-arts-billing-software/) for testing fees and belt purchases
 
 This technological support ensures that the traditional aspects of belt progression are enhanced rather than replaced by modern efficiency tools.
 
@@ -228,7 +228,7 @@ Understanding the **BJJ belts order** provides essential insight into one of mar
 
 The journey through the BJJ belt system is ultimately about more than colored fabric around your waist—it's about personal transformation, technical mastery, and becoming part of a global community united by shared values and dedication to the art.
 
-Ready to streamline your academy's belt tracking and student management? Discover how MyDojo's comprehensive martial arts management platform can help you maintain consistent ranking standards while growing your business. From student progress tracking to automated billing, we provide the tools successful academies need to focus on what matters most—developing exceptional martial artists.
+Ready to streamline your academy's belt tracking and student management? Discover how BeltManager's comprehensive martial arts management platform can help you maintain consistent ranking standards while growing your business. From student progress tracking to automated billing, we provide the tools successful academies need to focus on what matters most—developing exceptional martial artists.
 
 ## Related Articles
 

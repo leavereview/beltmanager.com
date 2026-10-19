@@ -6,14 +6,14 @@ imageAlt: "Interior of a martial arts dojo showing training space and equipment"
 date: "2026-02-06"
 updatedDate: "2026-07-29"
 tags: ["Software"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 faqs:
   - question: "Can I use general gym management software for a martial arts school?"
     answer: "Yes, and plenty of schools do. The trade-off is rank. General gym platforms handle memberships, bookings and payments well but treat belt progression as a custom field you maintain manually. If grading drives your class structure and retention, that manual work recurs at every grading. If you run mixed fitness programming and rank is secondary, general gym software is often the better fit."
   - question: "What is the difference between gym software and martial arts software?"
     answer: "Martial arts software treats rank progression, grading events, time-in-grade and curriculum as built-in concepts. Gym software treats members, classes and payments as the core model, with rank bolted on if at all. Clubworx illustrates the gap precisely: it is gym software that sells martial arts grading events as a $10/month add-on."
   - question: "Which gym management software is cheapest for a martial arts school?"
-    answer: "At under 20 active members, Clubworx's free tier costs nothing. Between 25 and 50 students, Kicksite ($49-$99/month) and Martialytics ($69/month) are the cheapest purpose-built options. Gymdesk starts at $75/month for up to 50 members. MyDojo is free until 31 March 2027 with no member cap. Verified July 2026."
+    answer: "At under 20 active members, Clubworx's free tier costs nothing. Between 25 and 50 students, Kicksite ($49-$99/month) and Martialytics ($69/month) are the cheapest purpose-built options. Gymdesk starts at $75/month for up to 50 members. BeltManager is free until 31 March 2027 with no member cap. Verified July 2026."
   - question: "Do I need martial arts software if I only teach one discipline?"
     answer: "It depends on whether you grade. A single-discipline school that runs regular belt testing gets more from martial-arts-specific software than a multi-discipline gym that rarely grades. The number of arts you teach matters less than how central rank is to your student journey."
   - question: "What should I check before switching gym management software?"
@@ -42,7 +42,7 @@ Clubworx makes the gap unusually visible: it is gym software that sells **martia
 |---|---|---|---|---|
 | **Kicksite** | Martial arts | Core | $49/mo (0–25 students) | No |
 | **Martialytics** | Martial arts | Core | $69/mo (0–50 students) | No |
-| **MyDojo** | Martial arts | Core | Free (until 31 March 2027) | Yes, no cap |
+| **BeltManager** | Martial arts | Core | Free (until 31 March 2027) | Yes, no cap |
 | **Clubworx** | Gyms/studios | $10/mo add-on | A$0 (≤20 members) | Yes, ≤20 |
 | **Gymdesk** | Gyms/studios | Not rank-first | $75/mo (≤50 members) | No |
 | **Zen Planner** | Fitness businesses | Not rank-first | $99/mo (Studio) | No |
@@ -63,7 +63,7 @@ $69/month for up to 50 active students, then $99 (51–100), $129 (101–200) an
 
 Best for schools planning to grow, because the curve is flatter than Kicksite's across the mid range.
 
-### MyDojo — martial arts, free until 31 March 2027
+### BeltManager — martial arts, free until 31 March 2027
 
 Free until 31 March 2027: no subscription, no per-student charge, no cap on student numbers, with belt and rank progression built in rather than bolted on.
 
@@ -109,17 +109,17 @@ Best for larger multi-instructor operations that need the ecosystem and can abso
 
 ## Summary
 
-If rank is central to how you run classes, the martial-arts-first platforms — Kicksite, Martialytics, MyDojo — will save you recurring manual work that general gym software will not.
+If rank is central to how you run classes, the martial-arts-first platforms — Kicksite, Martialytics, BeltManager — will save you recurring manual work that general gym software will not.
 
 If you run mixed programming and grade infrequently, Gymdesk and Zen Planner are capable and you're not missing much.
 
-If you have under 20 members and no budget, Clubworx's free tier and MyDojo (free until 31 March 2027) are the two genuinely free routes, and we've compared them properly in our guide to [free martial arts software](/free-martial-arts-software/).
+If you have under 20 members and no budget, Clubworx's free tier and BeltManager (free until 31 March 2027) are the two genuinely free routes, and we've compared them properly in our guide to [free martial arts software](/free-martial-arts-software/).
 
 For the full buying comparison ranked by school size, see [best martial arts software 2026](/blog/best-martial-arts-software/).
 
-## Try MyDojo
+## Try BeltManager
 
-MyDojo is free until 31 March 2027 — no subscription, no per-student fee, no card required. [See what it does](/martial-arts-software/).
+BeltManager is free until 31 March 2027 — no subscription, no per-student fee, no card required. [See what it does](/martial-arts-software/).
 
 ## Related Articles
 

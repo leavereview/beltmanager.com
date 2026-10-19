@@ -9,7 +9,7 @@ import { buildLastmodMap, lastmodSerializer } from '../scripts/sitemap-lastmod.m
 const lastmod = buildLastmodMap(dirname(fileURLToPath(import.meta.url)));
 
 export default defineConfig({
-  site: 'https://mydojo.software',
+  site: 'https://beltmanager.com',
   redirects: {
     '/blog/karate-belt-colors-guide': '/blog/karate-belt-order-complete-guide',
     '/blog/karate-belt-ranking-system-guide': '/blog/karate-belt-order-complete-guide',

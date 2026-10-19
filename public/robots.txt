@@ -1,10 +1,10 @@
-# robots.txt for mydojo.software
+# robots.txt for beltmanager.com
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://mydojo.software/sitemap-index.xml
+Sitemap: https://beltmanager.com/sitemap-index.xml
 
 # Disallow admin and private paths (if any)
 Disallow: /api/

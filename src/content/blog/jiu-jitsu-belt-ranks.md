@@ -4,7 +4,7 @@ description: "Jiu-Jitsu belt ranks white to black: typical 10-year timeline, str
 date: "2025-12-30"
 image: "/images/black-white-portrait-athlete-participating-olympic-championship-sports.jpg"
 tags: ["BJJ", "Belts"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 ---
 
 ## Teaching BJJ Belt Ranks: A Guide for School Owners

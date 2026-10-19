@@ -4,7 +4,7 @@ description: "Martial arts retention strategies that work. Onboarding plays, com
 image: /images/blog-belt-ceremony.jpg
 date: "2026-02-13"
 tags: ["Membership", "Business"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 ---
 
 Acquiring new students costs significantly more than keeping existing ones. Yet many martial arts schools focus heavily on marketing while neglecting retention. This guide covers practical strategies to keep your students training longer.
@@ -341,9 +341,9 @@ Small improvements in retention have outsized impact on school profitability and
 
 ## Support Your Retention Efforts
 
-[MyDojo.Software](/martial-arts-software/) provides tools to track attendance, monitor progress, communicate with students, and identify retention risks before they become cancellations.
+[BeltManager](/martial-arts-software/) provides tools to track attendance, monitor progress, communicate with students, and identify retention risks before they become cancellations.
 
-[Get started free](https://app.mydojo.software/signin) and build a school with students who stay.
+[Get started free](https://app.beltmanager.com/signin) and build a school with students who stay.
 
 ## Related Articles
 

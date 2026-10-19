@@ -33,14 +33,14 @@ const faqItems = [
   {
     question: 'What is the best martial arts school management software?',
     answer:
-      'There is no universal answer — it turns on your school size and whether you need belt progression as a first-class concept or just a gym CRM. Kicksite is the cheapest purpose-built option at $49/month for up to 25 students. Zen Planner is the most established but starts at $99/month and reaches $348/month. Gymdesk sits between at $75/month for up to 50 members. MyDojo is free until 31 March 2027 during early access and treats rank progression as core rather than a custom field. Pricing verified against vendor sites, July–August 2026.',
+      'There is no universal answer — it turns on your school size and whether you need belt progression as a first-class concept or just a gym CRM. Kicksite is the cheapest purpose-built option at $49/month for up to 25 students. Zen Planner is the most established but starts at $99/month and reaches $348/month. Gymdesk sits between at $75/month for up to 50 members. BeltManager is free until 31 March 2027 during early access and treats rank progression as core rather than a custom field. Pricing verified against vendor sites, July–August 2026.',
     links: [{ text: 'Full software roundup', url: '/blog/best-martial-arts-software/' }],
   },
   {
     question: 'How much does martial arts software cost per month?',
     answer:
-      'Published 2026 entry prices run from $49/month (Kicksite, up to 25 students) to $249/month (Spark Membership, flat rate). Most purpose-built platforms sit between $69 and $99/month for a school of about 50 students. Note that almost all of them price in US dollars, so UK schools should factor in the exchange rate and any card fees. Clubworx has a genuinely free tier for up to 20 active members, and MyDojo is free until 31 March 2027.',
-    links: [{ text: 'MyDojo pricing', url: '/pricing/' }],
+      'Published 2026 entry prices run from $49/month (Kicksite, up to 25 students) to $249/month (Spark Membership, flat rate). Most purpose-built platforms sit between $69 and $99/month for a school of about 50 students. Note that almost all of them price in US dollars, so UK schools should factor in the exchange rate and any card fees. Clubworx has a genuinely free tier for up to 20 active members, and BeltManager is free until 31 March 2027.',
+    links: [{ text: 'BeltManager pricing', url: '/pricing/' }],
   },
   {
     question: 'Do I need martial-arts-specific software, or will gym software do?',
@@ -61,15 +61,15 @@ const schemaMarkup = {
   '@type': 'CollectionPage',
   name: 'Martial Arts Software Comparisons',
   description:
-    'Honest side-by-side comparisons of martial arts school management software: MyDojo vs Kicksite, Zen Planner and others. Vendor-verified pricing.',
-  url: 'https://mydojo.software/compare/',
-  publisher: { '@type': 'Organization', name: 'MyDojo.Software' },
+    'Honest side-by-side comparisons of martial arts school management software: BeltManager vs Kicksite, Zen Planner and others. Vendor-verified pricing.',
+  url: 'https://beltmanager.com/compare/',
+  publisher: { '@type': 'Organization', name: 'BeltManager' },
 };
 ---
 
 <BaseLayout
   title="Compare Martial Arts School Software"
-  description="Honest side-by-side comparisons of martial arts management software. Vendor-verified pricing for Kicksite, Zen Planner and MyDojo."
+  description="Honest side-by-side comparisons of martial arts management software. Vendor-verified pricing for Kicksite, Zen Planner and BeltManager."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
@@ -90,7 +90,7 @@ const schemaMarkup = {
           Side-by-side against the platforms dojo owners actually shortlist. Every competitor price comes from that vendor's own pricing page — and we say where they beat us.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="https://app.mydojo.software/signin" class="btn-primary text-lg px-8 py-4">Try MyDojo Free</a>
+          <a href="https://app.beltmanager.com/signin" class="btn-primary text-lg px-8 py-4">Try BeltManager Free</a>
           <a href="/blog/best-martial-arts-software/" class="btn-secondary text-lg px-8 py-4">Read the Full Roundup</a>
         </div>
       </div>
@@ -98,7 +98,7 @@ const schemaMarkup = {
   </section>
 
   <FeaturedAnswer question="Which martial arts software should a school owner choose?">
-    For a school under 25 students, Kicksite is the cheapest purpose-built option at $49/month, though every tier starts with a demo call. For a larger, established school wanting a mature platform, Zen Planner is the safe choice at $99/month rising to $348/month for its Ultimate tier, with no free trial listed. MyDojo is free until 31 March 2027 during early access, with belt progression built in as a core concept rather than a custom field. The decision usually comes down to whether you grade students and how fast you expect to grow. Verified against vendor pricing pages, July–August 2026.
+    For a school under 25 students, Kicksite is the cheapest purpose-built option at $49/month, though every tier starts with a demo call. For a larger, established school wanting a mature platform, Zen Planner is the safe choice at $99/month rising to $348/month for its Ultimate tier, with no free trial listed. BeltManager is free until 31 March 2027 during early access, with belt progression built in as a core concept rather than a custom field. The decision usually comes down to whether you grade students and how fast you expect to grow. Verified against vendor pricing pages, July–August 2026.
   </FeaturedAnswer>
 
   <section class="section bg-white">
@@ -110,7 +110,7 @@ const schemaMarkup = {
         {platforms.map((p) => (
           <a href={p.href} class="card p-6 hover:shadow-lg transition-shadow group block">
             <h3 class="font-bold text-brand-navy text-xl mb-1 group-hover:text-brand-red transition-colors">
-              MyDojo vs {p.name}
+              BeltManager vs {p.name}
             </h3>
             <p class="text-gray-500 text-sm mb-4">{p.positioning}</p>
             <dl class="text-sm space-y-2 mb-4">
@@ -168,9 +168,9 @@ const schemaMarkup = {
 
   <section class="section bg-brand-navy text-white text-center">
     <div class="container-custom">
-      <h2 class="text-3xl font-bold mb-3">Try MyDojo — Free Until 31 March 2027</h2>
+      <h2 class="text-3xl font-bold mb-3">Try BeltManager — Free Until 31 March 2027</h2>
       <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">No subscription, no per-student fees, no demo call required. Set your school up and run a real week of classes before deciding.</p>
-      <a href="https://app.mydojo.software/signin" class="inline-block bg-brand-red text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-red-700 transition-colors">
+      <a href="https://app.beltmanager.com/signin" class="inline-block bg-brand-red text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-red-700 transition-colors">
         Get started free &rarr;
       </a>
       <p class="text-white/50 text-sm mt-3">Free until 31 March 2027 &middot; No card required</p>
@@ -181,6 +181,6 @@ const schemaMarkup = {
     faqs={faqItems}
     title="Choosing Martial Arts Software — Common Questions"
     site="mydojo"
-    pageUrl="https://mydojo.software/compare/"
+    pageUrl="https://beltmanager.com/compare/"
   />
 </BaseLayout>

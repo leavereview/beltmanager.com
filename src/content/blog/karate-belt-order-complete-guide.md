@@ -5,7 +5,7 @@ date: "2026-01-06"
 image: "/images/black-white-portrait-athlete-participating-olympic-championship-sports.jpg"
 imageAlt: "Karate athlete in traditional white gi demonstrating martial arts stance during competition, representing progression through belt ranks"
 tags: ["Karate", "Belts"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 faqs:
   - question: "How long does it typically take to earn a black belt in karate?"
     answer: "Most dedicated karate students require 3-5 years of consistent training to reach black belt, training 2-3 times per week. However, this timeline varies significantly based on individual ability, school requirements, age, and training intensity. Children may take longer due to physical and mental development factors, while adult students with previous martial arts experience might progress more quickly."
@@ -261,7 +261,7 @@ Modern karate instruction emphasizes character development alongside physical sk
 - **Perseverance**: Working through challenges without quitting
 - **Outside Application**: Demonstrating martial arts principles in daily life (school, work, home)
 
-Effective [martial arts school software](https://mydojo.software/martial-arts-software/) can help instructors track both technical progress and character development metrics for each student, ensuring holistic evaluation.
+Effective [martial arts school software](https://beltmanager.com/martial-arts-software/) can help instructors track both technical progress and character development metrics for each student, ensuring holistic evaluation.
 
 ## Belt Care and Tradition
 
@@ -435,7 +435,7 @@ Fees significantly higher than this warrant scrutiny. Schools charging $500+ for
 
 ### Digital Belt Tracking Systems
 
-Contemporary martial arts schools increasingly rely on [karate school software](https://mydojo.software/karate-school-software/) to manage their ranking systems effectively. These platforms offer:
+Contemporary martial arts schools increasingly rely on [karate school software](https://beltmanager.com/karate-school-software/) to manage their ranking systems effectively. These platforms offer:
 
 - **Progress Dashboards**: Visual tracking of each student's advancement toward their next belt
 - **Automated Reminders**: Notifications when students meet time requirements for testing

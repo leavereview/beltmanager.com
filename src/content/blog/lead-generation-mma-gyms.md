@@ -4,7 +4,7 @@ description: "Lead generation for MMA gyms that fills your intro slots. Social a
 image: /images/blog-mma-training.jpg
 date: "2026-02-13"
 tags: ["Marketing", "MMA"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 ---
 
 Running a successful [MMA gym](/mma-gym-software/) requires more than great coaching—you need a steady stream of new members walking through the door. Without effective lead generation, even the best training programs struggle to stay viable.
@@ -433,9 +433,9 @@ None of these require massive budgets—just consistent effort and attention.
 
 ## Ready to Manage Your Growing Gym?
 
-More leads means more members to track. [MyDojo.Software](/mma-gym-software/) helps you manage leads, memberships, and your entire martial arts business from one platform.
+More leads means more members to track. [BeltManager](/mma-gym-software/) helps you manage leads, memberships, and your entire martial arts business from one platform.
 
-[Get started free](https://app.mydojo.software/signin) and see how much easier gym management can be.
+[Get started free](https://app.beltmanager.com/signin) and see how much easier gym management can be.
 
 ## Related Articles
 

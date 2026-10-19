@@ -4,7 +4,7 @@ description: "Martial arts school owner salaries: £25K-£85K annual breakdown b
 image: /images/blog-dojo-interior.jpg
 date: "2026-02-06"
 tags: ["Business"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 ---
 
 How much can you actually earn owning a martial arts school? The answer varies dramatically based on location, size, business model, and operational efficiency. This guide provides realistic income expectations and the factors that determine whether a dojo generates modest supplemental income or substantial profit.
@@ -324,9 +324,9 @@ Realistic expectations help you plan properly, whether you're entering the indus
 
 ## Run Your School More Profitably
 
-Better systems mean more efficiency and higher margins. [MyDojo.Software](/dojo-management-software/) helps martial arts schools streamline operations, reduce administrative time, and focus on what generates revenue—great instruction.
+Better systems mean more efficiency and higher margins. [BeltManager](/dojo-management-software/) helps martial arts schools streamline operations, reduce administrative time, and focus on what generates revenue—great instruction.
 
-[Get started free](https://app.mydojo.software/signin) and see how the right tools support your business goals.
+[Get started free](https://app.beltmanager.com/signin) and see how the right tools support your business goals.
 
 ## Related Articles
 

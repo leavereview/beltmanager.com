@@ -1,7 +1,7 @@
 ---
 // Pricing Page
 //
-// MyDojo is free until 31 March 2027: no subscription and no commission. There
+// BeltManager is free until 31 March 2027: no subscription and no commission. There
 // is no free trial — there is nothing to trial, the product is free. After that
 // date pricing will be announced with notice. Do not state a notice period, a
 // billing interval, a pricing model or a currency for future pricing: none has
@@ -24,9 +24,9 @@ import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 const offerSchema = {
   "@context": "https://schema.org",
   "@type": "Offer",
-  "@id": "https://mydojo.software/pricing/#free",
-  "name": "MyDojo — free until 31 March 2027",
-  "description": "MyDojo is free to use until 31 March 2027 — no subscription, no commission, no setup fee, and no per-student charges. Every feature is included during the launch period.",
+  "@id": "https://beltmanager.com/pricing/#free",
+  "name": "BeltManager — free until 31 March 2027",
+  "description": "BeltManager is free to use until 31 March 2027 — no subscription, no commission, no setup fee, and no per-student charges. Every feature is included during the launch period.",
   "price": "0",
   "priceCurrency": "GBP",
   // Kept at 0 rather than removed: it is accurate, and it is what makes this
@@ -34,14 +34,14 @@ const offerSchema = {
   // structured-data expression of the same promise the copy makes.
   "priceValidUntil": "2027-03-31",
   "availability": "https://schema.org/InStock",
-  "url": "https://mydojo.software/pricing/",
+  "url": "https://beltmanager.com/pricing/",
   "seller": {
     "@type": "Organization",
-    "name": "MyDojo.Software"
+    "name": "BeltManager"
   },
   "itemOffered": {
     "@type": "SoftwareApplication",
-    "name": "MyDojo.Software",
+    "name": "BeltManager",
     "applicationCategory": "BusinessApplication"
   },
   "additionalProperty": [
@@ -90,34 +90,34 @@ const featureGroups = [
 // questions and the structured data cannot drift apart.
 const faqs = [
   {
-    question: "Is MyDojo really free?",
-    answer: "Yes. MyDojo is free until 31 March 2027 — no subscription, no commission, no setup fee, no per-student charges, and no credit card. Every feature is included during the launch period, including belt tracking, billing, and reporting.",
+    question: "Is BeltManager really free?",
+    answer: "Yes. BeltManager is free until 31 March 2027 — no subscription, no commission, no setup fee, no per-student charges, and no credit card. Every feature is included during the launch period, including belt tracking, billing, and reporting.",
     links: [
-      { text: 'Get started free', url: 'https://app.mydojo.software/signin' }
+      { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
     ]
   },
   {
     question: "How do you make money?",
-    answer: "Right now, we don't. MyDojo is free until 31 March 2027, with no subscription and no commission. Pricing for after that date will be announced with notice before anything changes.",
+    answer: "Right now, we don't. BeltManager is free until 31 March 2027, with no subscription and no commission. Pricing for after that date will be announced with notice before anything changes.",
     links: [
       { text: 'Read our terms', url: '/terms/' }
     ]
   },
   {
     question: "What's the catch?",
-    answer: "There isn't one, but there is a trade. We want martial arts schools actually running on MyDojo and telling us what's missing or broken before we set pricing, so it's free until 31 March 2027. You get the software for nothing; we get honest feedback from real dojos. That's the deal.",
+    answer: "There isn't one, but there is a trade. We want martial arts schools actually running on BeltManager and telling us what's missing or broken before we set pricing, so it's free until 31 March 2027. You get the software for nothing; we get honest feedback from real dojos. That's the deal.",
     links: []
   },
   {
     question: "Will you start charging me without warning?",
-    answer: "No. MyDojo is free until 31 March 2027. Pricing for after that date will be announced with notice before any charge. Nothing will start billing you by surprise.",
+    answer: "No. BeltManager is free until 31 March 2027. Pricing for after that date will be announced with notice before any charge. Nothing will start billing you by surprise.",
     links: [
       { text: 'Read our terms', url: '/terms/' }
     ]
   },
   {
     question: "How many students and locations can I have?",
-    answer: "Unlimited students, unlimited locations, and unlimited staff users. There are no capacity limits while MyDojo is free until 31 March 2027.",
+    answer: "Unlimited students, unlimited locations, and unlimited staff users. There are no capacity limits while BeltManager is free until 31 March 2027.",
     links: [
       { text: 'Compare features', url: '/martial-arts-software/' }
     ]
@@ -135,7 +135,7 @@ const faqs = [
 
 <BaseLayout
   title="Pricing — Free Martial Arts School Software"
-  description="MyDojo is free until 31 March 2027 — no subscription, no setup fee, no per-student charges. Belt tracking, scheduling, attendance and CRM all included."
+  description="BeltManager is free until 31 March 2027 — no subscription, no setup fee, no per-student charges. Belt tracking, scheduling, attendance and CRM all included."
 >
   <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
 
@@ -156,11 +156,11 @@ const faqs = [
     <div class="container-custom relative">
       <div class="max-w-3xl text-center mx-auto">
         <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Pricing</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">MyDojo is free</h1>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">BeltManager is free</h1>
         <p class="text-xl text-gray-300 mb-8">
           No subscription. No commission. No per-student fees. Free until 31 March 2027.
         </p>
-        <a href="https://app.mydojo.software/signin" class="btn-primary text-lg px-8 py-4">Get started free</a>
+        <a href="https://app.beltmanager.com/signin" class="btn-primary text-lg px-8 py-4">Get started free</a>
         <p class="mt-4 text-sm text-gray-400">Free until 31 March 2027 • No credit card • Every feature included</p>
       </div>
     </div>
@@ -172,7 +172,7 @@ const faqs = [
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-3xl font-bold text-brand-navy mb-6">Free for the launch period</h2>
         <p class="text-lg text-gray-600 mb-6">
-          MyDojo is launching free. Until <strong>31 March 2027</strong> there is no subscription and no commission,
+          BeltManager is launching free. Until <strong>31 March 2027</strong> there is no subscription and no commission,
           no setup fee and no per-student charge — and no student caps or feature lockouts while it's free.
         </p>
         <p class="text-lg text-gray-600">
@@ -220,7 +220,7 @@ const faqs = [
         <FAQEnhanced
           faqs={faqs}
           site="mydojo"
-          pageUrl="https://mydojo.software/pricing/"
+          pageUrl="https://beltmanager.com/pricing/"
           initiallyExpanded={0}
         />
       </div>
@@ -235,7 +235,7 @@ const faqs = [
         <p class="text-lg text-gray-300 mb-8">
           Belt tracking, scheduling, attendance, and CRM — free until 31 March 2027.
         </p>
-        <a href="https://app.mydojo.software/signin" class="btn-primary text-lg px-8 py-4">Get started free</a>
+        <a href="https://app.beltmanager.com/signin" class="btn-primary text-lg px-8 py-4">Get started free</a>
         <p class="mt-4 text-sm text-gray-400">Free until 31 March 2027 • No credit card • No contract</p>
       </div>
     </div>

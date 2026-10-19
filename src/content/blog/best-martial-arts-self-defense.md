@@ -4,7 +4,7 @@ description: "Best martial arts for self-defense ranked: BJJ for ground control,
 date: "2025-12-30"
 image: "/images/two-judo-wrestlers-showing-their-technical-skills-fight-club.jpg"
 tags: ["Self-Defense", "Martial Arts"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 ---
 
 ## Teaching Self-Defence Classes: Which Styles to Offer at Your School

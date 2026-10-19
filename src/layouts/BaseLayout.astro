@@ -19,13 +19,13 @@ interface Props {
 
 const {
   title,
-  description = 'MyDojo Software - The complete martial arts management platform for dojos, karate schools, and MMA gyms. Streamline scheduling, billing, and student management.',
+  description = 'BeltManager - The complete martial arts management platform for dojos, karate schools, and MMA gyms. Streamline scheduling, billing, and student management.',
   image = '/images/og-default.jpg',
   type = 'website',
   schemaType,
   publishedDate,
   modifiedDate,
-  author = 'MyDojo Team',
+  author = 'BeltManager Team',
   noindex = false
 } = Astro.props;
 
@@ -36,9 +36,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 // Dynamic title suffix: skip for long titles, use shorter brand name
 const getTitleSuffix = (pageTitle: string): string => {
-  if (pageTitle === 'Home') return 'MyDojo Software - Martial Arts Management Platform';
+  if (pageTitle === 'Home') return 'BeltManager - Martial Arts Management Platform';
   if (pageTitle.length > 50) return pageTitle; // No suffix for long titles
-  return `${pageTitle} | MyDojo`;
+  return `${pageTitle} | BeltManager`;
 };
 const fullTitle = getTitleSuffix(title);
 
@@ -48,25 +48,25 @@ const schemaOrg = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://mydojo.software/#organization",
-      "name": "MyDojo Software",
-      "url": "https://mydojo.software",
+      "@id": "https://beltmanager.com/#organization",
+      "name": "BeltManager",
+      "url": "https://beltmanager.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://mydojo.software/logo.svg",
+        "url": "https://beltmanager.com/logo.svg",
         "width": 200,
         "height": 60
       },
       "sameAs": [
-        "https://twitter.com/mydojosoftware",
-        "https://www.linkedin.com/company/mydojo-software",
-        "https://www.facebook.com/mydojosoftware"
+        "https://twitter.com/beltmanager",
+        "https://www.linkedin.com/company/beltmanager",
+        "https://www.facebook.com/beltmanager"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Customer Support",
-        "email": "support@mydojo.software",
-        "url": "https://mydojo.software/contact/"
+        "email": "support@beltmanager.com",
+        "url": "https://beltmanager.com/contact/"
       },
       "address": {
         "@type": "PostalAddress",
@@ -80,11 +80,11 @@ const schemaOrg = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://mydojo.software/#website",
-      "url": "https://mydojo.software",
-      "name": "MyDojo Software",
+      "@id": "https://beltmanager.com/#website",
+      "url": "https://beltmanager.com",
+      "name": "BeltManager",
       "publisher": {
-        "@id": "https://mydojo.software/#organization"
+        "@id": "https://beltmanager.com/#organization"
       }
     },
     {
@@ -95,16 +95,16 @@ const schemaOrg = {
       "headline": title,
       "description": description,
       "isPartOf": {
-        "@id": "https://mydojo.software/#website"
+        "@id": "https://beltmanager.com/#website"
       },
       ...((resolvedSchemaType === 'Article' || resolvedSchemaType === 'BlogPosting') && {
         "author": {
           "@type": "Person",
           "name": author,
-          "url": "https://mydojo.software/about/"
+          "url": "https://beltmanager.com/about/"
         },
         "publisher": {
-          "@id": "https://mydojo.software/#organization"
+          "@id": "https://beltmanager.com/#organization"
         }
       }),
       ...(image && (resolvedSchemaType === 'Article' || resolvedSchemaType === 'BlogPosting') && {
@@ -148,7 +148,7 @@ const schemaOrg = {
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={new URL(image, Astro.site)} />
-  <meta property="og:site_name" content="MyDojo Software" />
+  <meta property="og:site_name" content="BeltManager" />
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />

@@ -6,16 +6,16 @@ imageAlt: "Martial arts instructor teaching class at dojo, demonstrating the nee
 date: "2026-01-23"
 updatedDate: "2026-07-29"
 tags: ["Software"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 faqs:
   - question: "What is the best martial arts software for a small dojo?"
-    answer: "For schools under 25 students, Kicksite ($49/month) and Martialytics ($69/month for up to 50) are the cheapest purpose-built options with full feature access. If budget is the binding constraint, Clubworx has a genuinely free tier for up to 20 active members, and MyDojo is free until 31 March 2027. Verified July 2026."
+    answer: "For schools under 25 students, Kicksite ($49/month) and Martialytics ($69/month for up to 50) are the cheapest purpose-built options with full feature access. If budget is the binding constraint, Clubworx has a genuinely free tier for up to 20 active members, and BeltManager is free until 31 March 2027. Verified July 2026."
   - question: "Is there free martial arts software?"
-    answer: "Yes, but with limits. Clubworx offers a free plan for up to 20 active members including online booking, payments, attendance and a check-in kiosk. MyDojo is currently free with no student cap until 31 March 2027. Most other platforms offer 15-30 day trials rather than a free tier."
+    answer: "Yes, but with limits. Clubworx offers a free plan for up to 20 active members including online booking, payments, attendance and a check-in kiosk. BeltManager is currently free with no student cap until 31 March 2027. Most other platforms offer 15-30 day trials rather than a free tier."
   - question: "How much does martial arts software cost per month?"
     answer: "Published 2026 entry prices range from $49/month (Kicksite, up to 25 students) to $249/month (Spark Membership, flat rate). Most purpose-built platforms sit between $69 and $99/month for a school of 50 students. Zen Planner starts at $99/month and rises to $348/month for its Ultimate tier."
   - question: "Does martial arts software handle belt and rank tracking?"
-    answer: "Purpose-built martial arts platforms do. Kicksite, Martialytics and MyDojo include rank progression as a core concept rather than an add-on. General gym software often treats grading as a custom field, and Clubworx charges $10/month extra for martial arts grading events on its paid plans."
+    answer: "Purpose-built martial arts platforms do. Kicksite, Martialytics and BeltManager include rank progression as a core concept rather than an add-on. General gym software often treats grading as a custom field, and Clubworx charges $10/month extra for martial arts grading events on its paid plans."
   - question: "Should I choose martial arts software or general gym software?"
     answer: "Choose martial arts software if belt progression, grading events and multi-discipline tracking matter to how you run classes. Choose general gym software if you run mixed fitness programming and rank is secondary. The cost difference is small; the workflow difference is not."
   - question: "Do these platforms lock you into a contract?"
@@ -24,7 +24,7 @@ faqs:
 
 Search "best martial arts software" and you get a wall of listicles that never quite tell you what anything costs. This one does. Every price below was read off the vendor's own pricing page in **July 2026**, and where a figure comes from a third party instead, it says so.
 
-We build [martial arts software](/martial-arts-software/) ourselves, so treat our own entry with the scepticism it deserves — we have put MyDojo where the evidence puts it, not at the top. The genuinely useful part of this guide is the pricing table, because pricing is the thing vendors make hardest to compare and the thing that decides most purchases.
+We build [martial arts software](/martial-arts-software/) ourselves, so treat our own entry with the scepticism it deserves — we have put BeltManager where the evidence puts it, not at the top. The genuinely useful part of this guide is the pricing table, because pricing is the thing vendors make hardest to compare and the thing that decides most purchases.
 
 ## How these six were chosen
 
@@ -48,7 +48,7 @@ Published monthly prices, verified July 2026. Currencies are as the vendor lists
 | **[Zen Planner](/compare/zen-planner/)** | $99/mo (Studio) | Flat-rate tiers | No | None listed |
 | **Clubworx** | A$0 (≤20 members) | Tiered by members | **Yes, ≤20 members** | 15 days on paid plans |
 | **Spark Membership** | ~$249/mo | Flat rate, unlimited students | No | Promotional offers |
-| **MyDojo** | Free | Free until 31 March 2027 | **Yes, no student cap** | n/a — it's free |
+| **BeltManager** | Free | Free until 31 March 2027 | **Yes, no student cap** | n/a — it's free |
 
 Full published bands:
 
@@ -114,9 +114,9 @@ Reported add-ons include SMS credit packages and a done-for-you marketing module
 **Best for:** large schools where per-student pricing has become the dominant cost.
 **Watch for:** in-house merchant requirements and add-on costs on top of the flat fee.
 
-### MyDojo — free until 31 March 2027
+### BeltManager — free until 31 March 2027
 
-MyDojo is **free until 31 March 2027**: no subscription, no commission, no setup fee and no per-student charge, with no cap on student numbers. It's purpose-built for martial arts, so belt and rank progression, grading and attendance are core concepts rather than custom fields.
+BeltManager is **free until 31 March 2027**: no subscription, no commission, no setup fee and no per-student charge, with no cap on student numbers. It's purpose-built for martial arts, so belt and rank progression, grading and attendance are core concepts rather than custom fields.
 
 The honest positioning: it is newer than everything else on this page and the ecosystem around it is smaller. If you need a deep third-party integration library or a decade of community documentation, the established platforms have that and we don't yet. If you want martial-arts-native rank tracking at no cost while we build, that's the trade on offer.
 
@@ -143,7 +143,7 @@ Two genuinely free options exist, and they are free in different ways.
 
 **Clubworx free plan** caps at 20 active members but is a permanent free tier from an established vendor. When you pass 20 members you move to A$109/month, and grading events cost $10/month extra on top.
 
-**MyDojo** is free until 31 March 2027 with no member cap, because we're still building and would rather have your feedback than your money.
+**BeltManager** is free until 31 March 2027 with no member cap, because we're still building and would rather have your feedback than your money.
 
 Everything else on this page offers a trial, not a free tier: 30 days on Kicksite, Martialytics and Gymdesk, 15 days on Clubworx's paid plans, and nothing listed for Zen Planner.
 
@@ -173,7 +173,7 @@ We've written a fuller breakdown of what the no-cost options actually cover, and
 
 ## The short version
 
-If you have **under 25 students and no budget**, Clubworx's free tier or MyDojo (free until 31 March 2027) are the only genuinely free routes.
+If you have **under 25 students and no budget**, Clubworx's free tier or BeltManager (free until 31 March 2027) are the only genuinely free routes.
 
 If you have **25–75 students**, Martialytics at $69–$99 is the most consistently priced purpose-built option, with Kicksite cheaper at the very bottom of the range.
 
@@ -183,9 +183,9 @@ If you need **the established ecosystem** and the budget is there, Zen Planner i
 
 Prices change. Every figure here was verified against the vendor's published pricing in July 2026 — check before you buy, and treat any listicle that won't tell you what things cost as an advert.
 
-## Try MyDojo
+## Try BeltManager
 
-MyDojo is free until 31 March 2027 — no subscription, no per-student fee, no card required. If rank tracking built for martial arts is what you're missing, [take a look at what it does](/martial-arts-software/).
+BeltManager is free until 31 March 2027 — no subscription, no per-student fee, no card required. If rank tracking built for martial arts is what you're missing, [take a look at what it does](/martial-arts-software/).
 
 ## Related Articles
 

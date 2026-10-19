@@ -10,7 +10,7 @@ const blogCollection = defineCollection({
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     tags: z.array(z.string()).optional(),
-    author: z.string().default('MyDojo Team'),
+    author: z.string().default('BeltManager Team'),
     faqs: z.array(z.object({
       question: z.string(),
       answer: z.string(),

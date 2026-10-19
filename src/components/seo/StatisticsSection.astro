@@ -68,7 +68,7 @@ const datasetData: DatasetSchema = {
   datePublished: datePublished,
   creator: {
     type: 'Organization',
-    name: source || `${site} Research Team`
+    name: source || `${schemaGen.getSiteName()} Research Team`
   }
 };
 

@@ -28,28 +28,28 @@ const comparisonRows = [
 
 const faqItems = [
   {
-    question: 'How much does Kicksite cost compared to MyDojo?',
+    question: 'How much does Kicksite cost compared to BeltManager?',
     answer:
-      'Kicksite publishes four tiers by active student count: $49/month for 0–25 students, $99 for 26–50, $149 for 51–100 and $199 for 101 or more, with all features included at every tier and discounted annual pricing on request. MyDojo is free until 31 March 2027, with no subscription, no commission and no per-student charge at any school size; pricing for after that date will be announced with notice. Note Kicksite prices in US dollars, so a UK school also carries the exchange rate. Verified against kicksite.com/pricing, August 2026.',
-    links: [{ text: 'MyDojo pricing', url: '/pricing/' }],
+      'Kicksite publishes four tiers by active student count: $49/month for 0–25 students, $99 for 26–50, $149 for 51–100 and $199 for 101 or more, with all features included at every tier and discounted annual pricing on request. BeltManager is free until 31 March 2027, with no subscription, no commission and no per-student charge at any school size; pricing for after that date will be announced with notice. Note Kicksite prices in US dollars, so a UK school also carries the exchange rate. Verified against kicksite.com/pricing, August 2026.',
+    links: [{ text: 'BeltManager pricing', url: '/pricing/' }],
   },
   {
-    question: 'Is MyDojo better than Kicksite?',
+    question: 'Is BeltManager better than Kicksite?',
     answer:
-      'On cost today, yes — MyDojo is free until 31 March 2027 against Kicksite\'s $49–$199/month, and you can sign up yourself rather than booking a demo. On track record, no: Kicksite is a long-established martial arts platform with a large customer base, and we would rather you knew that than found out later. Both treat belt progression as a core concept rather than a bolt-on. If maturity matters more to you than price, Kicksite is a sound choice.',
-    links: [{ text: 'Get started free', url: 'https://app.mydojo.software/signin' }],
+      'On cost today, yes — BeltManager is free until 31 March 2027 against Kicksite\'s $49–$199/month, and you can sign up yourself rather than booking a demo. On track record, no: Kicksite is a long-established martial arts platform with a large customer base, and we would rather you knew that than found out later. Both treat belt progression as a core concept rather than a bolt-on. If maturity matters more to you than price, Kicksite is a sound choice.',
+    links: [{ text: 'Get started free', url: 'https://app.beltmanager.com/signin' }],
   },
   {
     question: 'Does Kicksite charge more as my school grows?',
     answer:
-      'Yes — that is the design of its pricing. Growing from 25 to 26 students moves you from $49 to $99/month, and passing 50 moves you to $149. The tiers are transparent and all features are included at each one, so there are no surprises, but the cost curve is steep for a school in a growth phase. MyDojo does not charge per student, or anything else, until 31 March 2027; pricing for after that date will be announced with notice.',
+      'Yes — that is the design of its pricing. Growing from 25 to 26 students moves you from $49 to $99/month, and passing 50 moves you to $149. The tiers are transparent and all features are included at each one, so there are no surprises, but the cost curve is steep for a school in a growth phase. BeltManager does not charge per student, or anything else, until 31 March 2027; pricing for after that date will be announced with notice.',
     links: [],
   },
   {
     question: 'Can I try Kicksite without talking to sales?',
     answer:
-      'Not currently. Kicksite offers a 30-day free trial, but its site routes that through booking a demo first. That is a reasonable model and the demo is genuinely useful for a larger school, though it does mean you cannot evaluate the product on a Sunday evening. MyDojo is self-serve: you sign up and set your school up without speaking to anyone.',
-    links: [{ text: 'Get started free', url: 'https://app.mydojo.software/signin' }],
+      'Not currently. Kicksite offers a 30-day free trial, but its site routes that through booking a demo first. That is a reasonable model and the demo is genuinely useful for a larger school, though it does mean you cannot evaluate the product on a Sunday evening. BeltManager is self-serve: you sign up and set your school up without speaking to anyone.',
+    links: [{ text: 'Get started free', url: 'https://app.beltmanager.com/signin' }],
   },
   {
     question: 'Where does Kicksite genuinely win?',
@@ -58,7 +58,7 @@ const faqItems = [
     links: [],
   },
   {
-    question: 'Can I move my student records from Kicksite to MyDojo?',
+    question: 'Can I move my student records from Kicksite to BeltManager?',
     answer:
       'Yes. Export your student list and current ranks to CSV and import it, then continue logging attendance and grading from your next class onward rather than backfilling years of history. Most schools are running live within a day or two. Confirm your Kicksite cancellation terms in writing before you migrate — that advice applies whichever direction you are moving.',
     links: [{ text: 'Billing and payments', url: '/martial-arts-billing-software/' }],
@@ -68,19 +68,19 @@ const faqItems = [
 const schemaMarkup = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'MyDojo vs Kicksite: Honest Comparison for Martial Arts Schools',
+  headline: 'BeltManager vs Kicksite: Honest Comparison for Martial Arts Schools',
   description:
-    'Side-by-side comparison of MyDojo and Kicksite — published pricing at every school size, belt tracking, trials, and which suits your dojo.',
-  author: { '@type': 'Organization', name: 'MyDojo.Software' },
-  publisher: { '@type': 'Organization', name: 'MyDojo.Software' },
+    'Side-by-side comparison of BeltManager and Kicksite — published pricing at every school size, belt tracking, trials, and which suits your dojo.',
+  author: { '@type': 'Organization', name: 'BeltManager' },
+  publisher: { '@type': 'Organization', name: 'BeltManager' },
   datePublished: '2026-08-19',
   dateModified: '2026-08-19',
 };
 ---
 
 <BaseLayout
-  title="MyDojo vs Kicksite: Pricing & Features Compared"
-  description="MyDojo vs Kicksite for martial arts schools. Kicksite is $49–$199/month by student count; MyDojo is free until 31 March 2027. Verified August 2026."
+  title="BeltManager vs Kicksite: Pricing & Features Compared"
+  description="BeltManager vs Kicksite for martial arts schools. Kicksite is $49–$199/month by student count; BeltManager is free until 31 March 2027. Verified August 2026."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
@@ -97,20 +97,20 @@ const schemaMarkup = {
     <div class="container-custom relative">
       <div class="max-w-3xl">
         <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Platform Comparison</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">MyDojo vs Kicksite</h1>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">BeltManager vs Kicksite</h1>
         <p class="text-xl text-gray-300 mb-8">
           Both are built for martial arts schools, and both treat belt progression as a first-class concept. The real difference is how the price behaves as your school grows.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="https://app.mydojo.software/signin" class="btn-primary text-lg px-8 py-4">Try MyDojo Free</a>
+          <a href="https://app.beltmanager.com/signin" class="btn-primary text-lg px-8 py-4">Try BeltManager Free</a>
           <a href="#comparison" class="btn-secondary text-lg px-8 py-4">See Feature Table</a>
         </div>
       </div>
     </div>
   </section>
 
-  <FeaturedAnswer question="How does MyDojo compare to Kicksite?">
-    Kicksite is an established martial arts platform priced by active student count: $49/month for 0–25 students, $99 for 26–50, $149 for 51–100 and $199 for 101 or more, with every feature included at each tier and a 30-day trial arranged through a demo. MyDojo is free until 31 March 2027 during early access, charges nothing per student at any size, and is self-serve. Kicksite is the more established platform; MyDojo is cheaper today and does not penalise growth. Verified against kicksite.com/pricing, August 2026.
+  <FeaturedAnswer question="How does BeltManager compare to Kicksite?">
+    Kicksite is an established martial arts platform priced by active student count: $49/month for 0–25 students, $99 for 26–50, $149 for 51–100 and $199 for 101 or more, with every feature included at each tier and a 30-day trial arranged through a demo. BeltManager is free until 31 March 2027 during early access, charges nothing per student at any size, and is self-serve. Kicksite is the more established platform; BeltManager is cheaper today and does not penalise growth. Verified against kicksite.com/pricing, August 2026.
   </FeaturedAnswer>
 
   <section class="section bg-white">
@@ -127,7 +127,7 @@ const schemaMarkup = {
           </ul>
         </div>
         <div class="card p-6 border-t-4 border-brand-red">
-          <h3 class="font-bold text-brand-navy text-lg mb-3">Choose MyDojo if…</h3>
+          <h3 class="font-bold text-brand-navy text-lg mb-3">Choose BeltManager if…</h3>
           <ul class="space-y-2 text-gray-700 text-sm">
             <li>You want to try it tonight without booking a demo.</li>
             <li>You are growing, and do not want the bill to step up every 25 students.</li>
@@ -142,9 +142,9 @@ const schemaMarkup = {
   <section id="comparison" class="section bg-gray-50">
     <div class="container-custom max-w-4xl">
       <ComparisonTable
-        title="MyDojo vs Kicksite"
+        title="BeltManager vs Kicksite"
         description="Kicksite figures taken from its own published pricing page and re-verified in August 2026."
-        headers={['Feature', 'MyDojo', 'Kicksite']}
+        headers={['Feature', 'BeltManager', 'Kicksite']}
         rows={comparisonRows}
       />
     </div>
@@ -160,7 +160,7 @@ const schemaMarkup = {
         A school with 24 active students pays $49/month. Sign two more and you are on $99 — the price has doubled for two students. Cross 50 and it is $149. Cross 100 and it is $199, which is $2,388 a year before the exchange rate. None of this is hidden; it is published plainly on their pricing page. But it does mean that the month you succeed at recruitment is also the month your software bill rises, which is an odd incentive.
       </p>
       <p class="text-gray-700 mb-8">
-        MyDojo charges nothing until 31 March 2027: no subscription, no commission and no per-student fee. Pricing for after that date hasn't been set, and will be announced with notice before any charge.
+        BeltManager charges nothing until 31 March 2027: no subscription, no commission and no per-student fee. Pricing for after that date hasn't been set, and will be announced with notice before any charge.
       </p>
 
       <h2 class="text-3xl font-bold text-brand-navy mb-6">Where Kicksite is genuinely the safer pick</h2>
@@ -168,13 +168,13 @@ const schemaMarkup = {
         We would rather be useful than flattering. Kicksite has been doing this a long time, and there are real situations where that is worth more than a lower price.
       </p>
       <p class="text-gray-700 mb-4">
-        If you are moving a school of 150 students with years of grading history, a guided migration with a person on the other end of a call is genuinely valuable, and Kicksite's demo-led onboarding provides that. MyDojo is self-serve, which is exactly what you want at 20 students and less reassuring at 150.
+        If you are moving a school of 150 students with years of grading history, a guided migration with a person on the other end of a call is genuinely valuable, and Kicksite's demo-led onboarding provides that. BeltManager is self-serve, which is exactly what you want at 20 students and less reassuring at 150.
       </p>
       <p class="text-gray-700 mb-8">
         If you are a US school, Kicksite's dollar pricing is simply its pricing, with none of the exchange-rate friction a UK school carries. And a long-established vendor carries a lower risk of the product changing direction underneath you — a fair thing to weigh against a newer platform, including ours.
       </p>
 
-      <h2 class="text-3xl font-bold text-brand-navy mb-6">Where we think MyDojo is the better fit</h2>
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Where we think BeltManager is the better fit</h2>
       <p class="text-gray-700 mb-4">
         <strong>You can evaluate it without an appointment.</strong> Sign up, add your classes, add a few students and see whether it fits your week. No demo, no card, no sales sequence.
       </p>
@@ -192,9 +192,9 @@ const schemaMarkup = {
 
   <section class="section bg-brand-navy text-white text-center">
     <div class="container-custom">
-      <h2 class="text-3xl font-bold mb-3">Try MyDojo — Free Until 31 March 2027</h2>
+      <h2 class="text-3xl font-bold mb-3">Try BeltManager — Free Until 31 March 2027</h2>
       <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">No subscription, no per-student fees, no demo call required.</p>
-      <a href="https://app.mydojo.software/signin" class="inline-block bg-brand-red text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-red-700 transition-colors">
+      <a href="https://app.beltmanager.com/signin" class="inline-block bg-brand-red text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-red-700 transition-colors">
         Get started free &rarr;
       </a>
       <p class="text-white/50 text-sm mt-3">Free until 31 March 2027 &middot; No card required</p>
@@ -203,9 +203,9 @@ const schemaMarkup = {
 
   <FAQEnhanced
     faqs={faqItems}
-    title="MyDojo vs Kicksite — Common Questions"
+    title="BeltManager vs Kicksite — Common Questions"
     site="mydojo"
-    pageUrl="https://mydojo.software/compare/kicksite/"
+    pageUrl="https://beltmanager.com/compare/kicksite/"
   />
 
   <section class="section bg-gray-50">

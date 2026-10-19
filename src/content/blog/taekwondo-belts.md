@@ -4,7 +4,7 @@ description: "Complete guide to taekwondo belt order and colors. Understand TKD 
 date: "2025-12-30"
 image: "/images/full-shot-asian-people-practicing-taekwondo.jpg"
 tags: ["Taekwondo", "Belts"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 ---
 
 ## Running Belt Grading Events at Your Taekwondo School

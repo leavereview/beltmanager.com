@@ -1,17 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
-  <!-- Belt Icon -->
-  <g>
-    <!-- Belt strap -->
-    <rect x="8" y="18" width="28" height="14" rx="2" fill="#E94560"/>
-    <!-- Belt knot -->
-    <path d="M36 22 L44 18 L44 32 L36 28 Z" fill="#E94560"/>
-    <circle cx="40" cy="25" r="3" fill="#1A1A2E"/>
-    <!-- Hanging belt ends -->
-    <path d="M38 28 Q42 35 40 42" stroke="#E94560" stroke-width="4" stroke-linecap="round" fill="none"/>
-    <path d="M42 28 Q46 35 48 42" stroke="#E94560" stroke-width="4" stroke-linecap="round" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 50" fill="none">
+  <!-- Rank-badge monogram -->
+  <g transform="translate(3,3) scale(0.6875)">
+    <polygon points="32,4 56,18 56,46 32,60 8,46 8,18" fill="#1A1A2E"/>
+    <polygon points="32,10 50,21 50,43 32,54 14,43 14,21" fill="none" stroke="#E94560" stroke-width="2"/>
+    <text x="32" y="38" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">BM</text>
   </g>
-  <!-- Text -->
-  <text x="60" y="34" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700" fill="#1A1A2E">
-    My<tspan fill="#E94560">Dojo</tspan>
+  <!-- Wordmark -->
+  <text x="64" y="32" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#1A1A2E">
+    Belt<tspan fill="#E94560">Manager</tspan>
   </text>
 </svg>

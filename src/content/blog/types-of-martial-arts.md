@@ -5,7 +5,7 @@ date: "2026-02-09"
 image: "/images/karate-player-performing-karate-stance.jpg"
 imageAlt: "Martial artist in karate gi performing traditional fighting stance, demonstrating fundamental technique used across striking martial arts"
 tags: ["Martial Arts", "Training"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 ---
 
 ## Choosing Which Martial Arts to Offer at Your School
@@ -617,7 +617,7 @@ The best martial art is the one you'll train consistently in, with quality instr
 
 Whatever style interests you, quality instruction and consistent training matter more than style selection. Visit schools, try classes, talk to students and instructors, then choose the art and school where you'll enjoy training for years to come.
 
-For schools managing students across multiple martial arts disciplines, [MyDojo Software](/martial-arts-software/) handles diverse belt systems, class types, and student progression. [Get started free](https://app.mydojo.software/signin) and focus on teaching while software handles administration.
+For schools managing students across multiple martial arts disciplines, [BeltManager](/martial-arts-software/) handles diverse belt systems, class types, and student progression. [Get started free](https://app.beltmanager.com/signin) and focus on teaching while software handles administration.
 
 ## Related Articles
 

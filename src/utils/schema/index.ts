@@ -23,6 +23,10 @@ export class SchemaGenerator {
     this.logoUrl = logoUrl;
   }
 
+  getSiteName(): string {
+    return this.siteName;
+  }
+
   /**
    * Generate organization schema (appears on all pages)
    */
@@ -307,9 +311,9 @@ export class SchemaGenerator {
 export function createSchemaGenerator(site: 'mydojo' | 'petcare' | 'driveschool' | 'tattoo'): SchemaGenerator {
   const configs = {
     mydojo: {
-      url: 'https://mydojo.software',
-      name: 'MyDojo Software',
-      logo: 'https://mydojo.software/logo.svg'
+      url: 'https://beltmanager.com',
+      name: 'BeltManager',
+      logo: 'https://beltmanager.com/logo.svg'
     },
     petcare: {
       url: 'https://petcare.software',

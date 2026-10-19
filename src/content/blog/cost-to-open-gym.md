@@ -4,7 +4,7 @@ description: "Detailed breakdown of gym startup costs including space, equipment
 image: /images/blog-dojo-interior.jpg
 date: "2026-01-30"
 tags: ["Business", "Starting a Gym"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 ---
 
 Opening a gym—whether a martial arts school, MMA facility, or fitness centre—requires significant financial investment. Understanding the true costs upfront helps you plan realistically, secure appropriate funding, and avoid financial surprises that sink new businesses.
@@ -381,9 +381,9 @@ Plan thoroughly, budget conservatively, and maintain reserves for the unexpected
 
 ## Managing Your Gym Finances
 
-Once open, tracking members, payments, and expenses becomes critical. [MyDojo.Software](/dojo-management-software/) helps you manage memberships, automate billing, and keep your martial arts business financially healthy.
+Once open, tracking members, payments, and expenses becomes critical. [BeltManager](/dojo-management-software/) helps you manage memberships, automate billing, and keep your martial arts business financially healthy.
 
-[Get started free](https://app.mydojo.software/signin) and see how proper systems make gym management easier.
+[Get started free](https://app.beltmanager.com/signin) and see how proper systems make gym management easier.
 
 ## Related Articles
 

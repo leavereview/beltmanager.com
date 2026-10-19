@@ -4,7 +4,7 @@ description: "Thinking about starting karate as an adult? This guide covers what
 image: /images/blog-instructor.jpg
 date: "2026-01-23"
 tags: ["Karate", "Training"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 ---
 
 Thinking about starting karate as an adult? You're not alone. More adults than ever are taking up martial arts, whether for fitness, self-defense, stress relief, or simply because it's something they've always wanted to try.

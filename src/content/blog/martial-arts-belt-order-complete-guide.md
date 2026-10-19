@@ -4,7 +4,7 @@ description: "Martial arts belt orders compared: karate (10-colour kyu/dan), BJJ
 date: "2026-01-16"
 image: "/images/close-up-female-karate-fighter.jpg"
 tags: ["Belts", "Martial Arts"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 ---
 
 ## Multi-Style Belt Tracking for Martial Arts Schools
@@ -20,7 +20,7 @@ The colored belt system that defines martial arts belt order today originated in
 
 The belt system serves multiple purposes beyond simple hierarchy. It provides students with clear, achievable goals, helps instructors organize classes by skill level, and creates a visual representation of progress that motivates continued training. For school owners, a well-structured belt system becomes an essential tool for student retention and program development.
 
-Modern [martial arts software](https://mydojo.software/martial-arts-software/) solutions have revolutionized how schools track student progress through these ranking systems, making it easier than ever to maintain accurate records and ensure consistent promotion standards.
+Modern [martial arts software](https://beltmanager.com/martial-arts-software/) solutions have revolutionized how schools track student progress through these ranking systems, making it easier than ever to maintain accurate records and ensure consistent promotion standards.
 ## Karate Belt Order: The Foundation System
 
 Karate's belt order remains the most widely recognized martial arts ranking system globally. The standard progression typically follows this sequence:
@@ -38,7 +38,7 @@ Karate's belt order remains the most widely recognized martial arts ranking syst
 
 However, this system varies significantly between karate styles. Shotokan karate might use only white, yellow, green, brown, and black belts, while Kyokushin includes orange and blue. Some schools add stripe systems within each belt level to mark incremental progress.
 
-The time between promotions typically ranges from 3-6 months for early ranks, extending to 1-2 years between brown belt levels, and 3-5 years between black belt degrees. These timelines help instructors using [karate school software](https://mydojo.software/karate-school-software/) plan promotion cycles and track student development accurately.
+The time between promotions typically ranges from 3-6 months for early ranks, extending to 1-2 years between brown belt levels, and 3-5 years between black belt degrees. These timelines help instructors using [karate school software](https://beltmanager.com/karate-school-software/) plan promotion cycles and track student development accurately.
 ## Taekwondo Ranking Systems
 
 Taekwondo presents one of the most colorful belt progressions in martial arts, though it varies between World Taekwondo (WT) and International Taekwon-Do Federation (ITF) systems.
@@ -64,7 +64,7 @@ Taekwondo presents one of the most colorful belt progressions in martial arts, t
 - Red
 - Black
 
-The Poom system in WT Taekwondo creates an additional complexity, where practitioners under 15 receive Poom ranks (indicated by red-black belts) rather than full Dan ranks. This system requires careful tracking, making [dojo management software](https://mydojo.software/dojo-management-software/) essential for schools managing large youth programs.
+The Poom system in WT Taekwondo creates an additional complexity, where practitioners under 15 receive Poom ranks (indicated by red-black belts) rather than full Dan ranks. This system requires careful tracking, making [dojo management software](https://beltmanager.com/dojo-management-software/) essential for schools managing large youth programs.
 ## Brazilian Jiu-Jitsu Belt Progression
 
 Brazilian Jiu-Jitsu follows perhaps the most stringent belt progression in modern martial arts, with only five belt colors for adults:
@@ -102,7 +102,7 @@ As the originator of modern belt systems, judo maintains a relatively simple pro
 Judo's promotion system emphasizes competition results, technical knowledge, and teaching ability, particularly at higher dan grades. The International Judo Federation sets global standards, though national federations may modify requirements for local programs.
 ## Mixed Martial Arts and Modern Systems
 
-[MMA gym software](https://mydojo.software/mma-gym-software/) users often face unique challenges since mixed martial arts doesn't follow a traditional belt system. Many MMA schools adapt existing systems or create hybrid approaches:
+[MMA gym software](https://beltmanager.com/mma-gym-software/) users often face unique challenges since mixed martial arts doesn't follow a traditional belt system. Many MMA schools adapt existing systems or create hybrid approaches:
 
 Some schools use a simplified system:
 - White (Beginner)
@@ -122,9 +122,9 @@ Key elements of successful belt system management include:
 
 **Regular Testing Schedules**: Establish predictable promotion cycles that give students goals to work toward while maintaining program momentum.
 
-**Progress Tracking**: Use [martial arts CRM](https://mydojo.software/martial-arts-crm/) systems to monitor individual student development, identify those ready for promotion, and flag students who might need additional support.
+**Progress Tracking**: Use [martial arts CRM](https://beltmanager.com/martial-arts-crm/) systems to monitor individual student development, identify those ready for promotion, and flag students who might need additional support.
 
-**Financial Integration**: Connect belt promotions with your billing system to manage testing fees and new belt costs efficiently through [martial arts billing software](https://mydojo.software/martial-arts-billing-software/).
+**Financial Integration**: Connect belt promotions with your billing system to manage testing fees and new belt costs efficiently through [martial arts billing software](https://beltmanager.com/martial-arts-billing-software/).
 ## Adapting Traditional Systems for Modern Schools
 
 Many successful martial arts schools modify traditional belt orders to better serve their student base and community. Common adaptations include:
@@ -170,7 +170,7 @@ Understanding martial arts belt order systems is essential for any school owner 
 
 The key lies not in perfectly following any single traditional system, but in creating consistent, motivating progression pathways that serve your students and community. Modern technology makes managing these systems easier than ever, allowing you to focus on what matters most—developing skilled, confident martial artists.
 
-Ready to streamline your belt ranking system? MyDojo's comprehensive management platform helps martial arts schools track student progress, manage promotions, and maintain consistent standards across all programs, making your ranking system work as hard as your students do.
+Ready to streamline your belt ranking system? BeltManager's comprehensive management platform helps martial arts schools track student progress, manage promotions, and maintain consistent standards across all programs, making your ranking system work as hard as your students do.
 
 ## Related Articles
 
