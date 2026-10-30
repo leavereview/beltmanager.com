@@ -21,7 +21,7 @@ npm run preview
 ## 📁 Project Structure
 
 ```
-mydojo-static/
+beltmanager.com/
 ├── public/
 │   ├── images/         # Static images
 │   ├── logo.svg        # Site logo
