@@ -13,11 +13,12 @@ From the parent `Front-end-sites` repo:
 This does a clean build (which runs `verify-seo.js`), shows an rsync `--delete` dry-run, deploys to
 `lightsail:/var/www/beltmanager.com/`, then checks the live sitemap URL count matches the build.
 
-## GitHub Actions
+## GitHub Actions (disabled)
 
-`.github/workflows/deploy.yml` also builds and rsyncs `dist/` to `/var/www/beltmanager.com/` on push to
-`main`, every Monday 09:00 UTC, and on manual dispatch. It needs the repo secrets `DEPLOY_KEY` and
-`SERVER_IP`.
+`.github/workflows/deploy.yml` is disabled (30 Oct 2026). It cannot build on a GitHub-hosted runner
+because `astro.config.mjs` imports `../scripts/sitemap-lastmod.mjs` from the parent
+`multi-site-documentation` checkout, and public site repos deliberately get no agentbox runner (they
+hold the production `DEPLOY_KEY`). Use `./deploy.sh` above.
 
 ## Local development
 
