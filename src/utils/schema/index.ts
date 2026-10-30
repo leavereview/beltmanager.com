@@ -308,9 +308,9 @@ export class SchemaGenerator {
 /**
  * Factory function to create schema generator for each site
  */
-export function createSchemaGenerator(site: 'mydojo' | 'petcare' | 'driveschool' | 'tattoo'): SchemaGenerator {
+export function createSchemaGenerator(site: 'beltmanager' | 'petcare' | 'driveschool' | 'tattoo'): SchemaGenerator {
   const configs = {
-    mydojo: {
+    beltmanager: {
       url: 'https://beltmanager.com',
       name: 'BeltManager',
       logo: 'https://beltmanager.com/logo.svg'

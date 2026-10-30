@@ -1,6 +1,6 @@
-# MyDojo Static Website
+# BeltManager Static Website
 
-A fast, SEO-optimized static website built with Astro for MyDojo.Software - the martial arts management platform.
+A fast, SEO-optimized static website built with Astro for BeltManager - the martial arts management platform.
 
 ## 🚀 Quick Start
 
@@ -79,7 +79,7 @@ description: "Meta description"
 date: "2025-01-15"
 image: "/images/your-image.jpg"
 tags: ["karate", "belts"]
-author: "MyDojo Team"
+author: "BeltManager Team"
 ---
 
 Your markdown content here...
@@ -153,4 +153,4 @@ Edit `src/components/Navigation.astro` to update menu items.
 
 ## 📄 License
 
-Proprietary - MyDojo Software
+Proprietary - BeltManager
