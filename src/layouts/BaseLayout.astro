@@ -200,6 +200,28 @@ const schemaOrg = {
       }
     })();
   </script>
+
+  <!-- Metricool web analytics - loads only after cookie consent (same gate as Google Analytics) -->
+  <script is:inline>
+    (function() {
+      function loadMetricool() {
+        if (window.__metricoolLoaded) return;
+        window.__metricoolLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://tracker.metricool.com/resources/be.js';
+        s.onload = function() { window.beTracker && window.beTracker.t({ hash: 'bad60609aad426d8cfaa570d721c3444' }); };
+        document.head.appendChild(s);
+      }
+      try {
+        var consent = localStorage.getItem('cookieConsent');
+        if (consent && JSON.parse(consent).accepted === true) loadMetricool();
+      } catch (error) {
+        console.error('Error loading analytics:', error);
+      }
+      window.addEventListener('cookieConsentAccepted', loadMetricool);
+    })();
+  </script>
 </head>
 <body class="min-h-screen flex flex-col">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-red focus:text-white focus:rounded-lg focus:shadow-lg">
