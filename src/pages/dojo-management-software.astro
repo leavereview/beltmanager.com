@@ -3,108 +3,8 @@ import AppScreenshot from '../components/AppScreenshot.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
 import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
-import StatisticsSection from '../components/seo/StatisticsSection.astro';
 import ComparisonTable from '../components/seo/ComparisonTable.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is dojo management software?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dojo management software is a specialized platform for traditional martial arts schools. It handles student databases, kyu/dan rank tracking, grading ceremonies, class scheduling, and billing while using terminology and workflows appropriate to the dojo environment rather than generic gym language. Software tracks progression through belt systems, manages testing eligibility, maintains curriculum records, and supports family account relationships common in traditional training environments."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is dojo software different from gym software?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dojo software is purpose-built for martial arts operations. It includes belt rank progression tracking, testing eligibility automation, curriculum management, and grading ceremony coordination—features absent from generic gym platforms. It also uses appropriate terminology (students vs members, dojo vs facility, sensei vs trainer, gi vs uniform) and understands cultural protocols like hierarchical student-teacher relationships, ceremonial aspects of testing, and multi-year developmental timelines."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can dojo software track multiple martial arts?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, quality dojo software supports multiple disciplines with separate rank tracks. A school teaching both Karate and Judo can maintain independent belt progressions, testing schedules, and curriculum requirements for each art while sharing student accounts and billing. You can configure different kyu/dan systems, belt colors, and testing criteria per discipline. Students training in multiple arts see all their progressions in one unified profile."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does testing management work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Testing management includes automatic eligibility determination based on attendance and time-in-rank, test scheduling with capacity limits, student registration and fee collection, grading panel assignment and permissions, results recording with pass/fail/defer outcomes, certificate generation with proper formatting, and automatic rank updates upon passing. The system sends eligibility notifications to qualified students, tracks who's registered, and maintains complete testing history for each student."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What should dojo software cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dojo management software typically costs £50-200 per month depending on student count and features. Smaller dojos (under 100 students) often find suitable options at £50-80 monthly. Mid-size schools (100-250 students) pay £80-120. Larger schools with advanced features or multiple locations may pay £120-200. Per-student pricing models charge £1-3 per active student. BeltManager is free until 31 March 2027 — no subscription and no per-student fees."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I import my existing student records?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most dojo software accepts data imports from spreadsheets or other platforms. You can typically import student contact information, current rank and belt history, membership details, attendance records, and family relationships. Data migration involves exporting from your current system, mapping fields to the new system, importing data, and verifying accuracy. Allow 1-2 weeks for data migration and verification. Support teams usually assist with imports."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does family billing work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Family accounts link related students under shared billing. The system automatically applies sibling discounts (e.g., 10% off second child, 15% off third+), consolidates invoices into a single monthly charge, and allows parents to manage payments for multiple children from one dashboard while maintaining individual progress tracking for each student. Parents see an itemized breakdown showing each child's fees and applied discounts."
-      }
-    }
-  ]
-};
-
-const dojoStats = [
-  {
-    label: 'UK Traditional Dojos',
-    value: '4,500+',
-    context: 'Traditional martial arts schools and dojos'
-  },
-  {
-    label: 'Multi-Generation Families',
-    value: '42%',
-    context: 'Dojos serving parents and children simultaneously'
-  },
-  {
-    label: 'Admin Time Saved',
-    value: '15+ hrs',
-    change: { value: 70, direction: 'up' as const, period: 'weekly' },
-    context: 'With automated belt tracking and billing'
-  },
-  {
-    label: 'Student Retention',
-    value: '85%',
-    change: { value: 20, direction: 'up' as const, period: 'vs manual' },
-    context: 'With engagement tracking and family accounts'
-  },
-  {
-    label: 'Belt Testing Accuracy',
-    value: '98%',
-    change: { value: 28, direction: 'up' as const, period: 'vs manual' },
-    context: 'Automated eligibility tracking'
-  },
-  {
-    label: 'Revenue per Family',
-    value: '1.8x',
-    context: 'Families with automated sibling discounts'
-  }
-];
 
 const comparisonData = [
   {
@@ -113,49 +13,49 @@ const comparisonData = [
     highlight: true
   },
   {
-    label: 'Curriculum Management',
-    values: [true, false, false],
+    label: 'Techniques and Kata per Belt',
+    values: [true, 'Varies', false],
     highlight: true
   },
   {
-    label: 'Family Account Linking',
+    label: 'Family Accounts with Guardians',
     values: [true, true, false],
     highlight: true
   },
   {
-    label: 'Testing & Grading Automation',
-    values: [true, false, false]
+    label: 'Grading Eligibility (time at grade + sessions)',
+    values: [true, 'Varies', false]
   },
   {
     label: 'Traditional Terminology Support',
     values: [true, false, false]
   },
   {
-    label: 'Sibling Discount Automation',
-    values: [true, true, false]
+    label: 'Printable Rank Certificates',
+    values: [true, 'Varies', false]
   },
   {
-    label: 'Rank Certificate Generation',
-    values: [true, false, false]
+    label: 'Promotion Notice to Families (email & app push)',
+    values: [true, 'Varies', false]
   },
   {
-    label: 'Attendance & Time-in-Rank',
-    values: [true, true, false]
+    label: 'Parent Portal and Free Parent App',
+    values: [true, 'Often a paid add-on', false]
   },
   {
-    label: 'Parent Portal Access',
-    values: [true, true, false]
+    label: 'Sibling Discounts on One Family Invoice',
+    values: ['Coming April 2027', 'Varies', 'Manual']
   },
   {
     label: 'Monthly Price',
-    values: ['Free', '£95', '£0']
+    values: ['Free until 31 March 2027', 'Varies', '£0']
   }
 ];
 
 const faqItems = [
   {
     question: "What is dojo management software?",
-    answer: "Dojo management software is a specialized platform for traditional martial arts schools. It handles student databases, kyu/dan rank tracking, grading ceremonies, class scheduling, and billing while using terminology and workflows appropriate to the dojo environment rather than generic gym language. Software tracks progression through belt systems, manages testing eligibility, maintains curriculum records, and supports family account relationships common in traditional training environments.",
+    answer: "Dojo management software is a platform built for traditional martial arts schools. It keeps student and family records, tracks kyu/dan grades and grading eligibility, runs gradings and the class timetable, and uses dojo terms rather than generic gym language. BeltManager does all of this, with membership billing to follow: automatic card billing is coming in April 2027.",
     links: [
       { text: 'View all features', url: '/martial-arts-software/' },
       { text: 'See pricing', url: '/pricing/' }
@@ -163,23 +63,23 @@ const faqItems = [
   },
   {
     question: "How is dojo software different from gym software?",
-    answer: "Dojo software is purpose-built for martial arts operations. It includes belt rank progression tracking, testing eligibility automation, curriculum management, and grading ceremony coordination—features absent from generic gym platforms. It also uses appropriate terminology (students vs members, dojo vs facility, sensei vs trainer, gi vs uniform) and understands cultural protocols like hierarchical student-teacher relationships, ceremonial aspects of testing, and multi-year developmental timelines.",
+    answer: "Dojo software is built around belts and gradings. It tracks each student's grade, the techniques and kata they need for the next one, and whether they've trained long enough to grade. Generic gym platforms don't do this. It also uses the right words: students rather than members, gradings rather than assessments.",
     links: [
       { text: 'Dojo vs gym software', url: '/martial-arts-software/' },
       { text: 'Karate-specific features', url: '/karate-school-software/' }
     ]
   },
   {
-    question: "Can dojo software track multiple martial arts?",
-    answer: "Yes, quality dojo software supports multiple disciplines with separate rank tracks. A school teaching both Karate and Judo can maintain independent belt progressions, testing schedules, and curriculum requirements for each art while sharing student accounts and billing. You can configure different kyu/dan systems, belt colors, and testing criteria per discipline. Students training in multiple arts see all their progressions in one unified profile.",
+    question: "Can BeltManager track more than one martial art?",
+    answer: "Yes. Each style has its own belt system, colours and grading criteria, while students and families sit in one database. A student who trains in two styles has a belt in each.",
     links: [
       { text: 'Multi-discipline tracking', url: '/martial-arts-software/' },
       { text: 'MMA features', url: '/mma-gym-software/' }
     ]
   },
   {
-    question: "How does testing management work?",
-    answer: "Testing management includes automatic eligibility determination based on attendance and time-in-rank, test scheduling with capacity limits, student registration and fee collection, grading panel assignment and permissions, results recording with pass/fail/defer outcomes, certificate generation with proper formatting, and automatic rank updates upon passing. The system sends eligibility notifications to qualified students, tracks who's registered, and maintains complete testing history for each student.",
+    question: "How do gradings work?",
+    answer: "Set how long a student must spend at a grade and how many sessions they need. BeltManager shows who is ready, almost ready or not yet ready. Create a grading session, record a pass or not-passed for each student, and their grade updates. Print a rank certificate for each promotion, and the family gets a promotion notice by email and app push.",
     links: [
       { text: 'Testing features', url: '/martial-arts-software/' },
       { text: 'Karate belt guide', url: '/blog/karate-belts/' }
@@ -187,7 +87,7 @@ const faqItems = [
   },
   {
     question: "What should dojo software cost?",
-    answer: "Dojo management software typically costs £50-200 per month depending on student count and features. Smaller dojos (under 100 students) often find suitable options at £50-80 monthly. Mid-size schools (100-250 students) pay £80-120. Larger schools with advanced features or multiple locations may pay £120-200. Per-student pricing models charge £1-3 per active student. BeltManager is free until 31 March 2027 — no subscription and no per-student fees.",
+    answer: "When we checked competitors' published pricing in November 2026, the main martial arts platforms ranged from about $49 to $350 a month, depending on student numbers and features. BeltManager is free until 31 March 2027, with no subscription and no per-student fees.",
     links: [
       { text: 'View pricing', url: '/pricing/' },
       { text: 'Feature comparison', url: '/martial-arts-software/' }
@@ -195,49 +95,61 @@ const faqItems = [
   },
   {
     question: "Can I import my existing student records?",
-    answer: "Most dojo software accepts data imports from spreadsheets or other platforms. You can typically import student contact information, current rank and belt history, membership details, attendance records, and family relationships. Data migration involves exporting from your current system (or compiling spreadsheets), mapping fields to new system, importing data, and verifying accuracy. Allow 1-2 weeks for data migration and verification. Support teams usually assist with imports.",
+    answer: "Yes. Import students from a spreadsheet (CSV), up to 1,000 rows at a time, with their guardians, groups and current belts. You check every row before anything is saved, and you can undo an import within 24 hours.",
     links: [
       { text: 'Implementation guide', url: '/martial-arts-software/' },
       { text: 'Contact support', url: '/contact/' }
     ]
   },
   {
-    question: "Do students get their own login?",
-    answer: "Yes, student portals provide individual access for viewing schedules, tracking rank progress toward next belt, managing payments, and communicating with instructors. Parents receive portal access for youth student accounts (under 16), allowing them to monitor progress, handle administrative tasks, view attendance, and see which techniques their children are learning. Adult students get direct access. Portals are mobile-friendly for on-the-go access.",
+    question: "Do families get their own login?",
+    answer: "Yes. Parents get a web portal and a free app for iPhone and Android. They see each child's belt, techniques and upcoming classes, answer RSVPs, sign waivers, and get reminders and notices.",
     links: [
       { text: 'Student portal features', url: '/martial-arts-software/' }
     ]
   },
   {
-    question: "How does family billing work?",
-    answer: "Family accounts link related students under shared billing. The system automatically applies sibling discounts (e.g., 10% off second child, 15% off third+), consolidates invoices into single monthly charge, and allows parents to manage payments for multiple children from one dashboard while maintaining individual progress tracking for each student. You configure discount percentages and family membership pricing. Parents see itemized breakdown showing each child's fees and applied discounts.",
+    question: "How will family billing work?",
+    answer: "From April 2027, when automatic card billing switches on, each household gets one invoice for all its children, with a sibling discount percentage you set. Until then, you can set up memberships and record payments by hand.",
     links: [
       { text: 'Family features', url: '/martial-arts-software/' },
       { text: 'Billing options', url: '/martial-arts-billing-software/' }
     ]
   },
   {
-    question: "Can dojo software handle organization requirements?",
-    answer: "Yes, professional dojo software tracks organization and federation affiliations (JKA, SKA, WKF, IOGKF, etc.) with federation-specific rank requirements, minimum time-in-rank standards, and dan grade restrictions. You can configure different testing criteria based on organization rules, track federation membership and dues, generate reports for organization audits, and maintain proper rank certificates with organization logos and signatures. This ensures compliance with governing body standards.",
+    question: "Does BeltManager connect to my association or federation?",
+    answer: "No. BeltManager doesn't connect to governing bodies or track federation licences. You can set up your association's grade structure and grading criteria yourself.",
     links: [
-      { text: 'Organization features', url: '/martial-arts-software/' },
-      { text: 'Karate federations', url: '/karate-school-software/' }
+      { text: 'Karate features', url: '/karate-school-software/' }
     ]
   },
   {
-    question: "What implementation timeline should I expect?",
-    answer: "Most dojos complete implementation in 4-6 weeks. Week 1-2: Data collection (audit student records, document rank structure, map current operations). Week 3-4: System configuration (set up belt colors, curriculum checklists, testing criteria, pricing, import student data). Week 5: Staff training and parallel operation with existing systems. Week 6+: Full deployment with student onboarding. Smaller dojos (under 75 students) often launch in 3-4 weeks. Complex multi-location or multi-discipline schools may need 8 weeks.",
+    question: "How long does it take to get started?",
+    answer: "Sign-up is self-serve. Set up your grades and classes, import your students from a spreadsheet, and invite families to the parent app. How long the full switch takes depends on your dojo.",
     links: [
       { text: 'Implementation guide', url: '/martial-arts-software/' },
       { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
     ]
   }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.slice(0, 8).map((item) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
 ---
 
 <BaseLayout
   title="Dojo Management Software (2026)"
-  description="Run your dojo without the admin chaos. Kyu/dan tracking, curriculum and family accounts, automated billing. Free until 31 March 2027."
+  description="Run your dojo without the admin chaos. Kyu/dan tracking, gradings and certificates, curriculum and family accounts. Free until 31 March 2027."
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <!-- Breadcrumbs -->
@@ -256,7 +168,7 @@ const faqItems = [
         <span class="inline-block px-4 py-2 mb-4 text-sm font-semibold text-brand-red bg-brand-red-light rounded-full">Complete Guide</span>
         <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Dojo Management Software</h1>
         <p class="text-xl text-gray-600">
-          Complete management software for traditional martial arts schools. Handle scheduling, belt tracking, billing, and student management while respecting dojo culture and terminology.
+          Management software for traditional martial arts schools. Handle your timetable, grades, gradings and families while respecting dojo culture and terminology.
         </p>
       </div>
     </div>
@@ -264,16 +176,8 @@ const faqItems = [
 
   <!-- Featured Answer -->
   <FeaturedAnswer question="What is dojo management software?">
-    Dojo management software is a specialized platform for traditional martial arts schools. It handles student databases, kyu/dan rank tracking, grading ceremonies, class scheduling, and billing while using terminology and workflows appropriate to the dojo environment rather than generic gym language. Software tracks progression through belt systems, manages testing eligibility, maintains curriculum records, and supports family account relationships.
+    Dojo management software is a specialized platform for traditional martial arts schools. It handles student records, kyu/dan rank tracking, gradings, class scheduling and family accounts, using dojo terminology rather than generic gym language. It tracks progression through belt systems, shows who is eligible to grade, and keeps curriculum records.
   </FeaturedAnswer>
-
-  <!-- Statistics Section -->
-  <StatisticsSection
-    site="beltmanager"
-    pageUrl="https://beltmanager.com/dojo-management-software/"
-    title="Traditional Dojo Industry Statistics"
-    stats={dojoStats}
-  />
 
   <!-- Main Content -->
   <section class="section bg-white">
@@ -361,35 +265,34 @@ const faqItems = [
 
         <h3>2. Grading and Testing Management</h3>
         <ul>
-          <li>Testing event scheduling with capacity management</li>
-          <li>Automatic eligibility notifications to qualified students</li>
-          <li>Pre-registration and fee collection</li>
-          <li>Grading panel assignment and management</li>
-          <li>Results recording with pass/fail/defer outcomes</li>
-          <li>Certificate generation with proper formatting</li>
-          <li>Post-grading rank updates and progression triggers</li>
+          <li>Grading sessions with each student's current and target grade</li>
+          <li>Readiness shown for every student: ready, almost, or not yet</li>
+          <li>One-tap pass or not-passed results</li>
+          <li>Printable rank certificates for each promotion</li>
+          <li>Promotion notice to the family by email and app push</li>
+          <li>Grades update automatically after a pass</li>
         </ul>
 
         <h3>3. Student and Family Management</h3>
         <ul>
           <li>Family accounts linking related students</li>
-          <li>Sibling discount automation</li>
-          <li>Parent portal access for youth student accounts</li>
+          <li>Guardians linked to each child</li>
+          <li>Parent portal and free parent app</li>
           <li>Emergency contact and medical information</li>
-          <li>Rank and attendance visibility across family members</li>
-          <li>Consolidated billing for family groups</li>
+          <li>Import students and guardians from a spreadsheet</li>
+          <li>Coming April 2027: one family invoice with sibling discounts</li>
         </ul>
 
-        <AppScreenshot src="/images/app/dojo-family-account.webp" width={1600} height={1200} caption="A family account: siblings in one household, a 10% sibling discount applied to every invoice, and the family's guardians and subscription" />
+        <AppScreenshot src="/images/app/dojo-family-account.webp" width={1600} height={1200} caption="A family account: siblings in one household with the family's guardians. The sibling discount and subscription take effect when card billing switches on in April 2027" />
 
         <h3>4. Class and Schedule Management</h3>
         <ul>
-          <li>Recurring class templates (beginner, intermediate, advanced, black belt)</li>
-          <li>Age-appropriate class scheduling (children, teens, adults)</li>
-          <li>Private lesson booking with instructor preferences</li>
-          <li>Seminar and workshop scheduling</li>
-          <li>Holiday and closure management</li>
-          <li>Training hall/mat space allocation for multi-room dojos</li>
+          <li>Recurring classes (beginner, intermediate, advanced, black belt)</li>
+          <li>Minimum/maximum belt and age range on each group (warns, doesn't block)</li>
+          <li>Seminar, tournament and social events</li>
+          <li>Term dates, holidays and closures, with automatic notices to families</li>
+          <li>Venues and rooms for multi-room dojos</li>
+          <li>Tablet kiosk check-in, locked with a PIN</li>
         </ul>
 
         <h2>Related Resources</h2>
@@ -398,7 +301,7 @@ const faqItems = [
           <li><a href="/martial-arts-software/">Martial Arts Software</a> — Complete platform overview</li>
           <li><a href="/karate-school-software/">Karate School Software</a> — Karate-specific features</li>
           <li><a href="/blog/karate-belts/">Understanding Karate Belts</a> — Belt system fundamentals</li>
-          <li><a href="/martial-arts-billing-software/">Billing Software</a> — Payment processing details</li>
+          <li><a href="/martial-arts-billing-software/">Billing Software</a> — Memberships today, card billing from April 2027</li>
           <li><a href="/blog/best-martial-arts-software/">Software Comparison</a> — Detailed reviews</li>
         </ul>
 
@@ -420,7 +323,7 @@ const faqItems = [
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4">Ready to Honor Tradition While Embracing Efficiency?</h2>
         <p class="text-xl mb-8 opacity-95">
-          See how BeltManager respects dojo culture while streamlining operations with belt tracking, family management, and automated testing workflows.
+          See how BeltManager respects dojo culture while handling the admin: grades, gradings and certificates, families, and your timetable.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://app.beltmanager.com/signin" class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>

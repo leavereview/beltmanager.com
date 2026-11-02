@@ -381,7 +381,7 @@ Plan thoroughly, budget conservatively, and maintain reserves for the unexpected
 
 ## Managing Your Gym Finances
 
-Once open, tracking members, payments, and expenses becomes critical. [BeltManager](/dojo-management-software/) helps you manage memberships, automate billing, and keep your martial arts business financially healthy.
+Once open, tracking members, payments, and expenses becomes critical. [BeltManager](/dojo-management-software/) helps you manage students, memberships and attendance, and export an accountant-ready revenue CSV. Automatic card billing is coming in April 2027.
 
 [Get started free](https://app.beltmanager.com/signin) and see how proper systems make gym management easier.
 

@@ -2,106 +2,59 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
 import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
-import StatisticsSection from '../components/seo/StatisticsSection.astro';
 import ComparisonTable from '../components/seo/ComparisonTable.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
-const schedulingStats = [
-  {
-    label: 'Admin Time Saved Weekly',
-    value: '12+ hrs',
-    change: { value: 65, direction: 'up' as const, period: 'vs manual' },
-    context: 'With automated scheduling and reminders'
-  },
-  {
-    label: 'No-Show Reduction',
-    value: '58%',
-    change: { value: 58, direction: 'up' as const, period: 'with reminders' },
-    context: 'Using SMS and email automated reminders'
-  },
-  {
-    label: 'Phone Call Reduction',
-    value: '70%',
-    change: { value: 70, direction: 'up' as const, period: 'with self-service' },
-    context: 'Students book and manage their own schedules'
-  },
-  {
-    label: 'Class Utilization Rate',
-    value: '89%',
-    change: { value: 24, direction: 'up' as const, period: 'with optimization' },
-    context: 'Automated capacity management fills classes efficiently'
-  },
-  {
-    label: 'Average Classes per Week',
-    value: '45+',
-    context: 'Typical martial arts school schedule complexity'
-  },
-  {
-    label: 'Scheduling Conflicts Eliminated',
-    value: '95%',
-    context: 'Real-time availability prevents double-bookings'
-  }
-];
-
 const comparisonData = [
   {
-    label: 'Automated Class Reminders',
-    values: [true, true, false],
+    label: 'Automatic class reminders (email and app push)',
+    values: [true, 'Varies', false],
     highlight: true
   },
   {
-    label: 'Student Self-Service Booking',
+    label: 'Pre-class RSVP with one-tap answers',
+    values: [true, 'Varies', false],
+    highlight: true
+  },
+  {
+    label: 'Minimum/maximum belt and age on a group (warns)',
     values: [true, false, false],
     highlight: true
   },
   {
-    label: 'Real-Time Capacity Management',
-    values: [true, false, false],
-    highlight: true
-  },
-  {
-    label: 'Belt/Skill-Based Class Restrictions',
-    values: [true, false, false],
-    highlight: true
-  },
-  {
-    label: 'Recurring Schedule Templates',
-    values: [true, true, false]
-  },
-  {
-    label: 'Multi-Instructor Coordination',
+    label: 'Recurring weekly timetable',
     values: [true, true, 'Manual']
   },
   {
-    label: 'Waitlist Management',
-    values: [true, false, false]
+    label: 'Term dates, closures and cancellation notices to families',
+    values: [true, 'Varies', 'Manual']
   },
   {
-    label: 'Family Member Coordination',
-    values: [true, false, false]
+    label: 'Instructor-to-student ratio warnings',
+    values: [true, false, 'Manual']
   },
   {
-    label: 'Private Lesson Scheduling',
-    values: [true, 'Limited', 'Paper calendar']
+    label: 'Family accounts with guardians',
+    values: [true, 'Varies', false]
   },
   {
-    label: 'No-Show Tracking & Analytics',
-    values: [true, false, false]
+    label: 'Attendance report with CSV export',
+    values: [true, 'Varies', 'Manual']
   }
 ];
 
 const faqItems = [
   {
     question: "What is martial arts scheduling software?",
-    answer: "Martial arts scheduling software is a specialized booking system designed for dojos and martial arts schools. Unlike generic scheduling tools, it understands belt ranks, skill prerequisites, multi-instructor classes, family bookings, and the unique complexities of martial arts programs. It automates class reminders, manages capacity by skill level, enables student self-service booking, and tracks attendance patterns to reduce no-shows and optimize class sizes.",
+    answer: "Martial arts scheduling software runs your class timetable around the way a martial arts school works: classes grouped by age and belt, families with more than one child training, gradings, and term dates. In BeltManager you set up your recurring classes once, families get reminders and answer an RSVP before class, and your register and attendance report come from the same timetable.",
     links: [
       { text: 'View all features', url: '/martial-arts-software/' },
       { text: 'See pricing', url: '/pricing/' }
     ]
   },
   {
-    question: "How does automated scheduling reduce no-shows?",
-    answer: "Automated reminders via SMS and email 24-48 hours before class dramatically reduce no-shows. Students can confirm attendance or cancel with one click, allowing waitlisted students to fill the spot automatically. The system tracks no-show patterns and can flag chronic offenders for instructor follow-up, improving overall attendance accountability.",
+    question: "How do class reminders work?",
+    answer: "On the day of a class, BeltManager emails families (and sends a push notification to the free parent app) about three hours before it starts. You can also switch on an RSVP request for a class: families are asked between 1 and 14 days ahead whether their child is coming, and answer with one tap. If they can't make it, they give a reason, so you know who to expect tonight.",
     links: [
       { text: 'CRM features', url: '/martial-arts-crm/' },
       { text: 'Contact us', url: '/contact/' }
@@ -109,66 +62,58 @@ const faqItems = [
   },
   {
     question: "Can students book their own classes?",
-    answer: "Yes. BeltManager provides a student portal and mobile app where members can view their schedule, book available classes, join waitlists, and manage their bookings. The system automatically enforces belt-level restrictions, class capacity limits, and membership tier access. This self-service reduces admin phone calls by 70% while giving students the flexibility they expect.",
+    answer: "Not yet. You add students to the classes (groups) they train in, and families then RSVP to those classes from the parent app or portal. There's no open booking calendar or waitlist today.",
     links: [
       { text: 'Dojo management', url: '/dojo-management-software/' },
       { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
     ]
   },
   {
-    question: "How does skill-based scheduling work?",
-    answer: "You can set belt rank or skill requirements for each class. When students try to book, the system checks their current rank and only shows classes they're eligible to attend. This prevents white belts from accidentally booking advanced classes and ensures proper skill segregation. Instructors can also manually override restrictions for special cases.",
+    question: "Can I restrict a class by belt?",
+    answer: "Yes. You can set a minimum and maximum belt (and an age range) on a group. If you add a student outside that range, BeltManager warns you. It doesn't block you, so you can still let a student try the next level up.",
     links: [
       { text: 'Karate school features', url: '/karate-school-software/' },
       { text: 'BJJ features', url: '/bjj-gym-software/' }
     ]
   },
   {
-    question: "Can I manage multiple instructors' schedules?",
-    answer: "Absolutely. Each instructor has their own calendar, availability settings, and class assignments. The system prevents double-booking instructors across locations or time slots. You can assign primary and assistant instructors to classes, track their teaching hours, and manage substitute instructor workflows when someone is unavailable.",
+    question: "Can I manage more than one instructor?",
+    answer: "Yes. You can invite staff with their own sign-in as head instructor, assistant or front desk, and name the instructor on each class. BeltManager also checks your instructor-to-student ratio against your insurer's rules. It doesn't keep separate instructor calendars, cover rotas or teaching-hour totals.",
     links: [
       { text: 'Overview', url: '/martial-arts-software/' },
       { text: 'See pricing', url: '/pricing/' }
     ]
   },
   {
-    question: "How do recurring schedules work?",
-    answer: "Create schedule templates that repeat weekly, bi-weekly, or monthly. For example, set \"Kids Karate\" to run Monday/Wednesday/Friday at 4pm with a specific instructor and capacity. The system automatically generates these classes for your chosen timeframe and allows exceptions for holidays or special events without disrupting the overall pattern.",
+    question: "How do recurring classes work?",
+    answer: "Set the days of the week and the time for each class, for example \"Kids Karate, Monday and Wednesday at 4pm\", and BeltManager creates the sessions for you. Add term dates and closed periods (bank holidays, summer break) and families are told automatically when a class is cancelled, moved or closed.",
     links: [
       { text: 'Karate features', url: '/karate-school-software/' },
       { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
     ]
   },
   {
-    question: "What happens when a class fills up?",
-    answer: "Students are automatically placed on a waitlist and notified when spots open. If a booked student cancels, the first person on the waitlist receives an immediate notification with a booking link. This automation fills last-minute cancellations and maximizes class attendance without staff intervention.",
+    question: "Can I schedule private lessons?",
+    answer: "Not at the moment. BeltManager is built around group classes. You can add a one-off event, but there are no bookable private-lesson slots or lesson packages.",
     links: [
-      { text: 'Dojo management', url: '/dojo-management-software/' },
+      { text: 'Overview', url: '/martial-arts-software/' },
       { text: 'Contact us', url: '/contact/' }
     ]
   },
   {
-    question: "Can I schedule private lessons?",
-    answer: "Yes. BeltManager handles both group classes and one-on-one private lessons. Students can book available private lesson slots with their preferred instructor. The system tracks private lesson packages, automatically deducts sessions, and alerts students when their package is running low. You can also set different pricing for different instructors or session lengths.",
-    links: [
-      { text: 'Billing features', url: '/martial-arts-billing-software/' },
-      { text: 'See pricing', url: '/pricing/' }
-    ]
-  },
-  {
-    question: "How does family scheduling work?",
-    answer: "Parents can book classes for all their children from one account and coordinate schedules to minimize trips. The system shows color-coded family calendars and alerts parents to scheduling conflicts (like two kids having classes at different locations simultaneously). This visibility helps families plan their week and reduces no-shows caused by forgotten commitments.",
+    question: "How does it work for families?",
+    answer: "Parents see all their children's classes in one place, in the free parent app or the web portal, and can add the timetable to their phone's calendar. Reminders, RSVP requests and closure notices go to every guardian on the account.",
     links: [
       { text: 'Dojo management', url: '/dojo-management-software/' },
       { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
     ]
   },
   {
-    question: "What scheduling reports are available?",
-    answer: "Track class utilization rates, peak attendance times, no-show patterns by student or class, instructor teaching hours, and booking lead times. These insights help you optimize your schedule by identifying underutilized time slots, overbooked classes that need additional sections, and which class types drive the most engagement. Export data to analyze trends over time.",
+    question: "What attendance reports are available?",
+    answer: "The attendance report shows attendance by class and by student for any date range, and you can export it as a CSV file. Your dashboard also shows the last 30 days at a glance.",
     links: [
       { text: 'Overview', url: '/martial-arts-software/' },
-      { text: 'Contact sales', url: '/contact/' }
+      { text: 'Contact us', url: '/contact/' }
     ]
   }
 ];
@@ -180,8 +125,8 @@ const breadcrumbItems = [
 ---
 
 <BaseLayout
-  title="Martial Arts Scheduling & Class Booking Software"
-  description="Students book their own classes, with belt-based eligibility, waitlists and automatic reminders. Built for martial arts schools. Free until 31 March 2027."
+  title="Martial Arts Scheduling & Class Timetable Software"
+  description="Recurring classes, reminders, one-tap RSVPs, belt and age bands on groups, and term dates with automatic closure notices. Built for martial arts schools. Free until 31 March 2027."
 >
   <BreadcrumbsEnhanced site="beltmanager" items={breadcrumbItems} />
 
@@ -195,7 +140,7 @@ const breadcrumbItems = [
           Martial Arts Scheduling Software
         </h1>
         <p class="text-xl text-gray-600 mb-8">
-          Automate class booking, reduce no-shows by 58%, and save 12+ hours of admin time every week with intelligent scheduling designed specifically for martial arts schools.
+          Set up your timetable once, remind families automatically, and know who's coming tonight before you unlock the doors. Scheduling built for martial arts schools.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
           <a href="https://app.beltmanager.com/signin" class="btn-primary">Get started free</a>
@@ -206,144 +151,76 @@ const breadcrumbItems = [
   </section>
 
   <FeaturedAnswer question="What is martial arts scheduling software?">
-    Martial arts scheduling software automates class booking, manages capacity by belt rank, sends automated reminders, coordinates instructor schedules, enables student self-service, and tracks attendance patterns. It reduces no-shows through SMS/email reminders and optimizes class utilization with real-time availability.
+    Martial arts scheduling software runs a school's recurring class timetable, reminds families before class, collects RSVPs, and flags students who are outside a class's belt or age range. BeltManager also handles term dates and closures, telling families automatically when a class is cancelled or moved.
   </FeaturedAnswer>
-
-  <StatisticsSection
-    site="beltmanager"
-    pageUrl="https://beltmanager.com/martial-arts-scheduling-software/"
-    title="Martial Arts Scheduling Statistics"
-    stats={schedulingStats}
-  />
 
   <section class="section bg-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto prose prose-lg">
-        <h2>Why Martial Arts Schools Need Specialized Scheduling</h2>
+        <h2>Why Martial Arts Schools Need Specialised Scheduling</h2>
         <p>
-          Managing a martial arts school schedule involves complexity that generic booking systems can't handle. You're not just filling time slots—you're coordinating multiple instructors across belt levels, enforcing skill prerequisites, managing family bookings where parents juggle multiple children's schedules, and handling both group classes and private lessons.
+          A martial arts timetable isn't just a list of time slots. Classes are split by age and belt, parents often have two or three children training, gradings and competitions come round every few months, and many clubs follow school term dates. Generic booking tools don't know any of that.
         </p>
         <p>
-          Manual scheduling with paper calendars or basic digital tools creates bottlenecks. Staff spend hours answering phone calls about class availability, manually checking belt requirements, and chasing down students to fill last-minute cancellations. Without automated reminders, no-show rates can reach 30-40%, leaving instructors teaching half-empty classes and wasting valuable mat time.
-        </p>
-
-        <h2>Automated Reminders Dramatically Reduce No-Shows</h2>
-        <p>
-          The single biggest scheduling win is automated class reminders. BeltManager sends SMS and email notifications 24-48 hours before each class with one-click confirmation links. Students can confirm attendance, cancel if needed, or add the class to their personal calendar—all from their phone in seconds.
-        </p>
-        <p>
-          When a student cancels with advance notice, the system immediately notifies waitlisted students that a spot opened. The first person to respond gets the slot automatically. This automation fills classes without staff intervention and reduces no-shows by an average of 58% according to our client data.
+          With paper or a spreadsheet, the same questions come round every week: is the class on during half term, who's coming tonight, and is that new white belt really in the right group? BeltManager is built to answer those questions for you.
         </p>
 
-        <h2>Student Self-Service Booking Reduces Admin Load</h2>
+        <h2>Automatic Class Reminders</h2>
         <p>
-          Give students control of their schedules through a mobile app and web portal. They can browse available classes, see which instructors are teaching, check current enrollment numbers, and book their spot instantly. The system automatically enforces belt-level restrictions, membership tier access, and class capacity limits.
-        </p>
-        <p>
-          This self-service dramatically reduces phone calls—our clients report 70% fewer scheduling inquiries. Staff time previously spent on the phone answering "What time is the advanced class?" and "Can I bring a friend?" is redirected to higher-value activities like trial class follow-up and student engagement.
+          On the day of each class, BeltManager emails families about three hours before it starts, and sends a push notification to anyone using the free parent app. Families can also add your timetable to Apple Calendar or Google Calendar.
         </p>
 
-        <h2>Skill-Based Class Restrictions</h2>
+        <h2>Know Who's Coming: One-Tap RSVP</h2>
         <p>
-          Different belt ranks need different training. BeltManager lets you set minimum belt requirements for each class. White belts only see beginner classes in their booking portal, while black belts can access all levels. This prevents awkward situations where new students accidentally book advanced sparring sessions they're not ready for.
-        </p>
-        <p>
-          The system checks eligibility automatically based on the student's current rank in their profile. As students progress and earn new belts, their available class options expand automatically. Instructors can manually override restrictions for special cases, like allowing a talented student to try the next level early.
+          Switch on an RSVP request for a class and families are asked, between 1 and 14 days ahead, whether their child is coming. They answer with one tap: "Coming" or "Can't make it". If they can't make it, they give a reason. You see the answers before the class starts.
         </p>
 
-        <h2>Real-Time Capacity Management</h2>
+        <h2>Belt and Age Bands on Groups</h2>
         <p>
-          Set maximum capacity for each class based on mat space, instructor ratios, or equipment availability. The system displays real-time enrollment numbers so students know if a class is filling up. When capacity is reached, new students join a waitlist instead of being turned away.
-        </p>
-        <p>
-          Capacity can vary by class type. Your kids' beginners class might max out at 20 students for safety, while adult sparring is capped at 12 due to space constraints. Competition team training might have unlimited capacity. These limits are enforced automatically, preventing overcrowding without staff having to manually track numbers.
+          Set a minimum and maximum belt and an age range on each group. If you add a student who's outside that range, BeltManager warns you before you save. It's a warning, not a block, so you can still move a talented student up early.
         </p>
 
-        <h2>Multi-Instructor Coordination</h2>
+        <h2>Recurring Classes, Term Dates and Closures</h2>
         <p>
-          Schools with multiple instructors need visibility into everyone's schedule. BeltManager shows a consolidated calendar across all instructors and locations. You can see at a glance who's teaching what, identify gaps in coverage, and prevent double-booking instructors across simultaneous classes.
+          Most schools run the same timetable every week. Set the days and time for each class once and BeltManager creates the sessions. Add your venues and rooms if you train in more than one place.
         </p>
         <p>
-          Each instructor has personal availability settings—marking when they're available to teach, unavailable due to travel, or only available at certain locations. When creating new classes, the system only suggests instructors who are available at that time. Substitute instructor workflows handle last-minute coverage needs.
-        </p>
-
-        <h2>Recurring Schedule Templates</h2>
-        <p>
-          Most martial arts schools run the same schedule every week. Create a template once—"Kids Karate Monday/Wednesday/Friday 4pm with Instructor John, capacity 20"—and the system generates all those classes automatically for the next 3-6 months. Make exceptions for holidays or special events without disrupting the overall pattern.
-        </p>
-        <p>
-          Templates handle complex patterns like alternating weeks (beginners week 1, intermediate week 2) or monthly specialty classes. When you update a template, you can choose whether to apply changes to all future classes or just new ones, preserving any manual adjustments already made.
+          Add term dates and closed periods, such as bank holidays or the summer break, and families are told automatically when a class is cancelled, moved or closed. No more group texts on a Sunday night.
         </p>
 
-        <h2>Waitlist Management</h2>
+        <h2>Staff and Instructor Ratios</h2>
         <p>
-          Popular classes fill up quickly, especially during peak evening hours. Rather than turning students away, place them on an automated waitlist. When someone cancels, the first person on the waitlist receives an instant notification via SMS and email with a link to claim the spot.
-        </p>
-        <p>
-          Waitlists are first-come, first-served by default, but you can prioritize by membership level (unlimited members before limited class packages) or manually override the order. Students can join waitlists for multiple classes and are automatically removed from other waitlists when they book a conflicting time slot.
+          Invite staff with their own sign-in as head instructor, assistant or front desk, and name the instructor on each class. BeltManager checks the instructor-to-student ratio and your insured student count, so you can show your insurer you're within the rules.
         </p>
 
-        <h2>Family Scheduling Coordination</h2>
+        <h2>Registers and Attendance</h2>
         <p>
-          Parents with multiple children training at your school need to coordinate schedules to minimize trips. BeltManager's family calendar shows all children's classes in one view with color-coding by child. Parents instantly see if two kids have overlapping classes at different locations—a scheduling conflict they need to resolve.
+          Take the register from a tablet or phone, even when the signal in the hall drops out: it syncs when you're back online. Add walk-ins on the spot. Or set up a tablet kiosk at the door, locked with a PIN, where students check themselves in.
         </p>
         <p>
-          The system alerts parents to conflicts when they try to book. It can also suggest alternative classes that work for the whole family, like back-to-back sessions where one child finishes right as another begins. This coordination reduces no-shows caused by forgotten commitments and helps families plan their week.
-        </p>
-
-        <h2>Private Lesson Scheduling</h2>
-        <p>
-          Many schools offer private one-on-one lessons alongside group classes. BeltManager handles both in one system. Set up private lesson time blocks for each instructor, define session lengths (30min, 60min, 90min), and set pricing that can vary by instructor or session length.
-        </p>
-        <p>
-          Students book available private lesson slots through the same portal they use for group classes. The system tracks private lesson packages—if a student purchased 10 sessions, each booking automatically deducts from their balance. Automated alerts notify students when they have 2 sessions remaining so they can purchase their next package.
+          The attendance report shows attendance by class and by student for any date range, and exports to CSV for your insurer, your gradings or your own records.
         </p>
 
-        <h2>Attendance Tracking Integration</h2>
+        <h2>The Free Parent App</h2>
         <p>
-          Scheduling and attendance work together. When students book a class, they appear on that class's attendance roster. Instructors mark attendance from a tablet or phone, and the system tracks no-shows, late arrivals, and consistent attendance patterns.
-        </p>
-        <p>
-          Chronic no-shows trigger automated follow-up. After 3 missed classes, the system can send a re-engagement email or flag the student for staff outreach. Conversely, students with perfect attendance streaks can receive recognition or rewards, encouraging continued commitment.
+          Parents get a free app for iPhone and Android. They can see their children's classes, answer RSVPs, get reminders and closure notices, and see belt progress and achievements.
         </p>
 
-        <h2>Scheduling Analytics & Optimization</h2>
+        <h2>What BeltManager Doesn't Do (Yet)</h2>
         <p>
-          Data reveals opportunities to optimize your schedule. Track class utilization rates to identify underbooked time slots that might be candidates for cancellation or combination with other classes. See which class times have the highest demand so you can add capacity where it's needed most.
-        </p>
-        <p>
-          Analyze no-show patterns by class type, time of day, or individual student to understand why people aren't attending. Track how far in advance students typically book classes—if most book day-of, your schedule might not be visible enough or students don't feel classes will fill up.
-        </p>
-
-        <h2>Mobile App for On-The-Go Booking</h2>
-        <p>
-          Students expect mobile convenience. BeltManager's mobile app lets members manage their entire schedule from their phone. Book classes while commuting, get push notifications for reminders and waitlist openings, and view their upcoming schedule at a glance.
-        </p>
-        <p>
-          The app syncs with device calendars so booked classes automatically appear in Apple Calendar or Google Calendar alongside their other commitments. Students can enable push notifications for specific class types (only notify me about sparring sessions) to reduce notification fatigue.
-        </p>
-
-        <h2>Integration with Billing</h2>
-        <p>
-          Scheduling connects to your billing system. Membership tiers determine which classes students can book (unlimited members access all classes, basic members get 8/month). The system automatically enforces these limits and prompts students to upgrade when they hit their cap.
-        </p>
-        <p>
-          For drop-in classes or special workshops, scheduling can charge per-class fees directly. Students book the class and pay in one transaction. This works for guest passes, trial classes, or premium workshops that have separate pricing from regular memberships.
+          We'd rather you know before you sign up. Today there's no open booking calendar, no class waitlist, no private-lesson booking or packages, and no SMS reminders. You enrol students into their groups, and families RSVP to those classes.
         </p>
 
         <h2>Getting Started with BeltManager Scheduling</h2>
         <p>
-          Implementation takes 1-2 weeks from signup to launch. You'll import your current class schedule, set capacity limits and skill requirements, configure automated reminder timing, and invite students to create their portal accounts. Most schools see immediate benefits—fewer phone calls and better class attendance—within the first billing cycle.
-        </p>
-        <p>
-          Start by testing scheduling with your staff and a small group of students. BeltManager includes onboarding support, template setup, and training materials to help your team and students adapt to the new system.
+          Sign up, add your classes and groups, and import your students from a spreadsheet (up to 1,000 rows, with their guardians). If an import goes wrong, you can undo it within 24 hours. Then invite families to the parent app.
         </p>
       </div>
     </div>
   </section>
 
   <ComparisonTable
-    title="Martial Arts Scheduling vs General Booking vs Manual Tracking"
+    title="BeltManager vs Generic Booking Tools vs Spreadsheets"
     headers={['BeltManager (Martial Arts-Specific)', 'Generic Booking Tools', 'Spreadsheets/Paper']}
     rows={comparisonData}
   />
@@ -359,10 +236,10 @@ const breadcrumbItems = [
     <div class="container-custom">
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">
-          Ready to Automate Your Scheduling?
+          Ready to Sort Out Your Timetable?
         </h2>
         <p class="text-xl mb-8 text-gray-300">
-          Reduce no-shows by 58%, save 12+ hours weekly, and give students the self-service booking they expect. Get started free today.
+          Recurring classes, reminders, RSVPs and closure notices in one place. Free until 31 March 2027.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
           <a href="https://app.beltmanager.com/signin" class="btn-primary">Get started free</a>
