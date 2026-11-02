@@ -438,10 +438,10 @@ Fees significantly higher than this warrant scrutiny. Schools charging $500+ for
 Contemporary martial arts schools increasingly rely on [karate school software](https://beltmanager.com/karate-school-software/) to manage their ranking systems effectively. These platforms offer:
 
 - **Progress Dashboards**: Visual tracking of each student's advancement toward their next belt
-- **Automated Reminders**: Notifications when students meet time requirements for testing
+- **Eligibility Tracking**: See which students meet the time and attendance requirements for testing
 - **Customizable Requirements**: Ability to modify belt requirements for different age groups or programs
 - **Historical Records**: Complete documentation of each student's martial arts journey
-- **Testing Scheduling**: Calendar integration and automated parent notifications
+- **Testing Scheduling**: Grading sessions, printable certificates and promotion notices to parents
 - **Reporting Analytics**: Identify students at risk of dropping out or ready for promotion
 
 ### Benefits of Digital Tracking

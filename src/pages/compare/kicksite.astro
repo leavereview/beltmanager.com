@@ -19,8 +19,9 @@ const comparisonRows = [
   { label: 'Free trial', values: ['Not needed — free until 31 Mar 2027', '30 days, via demo'] },
   { label: 'All features included', values: [true, true] },
   { label: 'Attendance tracking', values: [true, true] },
-  { label: 'Automated recurring billing', values: [true, true] },
-  { label: 'Class scheduling & booking', values: [true, true] },
+  { label: 'Automated recurring billing', values: ['Coming April 2027', true] },
+  { label: 'Class scheduling', values: [true, true] },
+  { label: 'Online class booking', values: ['RSVP only', true] },
   { label: 'Parent / student portal', values: [true, true] },
   { label: 'Prices in GBP', values: [true, false], highlight: true },
   { label: 'Years in market', values: ['Newer platform', 'Long established'] },
@@ -60,7 +61,7 @@ const faqItems = [
   {
     question: 'Can I move my student records from Kicksite to BeltManager?',
     answer:
-      'Yes. Export your student list and current ranks to CSV and import it, then continue logging attendance and grading from your next class onward rather than backfilling years of history. Most schools are running live within a day or two. Confirm your Kicksite cancellation terms in writing before you migrate — that advice applies whichever direction you are moving.',
+      'Yes. Export your student list and current ranks to CSV and import it (up to 1,000 rows at a time, with guardians, and you can undo an import within 24 hours), then continue logging attendance and grading from your next class onward rather than backfilling years of history. Confirm your Kicksite cancellation terms in writing before you migrate — that advice applies whichever direction you are moving.',
     links: [{ text: 'Billing and payments', url: '/martial-arts-billing-software/' }],
   },
 ];
@@ -179,9 +180,9 @@ const schemaMarkup = {
         <strong>You can evaluate it without an appointment.</strong> Sign up, add your classes, add a few students and see whether it fits your week. No demo, no card, no sales sequence.
       </p>
       <p class="text-gray-700 mb-4">
-        <strong>Growth does not cost you.</strong> Belt progression, class scheduling,
-        <a href="/martial-arts-billing-software/" class="text-brand-red hover:underline">automated recurring billing</a> and
+        <strong>Growth does not cost you.</strong> Belt progression, class scheduling and
         <a href="/martial-arts-crm/" class="text-brand-red hover:underline">lead and retention tracking</a> are all included at every school size, with no per-student tier to cross.
+        <a href="/martial-arts-billing-software/" class="text-brand-red hover:underline">Automatic card billing</a> is coming in April 2027.
       </p>
       <p class="text-gray-700">
         <strong>It is built for how UK schools actually run.</strong> Multiple styles, mixed kids and adults classes, and grading cycles that do not fit a US gym template. The
