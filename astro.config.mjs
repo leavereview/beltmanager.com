@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import compress from 'astro-compress';
 import { fileURLToPath } from 'node:url';
@@ -17,7 +16,6 @@ export default defineConfig({
     '/blog/karate-belts': '/blog/karate-belt-order-complete-guide',
   },
   integrations: [
-    tailwind(),
     sitemap({
       filter: (page) => !page.includes('/blog/tag/'),
       serialize: lastmodSerializer(lastmod),

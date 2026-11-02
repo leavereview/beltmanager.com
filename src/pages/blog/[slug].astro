@@ -2,12 +2,12 @@
 // Blog Post Template - /blog/[slug]
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post },
   }));
 }
@@ -17,7 +17,7 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 // Generate FAQPage schema if post has FAQs
 const faqSchema = post.data.faqs && post.data.faqs.length > 0 ? {
@@ -37,7 +37,7 @@ const faqSchema = post.data.faqs && post.data.faqs.length > 0 ? {
 const allPosts = await getCollection('blog');
 const relatedPosts = allPosts
   .filter(p => 
-    p.slug !== post.slug && 
+    p.id !== post.id && 
     p.data.tags?.some(tag => post.data.tags?.includes(tag))
   )
   .slice(0, 3);
@@ -209,7 +209,7 @@ const relatedPosts = allPosts
         <div class="grid md:grid-cols-3 gap-8">
           {relatedPosts.map((related) => (
             <article class="card group">
-              <a href={`/blog/${related.slug}/`} class="block">
+              <a href={`/blog/${related.id}/`} class="block">
                 {related.data.image && (
                   <div class="aspect-video overflow-hidden rounded-lg mb-4 -mx-6 -mt-6">
                     <img 
