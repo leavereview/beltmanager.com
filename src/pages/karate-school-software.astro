@@ -1,11 +1,11 @@
 ---
+import AppScreenshot from '../components/AppScreenshot.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
 import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
 import StatisticsSection from '../components/seo/StatisticsSection.astro';
 import ComparisonTable from '../components/seo/ComparisonTable.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
-import ScreenshotPlaceholder from '../components/ScreenshotPlaceholder.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -290,7 +290,7 @@ const faqItems = [
           Karate school software bridges this divide by handling administrative complexity while respecting the pedagogical structures that define karate education. From tracking students through the kyu ranks to managing kihon, kata, and kumite curriculum requirements, purpose-built software supports rather than disrupts the training methodology you have established.
         </p>
 
-        <ScreenshotPlaceholder caption="Karate school dashboard showing kyu-dan rank overview, upcoming belt tests, and class attendance summary" />
+        <AppScreenshot src="/images/app/karate-dashboard.webp" width={1600} height={1000} caption="The dashboard filtered to one dojo: tonight's classes, students ready to grade, and attendance over the last 30 days" />
 
         <h3>The Kyu-Dan Ranking System</h3>
 
@@ -311,7 +311,7 @@ const faqItems = [
           Software must track not just current rank but progression history, time-in-rank, attendance requirements, and specific technique mastery at each level.
         </p>
 
-        <ScreenshotPlaceholder caption="Kata library screen showing student progress through Shotokan kata requirements mapped to each kyu grade" />
+        <AppScreenshot src="/images/app/karate-kata-syllabus.webp" width={1600} height={1618} caption="The technique syllabus: Shotokan kata and kumite mapped to the kyu grade they are taught at" />
 
         <h3>Curriculum Components: Kihon, Kata, and Kumite</h3>
 
@@ -368,7 +368,7 @@ const faqItems = [
           <li>Organization and federation rank requirements</li>
         </ul>
 
-        <ScreenshotPlaceholder caption="Belt testing management screen showing eligible students, online registration, and fee collection for grading events" />
+        <AppScreenshot src="/images/app/karate-belt-testing.webp" width={1600} height={1000} caption="Students filtered to those eligible for their next grading, with current belt and group" />
 
         <h3>2. Kata Library and Progress</h3>
         <ul>
@@ -391,7 +391,7 @@ const faqItems = [
           <li>Rank updates triggered automatically upon passing</li>
         </ul>
 
-        <ScreenshotPlaceholder caption="Parent portal showing children's belt progress, upcoming class schedule, and consolidated family billing" />
+        <AppScreenshot src="/images/app/karate-parent-portal.webp" width={1200} height={1700} caption="The parent portal: each child's belt and their classes for the next two weeks, with one-tap attending or not attending" />
 
         <h3>4. Family and Youth Focus</h3>
         <ul>

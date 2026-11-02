@@ -6,6 +6,7 @@ import StatisticsSection from '../components/seo/StatisticsSection.astro';
 import ComparisonTable from '../components/seo/ComparisonTable.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 import ScreenshotPlaceholder from '../components/ScreenshotPlaceholder.astro';
+import AppScreenshot from '../components/AppScreenshot.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -299,7 +300,7 @@ const breadcrumbItems = [
           Beyond simple payment processing, martial arts billing systems accommodate the complex pricing structures these schools employ: family discounts that automatically apply when siblings enroll, contract terms ranging from month-to-month to annual commitments, belt testing fees that vary by rank, merchandise sales for uniforms and equipment, and promotional rates for new student acquisition. Purpose-built platforms handle these variations automatically, eliminating the spreadsheet gymnastics and manual calculations that generic payment systems require.
         </p>
 
-        <ScreenshotPlaceholder caption="Billing dashboard showing monthly recurring revenue, upcoming payments, and membership renewal schedule at a glance" />
+        <AppScreenshot src="/images/app/billing-revenue.webp" width={1600} height={1108} caption="The revenue report: what was collected by month and by membership, with CSV export" />
 
         <h2>Automated Recurring Billing</h2>
         <p>
@@ -309,7 +310,7 @@ const breadcrumbItems = [
           Automated billing handles membership cycles without intervention: charging on schedule, generating receipts automatically, applying appropriate discounts, calculating pro-rata amounts for mid-cycle enrollments, processing contract renewals, and tracking contract end dates to prevent inappropriate charges. Staff no longer chase payments or process cards manually—the system handles routine billing while flagging only exceptions that require attention.
         </p>
 
-        <ScreenshotPlaceholder caption="Failed payment recovery screen showing retry schedule, automated student notifications, and recovery rate analytics" />
+        <AppScreenshot src="/images/app/billing-overdue.webp" width={1600} height={769} caption="Overdue invoices: automatic card retries, a failed-card alert and an optional late fee" />
 
         <h2>Failed Payment Handling and Smart Retry</h2>
         <p>
@@ -322,7 +323,7 @@ const breadcrumbItems = [
           Simultaneously, the system sends automated notifications to students via email and SMS explaining the failed payment and providing a link to update payment details in their portal. This two-pronged approach—automated retry plus proactive communication—recovers approximately 40% of initially failed payments without staff intervention, representing significant revenue that manual processes would miss.
         </p>
 
-        <ScreenshotPlaceholder caption="Family billing view showing siblings on a consolidated invoice with automatic sibling discounts applied and itemized breakdown" />
+        <AppScreenshot src="/images/app/billing-family-invoice.webp" width={820} height={832} caption="A family invoice: three siblings on one invoice with the 10% sibling discount itemised" />
 
         <h2>Family Billing and Automatic Discounts</h2>
         <p>

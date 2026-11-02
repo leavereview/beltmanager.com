@@ -1,11 +1,11 @@
 ---
+import AppScreenshot from '../components/AppScreenshot.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
 import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
 import StatisticsSection from '../components/seo/StatisticsSection.astro';
 import ComparisonTable from '../components/seo/ComparisonTable.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
-import ScreenshotPlaceholder from '../components/ScreenshotPlaceholder.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -290,7 +290,7 @@ const faqItems = [
           Dojo management software bridges this gap between traditional values and modern operational requirements. These specialized platforms handle the business complexity that would otherwise distract from instruction, enabling senseis and school owners to maintain focus on what matters most: developing their students' skills and character.
         </p>
 
-        <ScreenshotPlaceholder caption="Dojo management dashboard showing kyu/dan rank overview, upcoming gradings, and student activity feed" />
+        <AppScreenshot src="/images/app/dojo-dashboard.webp" width={1600} height={1220} caption="Dashboard: active students, who is ready for their next kyu grade, and attendance over the last 30 days" />
 
         <h3>Understanding the Dojo Environment</h3>
 
@@ -302,7 +302,7 @@ const faqItems = [
           Effective dojo management software acknowledges these cultural elements rather than imposing generic gym terminology. When software refers to 'members' rather than 'students', 'facilities' rather than 'training halls', or 'fitness levels' rather than 'belt ranks', it creates friction that undermines the training environment.
         </p>
 
-        <ScreenshotPlaceholder caption="Belt rank progression tracker showing individual student journey from white belt through black belt with curriculum checklist" />
+        <AppScreenshot src="/images/app/dojo-belt-progression.webp" width={840} height={1560} caption="A student's training record: readiness for the next belt (days, sessions and techniques), the technique checklist and promotion history" />
 
         <h3>What Makes Dojo Operations Unique</h3>
 
@@ -357,7 +357,7 @@ const faqItems = [
           <li>Custom rank naming and color configuration</li>
         </ul>
 
-        <ScreenshotPlaceholder caption="Grading event management screen showing eligible students, registration status, and testing fee collection" />
+        <AppScreenshot src="/images/app/dojo-grading-event.webp" width={1600} height={1200} caption="A grading session: each student's current and target kyu, with a one-tap pass or not-passed result" />
 
         <h3>2. Grading and Testing Management</h3>
         <ul>
@@ -380,7 +380,7 @@ const faqItems = [
           <li>Consolidated billing for family groups</li>
         </ul>
 
-        <ScreenshotPlaceholder caption="Family account view showing siblings linked under consolidated billing with automatic sibling discount applied" />
+        <AppScreenshot src="/images/app/dojo-family-account.webp" width={1600} height={1200} caption="A family account: siblings in one household, a 10% sibling discount applied to every invoice, and the family's guardians and subscription" />
 
         <h3>4. Class and Schedule Management</h3>
         <ul>

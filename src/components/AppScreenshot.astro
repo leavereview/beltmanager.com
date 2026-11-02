@@ -1,0 +1,27 @@
+---
+// A real BeltManager app screenshot (captured from the app with demo data, beltmanager.com#6).
+// Replaces ScreenshotPlaceholder where the screen exists in the app. Files are 2x, so they
+// display at no more than half their pixel width.
+interface Props {
+  src: string;
+  width: number;
+  height: number;
+  caption: string;
+  alt?: string;
+}
+const { src, width, height, caption, alt = caption } = Astro.props;
+---
+
+<figure class="app-screenshot my-8">
+  <img
+    src={src}
+    width={width}
+    height={height}
+    alt={`${alt} (BeltManager screenshot, demo data)`}
+    loading="lazy"
+    decoding="async"
+    class="mx-auto h-auto w-full rounded-lg border border-gray-200 shadow-md"
+    style={`max-width: ${width / 2}px`}
+  />
+  <figcaption class="text-center text-sm text-gray-600 mt-2 italic">{caption}</figcaption>
+</figure>
