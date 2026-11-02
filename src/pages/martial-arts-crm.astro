@@ -5,7 +5,6 @@ import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
 import StatisticsSection from '../components/seo/StatisticsSection.astro';
 import ComparisonTable from '../components/seo/ComparisonTable.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
-import ScreenshotPlaceholder from '../components/ScreenshotPlaceholder.astro';
 
 const crmStats = [
   {
@@ -227,7 +226,10 @@ const faqItems = [
           Unlike generic CRM platforms designed for sales teams or retail businesses, martial arts CRM functionality addresses the specific journey from initial inquiry through trial class, enrollment, and ongoing retention. These tools recognize that a martial arts student relationship spans years rather than single transactions.
         </p>
 
-        <ScreenshotPlaceholder caption="CRM lead pipeline showing prospects at each stage from inquiry through trial class, enrollment, and active student status" />
+        <aside class="not-prose my-8 rounded-lg border border-gray-200 bg-gray-50 p-6">
+          <p class="font-semibold text-brand-navy mb-2">How BeltManager handles enquiries</p>
+          <p class="text-gray-700">Enquiries from your school's online join form, or added by hand after a phone call, land in Leads. Each one moves through New, Contacted, Trial booked, Attended and then Converted or Lost, with a separate cold, warm or hot rating, a follow-up date and a log of every contact. Converting an enquiry creates the student record, so nothing is typed twice.</p>
+        </aside>
 
         <h3>CRM Functions in Martial Arts</h3>
 
@@ -279,7 +281,6 @@ const faqItems = [
           <li>Lead pipeline visualization by stage</li>
         </ul>
 
-        <ScreenshotPlaceholder caption="Automated follow-up sequence builder showing lead nurture steps, email and SMS triggers, and conversion tracking" />
 
         <h3>2. Trial Class Management</h3>
         <ul>
@@ -291,7 +292,10 @@ const faqItems = [
           <li>Trial-to-member conversion analytics</li>
         </ul>
 
-        <ScreenshotPlaceholder caption="Student engagement dashboard highlighting at-risk members with declining attendance patterns and automated alert triggers" />
+        <aside class="not-prose my-8 rounded-lg border border-gray-200 bg-gray-50 p-6">
+          <p class="font-semibold text-brand-navy mb-2">How BeltManager spots students drifting away</p>
+          <p class="text-gray-700">The Retention screen lists members at risk: anyone who has missed the last few classes their group held (three by default, and you can change it) or whose family has stopped paying. A second list shows members who have left and the date they last trained, so you can have the conversation before they are gone for good.</p>
+        </aside>
 
         <h3>3. Student Engagement Tracking</h3>
         <ul>
@@ -313,7 +317,6 @@ const faqItems = [
           <li>Scheduled send for optimal timing</li>
         </ul>
 
-        <ScreenshotPlaceholder caption="Marketing ROI report showing lead conversion rates, cost per enrollment by channel, and student lifetime value by source" />
 
         <h3>5. Analytics and Reporting</h3>
         <ul>
