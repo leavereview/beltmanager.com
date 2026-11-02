@@ -6,6 +6,7 @@ import StatisticsSection from '../components/seo/StatisticsSection.astro';
 import ComparisonTable from '../components/seo/ComparisonTable.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 import ScreenshotPlaceholder from '../components/ScreenshotPlaceholder.astro';
+import AppScreenshot from '../components/AppScreenshot.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -290,7 +291,7 @@ const faqItems = [
           This dual mission—developing competitive athletes alongside recreational members—creates operational complexity that single-discipline schools rarely encounter. MMA gym software addresses these challenges with features designed for multi-discipline environments, fighter management, and the performance tracking that combat sports demand.
         </p>
 
-        <ScreenshotPlaceholder caption="MMA gym dashboard showing multi-discipline class schedule, member activity across BJJ, Muay Thai, and wrestling, and revenue overview" />
+        <AppScreenshot src="/images/app/mma-timetable.webp" width={1600} height={1000} caption="The weekly timetable for one venue: Muay Thai, Wrestling, MMA, BJJ and karate classes with their expected regulars" />
 
         <h3>Multi-Discipline Training Structure</h3>
 
@@ -360,7 +361,7 @@ const faqItems = [
           <li>Capacity limits and waitlists per class</li>
         </ul>
 
-        <ScreenshotPlaceholder caption="Multi-discipline membership management screen showing all-access and single-discipline plans with usage and billing status" />
+        <AppScreenshot src="/images/app/mma-memberships.webp" width={1600} height={1000} caption="Memberships: an all-access plan covering every adult discipline alongside single-discipline plans" />
 
         <h3>2. Fighter Development Tracking</h3>
         <ul>
