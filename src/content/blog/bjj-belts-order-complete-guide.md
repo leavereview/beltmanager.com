@@ -228,7 +228,7 @@ Understanding the **BJJ belts order** provides essential insight into one of mar
 
 The journey through the BJJ belt system is ultimately about more than colored fabric around your waist—it's about personal transformation, technical mastery, and becoming part of a global community united by shared values and dedication to the art.
 
-Ready to streamline your academy's belt tracking and student management? Discover how BeltManager's comprehensive martial arts management platform can help you maintain consistent ranking standards while growing your business. From student progress tracking to automated billing, we provide the tools successful academies need to focus on what matters most—developing exceptional martial artists.
+Ready to streamline your academy's belt tracking and student management? Discover how BeltManager's comprehensive martial arts management platform can help you maintain consistent ranking standards while growing your business. From student progress tracking to gradings and registers, we provide the tools successful academies need to focus on what matters most—developing exceptional martial artists.
 
 ## Related Articles
 

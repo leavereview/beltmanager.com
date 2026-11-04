@@ -26,7 +26,7 @@ const offerSchema = {
   "@type": "Offer",
   "@id": "https://beltmanager.com/pricing/#free",
   "name": "BeltManager — free until 31 March 2027",
-  "description": "BeltManager is free to use until 31 March 2027 — no subscription, no commission, no setup fee, and no per-student charges. Every feature is included during the launch period.",
+  "description": "BeltManager is free to use until 31 March 2027 — no subscription, no commission, no setup fee, and no per-student charges. Every live feature is included during the launch period.",
   "price": "0",
   "priceCurrency": "GBP",
   // Kept at 0 rather than removed: it is accurate, and it is what makes this
@@ -57,32 +57,32 @@ const featureGroups = [
   {
     icon: '🥋',
     title: 'Core Management',
-    features: ['Belt & rank tracking', 'Class scheduling', 'Attendance tracking', 'Unlimited locations', 'Unlimited staff users']
-  },
-  {
-    icon: '💳',
-    title: 'Billing & Payments',
-    features: ['Automated recurring billing', 'Family discounts', 'Failed payment recovery', 'Stripe integration', 'Payment reminders']
-  },
-  {
-    icon: '📱',
-    title: 'Student Experience',
-    features: ['Mobile student app', 'Parent portal (24/7 access)', 'Progress tracking', 'Schedule viewing', 'Belt promotion notifications']
-  },
-  {
-    icon: '📊',
-    title: 'Business Tools',
-    features: ['CRM & lead management', 'Automated follow-ups', 'Unlimited emails', 'Reporting & analytics', 'Revenue tracking']
+    features: ['Belt & rank tracking', 'Class timetable, term dates & closures', 'Unlimited locations', 'Unlimited staff users with roles', 'Help importing your students']
   },
   {
     icon: '✅',
-    title: 'Check-In Methods',
-    features: ['Tablet kiosk mode', 'Mobile check-in', 'QR code scanning', 'Manual attendance', 'Attendance reports']
+    title: 'Registers & Check-In',
+    features: ['Register on your phone (works offline)', 'Walk-ins', 'Tablet kiosk mode', 'Attendance reports & CSV export', 'One-tap RSVP before class']
   },
   {
-    icon: '🛟',
-    title: 'Support & Training',
-    features: ['Email support', 'Free onboarding', 'Training videos', 'Knowledge base', 'Help importing your students']
+    icon: '📱',
+    title: 'Families',
+    features: ['Free parent app (iPhone)', 'Parent portal (24/7 access)', 'E-signed waivers & contracts', 'Belt promotion notifications', 'Class reminders by email & app']
+  },
+  {
+    icon: '🏅',
+    title: 'Gradings & Progress',
+    features: ['Grading eligibility from attendance', 'Grading sessions & results', 'Printable rank certificates', 'Kata readiness & report cards', 'Achievements & patches']
+  },
+  {
+    icon: '📊',
+    title: 'Business & Safeguarding',
+    features: ['CRM & lead management', 'Message a family, a class or the whole school', 'At-risk student lists', 'Insurance compliance (instructor ratio, insured count)', "Safeguarding: erase minors' data on request"]
+  },
+  {
+    icon: '💳',
+    title: 'Billing (card payments from April 2027)',
+    features: ['Set up memberships and record payments by hand today', 'Recurring card billing through Stripe', 'Family discounts', 'Failed payment recovery', 'Payment reminders']
   }
 ];
 
@@ -91,7 +91,7 @@ const featureGroups = [
 const faqs = [
   {
     question: "Is BeltManager really free?",
-    answer: "Yes. BeltManager is free until 31 March 2027 — no subscription, no commission, no setup fee, no per-student charges, and no credit card. Every feature is included during the launch period, including belt tracking, billing, and reporting.",
+    answer: "Yes. BeltManager is free until 31 March 2027 — no subscription, no commission, no setup fee, no per-student charges, and no credit card. Every feature that is live is included during the launch period, including belt tracking, registers, gradings and reporting. Card billing switches on in April 2027; until then, record payments by hand.",
     links: [
       { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
     ]
@@ -189,7 +189,7 @@ const faqs = [
       <div class="max-w-3xl mx-auto text-center mb-12">
         <h2 class="text-3xl font-bold text-brand-navy mb-4">Everything's included</h2>
         <p class="text-lg text-gray-600">
-          No feature lockouts, no upsells, no "contact sales for that one". Every school gets the whole product.
+          No feature lockouts, no upsells, no "contact sales for that one". Every school gets the whole product. Card billing is the one part still switched off: it turns on in April 2027.
         </p>
       </div>
 
