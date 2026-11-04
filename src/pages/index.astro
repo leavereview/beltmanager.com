@@ -125,6 +125,40 @@ const features = [
   }
 ];
 
+// "How it works" strip (#22). Real screenshots from the demo school, no real families.
+const howItWorks = [
+  {
+    title: 'Add your students once',
+    text: "Put each student in a group, like Kids Karate. From then on they're a regular, expected at every class that group runs.",
+    image: '/images/app/karate-belt-testing.webp',
+    width: 1600,
+    height: 1000,
+    crop: 'width: 170%; transform: translate(0, -4%);',
+    alt: 'The students list, showing each student\'s belt, groups and guardian',
+    caption: 'Students, their belts and the groups they train in.'
+  },
+  {
+    title: 'Families tell you who\'s coming',
+    text: "Before class, parents answer Coming or Can't make it in one tap. You open the register on your phone, already filled in, and tap who's there.",
+    image: '/images/app/karate-parent-portal.webp',
+    width: 1200,
+    height: 1700,
+    crop: 'width: 100%;',
+    alt: 'The parent portal: a child\'s upcoming classes with Attending and Not attending buttons',
+    caption: "The parent's view: one tap per class."
+  },
+  {
+    title: 'See who\'s ready to grade',
+    text: 'Attendance and time at belt build the Ready to grade list for you, so your next grading picks itself.',
+    image: '/images/app/dojo-dashboard.webp',
+    width: 1600,
+    height: 1220,
+    crop: 'width: 280%; transform: translate(0, -27%);',
+    alt: 'The dashboard: a Ready to grade list showing each student\'s current and next belt',
+    caption: 'The Ready to grade list on the dashboard.'
+  }
+];
+
 const stats = [
   { number: 'Unlimited', label: 'Students & Classes' },
   { number: '£0', label: 'Until 31 March 2027' },
@@ -133,41 +167,55 @@ const stats = [
 ];
 ---
 
-<BaseLayout title="Home" description="Automate scheduling, billing and belt tracking so you can focus on teaching. Free until 31 March 2027 — no subscription, no per-student fees.">
+<BaseLayout title="Home" description="Your register fills itself: add students once and every class knows who's coming, then see who's ready to grade. Free until 31 March 2027, no per-student fees.">
   <!-- Structured Data Schemas -->
   <script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
 
-  <!-- Hero Section -->
+  <!-- Hero Section: leads with the aha moment (#22). The visual is a real app screenshot
+       (demo school, no real families); swap it for John's screen-recording clip when it exists. -->
   <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute inset-0" style="background-image: url('/images/group-diverse-teens-young-people-doing-activities-together-celebrating-world-youth-skills-day.jpg'); background-size: cover; background-position: center;"></div>
-    </div>
-    <div class="container-custom relative py-20 md:py-32">
-      <div class="max-w-3xl">
-        <span class="badge-primary mb-6">
-          Free until 31 March 2027
-        </span>
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-          Run Your <span class="text-brand-red">Dojo</span> Like a Pro
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-          The all-in-one platform for martial arts schools. Scheduling, billing, student management, and more — so you can focus on teaching.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="https://app.beltmanager.com/signin" class="btn-primary text-lg px-8 py-4">
-            Get started free
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-          <a href="/martial-arts-software/" class="btn-secondary text-lg px-8 py-4">
-            See Features
-          </a>
+    <div class="container-custom relative py-16 md:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="badge-primary mb-6">
+            Free until 31 March 2027
+          </span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Your register <span class="text-brand-red">fills itself.</span> Your gradings pick themselves.
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+            Add your students once. Every class knows who's coming, and BeltManager tells you who's ready to grade.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://app.beltmanager.com/signin" class="btn-primary text-lg px-8 py-4" data-ph-capture-attribute-cta="hero-get-started" data-ph-capture-attribute-hero-version="aha-2026-11">
+              Get started free
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a href="#how-it-works" class="btn-secondary text-lg px-8 py-4" data-ph-capture-attribute-cta="hero-how-it-works" data-ph-capture-attribute-hero-version="aha-2026-11">
+              See how it works
+            </a>
+          </div>
+          <p class="mt-6 text-sm text-gray-400">
+            Free until 31 March 2027 • No subscription • No commission • No credit card
+          </p>
         </div>
-        <p class="mt-6 text-sm text-gray-400">
-          Free until 31 March 2027 • No subscription • No commission • No credit card
-        </p>
+        <figure>
+          <img
+            src="/images/app/mma-timetable.webp"
+            width="1600"
+            height="1000"
+            alt="BeltManager's weekly timetable: each class shows how many regulars are expected and an Open register link (demo data)"
+            class="w-full h-auto rounded-xl shadow-2xl ring-1 ring-white/10"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <figcaption class="mt-3 text-sm text-gray-400 text-center">
+            This week's classes, each already expecting its regulars. Demo school data.
+          </figcaption>
+        </figure>
       </div>
     </div>
     <!-- Decorative element -->
@@ -177,6 +225,52 @@ const stats = [
         <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="currentColor" opacity=".5"></path>
         <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,googl172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
       </svg>
+    </div>
+  </section>
+
+  <!-- How it works: the aha moment in three real screens (#22) -->
+  <section id="how-it-works" class="section bg-white scroll-mt-20">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="badge-primary mb-4">How it works</span>
+        <h2 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6">
+          No more paper registers
+        </h2>
+        <p class="text-xl text-gray-600">
+          Join a group once and you're a regular. That one idea does most of the admin for you.
+        </p>
+      </div>
+      <ol class="grid md:grid-cols-3 gap-8">
+        {howItWorks.map((step, index) => (
+          <li class="card flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="w-10 h-10 rounded-full bg-brand-red text-white font-bold flex items-center justify-center flex-shrink-0">{index + 1}</span>
+              <h3 class="text-xl font-bold text-brand-navy">{step.title}</h3>
+            </div>
+            <p class="text-gray-600 mb-6">{step.text}</p>
+            <figure class="mt-auto">
+              <div class="relative aspect-[4/3] overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
+                <img
+                  src={step.image}
+                  width={step.width}
+                  height={step.height}
+                  alt={`${step.alt} (BeltManager screenshot, demo data)`}
+                  class="absolute left-0 top-0 h-auto max-w-none"
+                  style={step.crop}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <figcaption class="mt-2 text-sm text-gray-500">{step.caption}</figcaption>
+            </figure>
+          </li>
+        ))}
+      </ol>
+      <div class="text-center mt-12">
+        <a href="https://app.beltmanager.com/signin" class="btn-primary" data-ph-capture-attribute-cta="how-it-works-get-started" data-ph-capture-attribute-hero-version="aha-2026-11">
+          Get started free
+        </a>
+      </div>
     </div>
   </section>
 
