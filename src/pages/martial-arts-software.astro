@@ -2,46 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
 import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
-import StatisticsSection from '../components/seo/StatisticsSection.astro';
 import ComparisonTable from '../components/seo/ComparisonTable.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 import AppScreenshot from '../components/AppScreenshot.astro';
-
-const platformStats = [
-  {
-    label: 'UK Martial Arts Schools',
-    value: '8,500+',
-    context: 'From traditional dojos to MMA gyms across the UK'
-  },
-  {
-    label: 'Admin Time Saved Weekly',
-    value: '15+ hrs',
-    change: { value: 68, direction: 'up' as const, period: 'vs manual' },
-    context: 'Through automation and integrated workflows'
-  },
-  {
-    label: 'Student Retention Improvement',
-    value: '22%',
-    change: { value: 22, direction: 'up' as const, period: 'with software' },
-    context: 'Better communication and engagement tracking'
-  },
-  {
-    label: 'Payment Collection Rate',
-    value: '97%',
-    change: { value: 12, direction: 'up' as const, period: 'automated billing' },
-    context: 'Automated retry logic reduces failed payments'
-  },
-  {
-    label: 'Average Student Count Threshold',
-    value: '75+',
-    context: 'When manual management becomes unsustainable'
-  },
-  {
-    label: 'Implementation Timeline',
-    value: '4-8 weeks',
-    context: 'From signup to full deployment including training'
-  }
-];
 
 const comparisonData = [
   {
@@ -66,10 +29,10 @@ const comparisonData = [
   },
   {
     label: 'Recurring Membership Billing',
-    values: [true, true, 'Manual collection']
+    values: ['From April 2027', true, 'Manual collection']
   },
   {
-    label: 'Class Scheduling & Capacity',
+    label: 'Class Timetable, Term Dates & Closures',
     values: [true, true, 'Paper calendar']
   },
   {
@@ -77,8 +40,8 @@ const comparisonData = [
     values: [true, true, 'Clipboard']
   },
   {
-    label: 'Automated Reminders (SMS/Email)',
-    values: [true, 'Email only', false]
+    label: 'Automated Class Reminders',
+    values: ['Email & app push', 'Email only', false]
   },
   {
     label: 'Student/Parent Mobile App',
@@ -101,7 +64,7 @@ const faqItems = [
   },
   {
     question: "How much does martial arts software cost?",
-    answer: "Most platforms cost £50-300 per month depending on student count and features. Common pricing models include per-student charges (£1-3/month per active student), tiered plans based on school size, or flat monthly rates. Additional costs include payment processing fees (2-3% per transaction), SMS credits for text messaging, and optional premium features. ROI typically comes from 15+ hours weekly admin time savings and 22% improved retention.",
+    answer: "Most platforms cost £50-300 per month depending on student count and features. Common pricing models include per-student charges (£1-3/month per active student), tiered plans based on school size, or flat monthly rates. Additional costs include payment processing fees (2-3% per transaction), SMS credits for text messaging, and optional premium features.",
     links: [
       { text: 'View pricing', url: '/pricing/' },
       { text: 'Contact sales', url: '/contact/' }
@@ -124,8 +87,8 @@ const faqItems = [
     ]
   },
   {
-    question: "How long does implementation take?",
-    answer: "A typical implementation takes 4-8 weeks from signup to full deployment. Weeks 1-2 focus on configuration, data import, and testing. Weeks 3-4 involve staff training and parallel operation with existing systems. Weeks 5-6 soft launch new features. Weeks 7-8 complete full deployment and retire old systems. Data migration typically takes 2-4 weeks before going live with billing.",
+    question: "How long does it take to get started with BeltManager?",
+    answer: "Setup is self-serve. Sign up, add your belt system and classes, add your students (or send us your list and we'll help import it), put them into their groups and take your first register. Card billing doesn't switch on until April 2027, so there is no payment migration to plan yet: until then you can record payments by hand.",
     links: [
       { text: 'Get started free', url: 'https://app.beltmanager.com/signin' },
       { text: 'See pricing', url: '/pricing/' }
@@ -133,15 +96,15 @@ const faqItems = [
   },
   {
     question: "Does martial arts software work for multiple locations?",
-    answer: "Yes. Quality platforms support multi-location operations with centralized student databases, consolidated reporting, and cross-location class booking. Each location maintains its own schedule and instructor assignments while sharing membership data. Students can book classes at any location, and owners get unified reporting across all sites. This is essential for academies with 2+ locations.",
+    answer: "Yes. BeltManager supports unlimited venues and rooms at no extra cost. Each venue has its own timetable, all students sit in one database, and the dashboard can be filtered by venue.",
     links: [
       { text: 'Dojo management', url: '/dojo-management-software/' },
       { text: 'Contact us', url: '/contact/' }
     ]
   },
   {
-    question: "What payment methods does martial arts billing software support?",
-    answer: "Modern platforms support credit/debit cards with secure PCI-compliant storage, direct debit/ACH for lower processing fees, bank transfers, and cash/check tracking. Automated recurring billing processes memberships monthly, handles failed payments with retry logic and notifications, and manages family discounts, promotional pricing, contract terms, pro-rata billing, and one-time charges for testing, equipment, and drop-ins.",
+    question: "What payment methods does BeltManager support?",
+    answer: "Card billing through Stripe switches on in April 2027: recurring memberships, retries and reminders for failed payments, and sibling discounts. Until then you can set up memberships and record cash or bank-transfer payments by hand. Direct debit isn't available yet.",
     links: [
       { text: 'Billing features', url: '/martial-arts-billing-software/' },
       { text: 'See pricing', url: '/pricing/' }
@@ -149,100 +112,29 @@ const faqItems = [
   },
   {
     question: "Can students book classes online?",
-    answer: "Yes. Student portals and mobile apps allow members to view schedules, see real-time class availability, book their spot, join waitlists when full, and manage their bookings with cancellations within policy windows. The system enforces belt-level restrictions (white belts only see beginner classes), capacity limits, and membership tier access automatically, reducing admin phone calls by 70%.",
+    answer: "Not as open booking. In BeltManager you put a student in a group once, and they are expected at every class of that group. Before class, families get a reminder and answer Coming or Can't make it in one tap, from the parent portal or the free iPhone app, so you know who to expect. Open booking with class capacity and waitlists isn't available yet.",
     links: [
       { text: 'Scheduling software', url: '/martial-arts-scheduling-software/' },
       { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
     ]
   },
   {
-    question: "What reports are available in martial arts software?",
-    answer: "Comprehensive reporting includes revenue and financial summaries, membership growth and churn trends, attendance patterns by class and time, retention analysis identifying at-risk students, belt testing and progression metrics, lead and trial conversion tracking, instructor performance and teaching hours, class capacity utilization, and marketing campaign ROI. Export data to CSV for external analysis or integrate with QuickBooks/Xero for accounting.",
+    question: "What reports does BeltManager include?",
+    answer: "An attendance report by class and by student with CSV export, a list of students at risk of leaving (missed their recent classes), an insurance compliance report (instructor-to-student ratio and insured student count) and a ready-to-grade list built from attendance. The revenue report and accountant-ready CSV come with card billing in April 2027.",
     links: [
       { text: 'CRM features', url: '/martial-arts-crm/' },
       { text: 'Contact sales', url: '/contact/' }
     ]
   },
   {
-    question: "Does martial arts software integrate with other tools?",
-    answer: "Yes. Quality platforms integrate with websites for lead capture and class booking, email marketing platforms (Mailchimp, Constant Contact), accounting software (QuickBooks, Xero), calendar applications (Google Calendar, iCal) for schedule syncing, Zapier for automation workflows, and social media platforms. Payment gateways include Stripe, GoCardless, and others. API access enables custom integrations for specific needs.",
+    question: "Does BeltManager integrate with other tools?",
+    answer: "Families can add their classes to their phone's calendar with a calendar feed, and card payments will run through Stripe from April 2027. There are no Zapier, Mailchimp or accounting-software integrations yet.",
     links: [
       { text: 'Overview', url: '/martial-arts-software/' },
       { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
     ]
   }
 ];
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is martial arts software?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Martial arts software is a specialized management platform designed exclusively for dojos, academies, and combat sports gyms. Unlike generic gym software, it includes martial arts-specific features like belt/rank progression tracking with curriculum mapping, testing eligibility automation, family account management, and terminology appropriate to traditional martial arts schools. It consolidates student databases, scheduling, billing, attendance, and communication into one integrated system."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does martial arts software cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most platforms cost £50-300 per month depending on student count and features. Common pricing models include per-student charges (£1-3/month per active student), tiered plans based on school size, or flat monthly rates. Additional costs include payment processing fees (2-3% per transaction), SMS credits for text messaging, and optional premium features. ROI typically comes from 15+ hours weekly admin time savings and 22% improved retention."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What features are essential in martial arts management software?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Essential features include: (1) student database with family accounts, (2) belt/rank progression tracking with curriculum maps, (3) class scheduling with capacity management, (4) automated recurring billing with multiple payment methods, (5) attendance tracking with check-in systems, (6) communication tools (email, SMS, push), (7) student/parent portal for self-service, (8) mobile apps, (9) reporting and analytics, and (10) lead management with trial tracking."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can martial arts software track belt progression and testing?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Belt tracking is the most martial arts-specific feature in management software. Comprehensive systems include visual curriculum maps per discipline, individual student progress against requirements, stripe and incremental achievements, automatic testing eligibility based on attendance and time-in-rank, testing event scheduling, certificate generation, and support for multiple martial arts with different belt systems (BJJ, karate, taekwondo, etc.)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does implementation take?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A typical implementation takes 4-8 weeks from signup to full deployment. Weeks 1-2 focus on configuration, data import, and testing. Weeks 3-4 involve staff training and parallel operation with existing systems. Weeks 5-6 soft launch new features. Weeks 7-8 complete full deployment and retire old systems. Data migration typically takes 2-4 weeks before going live with billing."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does martial arts software work for multiple locations?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Quality platforms support multi-location operations with centralized student databases, consolidated reporting, and cross-location class booking. Each location maintains its own schedule and instructor assignments while sharing membership data. Students can book classes at any location, and owners get unified reporting across all sites. This is essential for academies with 2+ locations."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What payment methods does martial arts billing software support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Modern platforms support credit/debit cards with secure PCI-compliant storage, direct debit/ACH for lower processing fees, bank transfers, and cash/check tracking. Automated recurring billing processes memberships monthly, handles failed payments with retry logic and notifications, and manages family discounts, promotional pricing, contract terms, pro-rata billing, and one-time charges for testing, equipment, and drop-ins."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can students book classes online?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Student portals and mobile apps allow members to view schedules, see real-time class availability, book their spot, join waitlists when full, and manage their bookings with cancellations within policy windows. The system enforces belt-level restrictions, capacity limits, and membership tier access automatically, reducing admin phone calls by 70%."
-      }
-    }
-  ]
-};
 
 const breadcrumbItems = [
   { label: 'Home', url: 'https://beltmanager.com/' },
@@ -252,9 +144,8 @@ const breadcrumbItems = [
 
 <BaseLayout
   title="Martial Arts Management Software for Dojos & Gyms"
-  description="Belt progression, class scheduling, attendance and automated billing in one platform built for martial arts schools. Free until 31 March 2027."
+  description="Belt progression, gradings, class timetables and registers in one platform built for martial arts schools. Free until 31 March 2027."
 >
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <BreadcrumbsEnhanced site="beltmanager" items={breadcrumbItems} />
 
   <section class="section bg-white">
@@ -267,7 +158,7 @@ const breadcrumbItems = [
           Martial Arts Software
         </h1>
         <p class="text-xl text-gray-600 mb-8">
-          The complete management platform for dojos, academies, and combat sports gyms. Belt tracking, automated billing, scheduling, and student engagement—all in one system.
+          The management platform for dojos, academies, and combat sports gyms. Belt tracking, gradings, class timetables, registers and family communication in one system, with card billing switching on in April 2027.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
           <a href="https://app.beltmanager.com/signin" class="btn-primary">Get started free</a>
@@ -278,15 +169,8 @@ const breadcrumbItems = [
   </section>
 
   <FeaturedAnswer question="What is martial arts software?">
-    Martial arts software is a specialized management platform for dojos and combat sports gyms. It handles student databases, belt progression tracking with curriculum mapping, class scheduling, automated recurring billing, attendance tracking, family accounts, communication (email/SMS/push), student portals, mobile apps, and comprehensive reporting.
+    Martial arts software is a specialized management platform for dojos and combat sports gyms. It handles student databases, belt progression tracking with curriculum mapping, class scheduling, automated recurring billing, attendance tracking, family accounts, communication (email and app push), parent portals, mobile apps, and reporting.
   </FeaturedAnswer>
-
-  <StatisticsSection
-    site="beltmanager"
-    pageUrl="https://beltmanager.com/martial-arts-software/"
-    title="Martial Arts Software Industry Statistics"
-    stats={platformStats}
-  />
 
   <section class="section bg-white">
     <div class="container-custom">
@@ -335,7 +219,7 @@ const breadcrumbItems = [
           Attendance data serves multiple purposes: verifying membership usage, determining belt testing eligibility, identifying at-risk students showing declining engagement, and providing instructors with class rosters. Modern check-in options include kiosk mode for tablet-based self check-in, barcode or RFID scanning for rapid processing, mobile check-in through student apps, instructor-side attendance marking, and family check-in allowing parents to check in multiple children simultaneously.
         </p>
 
-        <AppScreenshot src="/images/app/billing-overdue.webp" width={1600} height={769} caption="Overdue invoices: card payments retry automatically, failed cards are flagged, and an optional late fee can be switched on" />
+        <AppScreenshot src="/images/app/billing-overdue.webp" width={1600} height={769} caption="Overdue invoices: card payments retry automatically, failed cards are flagged, and an optional late fee can be switched on. Card billing switches on in April 2027" />
 
         <h2>Automated Billing and Payment Processing</h2>
         <p>
@@ -399,7 +283,7 @@ const breadcrumbItems = [
           Successful software implementation requires planning beyond simply signing up and logging in. A structured approach minimizes disruption and maximizes adoption. Pre-implementation planning includes auditing current processes to identify pain points, cleaning and organizing existing student data for import, documenting current pricing structures and membership types, mapping belt curricula and progression requirements, and identifying staff who will require training.
         </p>
         <p>
-          A typical implementation timeline spans 4-8 weeks. Weeks 1-2 focus on configuration, data import, and testing. Weeks 3-4 involve staff training and parallel operation with existing systems. Weeks 5-6 soft launch new features to students. Weeks 7-8 complete full deployment and retire old systems. Allow 2-4 weeks for data migration and verification before going live with billing to ensure accuracy.
+          With BeltManager the setup is self-serve: add your belts and classes, add or import your students, put them into their groups and take your first register. If you move billing across too, allow time to check every member's amount before card billing switches on in April 2027.
         </p>
 
         <h2>Cost Considerations and ROI</h2>
@@ -411,6 +295,14 @@ const breadcrumbItems = [
         </p>
         <p>
           Software ROI comes from multiple sources: administrative time savings (schools typically report 10-15 hours per week saved on manual tasks), reduced payment failures (automated billing with retry logic reduces failed payment revenue loss by 30-50%), improved retention (better communication and engagement tracking can improve retention by 5-15%), and reduced missed revenue (automated belt testing notifications and equipment sales capture revenue otherwise lost to oversight).
+        </p>
+
+        <h2>What BeltManager Does Today, and What It Doesn't Yet</h2>
+        <p>
+          This guide describes the whole category, so not everything above is in BeltManager. Today BeltManager covers belt and rank tracking with grading eligibility, gradings and printable certificates, a recurring timetable with term dates and closures, registers on your phone, one-tap RSVPs and email and app reminders, family accounts with a parent portal and a free iPhone app, messages to a family, class or the whole school, leads and retention lists, attendance and insurance compliance reports, and e-signed waivers.
+        </p>
+        <p>
+          Card billing is built and switches on in April 2027; until then you record payments by hand. BeltManager doesn't yet offer open class booking with capacity limits and waitlists, private lessons, text messages, direct debit, point of sale, automatic follow-up emails to enquirers, or integrations with accounting or email-marketing tools.
         </p>
 
         <h2>Choosing the Right Platform</h2>
@@ -471,7 +363,7 @@ const breadcrumbItems = [
           Ready to Transform Your Dojo Operations?
         </h2>
         <p class="text-xl mb-8 text-gray-300">
-          Save 15+ hours weekly, improve retention by 22%, and give students the modern experience they expect. Get started free today.
+          Belt tracking, gradings, registers and a free parent app, all free until 31 March 2027. Get started free today.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
           <a href="https://app.beltmanager.com/signin" class="btn-primary">Get started free</a>

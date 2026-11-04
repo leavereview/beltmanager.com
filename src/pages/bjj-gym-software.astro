@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
 import ComparisonTable from '../components/seo/ComparisonTable.astro';
-import StatisticsSection from '../components/seo/StatisticsSection.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
 
@@ -14,7 +13,7 @@ const breadcrumbs = [
 const faqItems = [
   {
     question: 'What is BJJ gym software?',
-    answer: 'BJJ gym software is a specialized management platform designed for Brazilian Jiu-Jitsu academies. It handles student databases with IBJJF belt tracking, stripe management, class scheduling, competition records, membership billing, and attendance—specifically tailored for BJJ instruction rather than generic gym management.',
+    answer: 'BJJ gym software is a specialized management platform designed for Brazilian Jiu-Jitsu academies. It handles student databases with IBJJF belt tracking, stripe management, class scheduling, competition achievements, gradings and attendance, specifically tailored for BJJ instruction rather than generic gym management.',
     links: [
       { text: 'Martial Arts Software Overview', url: '/martial-arts-software/' },
       { text: 'BJJ Belt Guide', url: '/blog/bjj-belts-order-complete-guide/' }
@@ -29,42 +28,42 @@ const faqItems = [
   },
   {
     question: 'Can BJJ software track belt promotions and stripes?',
-    answer: 'Yes, dedicated BJJ software includes IBJJF-compliant belt progression tracking from white through black belt, stripe management (4 stripes per belt), promotion history with dates, time-in-grade calculations, and automatic eligibility notifications for testing.',
+    answer: 'Yes, dedicated BJJ software includes IBJJF-compliant belt progression tracking from white through black belt, stripe management (4 stripes per belt), promotion history with dates, time-in-grade calculations, and a list of who is ready for their next promotion.',
     links: [
       { text: 'BJJ Belt System Guide', url: '/blog/bjj-belts-order-complete-guide/' }
     ]
   },
   {
-    question: 'Does BJJ gym software work for competition teams?',
-    answer: 'Yes, most BJJ software includes competition management features: tournament registration tracking, weight class monitoring, competition records (wins/losses/submissions), team scheduling for competition-specific training, and IBJJF ranking points tracking.',
+    question: 'Does BeltManager work for competition teams?',
+    answer: 'You can run a competition team as its own class group, list tournaments as events, and record results such as medals as achievements, which families are told about. BeltManager does not track weight classes, win/loss records or IBJJF ranking points.',
   },
   {
-    question: 'Can students book open mat sessions through BJJ software?',
-    answer: 'Yes, students can book regular classes, open mat sessions, private lessons, and seminars through the member portal or mobile app with real-time availability, capacity management, and automatic reminders.',
+    question: 'Can students book open mat sessions?',
+    answer: 'Not as open booking. Students join a group, such as Open Mat, once and are expected at its sessions. Families can answer whether they are coming in one tap and get reminders by email and app push. Open booking with capacity limits is not available yet.',
   },
   {
     question: 'What makes BJJ software different from generic gym software?',
-    answer: 'BJJ-specific software understands gi vs. no-gi class distinctions, IBJJF belt progression with stripes, competition team management, multiple class types (fundamentals, advanced, drilling, competition), and BJJ-specific terminology and workflows that generic gym software cannot replicate.',
+    answer: 'BJJ-specific software understands gi vs. no-gi class distinctions, IBJJF belt progression with stripes, multiple class types (fundamentals, advanced, drilling, competition), and BJJ-specific terminology and workflows that generic gym software cannot replicate.',
   },
   {
-    question: 'Can I track private lessons separately from group classes?',
-    answer: 'Yes, BJJ software handles private lesson scheduling with instructor-specific calendars, different pricing tiers per instructor, private lesson packages, technique focus tracking, and individual progress notes per session.',
+    question: 'Can I schedule private lessons?',
+    answer: 'Not yet. BeltManager runs group classes, gradings and events. Private lessons and lesson packages are not available.',
   },
   {
     question: 'Does the software handle both kids and adult belt systems?',
-    answer: 'Yes, comprehensive BJJ software supports both the adult belt system (white→blue→purple→brown→black) and children\'s system (white→gray→yellow→orange→green), with automatic transition to adult system at age 16 and proper age restrictions for promotions.',
+    answer: 'Yes. Set up the adult belts (white→blue→purple→brown→black) and the children\'s belts (white→gray→yellow→orange→green) as separate ladders, each with its own stripes and minimums. You move a student onto the adult ladder when they turn 16; BeltManager does not do it automatically.',
   },
   {
     question: 'How does billing work for BJJ gym software?',
-    answer: 'BJJ software handles automated recurring billing for monthly memberships, private lesson packages, competition team fees, and testing fees. It supports credit card processing, direct debit, cash payments, and family discounts. Failed payment handling with automatic retry logic and notification sequences keeps revenue flowing while maintaining good member relationships.',
+    answer: 'Card billing through Stripe switches on in April 2027: recurring memberships, sibling discounts on one family invoice, and polite retries and reminders when a card fails. Until then you can set up memberships and record payments by hand. Direct debit is not available yet.',
     links: [
       { text: 'Billing features', url: '/martial-arts-billing-software/' },
       { text: 'View pricing', url: '/pricing/' }
     ]
   },
   {
-    question: 'Can members access their progress from mobile phones?',
-    answer: 'Yes, modern BJJ software includes mobile apps or responsive web portals where members can view their current belt/stripe status, attendance history, class schedules, competition records, private lesson bookings, and technique notes. Push notifications remind them of upcoming classes, open mat sessions, and promotion opportunities.',
+    question: 'Can families follow progress from their phones?',
+    answer: 'Yes. Parents use the parent portal or the free iPhone app to see each child\'s belt and upcoming classes, answer whether they are coming, and get push notifications for reminders, promotions and achievements.',
     links: [
       { text: 'Member portal features', url: '/martial-arts-software/' }
     ]
@@ -83,13 +82,8 @@ const comparisonData = [
     highlight: true
   },
   {
-    label: 'Competition Records',
+    label: 'Competition Achievements',
     values: [true, false, false],
-    highlight: false
-  },
-  {
-    label: 'Private Lesson Booking',
-    values: [true, true, true],
     highlight: false
   },
   {
@@ -109,35 +103,11 @@ const comparisonData = [
   }
 ];
 
-const bjjStats = [
-  {
-    label: 'Active BJJ Practitioners (US)',
-    value: '850K+',
-    change: { value: 23, direction: 'up' as const, period: 'since 2020' },
-    context: 'BJJ continues rapid growth globally'
-  },
-  {
-    label: 'Average Time to Black Belt',
-    value: '10 years',
-    context: 'With consistent training 3-4x per week'
-  },
-  {
-    label: 'Student Retention with Software',
-    value: '87%',
-    change: { value: 15, direction: 'up' as const, period: 'vs. manual' },
-    context: 'Automated engagement improves retention'
-  },
-  {
-    label: 'Average Monthly Membership',
-    value: '$150-200',
-    context: 'Varies by location and competition training availability'
-  }
-];
 ---
 
 <BaseLayout
   title="BJJ Gym Software"
-  description="BJJ academy software with IBJJF belt and stripe tracking, competition records, and automated billing. Save 12+ hrs/week on admin. Free until 31 March 2027."
+  description="BJJ academy software with IBJJF belt and stripe tracking, gradings, registers and a free parent app. Free until 31 March 2027."
 >
   <div class="container-custom">
     <BreadcrumbsEnhanced items={breadcrumbs} site="beltmanager" />
@@ -149,8 +119,8 @@ const bjjStats = [
       <span class="badge-primary">Complete Guide</span>
       <h1 class="hero-title">BJJ Gym Software</h1>
       <p class="hero-description">
-        Complete management software for Brazilian Jiu-Jitsu academies. IBJJF belt tracking, stripe management,
-        competition records, and comprehensive member management built specifically for BJJ schools.
+        Management software for Brazilian Jiu-Jitsu academies. IBJJF belt tracking, stripe management,
+        gradings, registers and member management built specifically for BJJ schools.
       </p>
     </div>
   </section>
@@ -162,7 +132,7 @@ const bjjStats = [
         <FeaturedAnswer question="What is BJJ gym software?">
           BJJ gym software is a specialized management platform designed for Brazilian Jiu-Jitsu academies.
           It handles student databases with IBJJF belt tracking, stripe management, class scheduling,
-          competition records, membership billing, and attendance—specifically tailored for BJJ instruction
+          competition achievements, gradings and attendance, specifically tailored for BJJ instruction
           rather than generic gym management.
         </FeaturedAnswer>
 
@@ -170,8 +140,8 @@ const bjjStats = [
 
         <p>
           Running a Brazilian Jiu-Jitsu academy involves unique challenges that generic gym software simply cannot address.
-          From tracking stripe promotions through the intricate IBJJF belt system, to managing competition teams, to
-          coordinating open mat sessions alongside structured classes—BJJ schools need purpose-built technology.
+          From tracking stripe promotions through the intricate IBJJF belt system to
+          running open mat alongside structured classes—BJJ schools need purpose-built technology.
         </p>
 
         <p>
@@ -184,7 +154,7 @@ const bjjStats = [
 
         <ul>
           <li>Generic gym software doesn't understand gi vs. no-gi class distinctions</li>
-          <li>Traditional martial arts software lacks competition team management</li>
+          <li>Standard systems can't show who is ready for their next stripe</li>
           <li>Standard systems can't track IBJJF stripe promotions</li>
           <li>General platforms don't handle multiple class types (fundamentals, advanced, drilling, competition)</li>
         </ul>
@@ -219,10 +189,10 @@ const bjjStats = [
 
         <ul>
           <li>Track individual stripe awards with dates</li>
-          <li>Automatic notifications when students qualify for next stripe</li>
-          <li>Visual stripe displays in student profiles</li>
-          <li>Instructor notes for each stripe promotion</li>
-          <li>Photo documentation of promotions</li>
+          <li>A ready-to-grade list when students meet your minimums</li>
+          <li>Visual stripe displays on the belt badge</li>
+          <li>Notes on each promotion</li>
+          <li>Promotion notices to families by email and app push</li>
         </ul>
 
         <h3>3. Class Type Management</h3>
@@ -239,65 +209,29 @@ const bjjStats = [
           <li><strong>Kids Classes:</strong> Age-specific programs</li>
         </ul>
 
-        <p>Your software must handle:</p>
+        <p>In BeltManager:</p>
         <ul>
-          <li>Different pricing for class types</li>
-          <li>Capacity limits per class</li>
-          <li>Eligibility restrictions by belt level</li>
-          <li>Gi vs. no-gi designation</li>
+          <li>Each class type is its own group with a weekly timetable</li>
+          <li>Each group can have a belt range and an age range (BeltManager warns you before adding a student outside it)</li>
+          <li>Gi and no-gi classes are separate groups</li>
+          <li>Students join a group once and are expected at every session</li>
         </ul>
 
-        <StatisticsSection
-          title="BJJ Industry Statistics 2026"
-          description="Key metrics showing the growth and scale of Brazilian Jiu-Jitsu"
-          stats={bjjStats}
-          source="BJJ Industry Report & IBJJF Data"
-          datePublished="2026-01-01"
-          site="beltmanager"
-          pageUrl={Astro.url.href}
-          layout="grid"
-        />
+        <h3>4. Competitions and Events</h3>
 
-        <h3>4. Competition Team Management</h3>
-
-        <p>For academies with competitive athletes, robust competition features are essential:</p>
-
-        <p><strong>Tournament Tracking:</strong></p>
-        <ul>
-          <li>Upcoming tournament registration</li>
-          <li>Weight class monitoring</li>
-          <li>Registration fee processing</li>
-          <li>Team transportation coordination</li>
-        </ul>
-
-        <p><strong>Competition Records:</strong></p>
-        <ul>
-          <li>Win/loss records by competition</li>
-          <li>Submission types achieved</li>
-          <li>Points scored</li>
-          <li>Medal/trophy tracking</li>
-          <li>IBJJF ranking points</li>
-        </ul>
-
-        <p><strong>Team Scheduling:</strong></p>
-        <ul>
-          <li>Competition-specific training sessions</li>
-          <li>Strategy planning sessions</li>
-          <li>Weight cutting guidance scheduling</li>
-          <li>Video review sessions</li>
-        </ul>
-
-        <h3>5. Private Lesson Coordination</h3>
-
-        <p>Many BJJ practitioners supplement group classes with private instruction:</p>
+        <p>For academies with competitive athletes:</p>
 
         <ul>
-          <li>Instructor-specific scheduling</li>
-          <li>Different pricing tiers per instructor</li>
-          <li>Private lesson packages</li>
-          <li>Technique focus tracking</li>
-          <li>Progress notes per session</li>
+          <li>Run your competition team as its own class group</li>
+          <li>List tournaments and seminars as events</li>
+          <li>Record results such as medals as achievements and patches</li>
+          <li>Families are told about each achievement by email and app push</li>
         </ul>
+
+        <p>
+          BeltManager does not track weight classes, win/loss records, submissions or IBJJF ranking points, and it does
+          not schedule private lessons or lesson packages yet.
+        </p>
 
         <ComparisonTable
           title="BJJ Software Feature Comparison"
@@ -315,8 +249,6 @@ const bjjStats = [
         <ul>
           <li>Set minimum mat time for each belt</li>
           <li>Define stripe requirements</li>
-          <li>Configure age restrictions</li>
-          <li>Set instructor approval requirements</li>
         </ul>
 
         <p><strong>Step 2: Import Existing Students</strong></p>
@@ -324,15 +256,12 @@ const bjjStats = [
           <li>Current belt levels</li>
           <li>Promotion history</li>
           <li>Stripe dates</li>
-          <li>Competition records</li>
         </ul>
 
         <p><strong>Step 3: Establish Testing Process</strong></p>
         <ul>
           <li>Testing frequency (quarterly, bi-annual, etc.)</li>
           <li>Evaluation criteria</li>
-          <li>Instructor assignment</li>
-          <li>Fee structure</li>
         </ul>
 
         <p><strong>Step 4: Train Your Instructors</strong></p>
@@ -422,7 +351,7 @@ const bjjStats = [
         <p>
           Generic gym software forces you to adapt your BJJ academy's unique needs to their inflexible structure.
           Purpose-built BJJ software adapts to <em>your</em> academy's specific requirements—from IBJJF belt compliance
-          to competition team management.
+          to separate kids' and adult belt ladders.
         </p>
 
         <p>
@@ -440,8 +369,8 @@ const bjjStats = [
       <div class="cta-card">
         <h2>Ready to Streamline Your BJJ Academy?</h2>
         <p>
-          See how BeltManager can transform your academy operations with BJJ-specific features, automated belt tracking,
-          and comprehensive management tools.
+          Belts and stripes, a ready-to-grade list built from your registers and a free parent app.
+          Free until 31 March 2027.
         </p>
         <div class="cta-buttons">
           <a href="https://app.beltmanager.com/signin" class="btn-primary-large">Get started free</a>

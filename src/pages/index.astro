@@ -10,9 +10,9 @@ const softwareApplicationSchema = {
   "@id": "https://beltmanager.com/#software",
   "name": "BeltManager",
   "alternateName": "BeltManager",
-  "description": "Complete martial arts management software for dojos, karate schools, BJJ academies, and MMA gyms. Class scheduling, billing, student management, and belt tracking in one platform.",
+  "description": "Martial arts management software for dojos, karate schools, BJJ academies, and MMA gyms. Class timetables, registers, student management, gradings and belt tracking in one platform.",
   "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web, iOS, Android",
+  "operatingSystem": "Web, iOS",
   "offers": {
     "@type": "Offer",
     "@id": "https://beltmanager.com/#free",
@@ -20,23 +20,23 @@ const softwareApplicationSchema = {
     "priceCurrency": "GBP",
     "priceValidUntil": "2027-03-31",
     "name": "Free until 31 March 2027",
-    "description": "BeltManager is free to use until 31 March 2027 — no subscription, no commission, no setup fee, and no per-student charges. Every feature is included during the launch period.",
+    "description": "BeltManager is free to use until 31 March 2027 — no subscription, no commission, no setup fee, and no per-student charges. Every live feature is included during the launch period.",
     "availability": "https://schema.org/InStock",
     "url": "https://beltmanager.com/pricing/"
   },
   "featureList": [
-    "Class Scheduling & Booking",
+    "Class Timetables & RSVP",
     "Student Management & Profiles",
     "Belt & Rank Tracking",
-    "Automated Billing & Payments",
+    "Membership Billing (card billing from April 2027)",
     "Attendance Tracking",
-    "Parent Portal & Mobile App",
-    "Instructor Management",
-    "Tournament & Competition Tracking",
+    "Parent Portal & Free Parent App",
+    "Staff Roles & Permissions",
+    "Tournament & Seminar Events",
     "Membership Management",
-    "Reports & Analytics",
+    "Attendance & Compliance Reports",
     "Multi-location Support",
-    "Automated Reminders (SMS & Email)"
+    "Class Reminders (Email & App Push)"
   ],
   "url": "https://beltmanager.com",
   "applicationSubCategory": "Martial Arts School Management",
@@ -54,7 +54,7 @@ const offerSchema = {
   "@type": "Offer",
   "@id": "https://beltmanager.com/#free-offer",
   "name": "BeltManager — free until 31 March 2027",
-  "description": "BeltManager is free to use until 31 March 2027, with complete access to all features including class scheduling, billing, student management, and belt tracking. No subscription, no commission, no setup fee, no per-student charges, and no credit card required.",
+  "description": "BeltManager is free to use until 31 March 2027, with access to every feature that is live, including class timetables, registers, student management, gradings and belt tracking. Card billing switches on in April 2027; until then, record payments by hand. No subscription, no commission, no setup fee, no per-student charges, and no credit card required.",
   "price": "0",
   "priceCurrency": "GBP",
   "priceValidUntil": "2027-03-31",
@@ -96,7 +96,7 @@ const features = [
   {
     icon: 'calendar',
     title: 'Class Scheduling',
-    description: 'Powerful scheduling tools with recurring classes, instructor assignments, and automated reminders.'
+    description: 'Recurring classes, venues and rooms, term dates and closures, with email and app reminders before each class.'
   },
   {
     icon: 'users',
@@ -106,22 +106,22 @@ const features = [
   {
     icon: 'credit-card',
     title: 'Billing & Payments',
-    description: 'Automated billing, membership management, and integrated payment processing.'
+    description: 'Card billing through Stripe switches on in April 2027. Until then, record payments by hand.'
   },
   {
     icon: 'chart',
     title: 'Reports & Analytics',
-    description: 'Real-time insights into your dojo performance, revenue, and student retention.'
+    description: 'Attendance reports with CSV export, at-risk student lists and insurance compliance checks.'
   },
   {
     icon: 'belt',
     title: 'Belt & Rank Tracking',
-    description: 'Manage belt progression, testing schedules, and certification for all martial arts styles.'
+    description: 'Manage belt progression, grading eligibility, gradings and printable certificates for any style.'
   },
   {
     icon: 'mobile',
-    title: 'Mobile App',
-    description: 'Students and parents can book classes, track progress, and make payments on the go.'
+    title: 'Free Parent App',
+    description: 'Parents RSVP to classes in one tap, follow their child\'s progress and get closure notices. Free on iPhone.'
   }
 ];
 
@@ -129,7 +129,7 @@ const stats = [
   { number: 'Unlimited', label: 'Students & Classes' },
   { number: '£0', label: 'Until 31 March 2027' },
   { number: 'All styles', label: 'Karate, BJJ, TKD, MMA' },
-  { number: '24/7', label: 'Self-Service Booking' }
+  { number: '24/7', label: 'Parent Portal & App' }
 ];
 ---
 
@@ -146,7 +146,7 @@ const stats = [
     <div class="container-custom relative py-20 md:py-32">
       <div class="max-w-3xl">
         <span class="badge-primary mb-6">
-          #1 Martial Arts Management Software
+          Free until 31 March 2027
         </span>
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
           Run Your <span class="text-brand-red">Dojo</span> Like a Pro
@@ -255,19 +255,19 @@ const stats = [
               <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              <span class="text-gray-700"><strong class="text-brand-navy">Karate & Traditional Arts:</strong> Kyu/Dan ranking, kata tracking, tournament management</span>
+              <span class="text-gray-700"><strong class="text-brand-navy">Karate & Traditional Arts:</strong> Kyu/Dan ranking, kata tracking, tournament and seminar events</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              <span class="text-gray-700"><strong class="text-brand-navy">BJJ & Grappling:</strong> IBJJF belt system, stripe tracking, competition records</span>
+              <span class="text-gray-700"><strong class="text-brand-navy">BJJ & Grappling:</strong> IBJJF belt system, stripe tracking, competition achievements</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              <span class="text-gray-700"><strong class="text-brand-navy">MMA & Kickboxing:</strong> Multi-discipline tracking, sparring logs, fight records</span>
+              <span class="text-gray-700"><strong class="text-brand-navy">MMA & Kickboxing:</strong> Multi-discipline belt tracking, competition achievements</span>
             </li>
           </ul>
           <a href="/dojo-management-software/" class="btn-primary">
@@ -361,14 +361,14 @@ const stats = [
             <svg class="w-5 h-5 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
           </div>
           <h3 class="font-bold text-brand-navy mb-1">Martial Arts Billing Software</h3>
-          <p class="text-sm text-gray-600">Automated recurring billing and payment recovery</p>
+          <p class="text-sm text-gray-600">Recurring card billing, switching on in April 2027</p>
         </a>
         <a href="/martial-arts-scheduling-software/" class="block p-6 rounded-xl border border-gray-200 hover:border-brand-red hover:shadow-md transition-all group">
           <div class="w-10 h-10 rounded-lg bg-brand-red-light flex items-center justify-center mb-3 group-hover:bg-brand-red transition-colors">
             <svg class="w-5 h-5 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
           </div>
           <h3 class="font-bold text-brand-navy mb-1">Martial Arts Scheduling Software</h3>
-          <p class="text-sm text-gray-600">Class timetables, bookings, and grading event management</p>
+          <p class="text-sm text-gray-600">Class timetables, RSVPs, and grading event management</p>
         </a>
       </div>
     </div>
