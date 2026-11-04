@@ -15,10 +15,13 @@ This does a clean build (which runs `verify-seo.js`), shows an rsync `--delete` 
 
 ## GitHub Actions (disabled)
 
-`.github/workflows/deploy.yml` is disabled (30 Oct 2026). It cannot build on a GitHub-hosted runner
-because `astro.config.mjs` imports `../scripts/sitemap-lastmod.mjs` from the parent
-`multi-site-documentation` checkout, and public site repos deliberately get no agentbox runner (they
-hold the production `DEPLOY_KEY`). Use `./deploy.sh` above.
+`.github/workflows/deploy.yml` is disabled (30 Oct 2026). Use `./deploy.sh` above. Public site repos
+deliberately get no agentbox runner, because they hold the production `DEPLOY_KEY`.
+
+The build no longer needs the parent `multi-site-documentation` checkout. `scripts/sitemap-lastmod.mjs`
+and `scripts/verify-seo.js` are vendored copies of that repo's shared `scripts/`, so a standalone clone
+builds. Keep them in step with the shared copies. Re-enabling the workflow is a separate decision: it
+would deploy on every push to `main`.
 
 ## Local development
 
