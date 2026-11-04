@@ -826,7 +826,7 @@ const howToSchema = {
 
   .step-indicator.active:not(:last-child)::after,
   .step-indicator.completed:not(:last-child)::after {
-    background: #E94560;
+    background: #C0420B;
   }
 
   .step-number {
@@ -838,7 +838,7 @@ const howToSchema = {
     justify-content: center;
     border-radius: 50%;
     background: #e5e7eb;
-    color: #6b7280;
+    color: #5B6170;
     font-weight: 600;
     font-size: 18px;
     transition: all 0.3s;
@@ -846,7 +846,7 @@ const howToSchema = {
 
   .step-indicator.active .step-number,
   .step-indicator.completed .step-number {
-    background: #E94560;
+    background: #C0420B;
     color: white;
   }
 
@@ -859,7 +859,7 @@ const howToSchema = {
 
   .step-indicator.active .step-label,
   .step-indicator.completed .step-label {
-    color: #1A1A2E;
+    color: #14161F;
   }
 
   /* Toggle switch */
@@ -887,7 +887,7 @@ const howToSchema = {
   }
 
   input:checked + .toggle-switch {
-    background: #E94560;
+    background: #C0420B;
   }
 
   input:checked + .toggle-switch::after {
@@ -906,9 +906,9 @@ const howToSchema = {
   }
 
   input:checked + .projection-option {
-    border-color: #E94560;
-    background: #FFE7EC;
-    color: #E94560;
+    border-color: #C0420B;
+    background: #FFF1EA;
+    color: #C0420B;
   }
 
   /* Print styles */
@@ -939,7 +939,7 @@ const howToSchema = {
   .prose-custom h2 {
     font-size: 1.875rem;
     font-weight: 700;
-    color: #1A1A2E;
+    color: #14161F;
     margin-top: 3rem;
     margin-bottom: 1.5rem;
   }
@@ -947,7 +947,7 @@ const howToSchema = {
   .prose-custom h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1A1A2E;
+    color: #14161F;
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
@@ -1163,9 +1163,9 @@ const howToSchema = {
     }
 
     const costs = [
-      { label: 'Rent', value: rent, color: '#E94560' },
+      { label: 'Rent', value: rent, color: '#C0420B' },
       { label: 'Instructors', value: totalInstructorCost, color: '#FF6B8A' },
-      { label: 'Marketing', value: marketing, color: '#1A1A2E' },
+      { label: 'Marketing', value: marketing, color: '#14161F' },
       { label: 'Utilities', value: utilities, color: '#4A4A5E' },
       { label: 'Insurance', value: insurance, color: '#7A7A8E' },
       { label: 'Equipment', value: equipment, color: '#AAAAAE' },
@@ -1557,17 +1557,17 @@ const howToSchema = {
         }).join('')}
 
         <!-- Revenue line -->
-        <polyline points="${revenuePoints}" fill="none" stroke="#E94560" stroke-width="3"/>
+        <polyline points="${revenuePoints}" fill="none" stroke="#C0420B" stroke-width="3"/>
 
         <!-- Profit line -->
-        <polyline points="${profitPoints}" fill="none" stroke="#1A1A2E" stroke-width="3" stroke-dasharray="5,5"/>
+        <polyline points="${profitPoints}" fill="none" stroke="#14161F" stroke-width="3" stroke-dasharray="5,5"/>
 
         <!-- Legend -->
         <g transform="translate(${padding}, 20)">
-          <line x1="0" y1="0" x2="30" y2="0" stroke="#E94560" stroke-width="3"/>
+          <line x1="0" y1="0" x2="30" y2="0" stroke="#C0420B" stroke-width="3"/>
           <text x="35" y="5" fill="#374151" font-size="12">Revenue</text>
 
-          <line x1="120" y1="0" x2="150" y2="0" stroke="#1A1A2E" stroke-width="3" stroke-dasharray="5,5"/>
+          <line x1="120" y1="0" x2="150" y2="0" stroke="#14161F" stroke-width="3" stroke-dasharray="5,5"/>
           <text x="155" y="5" fill="#374151" font-size="12">Profit</text>
         </g>
 
@@ -1596,7 +1596,7 @@ const howToSchema = {
           const x = padding + (i * (chartWidth - 2 * padding) / projections.length);
           const barHeight = range > 0 ? ((p.students - minStudents) / range) * (chartHeight - 2 * padding) : chartHeight - 2 * padding;
           const y = chartHeight - padding - barHeight;
-          const color = i === 0 ? '#1A1A2E' : '#E94560';
+          const color = i === 0 ? '#14161F' : '#C0420B';
 
           return `
             <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" fill="${color}" opacity="0.8"/>

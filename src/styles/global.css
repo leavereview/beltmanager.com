@@ -2,7 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Archivo — the app's display face (H1/H2 only). Self-hosted, Latin subset, the same
+ * two files the app ships (leavereview/beltmanager src/app/fonts). SIL OFL 1.1.
+ */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/archivo-wght-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/archivo-wght-900.woff2') format('woff2');
+}
+
 @layer base {
+  /* For component styles that read CSS variables (src/components/seo/*). */
+  :root {
+    --brand: theme('colors.brand.DEFAULT');
+    --brand-red: theme('colors.brand.600');
+    --brand-red-dark: theme('colors.brand.700');
+    --brand-red-light: theme('colors.brand.50');
+    --brand-navy: theme('colors.ink');
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -15,6 +43,45 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
   }
+
+  /* The app's display type for the two top heading levels. */
+  h1, h2 {
+    @apply font-display;
+  }
+
+  /* Keyboard focus ring, as in the app: brand-700 shows on white and on canvas. */
+  :focus-visible {
+    outline: 2px solid theme('colors.brand.700');
+    outline-offset: 2px;
+  }
+
+  /*
+   * The belt-colour stripe under section headings (the app's PageTitle underline).
+   * A pseudo-element, so the heading text and its accessible name stay the same.
+   * Decoration only: never a state or a rank.
+   */
+  h2.text-3xl::after {
+    content: '';
+    @apply block h-1 w-14 mt-3 rounded-full bg-belt;
+  }
+  .text-center h2.text-3xl::after,
+  h2.text-3xl.text-center::after {
+    @apply mx-auto;
+  }
+
+  /*
+   * brand-600 text on ink is only 3.46:1. On dark blocks, orange text uses the
+   * identity orange instead (5.11:1 on ink). This covers the existing markup without
+   * changing it; new markup on dark grounds can use `text-brand` directly.
+   */
+  .bg-brand-navy .text-brand-red:not([class*='bg-']),
+  .from-brand-navy .text-brand-red:not([class*='bg-']),
+  .bg-ink .text-brand-red:not([class*='bg-']),
+  .from-ink .text-brand-red:not([class*='bg-']),
+  .bg-brand-navy .hover\:text-brand-red:hover,
+  .from-brand-navy .hover\:text-brand-red:hover {
+    color: theme('colors.brand.DEFAULT');
+  }
 }
 
 @layer components {
@@ -23,24 +90,24 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
-  /* Buttons - Following PetCare design system */
+  /* Buttons — the app's CTA: brand-600 fill (5.22:1 with white), brand-700 on hover */
   .btn {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 ease-out;
   }
   
   .btn-primary {
-    @apply btn bg-brand-red text-white shadow-md;
-    @apply hover:bg-brand-red-dark hover:shadow-lg hover:-translate-y-0.5;
+    @apply btn bg-brand-600 text-white shadow-md;
+    @apply hover:bg-brand-700 hover:shadow-lg hover:-translate-y-0.5;
   }
   
   .btn-secondary {
-    @apply btn bg-white text-brand-navy border-2 border-gray-200;
+    @apply btn bg-white text-ink border-2 border-line;
     @apply hover:bg-gray-50 hover:border-gray-300 hover:-translate-y-0.5;
   }
   
   .btn-outline {
-    @apply btn bg-transparent text-brand-red border-2 border-brand-red;
-    @apply hover:bg-brand-red hover:text-white;
+    @apply btn bg-transparent text-brand-600 border-2 border-brand-600;
+    @apply hover:bg-brand-600 hover:text-white;
   }
   
   /* Cards */
@@ -57,12 +124,12 @@
   /* Inputs */
   .input {
     @apply w-full px-4 py-3 text-base border-2 border-gray-200 rounded-lg transition-all duration-200;
-    @apply focus:border-brand-red focus:outline-none focus:ring-2 focus:ring-brand-red-light;
+    @apply focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-50;
   }
   
   /* Links */
   .link {
-    @apply text-brand-red hover:text-brand-red-dark transition-colors duration-200;
+    @apply text-brand-600 hover:text-brand-700 transition-colors duration-200;
   }
   
   /* Badge */
@@ -71,11 +138,11 @@
   }
   
   .badge-primary {
-    @apply badge bg-brand-red-light text-brand-red;
+    @apply badge bg-brand-50 text-brand-700;
   }
   
   .badge-navy {
-    @apply badge bg-brand-navy text-white;
+    @apply badge bg-ink text-white;
   }
 }
 
@@ -85,11 +152,11 @@
 }
 
 .prose h2 {
-  @apply text-2xl md:text-3xl font-bold text-brand-navy mt-12 mb-6;
+  @apply text-2xl md:text-3xl font-bold text-ink mt-12 mb-6;
 }
 
 .prose h3 {
-  @apply text-xl md:text-2xl font-bold text-brand-navy mt-8 mb-4;
+  @apply text-xl md:text-2xl font-bold text-ink mt-8 mb-4;
 }
 
 .prose p {
@@ -105,7 +172,7 @@
 }
 
 .prose a {
-  @apply text-brand-red hover:text-brand-red-dark underline;
+  @apply text-brand-600 hover:text-brand-700 underline;
 }
 
 .prose strong {

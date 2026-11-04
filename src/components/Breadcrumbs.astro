@@ -30,14 +30,14 @@ const breadcrumbSchema = {
     {items.map((item, index) => (
       <li class="flex items-center">
         {index > 0 && (
-          <span class="text-gray-400 mx-2">/</span>
+          <span class="text-gray-400 mx-2" aria-hidden="true">/</span>
         )}
         {item.href && index < items.length - 1 ? (
-          <a href={item.href} class="text-gray-500 hover:text-brand-red transition-colors">
+          <a href={item.href} class="text-muted hover:text-brand-600 transition-colors">
             {item.label}
           </a>
         ) : (
-          <span class={index === items.length - 1 ? 'text-gray-700 font-medium' : 'text-gray-500'}>
+          <span class={index === items.length - 1 ? 'text-gray-700 font-medium' : 'text-muted'}>
             {item.label}
           </span>
         )}
