@@ -1,5 +1,7 @@
 ---
 // Blog Post Template - /blog/[slug]
+import { appLink } from '../../utils/appLink';
+import AppLinks from '../../components/AppLinks.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
@@ -117,7 +119,7 @@ const relatedPosts = allPosts
         <!-- Main Content -->
         <div class="lg:col-span-3">
           <div class="prose max-w-none">
-            <Content />
+            <AppLinks><Content /></AppLinks>
           </div>
 
           <!-- Share / Actions -->
@@ -164,7 +166,7 @@ const relatedPosts = allPosts
               <p class="text-sm text-gray-600 mb-4">
                 The complete martial arts management platform for your school.
               </p>
-              <a href="https://app.beltmanager.com/signin" class="btn-primary w-full text-center text-sm">
+              <a href={appLink(Astro.url.pathname, 'sidebar')} class="btn-primary w-full text-center text-sm">
                 Get started free
               </a>
             </div>

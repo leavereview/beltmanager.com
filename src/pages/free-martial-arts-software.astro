@@ -1,4 +1,5 @@
 ---
+import { appLink } from '../utils/appLink';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
 import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
@@ -75,7 +76,7 @@ const description =
           pricing pages in July 2026.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="https://app.beltmanager.com/signin" class="btn-primary text-lg px-8 py-4">Start Free — No Card</a>
+          <a href={appLink(Astro.url.pathname, 'hero')} class="btn-primary text-lg px-8 py-4">Start Free — No Card</a>
           <a href="/blog/best-martial-arts-software/" class="btn-secondary text-lg px-8 py-4">See the Full Comparison</a>
         </div>
       </div>
@@ -296,7 +297,7 @@ const description =
         students you track.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://app.beltmanager.com/signin" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4 font-bold">Get Started Free</a>
+        <a href={appLink(Astro.url.pathname, 'bottom')} class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4 font-bold">Get Started Free</a>
         <a href="/martial-arts-software/" class="btn border-2 border-white text-white hover:bg-white hover:text-brand-red text-lg px-8 py-4 font-bold">See What It Does</a>
       </div>
     </div>

@@ -1,5 +1,6 @@
 ---
 // PillarPageLayout.astro - Template for SEO pillar pages
+import { appLink } from '../utils/appLink';
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 
@@ -19,7 +20,7 @@ const {
   heroImage = '/images/full-shot-asian-people-practicing-taekwondo.jpg',
   badge = 'Complete Guide',
   ctaText = 'Get started free',
-  ctaLink = 'https://app.beltmanager.com/signin',
+  ctaLink = appLink(Astro.url.pathname, 'hero'),
   breadcrumbLabel
 } = Astro.props;
 
@@ -118,7 +119,7 @@ const breadcrumbs = [
               <p class="text-sm text-gray-600 mb-4">
                 Free until 31 March 2027 — no subscription, no commission, no credit card.
               </p>
-              <a href="https://app.beltmanager.com/signin" class="btn-primary w-full text-center text-sm">
+              <a href={appLink(Astro.url.pathname, 'sidebar')} class="btn-primary w-full text-center text-sm">
                 Get started free
               </a>
             </div>
@@ -138,7 +139,7 @@ const breadcrumbs = [
         Join hundreds of dojos and academies already using BeltManager to streamline their operations.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://app.beltmanager.com/signin" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
+        <a href={appLink(Astro.url.pathname, 'bottom')} class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
           Get started free
         </a>
         <a href="/pricing/" class="btn bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4">

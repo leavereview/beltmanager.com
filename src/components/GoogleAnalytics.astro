@@ -1,0 +1,43 @@
+---
+// Google Analytics 4. Loads only after the cookie banner is accepted, the same gate as PostHog and Metricool,
+// and listens for a later accept on the same page. Nothing below runs (and no cookie is set) without consent.
+// signup_click reads page and cta from the page path and the link's utm_content (see src/utils/appLink.ts).
+const measurementId = 'G-WSS89NS2ZN';
+---
+<script is:inline define:vars={{ measurementId }}>
+  (function () {
+    function loadAnalytics() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', measurementId);
+
+      var path = location.pathname.replace(/^\/+|\/+$/g, '');
+      if (path === 'pricing') window.gtag('event', 'pricing_view');
+
+      document.addEventListener('click', function (event) {
+        var link = event.target.closest && event.target.closest('a[href^="https://app.beltmanager.com/signin"]');
+        if (!link) return;
+        window.gtag('event', 'signup_click', {
+          page: path.replace(/\/+/g, '-') || 'home',
+          cta: new URL(link.href).searchParams.get('utm_content') || 'unknown',
+          transport_type: 'beacon',
+        });
+      });
+    }
+    try {
+      var consent = localStorage.getItem('cookieConsent');
+      if (consent && JSON.parse(consent).accepted === true) loadAnalytics();
+    } catch (error) {
+      console.error('Error loading analytics:', error);
+    }
+    window.addEventListener('cookieConsentAccepted', loadAnalytics);
+  })();
+</script>

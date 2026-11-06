@@ -1,4 +1,5 @@
 ---
+import { appLink } from '../utils/appLink';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
 import ComparisonTable from '../components/seo/ComparisonTable.astro';
@@ -355,7 +356,7 @@ const comparisonData = [
         </p>
 
         <p>
-          <strong>Ready to see the difference?</strong> <a href="https://app.beltmanager.com/signin" class="link">Get started free</a> and
+          <strong>Ready to see the difference?</strong> <a href={appLink(Astro.url.pathname, 'body')} class="link">Get started free</a> and
           experience software designed specifically for Brazilian Jiu-Jitsu academies. No credit card required, unlimited
           students, free until 31 March 2027.
         </p>
@@ -373,7 +374,7 @@ const comparisonData = [
           Free until 31 March 2027.
         </p>
         <div class="cta-buttons">
-          <a href="https://app.beltmanager.com/signin" class="btn-primary-large">Get started free</a>
+          <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary-large">Get started free</a>
           <a href="/pricing/" class="btn-secondary-large">View Pricing</a>
         </div>
         <p class="cta-note">Free until 31 March 2027 • No credit card • No contract</p>

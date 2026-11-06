@@ -1,4 +1,5 @@
 ---
+import { appLink } from '../../utils/appLink';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbsEnhanced from '../../components/seo/BreadcrumbsEnhanced.astro';
 import FeaturedAnswer from '../../components/seo/FeaturedAnswer.astro';
@@ -90,7 +91,7 @@ const schemaMarkup = {
           Side-by-side against the platforms dojo owners actually shortlist. Every competitor price comes from that vendor's own pricing page — and we say where they beat us.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="https://app.beltmanager.com/signin" class="btn-primary text-lg px-8 py-4">Try BeltManager Free</a>
+          <a href={appLink(Astro.url.pathname, 'hero')} class="btn-primary text-lg px-8 py-4">Try BeltManager Free</a>
           <a href="/blog/best-martial-arts-software/" class="btn-secondary text-lg px-8 py-4">Read the Full Roundup</a>
         </div>
       </div>
@@ -170,7 +171,7 @@ const schemaMarkup = {
     <div class="container-custom">
       <h2 class="text-3xl font-bold mb-3">Try BeltManager — Free Until 31 March 2027</h2>
       <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">No subscription, no per-student fees, no demo call required. Set your school up and run a real week of classes before deciding.</p>
-      <a href="https://app.beltmanager.com/signin" class="inline-block bg-brand-red text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-red-700 transition-colors">
+      <a href={appLink(Astro.url.pathname, 'bottom')} class="inline-block bg-brand-red text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-red-700 transition-colors">
         Get started free &rarr;
       </a>
       <p class="text-white/50 text-sm mt-3">Free until 31 March 2027 &middot; No card required</p>

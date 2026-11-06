@@ -1,5 +1,6 @@
 ---
 // Homepage - index.astro
+import { appLink } from '../utils/appLink';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 
@@ -188,7 +189,7 @@ const stats = [
             Add your students once. Every class knows who's coming, and BeltManager tells you who's ready to grade.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="https://app.beltmanager.com/signin" class="btn-primary text-lg px-8 py-4" data-ph-capture-attribute-cta="hero-get-started" data-ph-capture-attribute-hero-version="aha-2026-11">
+            <a href={appLink(Astro.url.pathname, 'hero')} class="btn-primary text-lg px-8 py-4" data-ph-capture-attribute-cta="hero-get-started" data-ph-capture-attribute-hero-version="aha-2026-11">
               Get started free
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -267,7 +268,7 @@ const stats = [
         ))}
       </ol>
       <div class="text-center mt-12">
-        <a href="https://app.beltmanager.com/signin" class="btn-primary" data-ph-capture-attribute-cta="how-it-works-get-started" data-ph-capture-attribute-hero-version="aha-2026-11">
+        <a href={appLink(Astro.url.pathname, 'how-it-works')} class="btn-primary" data-ph-capture-attribute-cta="how-it-works-get-started" data-ph-capture-attribute-hero-version="aha-2026-11">
           Get started free
         </a>
       </div>
@@ -552,7 +553,7 @@ const stats = [
         BeltManager is free until 31 March 2027 — no subscription, no commission. See how it can streamline your operations and grow your school.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://app.beltmanager.com/signin" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
+        <a href={appLink(Astro.url.pathname, 'bottom')} class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
           Get started free
         </a>
         <a href="/pricing/" class="btn bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4">

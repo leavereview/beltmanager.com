@@ -1,4 +1,5 @@
 ---
+import { appLink } from '../utils/appLink';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
 import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
@@ -59,7 +60,7 @@ const faqItems = [
     answer: "Not yet for card payments. BeltManager is free until 31 March 2027, and card billing switches on in April 2027. Until then you can set up memberships and families and record cash or bank-transfer payments by hand, so your records are ready when card billing starts.",
     links: [
       { text: 'See pricing', url: '/pricing/' },
-      { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
+      { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }
     ]
   },
   {
@@ -83,7 +84,7 @@ const faqItems = [
     answer: "BeltManager retries the card two days after the due date and again on day five. On day seven the family gets one friendly email. You're only told on day fourteen if it's still unpaid, and the invoice stays on the Overdue tab. Nothing in this process stops a child from training. You can choose to add a late fee, which the reminder names in advance.",
     links: [
       { text: 'CRM features', url: '/martial-arts-crm/' },
-      { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
+      { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }
     ]
   },
   {
@@ -107,7 +108,7 @@ const faqItems = [
     answer: "No. BeltManager doesn't prorate: a membership that starts or changes mid-cycle is charged at its normal amount from its billing date.",
     links: [
       { text: 'Scheduling software', url: '/martial-arts-scheduling-software/' },
-      { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
+      { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }
     ]
   },
   {
@@ -161,7 +162,7 @@ const breadcrumbItems = [
           One invoice per family, sibling discounts, freezes and polite failed-payment follow-up. Card billing switches on in April 2027; until then, record payments by hand.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
-          <a href="https://app.beltmanager.com/signin" class="btn-primary">Get started free</a>
+          <a href={appLink(Astro.url.pathname, 'hero')} class="btn-primary">Get started free</a>
           <a href="/pricing/" class="btn-secondary">View Pricing</a>
         </div>
       </div>
@@ -286,7 +287,7 @@ const breadcrumbItems = [
           Set up families and memberships now and record payments by hand. Card billing switches on in April 2027. Get started free today.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
-          <a href="https://app.beltmanager.com/signin" class="btn-primary">Get started free</a>
+          <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary">Get started free</a>
           <a href="/pricing/" class="btn-secondary bg-white text-navy hover:bg-gray-100">View Pricing</a>
         </div>
       </div>

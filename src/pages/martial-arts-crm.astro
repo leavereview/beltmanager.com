@@ -1,4 +1,5 @@
 ---
+import { appLink } from '../utils/appLink';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
 import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
@@ -106,7 +107,7 @@ const faqItems = [
     question: "How long does setup take?",
     answer: "Leads and retention work as soon as your school is set up: add your classes and students, and share your join form link on your website or social media.",
     links: [
-      { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
+      { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }
     ]
   }
 ];
@@ -279,7 +280,7 @@ const faqItems = [
           Track every enquiry from first contact to new student, and see who is drifting away before they leave.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://app.beltmanager.com/signin" class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>
+          <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>
           <a href="/pricing/" class="btn-secondary-large border-white text-white hover:bg-white hover:bg-opacity-10">View Pricing</a>
         </div>
         <p class="mt-6 text-sm opacity-90">Free until 31 March 2027 • No credit card • No contract</p>

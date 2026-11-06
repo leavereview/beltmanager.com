@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { appLink } from '../utils/appLink';
 
 const title = "Dojo Revenue Calculator — Free Martial Arts School Profit Planner";
 const description = "Calculate your martial arts school's revenue, costs, and growth potential with our free dojo revenue calculator. Plan memberships, classes, and profit margins.";
@@ -724,7 +725,7 @@ const howToSchema = {
               BeltManager automatically monitors your student count, revenue, churn rate, and class utilisation—so you always know exactly where your dojo stands. No more spreadsheets or manual calculations. Get real-time insights that help you make informed business decisions.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-              <a href="https://app.beltmanager.com/signin?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=contact-cta" class="btn-primary text-center">Get started free</a>
+              <a href={appLink(Astro.url.pathname, 'contact-cta', { source: 'calculator', medium: 'tool', campaign: 'dojo-revenue' })} class="btn-primary text-center">Get started free</a>
               <a href="/dojo-management-software/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-management" class="btn-secondary text-center bg-white/10 border-white/20 text-white hover:bg-white/20">See How It Works</a>
             </div>
           </div>

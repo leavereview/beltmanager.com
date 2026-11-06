@@ -1,4 +1,5 @@
 ---
+import { appLink } from '../utils/appLink';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
 import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
@@ -90,7 +91,7 @@ const faqItems = [
     question: "How long does it take to get started with BeltManager?",
     answer: "Setup is self-serve. Sign up, add your belt system and classes, add your students (or send us your list and we'll help import it), put them into their groups and take your first register. Card billing doesn't switch on until April 2027, so there is no payment migration to plan yet: until then you can record payments by hand.",
     links: [
-      { text: 'Get started free', url: 'https://app.beltmanager.com/signin' },
+      { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') },
       { text: 'See pricing', url: '/pricing/' }
     ]
   },
@@ -115,7 +116,7 @@ const faqItems = [
     answer: "Not as open booking. In BeltManager you put a student in a group once, and they are expected at every class of that group. Before class, families get a reminder and answer Coming or Can't make it in one tap, from the parent portal or the free iPhone app, so you know who to expect. Open booking with class capacity and waitlists isn't available yet.",
     links: [
       { text: 'Scheduling software', url: '/martial-arts-scheduling-software/' },
-      { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
+      { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }
     ]
   },
   {
@@ -131,7 +132,7 @@ const faqItems = [
     answer: "Families can add their classes to their phone's calendar with a calendar feed, and card payments will run through Stripe from April 2027. There are no Zapier, Mailchimp or accounting-software integrations yet.",
     links: [
       { text: 'Overview', url: '/martial-arts-software/' },
-      { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
+      { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }
     ]
   }
 ];
@@ -161,7 +162,7 @@ const breadcrumbItems = [
           The management platform for dojos, academies, and combat sports gyms. Belt tracking, gradings, class timetables, registers and family communication in one system, with card billing switching on in April 2027.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
-          <a href="https://app.beltmanager.com/signin" class="btn-primary">Get started free</a>
+          <a href={appLink(Astro.url.pathname, 'hero')} class="btn-primary">Get started free</a>
           <a href="/pricing/" class="btn-secondary">View Pricing</a>
         </div>
       </div>
@@ -366,7 +367,7 @@ const breadcrumbItems = [
           Belt tracking, gradings, registers and a free parent app, all free until 31 March 2027. Get started free today.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
-          <a href="https://app.beltmanager.com/signin" class="btn-primary">Get started free</a>
+          <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary">Get started free</a>
           <a href="/pricing/" class="btn-secondary bg-white text-navy hover:bg-gray-100">View Pricing</a>
         </div>
       </div>

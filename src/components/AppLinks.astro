@@ -1,0 +1,10 @@
+---
+// Markdown can't call appLink, so a blog post's body is wrapped in this to tag its links to the app.
+import { appLink } from '../utils/appLink';
+
+const html = await Astro.slots.render('default');
+const tagged = html.replace(/href="https:\/\/app\.beltmanager\.com(\/[^"?#]*)?"/g, (_, path) =>
+  `href="${appLink(Astro.url.pathname, 'article', { path: path ?? '/' }).replaceAll('&', '&amp;')}"`
+);
+---
+<Fragment set:html={tagged} />

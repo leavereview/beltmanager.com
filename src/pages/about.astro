@@ -1,5 +1,6 @@
 ---
 // About Page - EEAT Optimized for Google Trust
+import { appLink } from '../utils/appLink';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 
@@ -500,7 +501,7 @@ const testimonials = [
       <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
         Experience the same attention to detail and operational expertise that made RevelationPets a success.
       </p>
-      <a href="https://app.beltmanager.com/signin" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
+      <a href={appLink(Astro.url.pathname, 'bottom')} class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
         Get started free
       </a>
     </div>
