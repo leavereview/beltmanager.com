@@ -1,0 +1,62 @@
+---
+import ExportGuideLayout from '../../layouts/ExportGuideLayout.astro';
+---
+<ExportGuideLayout
+  title="How to Get Your Club Data Out of BMABA Club Manager"
+  description="BMABA Club Manager documents no student export. Here's the manual route: build a spreadsheet from your student records and import it into BeltManager. Checked November 2026."
+  heading="How to get your club data out of BMABA Club Manager"
+  crumb="BMABA Club Manager"
+  locale="uk"
+  checked="6 November 2026"
+  ctaHeading="Ready to bring your club across?"
+  sources={[
+    { label: 'BMABA Handbook: MyBMABA Club Manager Full Setup & Getting Started Guide', url: 'https://handbook.bmaba.org.uk/en/articles/11498953', note: 'Dated 4 June 2026. Read 6 November 2026.' },
+    { label: 'BMABA Handbook: BMABA Membership Agreement', url: 'https://handbook.bmaba.org.uk/en/articles/8662994', note: 'Dated 7 August 2025. Read 6 November 2026.' },
+  ]}
+>
+  <p>
+    <strong>BMABA's handbook doesn't describe a way to export your students from MyBMABA Club Manager</strong>, and we haven't been able to
+    check inside a Club Manager account. If you can see an export option in yours, use it and skip to the import steps. If not, the route
+    below is manual: you build the spreadsheet yourself.
+  </p>
+  <h2>What BMABA's documents say</h2>
+  <ul>
+    <li>
+      The setup guide describes importing students by CSV under <strong>Settings &gt; Import</strong>. It mentions exporting transactions,
+      but it doesn't describe an export for students.
+    </li>
+    <li>
+      In its section on transfers and exit charges, the membership agreement says: “We do not offer assistance with migrations or data transfers.”
+    </li>
+    <li>
+      The same agreement says access to MyBMABA stops when membership expires or is suspended, and that account data may be permanently deleted
+      within 90 days, possibly sooner. <strong>Copy what you need while your membership is active.</strong>
+    </li>
+  </ul>
+  <p>
+    Those documents cover the hosted MyBMABA version. If you use the older WordPress ClubManager, ask BMABA what applies to you.
+  </p>
+  <h2>Build your spreadsheet by hand</h2>
+  <ol>
+    <li>In BeltManager, go to <strong>Students</strong>, select <strong>Import</strong> and select <strong>Download template</strong>. Delete the two example rows.</li>
+    <li>In Club Manager, open <strong>Students</strong>. The setup guide says you can sort by status and show more students per page.</li>
+    <li>Open each student's profile and copy their details across, using the table below.</li>
+    <li>Save the finished file as a CSV.</li>
+  </ol>
+  <table>
+    <thead><tr><th>BeltManager column</th><th>Where the setup guide puts it</th></tr></thead>
+    <tbody>
+      <tr><td>First name, Last name, Date of birth</td><td>Student profile (all three are required by BeltManager)</td></tr>
+      <tr><td>Group</td><td>Classes tab</td></tr>
+      <tr><td>Current belt</td><td>Progression tab</td></tr>
+      <tr><td>Guardian name, email and phone</td><td>NOK (next of kin) tab, which holds parent details</td></tr>
+      <tr><td>Medical notes</td><td>Medical label and any custom fields you've set up</td></tr>
+    </tbody>
+  </table>
+  <p>
+    This spreadsheet will hold children's details, so keep it somewhere secure and delete it once your import is finished.
+  </p>
+  <p>
+    If you'd like a hand with it, <a href="/contact/">get in touch</a> and we'll help you import your list.
+  </p>
+</ExportGuideLayout>

@@ -1,0 +1,76 @@
+---
+// The BeltManager half of every export guide. Checked against the live import (app #353, #373, #380) on 6 Nov 2026.
+interface Props {
+  locale: 'us' | 'uk';
+}
+const { locale } = Astro.props;
+const us = locale === 'us';
+const school = us ? 'school' : 'club';
+---
+<h2>Import the file into BeltManager</h2>
+<p>
+  BeltManager has one import for every system, so these steps are the same whichever tool your file came from.
+  We last checked them against the live import on {us ? 'November 6, 2026' : '6 November 2026'}.
+</p>
+<ol>
+  <li>Sign in as the {school} owner, go to <strong>Students</strong> and select <strong>Import</strong>.</li>
+  <li>Select <strong>Choose CSV file</strong> and pick your file. It can hold up to 1,000 students and be up to 2 MB.</li>
+  <li>
+    Under <strong>Match your columns</strong>, check each column. BeltManager guesses from the headings. First name, last name
+    and date of birth are required. You can also bring email, phone, guardian name, email and phone, group, current belt,
+    status, medical notes and emergency contact. Set anything else to <strong>Don’t import</strong>.
+  </li>
+  <li>Select <strong>Check file</strong>. Each row is marked Add, Update, Skip or Error. Nothing is saved at this point.</li>
+  <li>
+    Fix any rows marked Error in your spreadsheet, then upload it again. Nothing can be imported until every row is clear.
+  </li>
+  <li>Select the <strong>Import</strong> button, which shows how many students will come in. You can undo an import for 24 hours if nothing has been recorded against those students since.</li>
+</ol>
+
+<h3>What usually needs fixing</h3>
+<ul>
+  {us ? (
+    <>
+      <li>
+        <strong>Dates of birth.</strong> Change them to YYYY-MM-DD, such as 2016-03-14, before you import. BeltManager reads dates
+        with slashes as day first. That means 03/14/2016 is rejected, and <strong>03/04/2016 is accepted as April 3, not March 4</strong>,
+        with no warning.
+      </li>
+      <li>
+        <strong>Phone numbers.</strong> A US number has to include the country code, such as +15550123456. Without it the row
+        is rejected with a message asking for a UK mobile number. If your numbers aren't in that form, set the phone columns to <strong>Don’t import</strong>
+        and add them later. In Excel, format the column as Text first so it keeps the plus sign.
+      </li>
+    </>
+  ) : (
+    <>
+      <li><strong>Dates of birth.</strong> Use DD/MM/YYYY, such as 14/03/2016.</li>
+      <li>
+        <strong>Phone numbers.</strong> Only UK mobile numbers are accepted, starting 07 or +447. A row with a landline is rejected,
+        so clear those cells or set the column to <strong>Don’t import</strong>.
+      </li>
+    </>
+  )}
+  <li>
+    <strong>Status.</strong> The only accepted values are active and trial. Any other value, such as inactive, stops the file until you
+    remove that row or set the column to <strong>Don’t import</strong>. Students with no status come in as active.
+  </li>
+  <li>
+    <strong>Under-18s.</strong> Every student under 18 needs a guardian in the file: a name, plus an email or a phone number.
+  </li>
+  <li>
+    <strong>Groups and belts.</strong> You don't need to set them up first. The import creates any group or belt it doesn't {us ? 'recognize' : 'recognise'}, and shows you the list first.
+    New belts go at the end of the style's belt list, and you can reorder them in Settings.
+    If your {school} teaches more than one style, write the belt as Style: Belt, such as Karate: Yellow.
+  </li>
+  <li>
+    <strong>Students already in BeltManager.</strong> A row with the same name and date of birth, or the same email, is skipped unless
+    you tick <strong>Update students who are already in BeltManager</strong>.
+  </li>
+</ul>
+
+<h2>Cards don't move in a CSV</h2>
+<p>
+  A CSV can't carry stored card details, so no card comes across in this import. Families re-add a card in BeltManager in April 2027,
+  when card billing turns on. BeltManager is free until {us ? 'March 31, 2027' : '31 March 2027'}, so nobody needs a card on file before then.
+</p>
