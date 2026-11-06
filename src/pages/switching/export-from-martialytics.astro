@@ -1,0 +1,38 @@
+---
+import ExportGuideLayout from '../../layouts/ExportGuideLayout.astro';
+---
+<ExportGuideLayout
+  title="How to Export Your Students from Martialytics"
+  description="Export your active student list from Martialytics as a CSV and import it into BeltManager, step by step. Sourced from Martialytics' own help pages, checked November 2026."
+  heading="How to export your students from Martialytics"
+  crumb="Export from Martialytics"
+  locale="us"
+  checked="November 6, 2026"
+  ctaHeading="Ready to bring your school across?"
+  sources={[
+    { label: 'Martialytics Help Center: How To: Export a list of Active Students', url: 'https://intercom.help/martialytics/en/articles/4222112-how-to-export-a-list-of-active-students', note: 'Dated August 5, 2021 on the page. Read November 6, 2026.' },
+    { label: 'Martialytics Help Center: How To: Navigate your Student List', url: 'https://intercom.help/martialytics/en/articles/3942178-how-to-navigate-your-student-list', note: 'Dated September 13, 2021 on the page. Read November 6, 2026.' },
+  ]}
+>
+  <p>
+    Martialytics lets you download your student list as a CSV yourself. These steps come from its help center. We haven't run them
+    in a Martialytics account.
+  </p>
+  <h2>Export from Martialytics</h2>
+  <ol>
+    <li>Open your <strong>Student List</strong>.</li>
+    <li>Open the filters at the top of the list and choose <strong>Reset</strong>.</li>
+    <li>Make sure the <strong>Active Students</strong> toggle is on, then choose <strong>Apply Filters</strong>.</li>
+    <li>Choose the <strong>Export</strong> button at the bottom of the list. It's a downward arrow, and it downloads a CSV file.</li>
+  </ol>
+  <h2>What the file contains</h2>
+  <p>
+    <strong>Martialytics' help pages don't list the columns in this export</strong>, so we can't tell you what's in the file. Open it before
+    you import and look for the columns BeltManager needs: first name, last name and date of birth. Also look for guardian
+    details, because every student under 18 needs them. If something is missing, add a column and fill it in by hand.
+  </p>
+  <p>
+    The list can also be filtered to Inactive and Pending students. BeltManager only accepts active and trial students, so stay
+    with the active list for this import.
+  </p>
+</ExportGuideLayout>

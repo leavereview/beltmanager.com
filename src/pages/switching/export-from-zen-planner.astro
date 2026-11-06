@@ -1,0 +1,45 @@
+---
+import ExportGuideLayout from '../../layouts/ExportGuideLayout.astro';
+---
+<ExportGuideLayout
+  title="How to Export Your Members from Zen Planner"
+  description="What Zen Planner documents about exporting member data, what it doesn't, and how to import a member CSV into BeltManager. Sources dated and checked November 2026."
+  heading="How to export your members from Zen Planner"
+  crumb="Export from Zen Planner"
+  locale="us"
+  checked="November 6, 2026"
+  ctaHeading="Ready to bring your school across?"
+  sources={[
+    { label: 'Zen Planner: Gym Reporting & Dashboards', url: 'https://zenplanner.com/fitness-business-dashboard-reports/', note: 'Undated page. Read November 6, 2026.' },
+    { label: 'Daxko Help Center: How Do I Import Member Data Into Zen Planner?', url: 'https://help.daxko.com/s/article/ZEN-PLANNER-How-Do-I-Import-Member-Data-Into-Zen-Planner', note: 'Shown as last updated 3 months ago. Read November 6, 2026.' },
+    { label: 'Gymdesk Docs: Exporting From Zen Planner', url: 'https://docs.gymdesk.com/en/help/docs/zenplannerexports', note: 'A third-party guide from another software company, not Zen Planner. Read November 6, 2026.' },
+  ]}
+>
+  <p>
+    <strong>We couldn't find a public Zen Planner help page with the steps for exporting a member list</strong>, so we're not going to
+    guess at them here. This is what we could confirm on November 6, 2026.
+  </p>
+  <h2>What Zen Planner says</h2>
+  <ul>
+    <li>Its reporting page says reports can be exported to Excel.</li>
+    <li>
+      Its help center says reporting won't return more than 2,000 records, so a list longer than that has to be filtered down.
+    </li>
+  </ul>
+  <h2>What another company's guide says</h2>
+  <p>
+    Gymdesk, another software company, publishes a migration guide that says to go to <strong>New Report</strong> and choose
+    <strong>People</strong>. That report includes leads and contacts as well as members. This isn't Zen Planner's own documentation
+    and we haven't tested it, so confirm it with Zen Planner support if your screen looks different.
+  </p>
+  <p>
+    Once you have the file, save it as a CSV and keep only your current members. BeltManager only accepts active and trial students,
+    and it needs first name, last name and date of birth.
+  </p>
+  <h2>Payment data</h2>
+  <p>
+    <strong>We found no Zen Planner page that says what payment data you can export or what that costs, so we make no claim about it.</strong>
+    If you want your payment history or stored card details moved, ask Zen Planner in writing what it will provide and whether there's
+    a fee before you make plans around it. The import below doesn't need any payment data.
+  </p>
+</ExportGuideLayout>

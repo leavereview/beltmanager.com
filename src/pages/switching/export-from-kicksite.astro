@@ -1,0 +1,42 @@
+---
+import ExportGuideLayout from '../../layouts/ExportGuideLayout.astro';
+---
+<ExportGuideLayout
+  title="How to Export Your Students from Kicksite"
+  description="Export your student list and ranks from Kicksite as CSV files and import them into BeltManager, step by step. Sourced from Kicksite's own help pages, checked November 2026."
+  heading="How to export your students from Kicksite"
+  crumb="Export from Kicksite"
+  locale="us"
+  checked="November 6, 2026"
+  ctaHeading="Ready to bring your school across?"
+  sources={[
+    { label: 'Kicksite Help Center: Tip: How Do I Print PINs for Student Attendance Check In?', url: 'https://kicksite.com/knowledge-base/tip-how-do-i-print-pins-for-student-attendance-check-in/', note: 'Updated September 23, 2025. Read November 6, 2026. The student list export is described here as part of printing PINs.' },
+    { label: 'Kicksite Help Center: How to Use the Programs Section', url: 'https://kicksite.com/knowledge-base/programs-section/', note: 'Updated August 29, 2024. Read November 6, 2026.' },
+  ]}
+>
+  <p>
+    You can download your Kicksite student list as a CSV from the web portal. These steps come from Kicksite's help center. We haven't
+    run them in a Kicksite account.
+  </p>
+  <h2>Export your students</h2>
+  <ol>
+    <li>In the left panel, choose <strong>Profiles</strong>, then <strong>Students</strong>.</li>
+    <li>Check the <strong>Status</strong> filter. It shows only active students by default, which is what you want for this import.</li>
+    <li>Choose <strong>Export</strong>. A CSV file downloads.</li>
+  </ol>
+  <h2>Export your ranks</h2>
+  <ol>
+    <li>In the left sidebar, choose <strong>Programs</strong>, then <strong>Ranks Overview</strong>.</li>
+    <li>Choose <strong>Export</strong>. This downloads a CSV of the students in each rank.</li>
+  </ol>
+  <p>
+    If your student file has no rank column, copy each student's rank from this second file into a new column called Current belt.
+    BeltManager imports one file at a time.
+  </p>
+  <h2>What the file contains</h2>
+  <p>
+    <strong>Kicksite's help pages don't list every column in the student export.</strong> The article above names First Name and Last Name
+    and shows that the file runs out to column AI. Open it before you import and look for date of birth, which BeltManager
+    requires, and for guardian details, which every student under 18 needs.
+  </p>
+</ExportGuideLayout>
