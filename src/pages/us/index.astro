@@ -1,0 +1,235 @@
+---
+// US landing page (#29), US English: school, belt testing, attendance, tuition, program.
+// The destination for the US outreach sequence, US review-site profiles and US pitches.
+//
+// Rules for this page (John, 7 Nov 2026, and the issue's "Never" list):
+// - No dollar prices: USD pricing is not decided. Say founding schools are free until
+//   March 31, 2027, and that small schools (up to 25 active students) have a free plan,
+//   then link to /pricing/. Source: leavereview/beltmanager docs/pricing/beltmanager-pricing.md.
+// - The setup call is 30 minutes (the Calendly event length). Keep the copy in step.
+// - The parent app is live on iPhone and Android.
+// - No Daxko or "forced migration" claims, no competitor price claims, no user counts, no
+//   testimonials, no children in imagery (app screenshots of demo data only), no kiosk claims.
+// - Card billing is not available to US schools yet (the app creates GB Stripe accounts and
+//   bills in GBP), so the page makes no tuition-billing promise.
+// - Every sign-up link carries utm_source=us-landing.
+//
+// hreflang: this page and the UK home page list each other (en-US / en-GB / x-default).
+import { appLink } from '../../utils/appLink';
+import { HOME_ALTERNATES } from '../../utils/hreflang';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQEnhanced from '../../components/seo/FAQEnhanced.astro';
+
+const CALENDLY_URL = 'https://calendly.com/johnpowell-hey/30min?utm_source=us-landing';
+const signUp = (cta: string) => appLink(Astro.url.pathname, cta, { source: 'us-landing' });
+
+const softwareApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  '@id': 'https://beltmanager.com/us/#software',
+  name: 'BeltManager',
+  description:
+    'Martial arts school software: attendance that fills itself from program groups, belt testing from attendance, family accounts and a free parent app for iPhone and Android.',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web, iOS, Android',
+  url: 'https://beltmanager.com/us/',
+  inLanguage: 'en-US',
+  audience: {
+    '@type': 'BusinessAudience',
+    audienceType: 'Martial arts schools, karate schools, taekwondo schools, BJJ academies',
+  },
+};
+
+const highlights = [
+  {
+    title: 'Attendance that fills itself',
+    text: "Put each student in a program group, like Kids Karate, once. From then on they're a regular, expected at every class that group runs. Parents tap Coming or Can't make it, and you open attendance on your phone already filled in.",
+  },
+  {
+    title: 'A parent app that works',
+    text: "Free on iPhone and Android. Parents answer for each class in one tap, see their child's belt and upcoming classes, sign waivers and get class reminders.",
+  },
+  {
+    title: 'Families grouped together',
+    text: 'Siblings sit under one family with their parents or guardians, so a parent with three kids signs in once and sees all three.',
+  },
+  {
+    title: 'Belt testing from attendance',
+    text: 'Set a minimum time at each belt and a minimum number of classes. BeltManager builds the list of students ready for belt testing, so your next test picks itself.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How much does BeltManager cost for a US school?',
+    answer:
+      "Schools that join before March 31, 2027 use BeltManager free until then, with every feature that's live and no credit card. After that, small schools with up to 25 active students have a free plan. Pricing for larger US schools hasn't been published yet; it will be on our pricing page, with notice, before anything is charged.",
+    links: [{ text: 'Pricing', url: '/pricing/' }],
+  },
+  {
+    question: 'Can I import my students from my current software?',
+    answer:
+      'Yes. BeltManager imports any CSV file: names, dates of birth, parents or guardians, program group and current belt. We have step-by-step guides for exporting from Martialytics, Kicksite and Zen Planner, and the setup call can cover your import.',
+    links: [
+      { text: 'Switching guides', url: '/switch/' },
+      { text: 'Export from Kicksite', url: '/switch/kicksite/' },
+    ],
+  },
+  {
+    question: 'Can BeltManager collect tuition by card in the US?',
+    answer:
+      "Not yet. Card billing isn't available to US schools today. Keep your current tuition setup while you move attendance, belts and families across.",
+    links: [],
+  },
+  {
+    question: 'Is BeltManager a US company?',
+    answer:
+      "No. BeltManager is made in the UK by John Powell Ltd. Some screens still use UK wording (\"grading\" for belt testing) and day-first dates, and that's worth knowing before you sign up.",
+    links: [{ text: 'About BeltManager', url: '/about/' }],
+  },
+  {
+    question: 'What happens on the setup call?',
+    answer:
+      "It's a 30-minute video call with John, who builds BeltManager. Bring your student list and your class schedule, and we'll set up your school together: belts, program groups, classes and your first students.",
+    links: [],
+  },
+];
+---
+
+<BaseLayout
+  title="Martial Arts School Software for US Schools"
+  description="Attendance that fills itself, belt testing from attendance, families grouped, and a free parent app for iPhone and Android. Free for founding schools until March 31, 2027."
+  lang="en-US"
+  alternates={HOME_ALTERNATES}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
+    <div class="container-custom relative py-14 md:py-24">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="badge-primary mb-6">Free for founding schools until March 31, 2027</span>
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            A parent app that works. Families grouped. <span class="text-brand-red">Belt testing from attendance.</span>
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Software for martial arts schools. Add your students once, and every class knows who's coming. Free import from any spreadsheet.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href={signUp('hero')} class="btn-primary text-lg px-8 py-4" data-ph-capture-attribute-cta="us-hero-get-started">
+              Get started free
+            </a>
+            <a href={CALENDLY_URL} class="btn-secondary text-lg px-8 py-4" target="_blank" rel="noopener" data-ph-capture-attribute-cta="us-hero-book-call">
+              Book a 30-minute setup call
+            </a>
+          </div>
+          <p class="mt-6 text-sm text-gray-400">No credit card to sign up • Parent app on iPhone and Android</p>
+        </div>
+        <figure>
+          <img
+            src="/images/app/mma-timetable.webp"
+            width="1600"
+            height="1000"
+            alt="BeltManager's weekly class schedule: each class shows how many regulars are expected and a link to open attendance (demo data)"
+            class="w-full h-auto rounded-xl shadow-2xl ring-1 ring-white/10"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <figcaption class="mt-3 text-sm text-gray-400 text-center">This week's classes, each already expecting its regulars. Demo school data.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- What it does -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Less admin before class, after class and on test day</h2>
+        <p class="text-lg text-gray-600">Join a program group once and you're a regular. That one idea does most of the work.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {highlights.map((h) => (
+          <div class="card">
+            <h3 class="text-xl font-bold text-brand-navy mb-2">{h.title}</h3>
+            <p class="text-gray-600">{h.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Screens -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+        <figure>
+          <div class="relative aspect-[4/3] overflow-hidden rounded-lg border border-gray-200 bg-white">
+            <img src="/images/app/karate-parent-portal.webp" width="1200" height="1700" alt="The parent's view: a child's upcoming classes with Attending and Not attending buttons (BeltManager screenshot, demo data)" class="absolute left-0 top-0 w-full h-auto max-w-none" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="mt-2 text-sm text-gray-500">What parents see: one tap per class. Demo data.</figcaption>
+        </figure>
+        <figure>
+          <div class="relative aspect-[4/3] overflow-hidden rounded-lg border border-gray-200 bg-white">
+            <img src="/images/app/dojo-belt-progression.webp" width="840" height="1560" alt="A student's belt testing readiness: days at current belt and classes attended since, each against the school's minimum (BeltManager screenshot, demo data)" class="absolute left-0 top-0 w-full h-auto max-w-none" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="mt-2 text-sm text-gray-500">Readiness for the next belt test, from time at belt and attendance. Demo data.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Switching -->
+  <section class="section bg-white" id="switching">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-brand-navy mb-4">Switching? Bring your students with you</h2>
+      <p class="text-lg text-gray-600 mb-6">
+        BeltManager imports any CSV file, free: names, dates of birth, parents, program group and current belt. Our guides show how to get the file out of the software you use now.
+      </p>
+      <ul class="grid sm:grid-cols-3 gap-4 mb-6">
+        <li><a href="/switch/martialytics/" class="card block p-5 font-semibold text-brand-navy hover:text-brand-red">Export from Martialytics</a></li>
+        <li><a href="/switch/kicksite/" class="card block p-5 font-semibold text-brand-navy hover:text-brand-red">Export from Kicksite</a></li>
+        <li><a href="/switch/zen-planner/" class="card block p-5 font-semibold text-brand-navy hover:text-brand-red">Export from Zen Planner</a></li>
+      </ul>
+      <p class="text-gray-600">
+        Card details never move by spreadsheet, from any system, so keep your current tuition setup running for now. Attendance reports export to CSV whenever you like, and if you ever leave, we'll help you get your student data out.
+        <a href="/switch/" class="text-brand-red hover:underline">All switching guides</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section bg-gray-50">
+    <div class="container-custom max-w-3xl text-center">
+      <h2 class="text-3xl font-bold text-brand-navy mb-4">Free while you find out if it fits</h2>
+      <p class="text-lg text-gray-600 mb-4">
+        Schools that join before March 31, 2027 pay nothing until then. After that, small schools with up to 25 active students have a free plan.
+      </p>
+      <p class="text-lg text-gray-600 mb-6">
+        Pricing for larger US schools isn't published yet. It will be on the pricing page, with notice, before anything is charged.
+      </p>
+      <a href="/pricing/" class="btn-outline">See pricing</a>
+    </div>
+  </section>
+
+  <FAQEnhanced faqs={faqs} title="Questions from US schools" site="beltmanager" pageUrl="https://beltmanager.com/us/" />
+
+  <!-- Book a call -->
+  <section class="section bg-gradient-to-r from-brand-red to-brand-red-dark text-white">
+    <div class="container-custom text-center max-w-2xl">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Set up your school on a 30-minute call</h2>
+      <p class="text-lg text-white/90 mb-8">
+        Bring your student list and class schedule. Or skip the call and set up on your own tonight.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={CALENDLY_URL} class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4" target="_blank" rel="noopener" data-ph-capture-attribute-cta="us-bottom-book-call">
+          Book a 30-minute call
+        </a>
+        <a href={signUp('bottom')} class="btn bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4" data-ph-capture-attribute-cta="us-bottom-get-started">
+          Get started free
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

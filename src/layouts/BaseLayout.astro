@@ -17,6 +17,13 @@ interface Props {
   modifiedDate?: string;
   author?: string;
   noindex?: boolean;
+  /** BCP 47 language for <html lang>. US-English pages pass `en-US`. */
+  lang?: string;
+  /**
+   * hreflang alternates (#29). Each page in a set lists every member, itself included,
+   * so the tags are reciprocal. Hrefs are site-relative paths.
+   */
+  alternates?: Array<{ hreflang: string; href: string }>;
 }
 
 const {
@@ -28,7 +35,9 @@ const {
   publishedDate,
   modifiedDate,
   author = 'BeltManager Team',
-  noindex = false
+  noindex = false,
+  lang = 'en',
+  alternates = []
 } = Astro.props;
 
 // Determine the schema type to use
@@ -125,7 +134,7 @@ const schemaOrg = {
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -145,6 +154,9 @@ const schemaOrg = {
   
   <!-- Canonical -->
   <link rel="canonical" href={canonicalURL} />
+  {alternates.map((alt) => (
+    <link rel="alternate" hreflang={alt.hreflang} href={new URL(alt.href, Astro.site).href} />
+  ))}
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content={type} />

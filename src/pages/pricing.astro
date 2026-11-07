@@ -21,6 +21,7 @@ import { appLink } from '../utils/appLink';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+import { SWITCH_GUIDES } from '../components/switch/guides';
 
 const offerSchema = {
   "@context": "https://schema.org",
@@ -211,6 +212,24 @@ const faqs = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- Switching guides (#30) -->
+  <section class="section bg-white" id="switching">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center mb-8">
+        <h2 class="text-3xl font-bold text-brand-navy mb-4">Switching from another system?</h2>
+        <p class="text-lg text-gray-600">
+          Importing your students is free. These guides show how to get your list out of the system you use now.
+        </p>
+      </div>
+      <ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+        {SWITCH_GUIDES.map((g) => (
+          <li><a href={g.href} class="card block p-5 font-semibold text-brand-navy hover:text-brand-red">{g.title}</a></li>
+        ))}
+      </ul>
+      <p class="text-center mt-6"><a href="/switch/" class="text-brand-red hover:underline">All switching guides</a></p>
     </div>
   </section>
 
