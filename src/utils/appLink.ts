@@ -27,7 +27,9 @@ export function pageSlug(pathname: string): string {
  */
 export function appLink(pathname: string, cta: string, options: AppLinkOptions = {}): string {
   const url = new URL(options.path ?? '/signin', APP_ORIGIN);
-  url.searchParams.set('utm_source', options.source ?? 'beltmanager.com');
+  // Every app link on the US landing page, nav and footer included, is attributed to it (#29).
+  const defaultSource = pathname.startsWith('/us/') || pathname === '/us' ? 'us-landing' : 'beltmanager.com';
+  url.searchParams.set('utm_source', options.source ?? defaultSource);
   url.searchParams.set('utm_medium', options.medium ?? 'site');
   url.searchParams.set('utm_campaign', options.campaign ?? pageSlug(pathname));
   url.searchParams.set('utm_content', cta);

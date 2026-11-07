@@ -1,0 +1,112 @@
+---
+// Export guide: BMABA's club management platform → BeltManager (#30). UK English (BMABA
+// is a UK association). Sources accessed 7 Nov 2026. BMABA's marketing says its tools let
+// clubs "export student data", but its public handbook has no article saying how, so the
+// page says exactly that and shows the ask-in-writing and manual routes. No claims about
+// BMABA's motives, prices or migration help.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../../components/seo/BreadcrumbsEnhanced.astro';
+import ImportSteps from '../../components/switch/ImportSteps.astro';
+import Sources from '../../components/switch/Sources.astro';
+import RelatedGuides from '../../components/switch/RelatedGuides.astro';
+
+const PLATFORM_URL = 'https://bmaba.org.uk/clubs/uk-martial-arts-association-governing-body-instructor-membership/free-martial-arts-club-management-platform-free-martial-arts-billing-software/';
+const INSURANCE_URL = 'https://bmaba.org.uk/clubs/martial-arts-insurance/affordable-uk-martial-arts-student-insurance-licensing/';
+const HANDBOOK_URL = 'https://handbook.bmaba.org.uk/en/';
+const LSGR_URL = 'https://bmaba.org.uk/clubs/uk-martial-arts-association-governing-body-instructor-membership/martial-arts-lifetime-student-grade-register-lsgr-national-register-of-martial-artists/';
+---
+
+<BaseLayout
+  title="How to Get Your Club Data Out of BMABA Club Manager"
+  description="Moving your club's student list from BMABA's club management platform to BeltManager: what BMABA documents, what to ask for, the manual route, and the import steps. Researched 7 November 2026."
+  type="article"
+  schemaType="Article"
+  publishedDate="2026-11-07"
+  modifiedDate="2026-11-07"
+  lang="en-GB"
+>
+  <BreadcrumbsEnhanced
+    site="beltmanager"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Switching guides', href: '/switch/' },
+      { label: 'BMABA Club Manager', href: '/switch/bmaba-club-manager/' },
+    ]}
+  />
+
+  <section class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-14">
+    <div class="container-custom max-w-3xl">
+      <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Switching guide</span>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4">How to get your club data out of BMABA Club Manager</h1>
+      <p class="text-lg text-gray-300">
+        BMABA's club management platform keeps your students, registers and gradings. BMABA says you can export student data, but doesn't publish the steps. Here's what to do about that, and how to bring your students into BeltManager.
+      </p>
+      <p class="text-sm text-gray-400 mt-4">Researched 7 November 2026.</p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">What BMABA documents</h2>
+      <p class="text-gray-700 mb-4">
+        BMABA (the British Martial Arts &amp; Boxing Association) calls its software the <strong>Club Management Platform</strong>; you may know it as Club Manager. BMABA's own page lists student records, registers, grade and belt tracking, and payments among its features [1].
+      </p>
+      <p class="text-gray-700 mb-4">
+        BMABA's student insurance and licensing page says the free club tools let you "export student data" [2]. We couldn't find a page in BMABA's public handbook [3] that explains how to export student records, which fields an export includes, or what format it comes in.
+      </p>
+      <p class="text-gray-700 mb-8">
+        So there are three routes, in order of effort.
+      </p>
+
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Route 1: look for an export in your account</h2>
+      <p class="text-gray-700 mb-8">
+        Sign in to MyBMABA and open your student list. If there's an export or download option, choose CSV (or Excel, then save it as CSV). Check that the file includes each student's date of birth and their parent or guardian's contact details: BeltManager needs both for under-18s.
+      </p>
+
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Route 2: ask BMABA in writing</h2>
+      <p class="text-gray-700 mb-4">
+        If you can't find an export, email BMABA (its contact details are on bmaba.org.uk) and ask for a spreadsheet of your club's students with:
+      </p>
+      <ul class="space-y-2 text-gray-700 mb-4 list-disc pl-6">
+        <li>first name, last name and date of birth;</li>
+        <li>parent or guardian name, email and mobile number;</li>
+        <li>current grade or belt, and the class or group each student trains in;</li>
+        <li>status (current or lapsed).</li>
+      </ul>
+      <p class="text-gray-700 mb-8">
+        Ask for it as a CSV or Excel file, and ask when you can expect it. Putting the request in writing gives you a record of what you asked for and when.
+      </p>
+
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Route 3: build the spreadsheet yourself</h2>
+      <p class="text-gray-700 mb-4">
+        For a small club this is often quickest. In BeltManager, open <strong>Students → Import</strong> and click <strong>Download template</strong>. It has every column BeltManager reads and two example rows. Fill in one row per student from your register, membership forms or the student list on screen, then save it as CSV.
+      </p>
+      <p class="text-gray-700 mb-8">
+        Only the first three columns (first name, last name, date of birth) are required, plus a guardian for anyone under 18. Everything else can be added later.
+      </p>
+
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Grades, insurance and licences</h2>
+      <p class="text-gray-700 mb-4">
+        BMABA describes its Lifetime Student Grade Register as a permanent national record of a student's grades [4]. Moving your day-to-day records to BeltManager doesn't need to touch it: put each student's current grade in the <code>Current belt</code> column and BeltManager tracks progress from there.
+      </p>
+      <p class="text-gray-700">
+        BeltManager doesn't sell insurance or licences. If you stay with BMABA for those, check with BMABA how your membership works if you stop using its club platform, before you change anything.
+      </p>
+    </div>
+  </section>
+
+  <ImportSteps variant="uk" from="BMABA" />
+
+  <Sources
+    heading="Sources"
+    accessed="All pages accessed 7 November 2026"
+    items={[
+      { label: 'BMABA: The Free, Award-Winning Club Management Platform For Martial Arts', url: PLATFORM_URL },
+      { label: 'BMABA: Martial Arts Student Insurance, Licensing & Membership', url: INSURANCE_URL },
+      { label: 'BMABA Handbook (help articles)', url: HANDBOOK_URL, note: 'no article on exporting student records found' },
+      { label: 'BMABA: Lifetime Student Grade Register', url: LSGR_URL },
+    ]}
+  />
+
+  <RelatedGuides current="/switch/bmaba-club-manager/" />
+</BaseLayout>
