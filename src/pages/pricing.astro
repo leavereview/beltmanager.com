@@ -17,6 +17,7 @@
 // no-commission-claim rule in
 // docs/superpowers/specs/2026-07-12-free-pricing-model-design.md; it still makes
 // no claim about commission after 31 March 2027.
+import { appLink } from '../utils/appLink';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
@@ -93,7 +94,7 @@ const faqs = [
     question: "Is BeltManager really free?",
     answer: "Yes. BeltManager is free until 31 March 2027 — no subscription, no commission, no setup fee, no per-student charges, and no credit card. Every feature that is live is included during the launch period, including belt tracking, registers, gradings and reporting. Card billing switches on in April 2027; until then, record payments by hand.",
     links: [
-      { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
+      { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }
     ]
   },
   {
@@ -160,7 +161,7 @@ const faqs = [
         <p class="text-xl text-gray-300 mb-8">
           No subscription. No commission. No per-student fees. Free until 31 March 2027.
         </p>
-        <a href="https://app.beltmanager.com/signin" class="btn-primary text-lg px-8 py-4">Get started free</a>
+        <a href={appLink(Astro.url.pathname, 'hero')} class="btn-primary text-lg px-8 py-4">Get started free</a>
         <p class="mt-4 text-sm text-gray-400">Free until 31 March 2027 • No credit card • Every feature included</p>
       </div>
     </div>
@@ -235,7 +236,7 @@ const faqs = [
         <p class="text-lg text-gray-300 mb-8">
           Belt tracking, scheduling, attendance, and CRM — free until 31 March 2027.
         </p>
-        <a href="https://app.beltmanager.com/signin" class="btn-primary text-lg px-8 py-4">Get started free</a>
+        <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary text-lg px-8 py-4">Get started free</a>
         <p class="mt-4 text-sm text-gray-400">Free until 31 March 2027 • No credit card • No contract</p>
       </div>
     </div>

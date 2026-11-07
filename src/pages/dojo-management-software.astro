@@ -1,4 +1,5 @@
 ---
+import { appLink } from '../utils/appLink';
 import AppScreenshot from '../components/AppScreenshot.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
@@ -129,7 +130,7 @@ const faqItems = [
     answer: "Setup is self-serve. Add your belt system, classes and students (or send us your list to import), put students into their groups and take your first register. Schools teaching several styles add a belt ladder for each.",
     links: [
       { text: 'Implementation guide', url: '/martial-arts-software/' },
-      { text: 'Get started free', url: 'https://app.beltmanager.com/signin' }
+      { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }
     ]
   }
 ];
@@ -314,7 +315,7 @@ const faqItems = [
           See how BeltManager respects dojo culture while streamlining operations with belt tracking, family management, and automated testing workflows.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://app.beltmanager.com/signin" class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>
+          <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>
           <a href="/pricing/" class="btn-secondary-large border-white text-white hover:bg-white hover:bg-opacity-10">View Pricing</a>
         </div>
         <p class="mt-6 text-sm opacity-90">Free until 31 March 2027 • No credit card • No contract</p>

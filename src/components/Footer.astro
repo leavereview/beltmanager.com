@@ -1,4 +1,5 @@
 ---
+import { appLink } from '../utils/appLink';
 // Footer.astro
 const currentYear = new Date().getFullYear();
 
@@ -119,7 +120,7 @@ const footerLinks = {
         <p class="text-gray-400 text-sm mb-4">
           Ready to transform your martial arts school? BeltManager is free until 31 March 2027 — no subscription, no commission.
         </p>
-        <a href="https://app.beltmanager.com/signin" class="btn-primary text-sm">
+        <a href={appLink(Astro.url.pathname, 'footer')} class="btn-primary text-sm">
           Get started free
         </a>
       </div>
