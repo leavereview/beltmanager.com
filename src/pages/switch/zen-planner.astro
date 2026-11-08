@@ -1,0 +1,106 @@
+---
+// Export guide: Zen Planner → BeltManager (#30). US English.
+//
+// Sourcing, accessed 7 Nov 2026: we found no public Zen Planner help article on exporting, so the report steps come from other
+// software companies' dated migration guides, labelled as such. Zen Planner's own public
+// page is cited for "reports export". The issue asked us to say payment-data export is
+// paid; no Zen Planner page we could read states a fee, so the page says that plainly and
+// tells the owner to ask in writing. Do not add a fee claim without a dated Zen Planner source.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../../components/seo/BreadcrumbsEnhanced.astro';
+import ImportSteps from '../../components/switch/ImportSteps.astro';
+import Sources from '../../components/switch/Sources.astro';
+import RelatedGuides from '../../components/switch/RelatedGuides.astro';
+
+const ZP_REPORTS_URL = 'https://zenplanner.com/fitness-business-dashboard-reports/';
+const SPARK_URL = 'https://help.sparkmembership.com/en/articles/2369720-exporting-from-zenplanner';
+const TRIIB_URL = 'https://intercom.help/triib-inc/en/articles/3694371-how-to-export-from-zen-planner';
+---
+
+<BaseLayout
+  title="How to Export Your Members from Zen Planner"
+  description="Step-by-step: run a People report in Zen Planner, download it as CSV, and import it into BeltManager. What's documented, what isn't, and what to ask Zen Planner about payment data."
+  type="article"
+  schemaType="Article"
+  publishedDate="2026-11-07"
+  modifiedDate="2026-11-07"
+  lang="en-US"
+>
+  <BreadcrumbsEnhanced
+    site="beltmanager"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Switching guides', href: '/switch/' },
+      { label: 'Zen Planner', href: '/switch/zen-planner/' },
+    ]}
+  />
+
+  <section class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-14">
+    <div class="container-custom max-w-3xl">
+      <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Switching guide</span>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4">How to export your members from Zen Planner</h1>
+      <p class="text-lg text-gray-300">
+        Your member list comes out of Zen Planner as a report you download as a CSV file. Payment details are a separate question. Here's what's documented, what isn't, and how to bring your members into BeltManager.
+      </p>
+      <p class="text-sm text-gray-400 mt-4">Researched November 7, 2026.</p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-custom max-w-3xl">
+      <div class="card border-l-4 border-gray-300 mb-10">
+        <h2 class="text-lg font-bold text-brand-navy mb-2">A note on sources</h2>
+        <p class="text-gray-700">
+          Zen Planner's own public site says its reports can be exported to Excel or emailed [1]. We couldn't find a public Zen Planner help article with export steps, so the steps below come from switching guides published by other software companies [2][3]. Menu names may differ in your account.
+        </p>
+      </div>
+
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Export your member list</h2>
+      <p class="text-gray-700 mb-4">The most recent guide we found, Spark Membership's (dated October 1, 2026) [2], describes these steps:</p>
+      <ol class="space-y-3 text-gray-700 mb-6 list-decimal pl-6">
+        <li>Sign in with your main (master) login. Go to <strong>My Reports → Members</strong> in the left sidebar and click <strong>+ New Report</strong>. Choose <strong>People</strong> as the report type.</li>
+        <li>Click <strong>Edit Report Settings</strong>, select the fields you want, then click <strong>Refresh Report</strong>.</li>
+        <li>Clear any active filters, refresh, then click the download icon and choose <strong>CSV</strong>.</li>
+      </ol>
+      <p class="text-gray-700 mb-8">
+        An older guide from Triib (February 7, 2020) [3] describes the same report from <strong>Dashboard → All People</strong>, choosing first name, last name, birth date, email, phone and status in <strong>Edit Report Settings</strong>. Whichever route you see, make sure <strong>birth date</strong> is included: BeltManager needs it for every student.
+      </p>
+
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Trim the file to current members</h2>
+      <p class="text-gray-700 mb-8">
+        A People report can include leads and former members as well as current ones. Sort by the status column and delete anyone who doesn't train with you now: BeltManager imports students as active or trial. Add a <code>Group</code> column for the program each member attends and a <code>Current belt</code> column if your report doesn't include rank.
+      </p>
+
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Payment data: ask Zen Planner in writing</h2>
+      <p class="text-gray-700 mb-4">
+        Spark's guide [2] says plainly that financial data is not included in the standard Zen Planner export, and that how card data can move depends on which payment processor your account uses. We couldn't find a Zen Planner page that says what it provides or what, if anything, it charges for a payment-data export.
+      </p>
+      <p class="text-gray-700 mb-4">
+        So before you give notice, ask Zen Planner in writing what payment data it will release, to whom, and at what cost. You may not need it for BeltManager: card details never move by CSV, and families add their own card when BeltManager card billing is available to your school (more below).
+      </p>
+      <p class="text-gray-700">
+        <strong>Before you cancel Zen Planner:</strong> check your contract and cancellation terms in writing, and keep billing running there until your families are set up in BeltManager.
+      </p>
+    </div>
+  </section>
+
+  <ImportSteps variant="us" from="Zen Planner" />
+
+  <Sources
+    heading="Sources"
+    accessed="All pages accessed November 7, 2026"
+    items={[
+      { label: 'Zen Planner: Gym Reporting & Dashboards', url: ZP_REPORTS_URL, note: "Zen Planner's own page" },
+      { label: 'Spark Membership: Exporting from ZenPlanner', url: SPARK_URL, note: 'third-party guide, dated October 1, 2026' },
+      { label: 'Triib: How to export from Zen Planner', url: TRIIB_URL, note: 'third-party guide, dated February 7, 2020' },
+    ]}
+  />
+
+  <section class="bg-gray-50 py-8">
+    <div class="container-custom max-w-3xl text-gray-700">
+      Running a school in the US? See <a href="/us/" class="text-brand-red hover:underline">BeltManager for US martial arts schools</a>.
+    </div>
+  </section>
+
+  <RelatedGuides current="/switch/zen-planner/" />
+</BaseLayout>

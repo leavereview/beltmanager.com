@@ -1,0 +1,68 @@
+---
+// Switching guides hub (#30): one page that links every export guide, so each guide has a
+// home and the pricing, home and US pages have one place to point at.
+import { appLink } from '../../utils/appLink';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../../components/seo/BreadcrumbsEnhanced.astro';
+import { SWITCH_GUIDES } from '../../components/switch/guides';
+
+const schemaMarkup = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Switching to BeltManager: export guides',
+  description: 'How to export your students from Martialytics, Kicksite, Zen Planner and BMABA Club Manager, and import them into BeltManager.',
+  url: 'https://beltmanager.com/switch/',
+  publisher: { '@type': 'Organization', name: 'BeltManager' },
+};
+---
+
+<BaseLayout
+  title="Switching to BeltManager: Export Guides"
+  description="Step-by-step guides to getting your student list out of Martialytics, Kicksite, Zen Planner or BMABA Club Manager and into BeltManager, sourced to each vendor's own help pages."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+  <BreadcrumbsEnhanced
+    site="beltmanager"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Switching guides', href: '/switch/' },
+    ]}
+  />
+
+  <section class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-14">
+    <div class="container-custom max-w-3xl">
+      <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Switching guides</span>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4">Bring your students with you</h1>
+      <p class="text-lg text-gray-300">
+        Every guide shows how to get your student list out of the system you use now, what that system does and doesn't document, and how to import the file into BeltManager.
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-custom max-w-4xl">
+      <div class="grid md:grid-cols-2 gap-6">
+        {SWITCH_GUIDES.map((g) => (
+          <a href={g.href} class="card p-6 hover:shadow-lg transition-shadow group">
+            <h2 class="text-xl font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">{g.title}</h2>
+            <p class="text-gray-600">{g.blurb}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-gray-50">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-2xl font-bold text-brand-navy mb-4">Using a spreadsheet, or something else?</h2>
+      <p class="text-gray-700 mb-4">
+        BeltManager imports any CSV file. Save your spreadsheet as CSV (in Excel or Google Sheets: File → Download → CSV), open <strong>Students → Import</strong>, and match your columns. You need a first name, last name and date of birth for every student, and a guardian for anyone under 18. Download the template on the import page to see every column BeltManager reads.
+      </p>
+      <p class="text-gray-700 mb-6">
+        Card details never move by spreadsheet, from any system. Card billing in BeltManager switches on for UK schools in April 2027, and families add their card themselves then. See <a href="/pricing/" class="text-brand-red hover:underline">pricing</a> for what's free.
+      </p>
+      <a href={appLink(Astro.url.pathname, 'hub')} class="btn-primary">Get started free</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,26 @@
+---
+/** Dated source list for an export guide (#30): every claim about another vendor points here. */
+interface Props {
+  heading: string;
+  /** "Accessed 7 November 2026" / "Accessed November 7, 2026". */
+  accessed: string;
+  items: Array<{ label: string; url: string; note?: string }>;
+}
+
+const { heading, accessed, items } = Astro.props;
+---
+
+<section class="section bg-white">
+  <div class="container-custom max-w-3xl">
+    <h2 class="text-2xl font-bold text-brand-navy mb-4">{heading}</h2>
+    <p class="text-gray-600 text-sm mb-4">{accessed}. Menus and labels change; if a step doesn't match what you see, the vendor's own help pages are the authority.</p>
+    <ol class="space-y-2 text-sm text-gray-700 list-decimal pl-6">
+      {items.map((item) => (
+        <li>
+          <a href={item.url} class="text-brand-red hover:underline break-words" rel="noopener nofollow" target="_blank">{item.label}</a>
+          {item.note && <span class="text-gray-500"> ({item.note})</span>}
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
