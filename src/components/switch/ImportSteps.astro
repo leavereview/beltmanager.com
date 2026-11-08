@@ -3,7 +3,7 @@
  * The "into BeltManager" half of every export guide (#30). One copy, so the four guides
  * cannot drift from the importer. Every rule here was read from the app's importer
  * (leavereview/beltmanager src/lib/services/student-import-csv.ts and student-import-plan.ts,
- * 7 Nov 2026): the headings it recognises, day-first dates, the phone rule, the guardian
+ * 7 Nov 2026; dates updated 8 Nov for #447): the headings it recognises, the date-order choice, the phone rule, the guardian
  * rule for under-18s, active/trial status only, 1,000 rows a file, all-or-nothing commit,
  * and the 24-hour undo. If the importer changes, change this file.
  *
@@ -48,7 +48,7 @@ const headings = [
       <li>
         <strong>Every student needs a date of birth.</strong> It's how BeltManager knows who is under 18 and needs a guardian.
         {us ? (
-          <>BeltManager reads dates <strong>day first</strong> (DD/MM/YYYY) or as <strong>YYYY-MM-DD</strong>. Most US exports write month first, so <code>03/04/2015</code> (March 4) would be read as April 3. Change the birth date column to YYYY-MM-DD before you upload: in Excel or Google Sheets, select the column and set a custom date format of <code>yyyy-mm-dd</code>.</>
+          <>The import asks whether your file's dates are <strong>Month/Day/Year</strong> or Day/Month/Year, and starts on Month/Day/Year for a US school. It refuses a file that is clearly in the other order, and shows each student's date of birth as it will be saved, so check the preview before you import.</>
         ) : (
           <>Write dates as DD/MM/YYYY (for example <code>14/03/2016</code>) or YYYY-MM-DD. Two-digit years such as <code>14/03/16</code> are refused rather than guessed.</>
         )}
