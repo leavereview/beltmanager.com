@@ -91,7 +91,7 @@ const faqItems = [
   },
   {
     question: "How much does karate school software cost?",
-    answer: "Most karate software costs £50-150 per month depending on student count and features. Smaller schools (under 75 students) typically find options at £50-80 monthly. Mid-size schools (75-200 students) pay £80-120. Larger academies or multi-location operations pay £120-200. Pricing models include flat-rate (unlimited students) or per-student (£1-2 per active student). BeltManager is free until 31 March 2027 — no subscription and no per-student fees.",
+    answer: "Most karate software costs £50-150 per month depending on student count and features. Smaller schools (under 75 students) typically find options at £50-80 monthly. Mid-size schools (75-200 students) pay £80-120. Larger academies or multi-location operations pay £120-200. Pricing models include flat-rate (unlimited students) or per-student (£1-2 per active student). BeltManager is free for up to 25 students, with paid plans at £29, £49 and £79 a month and every feature on every plan.",
     links: [
       { text: 'View pricing', url: '/pricing/' },
       { text: 'Compare features', url: '/martial-arts-software/' }
@@ -99,7 +99,7 @@ const faqItems = [
   },
   {
     question: "Can I try karate software before committing?",
-    answer: "Most karate school software providers offer free trials ranging from 14 to 30 days. This allows you to test features with your actual student data, train your staff on the platform, evaluate how well it fits your dojo operations, and assess whether students and parents adopt the system easily. BeltManager is free until 31 March 2027, so there is nothing to trial — full feature access, no credit card, and onboarding support included.",
+    answer: "Most karate school software providers offer free trials ranging from 14 to 30 days. This allows you to test features with your actual student data, train your staff on the platform, evaluate how well it fits your dojo operations, and assess whether students and parents adopt the system easily. BeltManager's Free plan covers up to 25 students with full feature access and no credit card, so there is nothing to trial — and onboarding support is included.",
     links: [
       { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') },
       { text: 'Setup guide', url: '/martial-arts-software/' }
@@ -133,7 +133,7 @@ const faqItems = [
 
 <BaseLayout
   title="Karate School Software (2026)"
-  description="Kyu/dan belt tracking, kata readiness, gradings and registers built for karate dojos. Free until 31 March 2027."
+  description="Kyu/dan belt tracking, kata readiness, gradings and registers built for karate dojos. Free for up to 25 students. Paid plans from £29 a month."
 >
   <!-- Breadcrumbs -->
   <BreadcrumbsEnhanced
@@ -330,13 +330,13 @@ const faqItems = [
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4">Ready to Streamline Your Karate Dojo?</h2>
         <p class="text-xl mb-8 opacity-95">
-          Belt tracking, kata readiness and a ready-to-grade list built from your registers. Free until 31 March 2027.
+          Belt tracking, kata readiness and a ready-to-grade list built from your registers. Free for up to 25 students. Paid plans from £29 a month.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>
           <a href="/pricing/" class="btn-secondary-large border-white text-white hover:bg-white hover:bg-opacity-10">View Pricing</a>
         </div>
-        <p class="mt-6 text-sm opacity-90">Free until 31 March 2027 • No credit card • No contract</p>
+        <p class="mt-6 text-sm opacity-90">Free for up to 25 students. Paid plans from £29 a month. • No credit card • No contract</p>
       </div>
     </div>
   </section>

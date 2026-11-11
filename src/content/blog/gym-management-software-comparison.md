@@ -13,7 +13,7 @@ faqs:
   - question: "What is the difference between gym software and martial arts software?"
     answer: "Martial arts software treats rank progression, grading events, time-in-grade and curriculum as built-in concepts. Gym software treats members, classes and payments as the core model, with rank bolted on if at all. Clubworx illustrates the gap precisely: it is gym software that sells martial arts grading events as a $10/month add-on."
   - question: "Which gym management software is cheapest for a martial arts school?"
-    answer: "At under 20 active members, Clubworx's free tier costs nothing. Between 25 and 50 students, Kicksite ($49-$99/month) and Martialytics ($69/month) are the cheapest purpose-built options. Gymdesk starts at $75/month for up to 50 members. BeltManager is free until 31 March 2027 with no member cap. Verified July 2026."
+    answer: "At under 20 active members, Clubworx's free tier costs nothing. Between 25 and 50 students, Kicksite ($49-$99/month) and Martialytics ($69/month) are the cheapest purpose-built options. Gymdesk starts at $75/month for up to 50 members. BeltManager is free for up to 25 students, with paid plans at £29 / £49 / £79 a month. Verified July 2026."
   - question: "Do I need martial arts software if I only teach one discipline?"
     answer: "It depends on whether you grade. A single-discipline school that runs regular belt testing gets more from martial-arts-specific software than a multi-discipline gym that rarely grades. The number of arts you teach matters less than how central rank is to your student journey."
   - question: "What should I check before switching gym management software?"
@@ -42,7 +42,7 @@ Clubworx makes the gap unusually visible: it is gym software that sells **martia
 |---|---|---|---|---|
 | **Kicksite** | Martial arts | Core | $49/mo (0–25 students) | No |
 | **Martialytics** | Martial arts | Core | $69/mo (0–50 students) | No |
-| **BeltManager** | Martial arts | Core | Free (until 31 March 2027) | Yes, no cap |
+| **BeltManager** | Martial arts | Core | Free up to 25 students; £29 / £49 / £79 | Yes, ≤25 students |
 | **Clubworx** | Gyms/studios | $10/mo add-on | A$0 (≤20 members) | Yes, ≤20 |
 | **Gymdesk** | Gyms/studios | Not rank-first | $75/mo (≤50 members) | No |
 | **Zen Planner** | Fitness businesses | Not rank-first | $99/mo (Studio) | No |
@@ -63,9 +63,9 @@ $69/month for up to 50 active students, then $99 (51–100), $129 (101–200) an
 
 Best for schools planning to grow, because the curve is flatter than Kicksite's across the mid range.
 
-### BeltManager — martial arts, free until 31 March 2027
+### BeltManager — martial arts, free up to 25 students
 
-Free until 31 March 2027: no subscription, no per-student charge, no cap on student numbers, with belt and rank progression built in rather than bolted on.
+Free for up to 25 students, then £29 / £49 / £79 a month for up to 75 / 150 / unlimited students, with every feature on every plan and belt and rank progression built in rather than bolted on.
 
 The honest caveat: we're newer than everything else here, and the integration ecosystem and body of community documentation are correspondingly smaller. If you need a mature third-party integration library, the established platforms have one and we don't yet.
 
@@ -113,13 +113,13 @@ If rank is central to how you run classes, the martial-arts-first platforms — 
 
 If you run mixed programming and grade infrequently, Gymdesk and Zen Planner are capable and you're not missing much.
 
-If you have under 20 members and no budget, Clubworx's free tier and BeltManager (free until 31 March 2027) are the two genuinely free routes, and we've compared them properly in our guide to [free martial arts software](/free-martial-arts-software/).
+If you have under 20 members and no budget, Clubworx's free tier and BeltManager (free up to 25 students) are the two genuinely free routes, and we've compared them properly in our guide to [free martial arts software](/free-martial-arts-software/).
 
 For the full buying comparison ranked by school size, see [best martial arts software 2026](/blog/best-martial-arts-software/).
 
 ## Try BeltManager
 
-BeltManager is free until 31 March 2027 — no subscription, no per-student fee, no card required. [See what it does](/martial-arts-software/).
+BeltManager is free for up to 25 students, with paid plans from £29 a month and no card required to start. [See what it does](/martial-arts-software/).
 
 ## Related Articles
 

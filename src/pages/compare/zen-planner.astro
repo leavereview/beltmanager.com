@@ -12,9 +12,9 @@ import FAQEnhanced from '../../components/seo/FAQEnhanced.astro';
 // August 2026, so nothing here has been revised upward or downward on guesswork.
 const comparisonRows = [
   { label: 'Belt & rank progression', values: [true, true] },
-  { label: 'Published entry price', values: ['Free until 31 Mar 2027', '$99/mo (Studio)'], highlight: true },
-  { label: 'Top published tier', values: ['Free until 31 Mar 2027', '$348/mo (Ultimate)'], highlight: true },
-  { label: 'Free trial', values: ['Not needed — free until 31 Mar 2027', 'None listed'], highlight: true },
+  { label: 'Published entry price', values: ['Free up to 25 students; then £29/mo', '$99/mo (Studio)'], highlight: true },
+  { label: 'Top published tier', values: ['£79/mo (unlimited students)', '$348/mo (Ultimate)'], highlight: true },
+  { label: 'Free trial', values: ['Not needed — free plan up to 25 students', 'None listed'], highlight: true },
   { label: 'Self-serve sign-up (no demo call)', values: [true, false], highlight: true },
   { label: 'Class scheduling', values: [true, true] },
   { label: 'Online class booking', values: ['RSVP only', true] },
@@ -32,19 +32,19 @@ const faqItems = [
   {
     question: 'How much does Zen Planner cost compared to BeltManager?',
     answer:
-      'Zen Planner starts at $99/month for its Studio tier and rises to $348/month for Ultimate, on flat-rate tiers rather than per-student pricing, with no free trial listed on its site. BeltManager is free until 31 March 2027, with no subscription, no commission and no per-student fees; pricing for after that date will be announced with notice. Zen Planner prices in US dollars, which adds exchange-rate cost for a UK school. Figures verified July 2026.',
+      'Zen Planner starts at $99/month for its Studio tier and rises to $348/month for Ultimate, on flat-rate tiers rather than per-student pricing, with no free trial listed on its site. BeltManager is free for up to 25 students, then £29 / £49 / £79 a month for up to 75 / 150 / unlimited students, with every feature on every plan. Zen Planner prices in US dollars, which adds exchange-rate cost for a UK school. Figures verified July 2026.',
     links: [{ text: 'BeltManager pricing', url: '/pricing/' }],
   },
   {
     question: 'Is BeltManager better than Zen Planner?',
     answer:
-      'They are aimed at different schools. Zen Planner is a very broad platform covering gyms, boxes and martial arts academies, with retail, point of sale and workout tracking that BeltManager does not have. It is also long established. BeltManager is narrower on purpose: it does dojo management, and it is free until 31 March 2027 with self-serve sign-up. If you need retail and POS in the same system, Zen Planner wins outright. If you want dojo software rather than gym software, we think we fit better.',
+      'They are aimed at different schools. Zen Planner is a very broad platform covering gyms, boxes and martial arts academies, with retail, point of sale and workout tracking that BeltManager does not have. It is also long established. BeltManager is narrower on purpose: it does dojo management, and it has a free plan for up to 25 students with self-serve sign-up. If you need retail and POS in the same system, Zen Planner wins outright. If you want dojo software rather than gym software, we think we fit better.',
     links: [{ text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }],
   },
   {
     question: 'Does Zen Planner have a free trial?',
     answer:
-      'Its site does not list one. Zen Planner is generally demo-led, meaning you arrange a call and a guided walkthrough rather than signing up and exploring on your own. For a larger academy migrating substantial data that is often the better experience, but it does mean you cannot evaluate it unaccompanied. BeltManager is self-serve and free until 31 March 2027, so trying it costs nothing but an evening.',
+      'Its site does not list one. Zen Planner is generally demo-led, meaning you arrange a call and a guided walkthrough rather than signing up and exploring on your own. For a larger academy migrating substantial data that is often the better experience, but it does mean you cannot evaluate it unaccompanied. BeltManager is self-serve with a free plan for up to 25 students, so trying it costs nothing but an evening.',
     links: [{ text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }],
   },
   {
@@ -62,7 +62,7 @@ const faqItems = [
   {
     question: 'Which is better for a small dojo?',
     answer:
-      'BeltManager, on balance. Zen Planner\'s $99/month entry tier buys a great deal of capability a 30-student club will never open — retail, point of sale, workout programming — and $1,188 a year before exchange rates is a meaningful cost at that size. BeltManager is free until 31 March 2027, self-serve, and focused on the things a small dojo actually does: classes, attendance, gradings and getting fees collected without chasing.',
+      'BeltManager, on balance. Zen Planner\'s $99/month entry tier buys a great deal of capability a 30-student club will never open — retail, point of sale, workout programming — and $1,188 a year before exchange rates is a meaningful cost at that size. BeltManager is free up to 25 students (then from £29/month), self-serve, and focused on the things a small dojo actually does: classes, attendance, gradings and getting fees collected without chasing.',
     links: [{ text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }],
   },
 ];
@@ -82,7 +82,7 @@ const schemaMarkup = {
 
 <BaseLayout
   title="BeltManager vs Zen Planner: Pricing & Features Compared"
-  description="BeltManager vs Zen Planner for martial arts schools. Zen Planner is $99–$348/month with no listed trial; BeltManager is free until 31 March 2027."
+  description="BeltManager vs Zen Planner for martial arts schools. Zen Planner is $99–$348/month with no listed trial; BeltManager is free up to 25 students, then £29 / £49 / £79 a month."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
@@ -112,7 +112,7 @@ const schemaMarkup = {
   </section>
 
   <FeaturedAnswer question="How does BeltManager compare to Zen Planner?">
-    Zen Planner is a long-established, very broad platform serving gyms, fitness boxes and martial arts academies, with retail, point of sale and workout tracking alongside class management. It starts at $99/month for Studio and reaches $348/month for Ultimate, with no free trial listed. BeltManager is narrower by design — dojo management, belt progression, billing and retention — and is free until 31 March 2027 during early access with self-serve sign-up. Choose Zen Planner for breadth, BeltManager for focus and cost. Pricing verified July 2026.
+    Zen Planner is a long-established, very broad platform serving gyms, fitness boxes and martial arts academies, with retail, point of sale and workout tracking alongside class management. It starts at $99/month for Studio and reaches $348/month for Ultimate, with no free trial listed. BeltManager is narrower by design — dojo management, belt progression, billing and retention — and has a free plan for up to 25 students (paid plans £29 / £49 / £79 a month) with self-serve sign-up. Choose Zen Planner for breadth, BeltManager for focus and cost. Pricing verified July 2026.
   </FeaturedAnswer>
 
   <section class="section bg-white">
@@ -186,7 +186,7 @@ const schemaMarkup = {
         <a href="/martial-arts-billing-software/" class="text-brand-red hover:underline">Billing</a> puts every child on one family invoice with a sibling discount. Card billing switches on in April 2027; until then, record payments by hand.
       </p>
       <p class="text-gray-700">
-        <strong>No cost while you decide.</strong> Free until 31 March 2027, self-serve, no card. Compare it against
+        <strong>No cost while you decide.</strong> Free up to 25 students, self-serve, no card. Compare it against
         <a href="/compare/kicksite/" class="text-brand-red hover:underline">Kicksite</a> too, or read the
         <a href="/blog/best-martial-arts-software/" class="text-brand-red hover:underline">full roundup</a> before committing to anything.
       </p>
@@ -195,12 +195,12 @@ const schemaMarkup = {
 
   <section class="section bg-brand-navy text-white text-center">
     <div class="container-custom">
-      <h2 class="text-3xl font-bold mb-3">Try BeltManager — Free Until 31 March 2027</h2>
-      <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">No subscription, no per-student fees, no demo call required.</p>
+      <h2 class="text-3xl font-bold mb-3">Try BeltManager — Free for Up to 25 Students</h2>
+      <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">Every feature on every plan, no demo call required.</p>
       <a href={appLink(Astro.url.pathname, 'bottom')} class="inline-block bg-brand-red text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-red-700 transition-colors">
         Get started free &rarr;
       </a>
-      <p class="text-white/50 text-sm mt-3">Free until 31 March 2027 &middot; No card required</p>
+      <p class="text-white/50 text-sm mt-3">Free up to 25 students &middot; Paid plans from £29 a month &middot; No card required</p>
     </div>
   </section>
 

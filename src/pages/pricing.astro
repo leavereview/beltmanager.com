@@ -1,58 +1,72 @@
 ---
 // Pricing Page
 //
-// BeltManager is free until 31 March 2027: no subscription and no commission. There
-// is no free trial — there is nothing to trial, the product is free. After that
-// date pricing will be announced with notice. Do not state a notice period, a
-// billing interval, a pricing model or a currency for future pricing: none has
-// been set, and the only committed notice period lives in terms.astro.
+// Decided by John, 07/11/2026 (currency 09/11/2026); spec: docs/pricing/beltmanager-pricing.md
+// in the app repo. Effective 1 April 2027. Founding schools (joined on or before
+// 31/03/2027) are free with no cap until 31/03/2027, then 50% off a paid plan for 12 months.
 //
-// The DATE is the point. "Free while in early access" is open-ended, and an
-// open-ended free reads as a hobby project that might vanish — fatal when a
-// dojo owner is deciding where to keep their student records. A stated end
-// date says this is a business with a plan. Keep it in step with
-// FOUNDING_PLAN_EXPIRES_AT / planExpiresAt in the product app.
+// Plans: Free (up to 25 active students), Club (75) £29, School (150) £49,
+// Academy (unlimited) £79; annual is 10x monthly. Same numbers in every currency:
+// GBP for UK schools, USD for US schools and everyone else. They are NOT exchange-rate
+// conversions. No VAT: John Powell Ltd is not VAT-registered, so these are full prices.
+// Only Active students count; going over gives 30 days' grace and never locks a school out.
+// Free plan pays a 1% platform fee on card payments collected through BeltManager (on top
+// of Stripe's fee); paid plans pay 0%; cash and standing orders never carry a fee.
 //
-// States "no commission" for the free launch period only. This supersedes the
-// no-commission-claim rule in
-// docs/superpowers/specs/2026-07-12-free-pricing-model-design.md; it still makes
-// no claim about commission after 31 March 2027.
+// This site is static, so the visitor's country (Vercel x-vercel-ip-country) is not
+// readable. Show £ with "$29 / $49 / $79 in the US and elsewhere" beside it.
+// Keep the "30 days' notice" promise in step with terms.astro.
 import { appLink } from '../utils/appLink';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 import { SWITCH_GUIDES } from '../components/switch/guides';
 
+const plans = [
+  { id: 'free', name: 'Free', students: 'Up to 25 active students', gbp: 0, usd: 0, gbpYear: null, usdYear: null,
+    blurb: 'Free forever. Every feature included.' },
+  { id: 'club', name: 'Club', students: 'Up to 75 active students', gbp: 29, usd: 29, gbpYear: 290, usdYear: 290,
+    blurb: 'For growing clubs.' },
+  { id: 'school', name: 'School', students: 'Up to 150 active students', gbp: 49, usd: 49, gbpYear: 490, usdYear: 490,
+    blurb: 'For established schools.', popular: true },
+  { id: 'academy', name: 'Academy', students: 'Unlimited active students', gbp: 79, usd: 79, gbpYear: 790, usdYear: 790,
+    blurb: 'For large academies and multi-location schools.' }
+];
+
+const sellerAndItem = {
+  "seller": { "@type": "Organization", "name": "BeltManager" },
+  "itemOffered": { "@type": "SoftwareApplication", "name": "BeltManager", "applicationCategory": "BusinessApplication" }
+};
+
+// One Offer per plan per currency. Free keeps price "0" (free-tier rich results) and has
+// no priceValidUntil because it no longer expires.
+const offers = plans.flatMap((plan) =>
+  (['GBP', 'USD'] as const).map((cur) => ({
+    "@type": "Offer",
+    "@id": `https://beltmanager.com/pricing/#${plan.id}-${cur.toLowerCase()}`,
+    "name": `BeltManager ${plan.name}`,
+    "description": `${plan.students}. Every feature included. ${plan.id === 'free' ? '1% platform fee on card payments collected through BeltManager.' : 'No platform fee on card payments.'}`,
+    "price": String(plan.gbp),
+    "priceCurrency": cur,
+    "availability": "https://schema.org/InStock",
+    "url": "https://beltmanager.com/pricing/",
+    ...(plan.id === 'free' ? {} : {
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": String(plan.gbp),
+        "priceCurrency": cur,
+        "billingDuration": 1,
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      }
+    }),
+    ...sellerAndItem
+  }))
+);
+
 const offerSchema = {
   "@context": "https://schema.org",
-  "@type": "Offer",
-  "@id": "https://beltmanager.com/pricing/#free",
-  "name": "BeltManager — free until 31 March 2027",
-  "description": "BeltManager is free to use until 31 March 2027 — no subscription, no commission, no setup fee, and no per-student charges. Every live feature is included during the launch period.",
-  "price": "0",
-  "priceCurrency": "GBP",
-  // Kept at 0 rather than removed: it is accurate, and it is what makes this
-  // page eligible for free-tier rich results. `priceValidUntil` is the
-  // structured-data expression of the same promise the copy makes.
-  "priceValidUntil": "2027-03-31",
-  "availability": "https://schema.org/InStock",
-  "url": "https://beltmanager.com/pricing/",
-  "seller": {
-    "@type": "Organization",
-    "name": "BeltManager"
-  },
-  "itemOffered": {
-    "@type": "SoftwareApplication",
-    "name": "BeltManager",
-    "applicationCategory": "BusinessApplication"
-  },
-  "additionalProperty": [
-    { "@type": "PropertyValue", "name": "Subscription", "value": "No" },
-    { "@type": "PropertyValue", "name": "Commission", "value": "No" },
-    { "@type": "PropertyValue", "name": "Setup Fee", "value": "No" },
-    { "@type": "PropertyValue", "name": "Per-Student Fees", "value": "No" },
-    { "@type": "PropertyValue", "name": "Credit Card Required", "value": "No" }
-  ]
+  "@graph": offers
 };
 
 const featureGroups = [
@@ -84,64 +98,76 @@ const featureGroups = [
   {
     icon: '💳',
     title: 'Billing (card payments from April 2027)',
-    features: ['Set up memberships and record payments by hand today', 'Recurring card billing through Stripe', 'Family discounts', 'Failed payment recovery', 'Payment reminders']
+    features: ['Set up memberships and record payments by hand today', 'Recurring card billing through Stripe (UK schools; US coming in 2027)', 'Family discounts', 'Failed payment recovery', 'Payment reminders']
   }
+];
+
+const paidExtras = [
+  'No card platform fee (the Free plan pays 1%)',
+  'The "Powered by BeltManager" link removed from your public signup and check-in pages',
+  'Room to grow: 75, 150 or unlimited active students'
 ];
 
 // FAQEnhanced generates the FAQPage JSON-LD from this array, so the rendered
 // questions and the structured data cannot drift apart.
 const faqs = [
   {
-    question: "Is BeltManager really free?",
-    answer: "Yes. BeltManager is free until 31 March 2027 — no subscription, no commission, no setup fee, no per-student charges, and no credit card. Every feature that is live is included during the launch period, including belt tracking, registers, gradings and reporting. Card billing switches on in April 2027; until then, record payments by hand.",
-    links: [
-      { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }
-    ]
+    question: "Is there really a free plan?",
+    answer: "Yes. The Free plan is free forever for up to 25 active students, with every feature included and no credit card needed. Paid plans start at £29 a month (or $29 in the US and elsewhere) when you have more students.",
+    links: [{ text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }]
   },
   {
-    question: "How do you make money?",
-    answer: "Right now, we don't. BeltManager is free until 31 March 2027, with no subscription and no commission. Pricing for after that date will be announced with notice before anything changes.",
-    links: [
-      { text: 'Read our terms', url: '/terms/' }
-    ]
-  },
-  {
-    question: "What's the catch?",
-    answer: "There isn't one, but there is a trade. We want martial arts schools actually running on BeltManager and telling us what's missing or broken before we set pricing, so it's free until 31 March 2027. You get the software for nothing; we get honest feedback from real dojos. That's the deal.",
+    question: "What counts as an active student?",
+    answer: "Only students with Active status count towards your plan limit. Staff are unlimited on every plan and never count.",
     links: []
   },
   {
-    question: "Will you start charging me without warning?",
-    answer: "No. BeltManager is free until 31 March 2027. Pricing for after that date will be announced with notice before any charge. Nothing will start billing you by surprise.",
+    question: "What happens if I go over my student limit?",
+    answer: "You get 30 days' grace to move up a plan or bring your active count back under the limit. BeltManager never locks your school out, and your records stay available throughout.",
+    links: []
+  },
+  {
+    question: "Is there a fee on card payments?",
+    answer: "On the Free plan, BeltManager takes a 1% platform fee on card payments collected through BeltManager, on top of Stripe's own fee. Paid plans pay 0% platform fee. Cash and standing orders never carry a fee on any plan. Card billing switches on in April 2027 for UK schools and is coming to US schools in 2027.",
+    links: [{ text: 'Card billing', url: '/martial-arts-billing-software/' }]
+  },
+  {
+    question: "Do the prices include VAT?",
+    answer: "There is no VAT to add. John Powell Ltd, which runs BeltManager, is not VAT-registered, so the prices shown are the full price you pay.",
+    links: []
+  },
+  {
+    question: "Can I cancel any time?",
+    answer: "Yes. There is no contract and no setup fee. Cancel whenever you like. Your records are yours: get in touch and we will help you export your student data.",
     links: [
+      { text: 'Contact us', url: '/contact/' },
       { text: 'Read our terms', url: '/terms/' }
     ]
   },
   {
-    question: "How many students and locations can I have?",
-    answer: "Unlimited students, unlimited locations, and unlimited staff users. There are no capacity limits while BeltManager is free until 31 March 2027.",
-    links: [
-      { text: 'Compare features', url: '/martial-arts-software/' }
-    ]
+    question: "Which currency do I pay in?",
+    answer: "UK schools pay in pounds (£29 / £49 / £79 a month, or £290 / £490 / £790 a year). Schools in the US and everywhere else pay in US dollars ($29 / $49 / $79 a month, or $290 / $490 / $790 a year). The plans and limits are identical.",
+    links: []
   },
   {
-    question: "What happens to my data if I don't continue after 31 March 2027?",
-    answer: "Your records are yours. If you decide not to continue once pricing is announced, get in touch and we'll help you get your student data out. We're not going to hold your dojo's records hostage.",
-    links: [
-      { text: 'Contact us', url: '/contact/' },
-      { text: 'Privacy policy', url: '/privacy-policy/' }
-    ]
+    question: "I joined early. What do I pay?",
+    answer: "Founding schools, those that join on or before 31 March 2027, are free with no student cap until 31 March 2027. After that you get 50% off a paid plan for 12 months, or you can stay on the Free plan if you have 25 or fewer active students.",
+    links: [{ text: 'Get started free', url: appLink(Astro.url.pathname, 'faq-founding') }]
+  },
+  {
+    question: "Will you start charging me without warning?",
+    answer: "No. Paid plans take effect on 1 April 2027, and we will always give at least 30 days' notice before any change to your charges.",
+    links: [{ text: 'Read our terms', url: '/terms/' }]
   }
 ];
 ---
 
 <BaseLayout
-  title="Pricing — Free Martial Arts School Software"
-  description="BeltManager is free until 31 March 2027 — no subscription, no setup fee, no per-student charges. Belt tracking, scheduling, attendance and CRM all included."
+  title="Pricing — Free Plan and Plans from £29 a Month"
+  description="BeltManager is free for up to 25 students. Paid plans from £29 a month ($29 in the US): Club, School and Academy, every feature on every plan, no contract."
 >
   <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
 
-  <!-- Breadcrumbs -->
   <div class="bg-gray-100 py-3">
     <div class="container-custom">
       <Breadcrumbs items={[
@@ -151,47 +177,82 @@ const faqs = [
     </div>
   </div>
 
-  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-12 md:py-16">
     <div class="absolute inset-0 opacity-10">
       <div class="absolute inset-0" style="background-image: url('/images/hero-pricing.jpg'); background-size: cover; background-position: center;"></div>
     </div>
     <div class="container-custom relative">
       <div class="max-w-3xl text-center mx-auto">
         <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Pricing</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">BeltManager is free</h1>
-        <p class="text-xl text-gray-300 mb-8">
-          No subscription. No commission. No per-student fees. Free until 31 March 2027.
+        <h1 class="text-3xl md:text-5xl font-bold mb-4">Free for up to 25 students</h1>
+        <p class="text-lg md:text-xl text-gray-300 mb-6">
+          Paid plans from £29 a month. Every feature on every plan, unlimited staff, no setup fee, no contract.
         </p>
-        <a href={appLink(Astro.url.pathname, 'hero')} class="btn-primary text-lg px-8 py-4">Get started free</a>
-        <p class="mt-4 text-sm text-gray-400">Free until 31 March 2027 • No credit card • Every feature included</p>
+        <p class="text-sm text-gray-400">Plans take effect 1 April 2027. Schools that join before then are free until 31 March 2027.</p>
       </div>
     </div>
   </section>
 
-  <!-- The offer, stated plainly -->
-  <section class="section bg-white">
+  <!-- Plans -->
+  <section class="section bg-white" id="plans">
+    <div class="container-custom">
+      <div class="flex justify-center mb-8" role="group" aria-label="Billing interval">
+        <div class="inline-flex rounded-full bg-gray-100 p-1">
+          <button type="button" class="billing-toggle px-5 py-2 rounded-full text-sm font-semibold bg-brand-navy text-white" data-interval="monthly" aria-pressed="true">Monthly</button>
+          <button type="button" class="billing-toggle px-5 py-2 rounded-full text-sm font-semibold text-gray-700" data-interval="annual" aria-pressed="false">Annual <span class="text-brand-red">2 months free</span></button>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        {plans.map(plan => (
+          <div class={`card flex flex-col ${plan.popular ? 'ring-2 ring-brand-red' : ''}`}>
+            <h2 class="text-xl font-bold text-brand-navy">{plan.name}</h2>
+            <p class="text-sm text-gray-600 mb-4">{plan.students}</p>
+            {plan.id === 'free' ? (
+              <p class="text-4xl font-bold text-brand-navy">£0<span class="block text-sm font-normal text-gray-600">free forever</span></p>
+            ) : (
+              <>
+                <p class="price-monthly text-4xl font-bold text-brand-navy">£{plan.gbp}<span class="text-base font-normal text-gray-600"> / month</span></p>
+                <p class="price-annual text-4xl font-bold text-brand-navy" hidden>£{plan.gbpYear}<span class="text-base font-normal text-gray-600"> / year</span></p>
+                <p class="text-sm text-gray-600 mt-1">
+                  <span class="price-monthly">${plan.usd} / month in the US and elsewhere</span>
+                  <span class="price-annual" hidden>${plan.usdYear} / year in the US and elsewhere</span>
+                </p>
+              </>
+            )}
+            <p class="text-gray-700 mt-4 mb-6 flex-1">{plan.blurb}</p>
+            <a href={appLink(Astro.url.pathname, `plan-${plan.id}`)} class="btn-primary text-center">{plan.id === 'free' ? 'Start free' : 'Get started'}</a>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-center text-sm text-gray-600 mt-6 max-w-3xl mx-auto">
+        UK schools pay in £, schools in the US and everywhere else pay in $ (same numbers, not a conversion). No VAT to add.
+        Free plan: 1% platform fee on card payments collected through BeltManager, on top of Stripe's fee. Paid plans: 0%. Cash and standing orders never carry a fee.
+      </p>
+    </div>
+  </section>
+
+  <!-- Founding schools -->
+  <section class="section bg-brand-red-light">
     <div class="container-custom">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-brand-navy mb-6">Free for the launch period</h2>
-        <p class="text-lg text-gray-600 mb-6">
-          BeltManager is launching free. Until <strong>31 March 2027</strong> there is no subscription and no commission,
-          no setup fee and no per-student charge — and no student caps or feature lockouts while it's free.
-        </p>
-        <p class="text-lg text-gray-600">
-          We're being straight with you about what happens next: pricing for after 31 March 2027 hasn't been set.
-          It will be announced <strong>with notice</strong> before any charge. Nothing will start billing you by surprise.
+        <h2 class="text-3xl font-bold text-brand-navy mb-4">Founding schools</h2>
+        <p class="text-lg text-gray-700">
+          Join on or before <strong>31 March 2027</strong> and BeltManager is free with no student cap until then.
+          After that you get <strong>50% off a paid plan for 12 months</strong>, or stay on Free if you have 25 or fewer active students.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Everything included -->
+  <!-- Every plan includes -->
   <section class="section bg-gray-50">
     <div class="container-custom">
       <div class="max-w-3xl mx-auto text-center mb-12">
-        <h2 class="text-3xl font-bold text-brand-navy mb-4">Everything's included</h2>
+        <h2 class="text-3xl font-bold text-brand-navy mb-4">Every plan includes</h2>
         <p class="text-lg text-gray-600">
-          No feature lockouts, no upsells, no "contact sales for that one". Every school gets the whole product. Card billing is the one part still switched off: it turns on in April 2027.
+          No feature lockouts, no upsells, no "contact sales for that one". The plans differ only by how many active students you have. Staff are unlimited on every plan.
         </p>
       </div>
 
@@ -211,6 +272,18 @@ const faqs = [
             </ul>
           </div>
         ))}
+      </div>
+
+      <div class="card max-w-3xl mx-auto mt-8">
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Paid plans also get</h3>
+        <ul class="space-y-2">
+          {paidExtras.map(item => (
+            <li class="flex items-start gap-2 text-gray-700">
+              <span class="text-brand-red font-bold" aria-hidden="true">✓</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   </section>
@@ -233,8 +306,7 @@ const faqs = [
     </div>
   </section>
 
-  <!-- FAQs (FAQPage schema is generated from the same array that renders them) -->
-  <section class="section bg-white">
+  <section class="section bg-gray-50">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
         <FAQEnhanced
@@ -247,17 +319,33 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Closing CTA -->
   <section class="section bg-brand-navy text-white">
     <div class="container-custom">
       <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4">Ready to simplify your school?</h2>
         <p class="text-lg text-gray-300 mb-8">
-          Belt tracking, scheduling, attendance, and CRM — free until 31 March 2027.
+          Free for up to 25 students. Paid plans from £29 a month.
         </p>
         <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary text-lg px-8 py-4">Get started free</a>
-        <p class="mt-4 text-sm text-gray-400">Free until 31 March 2027 • No credit card • No contract</p>
+        <p class="mt-4 text-sm text-gray-400">No credit card • No contract • Every feature on every plan</p>
       </div>
     </div>
   </section>
+
+  <script is:inline>
+    document.querySelectorAll('.billing-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var annual = btn.dataset.interval === 'annual';
+        document.querySelectorAll('.billing-toggle').forEach(function (b) {
+          var on = b === btn;
+          b.setAttribute('aria-pressed', String(on));
+          b.classList.toggle('bg-brand-navy', on);
+          b.classList.toggle('text-white', on);
+          b.classList.toggle('text-gray-700', !on);
+        });
+        document.querySelectorAll('.price-annual').forEach(function (e) { e.hidden = !annual; });
+        document.querySelectorAll('.price-monthly').forEach(function (e) { e.hidden = annual; });
+      });
+    });
+  </script>
 </BaseLayout>

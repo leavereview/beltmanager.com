@@ -9,7 +9,7 @@ const faqs = [
   {
     question: 'Is there genuinely free martial arts software?',
     answer:
-      'Yes, from two directions. Clubworx publishes a permanently free plan for up to 20 active members that includes online booking, payment acceptance, attendance tracking and a self check-in kiosk. BeltManager is free until 31 March 2027, with no cap on student numbers. Most other platforms offer a 15 to 30 day trial rather than a free tier. Pricing verified July 2026.',
+      'Yes, from two directions. Clubworx publishes a permanently free plan for up to 20 active members that includes online booking, payment acceptance, attendance tracking and a self check-in kiosk. BeltManager has a free-forever plan for up to 25 students with every feature included; paid plans start at £29 a month. Most other platforms offer a 15 to 30 day trial rather than a free tier. Pricing verified July 2026.',
   },
   {
     question: 'What is the catch with free martial arts software?',
@@ -27,9 +27,9 @@ const faqs = [
       'Judge it on the same basis as paid software, not a lower one. Ask where data is hosted, whether you can export your full student list and grading history at any time, and what happens to your data if you stop using the product. A free tier from an established vendor and a free tier from an unknown one are not equivalent risks.',
   },
   {
-    question: 'What does BeltManager cost after 31 March 2027?',
+    question: 'What does BeltManager cost?',
     answer:
-      'We have not set post-early-access pricing yet. What we have committed to is notice: we will not switch a free account to a paid one without telling you well in advance, and you will be able to export your students and grading records at any point.',
+      'The Free plan is free forever for up to 25 active students, with every feature included. Larger schools pay £29 a month (Club, up to 75 students), £49 (School, up to 150) or £79 (Academy, unlimited), or $29 / $49 / $79 in the US and elsewhere. From April 2027 the Free plan pays a 1% platform fee on card payments collected through BeltManager, on top of Stripe\'s fee; cash and standing orders never carry a fee. You can export your students and grading records at any point.',
   },
   {
     question: 'Is free software or a free trial better for a new school?',
@@ -90,7 +90,7 @@ const description =
           <p>
             Yes, but only two options are free in the sense most school owners mean.
             <strong>Clubworx</strong> offers a permanently free plan for up to 20 active
-            members. <strong>BeltManager</strong> is free until 31 March 2027 with no member cap.
+            members. <strong>BeltManager</strong> has a free-forever plan for up to 25 students.
             Everything else in the category — Kicksite, Martialytics, Gymdesk, Zen Planner —
             offers a time-limited trial, not a free tier.
           </p>
@@ -134,10 +134,13 @@ const description =
             school the real cost moves with the exchange rate.
           </p>
 
-          <h3>BeltManager — free until 31 March 2027, no member cap</h3>
+          <h3>BeltManager — free forever for up to 25 students</h3>
           <p>
-            BeltManager is free until 31 March 2027: no subscription, no commission, no setup fee, no
-            per-student charge, and no cap on how many students you track. Belt and rank
+            BeltManager's Free plan is free forever for up to 25 active students, with every feature
+            included, unlimited staff and no setup fee. Only active students count, and going over
+            gives you 30 days' grace rather than locking you out. From April 2027 the Free plan pays a
+            1% platform fee on card payments collected through BeltManager, on top of Stripe's fee;
+            cash and standing orders never carry a fee. Belt and rank
             progression, grading and attendance are built in as core concepts rather than
             custom fields you maintain yourself.
           </p>
@@ -145,9 +148,9 @@ const description =
             The honest trade: we are newer than every other platform in this category, and
             the surrounding ecosystem — third-party integrations, years of community
             documentation, a large pool of staff who already know the interface — is smaller.
-            We have not set post-early-access pricing. What we have committed to is that we
-            won't move you onto a paid plan without substantial notice, and you can export
-            your students and grading history whenever you want.
+            If you outgrow 25 students, paid plans are £29 a month for up to 75 students, £49 for up to 150 and
+            £79 for unlimited ($29 / $49 / $79 in the US and elsewhere), with every feature on every plan. You can
+            export your students and grading history whenever you want.
           </p>
 
           <h2>What "free" means everywhere else</h2>
@@ -164,15 +167,15 @@ const description =
                   <th class="py-3 pr-4 font-bold text-brand-navy">Platform</th>
                   <th class="py-3 pr-4 font-bold text-brand-navy">Free tier?</th>
                   <th class="py-3 pr-4 font-bold text-brand-navy">Trial</th>
-                  <th class="py-3 font-bold text-brand-navy">Cost once free ends</th>
+                  <th class="py-3 font-bold text-brand-navy">Paid pricing</th>
                 </tr>
               </thead>
               <tbody class="text-gray-700">
                 <tr class="border-b border-gray-100">
                   <td class="py-3 pr-4 font-semibold">BeltManager</td>
-                  <td class="py-3 pr-4">Yes — no cap</td>
+                  <td class="py-3 pr-4">Yes — up to 25 students</td>
                   <td class="py-3 pr-4">n/a</td>
-                  <td class="py-3">Not yet set</td>
+                  <td class="py-3">£29 / £49 / £79 a month</td>
                 </tr>
                 <tr class="border-b border-gray-100">
                   <td class="py-3 pr-4 font-semibold">Clubworx</td>
@@ -261,8 +264,8 @@ const description =
             the safest established option, as long as you don't need grading events.
           </p>
           <p>
-            <strong>Any size, and rank tracking matters:</strong> BeltManager is free until 31 March
-            2027 with no member cap and martial-arts-native grading. The trade is product
+            <strong>Any size, and rank tracking matters:</strong> BeltManager's free plan covers up to 25
+            students, with paid plans from £29 a month and martial-arts-native grading. The trade is product
             maturity, and we'd rather you knew that upfront.
           </p>
           <p>
@@ -291,10 +294,10 @@ const description =
   <!-- CTA -->
   <section class="section bg-brand-red text-white">
     <div class="container-custom text-center">
-      <h2 class="text-3xl font-bold mb-4">Free Until 31 March 2027</h2>
+      <h2 class="text-3xl font-bold mb-4">Free for up to 25 students</h2>
       <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-        No subscription, no commission, no per-student fee, no card required, and no cap on how many
-        students you track.
+        Every feature on every plan, no card required, no contract. Paid plans from £29 a month when
+        you outgrow 25 students.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href={appLink(Astro.url.pathname, 'bottom')} class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4 font-bold">Get Started Free</a>

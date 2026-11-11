@@ -22,7 +22,7 @@ const faqItems = [
   },
   {
     question: 'How much does BJJ gym management software cost?',
-    answer: "BJJ gym software typically costs £50-200 per month depending on your student count. Most platforms use per-student pricing (£1-3 per active student) or tiered plans. BeltManager is free until 31 March 2027, with unlimited students and no subscription.",
+    answer: "BJJ gym software typically costs £50-200 per month depending on your student count. Most platforms use per-student pricing (£1-3 per active student) or tiered plans. BeltManager is free for up to 25 students, with paid plans at £29, £49 and £79 a month and every feature on every plan.",
     links: [
       { text: 'View Pricing', url: '/pricing/' }
     ]
@@ -108,7 +108,7 @@ const comparisonData = [
 
 <BaseLayout
   title="BJJ Gym Software"
-  description="BJJ academy software with IBJJF belt and stripe tracking, gradings, registers and a free parent app. Free until 31 March 2027."
+  description="BJJ academy software with IBJJF belt and stripe tracking, gradings, registers and a free parent app. Free for up to 25 students. Paid plans from £29 a month."
 >
   <div class="container-custom">
     <BreadcrumbsEnhanced items={breadcrumbs} site="beltmanager" />
@@ -357,8 +357,8 @@ const comparisonData = [
 
         <p>
           <strong>Ready to see the difference?</strong> <a href={appLink(Astro.url.pathname, 'body')} class="link">Get started free</a> and
-          experience software designed specifically for Brazilian Jiu-Jitsu academies. No credit card required, unlimited
-          students, free until 31 March 2027.
+          experience software designed specifically for Brazilian Jiu-Jitsu academies. No credit card required. Free for up to 25
+          students, with paid plans from £29 a month.
         </p>
       </div>
     </div>
@@ -371,13 +371,13 @@ const comparisonData = [
         <h2>Ready to Streamline Your BJJ Academy?</h2>
         <p>
           Belts and stripes, a ready-to-grade list built from your registers and a free parent app.
-          Free until 31 March 2027.
+          Free for up to 25 students. Paid plans from £29 a month.
         </p>
         <div class="cta-buttons">
           <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary-large">Get started free</a>
           <a href="/pricing/" class="btn-secondary-large">View Pricing</a>
         </div>
-        <p class="cta-note">Free until 31 March 2027 • No credit card • No contract</p>
+        <p class="cta-note">Free for up to 25 students. Paid plans from £29 a month. • No credit card • No contract</p>
       </div>
     </div>
   </section>
