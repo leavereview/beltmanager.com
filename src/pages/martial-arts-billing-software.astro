@@ -57,7 +57,7 @@ const comparisonData = [
 const faqItems = [
   {
     question: "Is BeltManager billing available now?",
-    answer: "Not yet for card payments. BeltManager is free until 31 March 2027, and card billing switches on in April 2027. Until then you can set up memberships and families and record cash or bank-transfer payments by hand, so your records are ready when card billing starts.",
+    answer: "Not yet for card payments. BeltManager has a free plan for up to 25 students, and card billing switches on in April 2027 (the Free plan pays a 1% platform fee on card payments; paid plans pay 0%). Until then you can set up memberships and families and record cash or bank-transfer payments by hand, so your records are ready when card billing starts.",
     links: [
       { text: 'See pricing', url: '/pricing/' },
       { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }
@@ -145,7 +145,7 @@ const breadcrumbItems = [
 
 <BaseLayout
   title="Recurring Billing for Martial Arts Schools"
-  description="Family invoices, sibling discounts, freezes and polite failed-payment follow-up. Card billing switches on April 2027; record payments by hand until then. Free until 31 March 2027."
+  description="Family invoices, sibling discounts, freezes and polite failed-payment follow-up. Card billing switches on April 2027; record payments by hand until then. Free for up to 25 students. Paid plans from £29 a month."
 >
   <BreadcrumbsEnhanced site="beltmanager" items={breadcrumbItems} />
 
@@ -178,7 +178,7 @@ const breadcrumbItems = [
       <div class="max-w-4xl mx-auto prose prose-lg">
         <h2>Billing in BeltManager: What's Live and What's Coming</h2>
         <p>
-          BeltManager is free until 31 March 2027. Card billing is built, and it switches on in April 2027. Until then you can set up memberships and families and record cash or bank-transfer payments by hand. We'd rather say that plainly than have you sign up expecting to take card payments next week.
+          BeltManager is free for up to 25 students, with paid plans from £29 a month. Card billing is built, and it switches on in April 2027. When it does, the Free plan pays a 1% platform fee on card payments collected through BeltManager, on top of Stripe's fee; paid plans pay 0%, and cash and standing orders never carry a fee. Until then you can set up memberships and families and record cash or bank-transfer payments by hand. We'd rather say that plainly than have you sign up expecting to take card payments next week.
         </p>
         <p>
           Martial arts pricing is rarely one flat fee. Families have two or three children training, memberships pause for injuries and exams, and a few people always pay late. BeltManager's billing is built around families and memberships, not single transactions.

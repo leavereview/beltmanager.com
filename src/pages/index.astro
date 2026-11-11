@@ -5,6 +5,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { HOME_ALTERNATES } from '../utils/hreflang';
 import { Image } from 'astro:assets';
 
+// One Offer per plan per currency (same numbers in GBP and USD; John, 09/11/2026).
+// Free keeps price "0" for free-tier rich results and has no priceValidUntil.
+// Keep in step with pricing.astro.
+const PLAN_OFFERS = [
+  { id: 'free', name: 'Free', price: '0', desc: 'Up to 25 active students. Every feature included.' },
+  { id: 'club', name: 'Club', price: '29', desc: 'Up to 75 active students. Every feature included.' },
+  { id: 'school', name: 'School', price: '49', desc: 'Up to 150 active students. Every feature included.' },
+  { id: 'academy', name: 'Academy', price: '79', desc: 'Unlimited active students. Every feature included.' }
+];
+const planOffers = PLAN_OFFERS.flatMap((plan) =>
+  ['GBP', 'USD'].map((cur) => ({
+    "@type": "Offer",
+    "@id": `https://beltmanager.com/#${plan.id}-${cur.toLowerCase()}`,
+    "name": `BeltManager ${plan.name}`,
+    "description": plan.desc,
+    "price": plan.price,
+    "priceCurrency": cur,
+    "availability": "https://schema.org/InStock",
+    "url": "https://beltmanager.com/pricing/",
+    "seller": { "@type": "Organization", "name": "BeltManager" }
+  }))
+);
 // SoftwareApplication Schema
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
@@ -15,17 +37,7 @@ const softwareApplicationSchema = {
   "description": "Martial arts management software for dojos, karate schools, BJJ academies, and MMA gyms. Class timetables, registers, student management, gradings and belt tracking in one platform.",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web, iOS, Android",
-  "offers": {
-    "@type": "Offer",
-    "@id": "https://beltmanager.com/#free",
-    "price": "0",
-    "priceCurrency": "GBP",
-    "priceValidUntil": "2027-03-31",
-    "name": "Free until 31 March 2027",
-    "description": "BeltManager is free to use until 31 March 2027 — no subscription, no commission, no setup fee, and no per-student charges. Every live feature is included during the launch period.",
-    "availability": "https://schema.org/InStock",
-    "url": "https://beltmanager.com/pricing/"
-  },
+  "offers": planOffers,
   "featureList": [
     "Class Timetables & RSVP",
     "Student Management & Profiles",
@@ -48,50 +60,9 @@ const softwareApplicationSchema = {
   }
 };
 
-// Free Offer Schema — BeltManager is free until 31 March 2027 (no subscription, no
-// commission). Pricing after that date will be announced with notice. `priceValidUntil`
-// carries the same promise into structured data.
 const offerSchema = {
   "@context": "https://schema.org",
-  "@type": "Offer",
-  "@id": "https://beltmanager.com/#free-offer",
-  "name": "BeltManager — free until 31 March 2027",
-  "description": "BeltManager is free to use until 31 March 2027, with access to every feature that is live, including class timetables, registers, student management, gradings and belt tracking. Card billing switches on in April 2027; until then, record payments by hand. No subscription, no commission, no setup fee, no per-student charges, and no credit card required.",
-  "price": "0",
-  "priceCurrency": "GBP",
-  "priceValidUntil": "2027-03-31",
-  "availability": "https://schema.org/InStock",
-  "url": "https://beltmanager.com/pricing/",
-  "seller": {
-    "@type": "Organization",
-    "name": "BeltManager"
-  },
-  "itemOffered": {
-    "@type": "SoftwareApplication",
-    "name": "BeltManager",
-    "applicationCategory": "BusinessApplication"
-  },
-  "eligibleRegion": {
-    "@type": "Place",
-    "name": "United Kingdom"
-  },
-  "additionalProperty": [
-    {
-      "@type": "PropertyValue",
-      "name": "Subscription Required",
-      "value": "No"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Credit Card Required",
-      "value": "No"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Full Feature Access",
-      "value": "Yes"
-    }
-  ]
+  "@graph": planOffers
 };
 
 const features = [
@@ -162,14 +133,14 @@ const howItWorks = [
 ];
 
 const stats = [
-  { number: 'Unlimited', label: 'Students & Classes' },
-  { number: '£0', label: 'Until 31 March 2027' },
+  { number: 'Unlimited', label: 'Staff & Classes' },
+  { number: '£0', label: 'Free up to 25 students' },
   { number: 'All styles', label: 'Karate, BJJ, TKD, MMA' },
   { number: '24/7', label: 'Parent Portal & App' }
 ];
 ---
 
-<BaseLayout title="Home" description="Your register fills itself: add students once and every class knows who's coming, then see who's ready to grade. Free until 31 March 2027, no per-student fees." alternates={HOME_ALTERNATES}>
+<BaseLayout title="Home" description="Your register fills itself: add students once and every class knows who's coming, then see who's ready to grade. Free for up to 25 students; paid plans from £29 a month." alternates={HOME_ALTERNATES}>
   <!-- Structured Data Schemas -->
   <script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
@@ -181,7 +152,7 @@ const stats = [
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <span class="badge-primary mb-6">
-            Free until 31 March 2027
+            Free for up to 25 students
           </span>
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
             Your register <span class="text-brand-red">fills itself.</span> Your gradings pick themselves.
@@ -201,7 +172,7 @@ const stats = [
             </a>
           </div>
           <p class="mt-6 text-sm text-gray-400">
-            Free until 31 March 2027 • No subscription • No commission • No credit card
+            Free for up to 25 students. Paid plans from £29 a month ($29 in the US). • No credit card
           </p>
           <p class="mt-3 text-sm text-gray-300">
             Switching? <a href="/switch/" class="underline hover:text-white">Bring your students with you</a>
@@ -554,7 +525,7 @@ const stats = [
         Ready to Transform Your Dojo?
       </h2>
       <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-        BeltManager is free until 31 March 2027 — no subscription, no commission. See how it can streamline your operations and grow your school.
+        BeltManager is free for up to 25 students, with paid plans from £29 a month. See how it can streamline your operations and grow your school.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href={appLink(Astro.url.pathname, 'bottom')} class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">

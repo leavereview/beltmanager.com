@@ -12,12 +12,12 @@ import FAQEnhanced from '../../components/seo/FAQEnhanced.astro';
 // discounted annual pricing available on request.
 const comparisonRows = [
   { label: 'Belt & rank progression built in', values: [true, true] },
-  { label: 'Price at 20 students', values: ['Free until 31 Mar 2027', '$49/mo'], highlight: true },
-  { label: 'Price at 60 students', values: ['Free until 31 Mar 2027', '$149/mo'], highlight: true },
-  { label: 'Price at 120 students', values: ['Free until 31 Mar 2027', '$199/mo'], highlight: true },
+  { label: 'Price at 20 students', values: ['Free (up to 25 students)', '$49/mo'], highlight: true },
+  { label: 'Price at 60 students', values: ['£29/mo ($29 in the US)', '$149/mo'], highlight: true },
+  { label: 'Price at 120 students', values: ['£49/mo ($49 in the US)', '$199/mo'], highlight: true },
   { label: 'Per-student pricing tiers', values: [false, true] },
   { label: 'Self-serve sign-up (no demo call)', values: [true, false], highlight: true },
-  { label: 'Free trial', values: ['Not needed — free until 31 Mar 2027', '30 days, via demo'] },
+  { label: 'Free trial', values: ['Not needed — free plan up to 25 students', '30 days, via demo'] },
   { label: 'All features included', values: [true, true] },
   { label: 'Attendance tracking', values: [true, true] },
   { label: 'Automated recurring billing', values: ['From April 2027', true] },
@@ -32,19 +32,19 @@ const faqItems = [
   {
     question: 'How much does Kicksite cost compared to BeltManager?',
     answer:
-      'Kicksite publishes four tiers by active student count: $49/month for 0–25 students, $99 for 26–50, $149 for 51–100 and $199 for 101 or more, with all features included at every tier and discounted annual pricing on request. BeltManager is free until 31 March 2027, with no subscription, no commission and no per-student charge at any school size; pricing for after that date will be announced with notice. Note Kicksite prices in US dollars, so a UK school also carries the exchange rate. Verified against kicksite.com/pricing, August 2026.',
+      'Kicksite publishes four tiers by active student count: $49/month for 0–25 students, $99 for 26–50, $149 for 51–100 and $199 for 101 or more, with all features included at every tier and discounted annual pricing on request. BeltManager is free for up to 25 students, then £29 a month for up to 75, £49 for up to 150 and £79 for unlimited (the same numbers in US dollars), with every feature on every plan. Note Kicksite prices in US dollars, so a UK school also carries the exchange rate. Verified against kicksite.com/pricing, August 2026.',
     links: [{ text: 'BeltManager pricing', url: '/pricing/' }],
   },
   {
     question: 'Is BeltManager better than Kicksite?',
     answer:
-      'On cost today, yes — BeltManager is free until 31 March 2027 against Kicksite\'s $49–$199/month, and you can sign up yourself rather than booking a demo. On track record, no: Kicksite is a long-established martial arts platform with a large customer base, and we would rather you knew that than found out later. Both treat belt progression as a core concept rather than a bolt-on. If maturity matters more to you than price, Kicksite is a sound choice.',
+      'On cost, yes — BeltManager is free up to 25 students and £29–£79/month beyond that, against Kicksite\'s $49–$199/month, and you can sign up yourself rather than booking a demo. On track record, no: Kicksite is a long-established martial arts platform with a large customer base, and we would rather you knew that than found out later. Both treat belt progression as a core concept rather than a bolt-on. If maturity matters more to you than price, Kicksite is a sound choice.',
     links: [{ text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }],
   },
   {
     question: 'Does Kicksite charge more as my school grows?',
     answer:
-      'Yes — that is the design of its pricing. Growing from 25 to 26 students moves you from $49 to $99/month, and passing 50 moves you to $149. The tiers are transparent and all features are included at each one, so there are no surprises, but the cost curve is steep for a school in a growth phase. BeltManager does not charge per student, or anything else, until 31 March 2027; pricing for after that date will be announced with notice.',
+      'Yes — that is the design of its pricing. Growing from 25 to 26 students moves you from $49 to $99/month, and passing 50 moves you to $149. The tiers are transparent and all features are included at each one, so there are no surprises, but the cost curve is steep for a school in a growth phase. BeltManager also steps up by student count, in four plans (Free up to 25, then £29, £49 and £79 a month), with every feature on every plan.',
     links: [],
   },
   {
@@ -82,7 +82,7 @@ const schemaMarkup = {
 
 <BaseLayout
   title="BeltManager vs Kicksite: Pricing & Features Compared"
-  description="BeltManager vs Kicksite for martial arts schools. Kicksite is $49–$199/month by student count; BeltManager is free until 31 March 2027. Verified August 2026."
+  description="BeltManager vs Kicksite for martial arts schools. Kicksite is $49–$199/month by student count; BeltManager is free up to 25 students, then £29–£79/month. Verified August 2026."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
@@ -112,7 +112,7 @@ const schemaMarkup = {
   </section>
 
   <FeaturedAnswer question="How does BeltManager compare to Kicksite?">
-    Kicksite is an established martial arts platform priced by active student count: $49/month for 0–25 students, $99 for 26–50, $149 for 51–100 and $199 for 101 or more, with every feature included at each tier and a 30-day trial arranged through a demo. BeltManager is free until 31 March 2027 during early access, charges nothing per student at any size, and is self-serve. Kicksite is the more established platform; BeltManager is cheaper today and does not penalise growth. Verified against kicksite.com/pricing, August 2026.
+    Kicksite is an established martial arts platform priced by active student count: $49/month for 0–25 students, $99 for 26–50, $149 for 51–100 and $199 for 101 or more, with every feature included at each tier and a 30-day trial arranged through a demo. BeltManager is free up to 25 students and £29 / £49 / £79 a month beyond that, and is self-serve. Kicksite is the more established platform; BeltManager is cheaper at each size. Verified against kicksite.com/pricing, August 2026.
   </FeaturedAnswer>
 
   <section class="section bg-white">
@@ -134,7 +134,7 @@ const schemaMarkup = {
             <li>You want to try it tonight without booking a demo.</li>
             <li>You are growing, and do not want the bill to step up every 25 students.</li>
             <li>You are a UK school and would rather not pay in dollars.</li>
-            <li>Cost is the binding constraint right now — it is free until 31 March 2027.</li>
+            <li>Cost is the binding constraint right now — BeltManager is free up to 25 students and starts at £29 a month beyond that.</li>
           </ul>
         </div>
       </div>
@@ -162,7 +162,7 @@ const schemaMarkup = {
         A school with 24 active students pays $49/month. Sign two more and you are on $99 — the price has doubled for two students. Cross 50 and it is $149. Cross 100 and it is $199, which is $2,388 a year before the exchange rate. None of this is hidden; it is published plainly on their pricing page. But it does mean that the month you succeed at recruitment is also the month your software bill rises, which is an odd incentive.
       </p>
       <p class="text-gray-700 mb-8">
-        BeltManager charges nothing until 31 March 2027: no subscription, no commission and no per-student fee. Pricing for after that date hasn't been set, and will be announced with notice before any charge.
+        BeltManager is free for up to 25 students, then £29 a month for up to 75, £49 for up to 150 and £79 for unlimited. Every feature is on every plan, with no contract. See the <a href="/pricing/" class="text-brand-red hover:underline">pricing page</a>.
       </p>
 
       <h2 class="text-3xl font-bold text-brand-navy mb-6">Where Kicksite is genuinely the safer pick</h2>
@@ -182,7 +182,7 @@ const schemaMarkup = {
       </p>
       <p class="text-gray-700 mb-4">
         <strong>Growth does not cost you.</strong> Belt progression, class scheduling and
-        <a href="/martial-arts-crm/" class="text-brand-red hover:underline">lead and retention tracking</a> are all included at every school size, with no per-student tier to cross.
+        <a href="/martial-arts-crm/" class="text-brand-red hover:underline">lead and retention tracking</a> are all included on every plan.
         <a href="/martial-arts-billing-software/" class="text-brand-red hover:underline">Card billing</a> switches on in April 2027.
       </p>
       <p class="text-gray-700">
@@ -194,12 +194,12 @@ const schemaMarkup = {
 
   <section class="section bg-brand-navy text-white text-center">
     <div class="container-custom">
-      <h2 class="text-3xl font-bold mb-3">Try BeltManager — Free Until 31 March 2027</h2>
-      <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">No subscription, no per-student fees, no demo call required.</p>
+      <h2 class="text-3xl font-bold mb-3">Try BeltManager — Free for Up to 25 Students</h2>
+      <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">Every feature on every plan, no demo call required.</p>
       <a href={appLink(Astro.url.pathname, 'bottom')} class="inline-block bg-brand-red text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-red-700 transition-colors">
         Get started free &rarr;
       </a>
-      <p class="text-white/50 text-sm mt-3">Free until 31 March 2027 &middot; No card required</p>
+      <p class="text-white/50 text-sm mt-3">Free up to 25 students &middot; Paid plans from £29 a month &middot; No card required</p>
     </div>
   </section>
 
