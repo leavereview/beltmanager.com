@@ -2,7 +2,7 @@
 // Pricing Page
 //
 // Decided by John, 07/11/2026 (currency 09/11/2026); spec: docs/pricing/beltmanager-pricing.md
-// in the app repo. Effective 1 April 2027. Founding schools (joined on or before
+// in the app repo. Effective 1 April 2027. Schools that join on or before
 // 31/03/2027) are free with no cap until 31/03/2027, then 50% off a paid plan for 12 months.
 //
 // Plans: Free (up to 25 active students), Club (75) £29, School (150) £49,
@@ -151,8 +151,8 @@ const faqs = [
   },
   {
     question: "I joined early. What do I pay?",
-    answer: "Founding schools, those that join on or before 31 March 2027, are free with no student cap until 31 March 2027. After that you get 50% off a paid plan for 12 months, or you can stay on the Free plan if you have 25 or fewer active students.",
-    links: [{ text: 'Get started free', url: appLink(Astro.url.pathname, 'faq-founding') }]
+    answer: "If you join on or before 31 March 2027, BeltManager is free with no student cap until 31 March 2027. After that you get 50% off a paid plan for 12 months, or you can stay on the Free plan if you have 25 or fewer active students.",
+    links: [{ text: 'Get started free', url: appLink(Astro.url.pathname, 'faq-early-join') }]
   },
   {
     question: "Will you start charging me without warning?",
@@ -233,11 +233,11 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Founding schools -->
+  <!-- Joining before 1 April 2027 -->
   <section class="section bg-brand-red-light">
     <div class="container-custom">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-brand-navy mb-4">Founding schools</h2>
+        <h2 class="text-3xl font-bold text-brand-navy mb-4">Joining before 1 April 2027?</h2>
         <p class="text-lg text-gray-700">
           Join on or before <strong>31 March 2027</strong> and BeltManager is free with no student cap until then.
           After that you get <strong>50% off a paid plan for 12 months</strong>, or stay on Free if you have 25 or fewer active students.

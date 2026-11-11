@@ -2,7 +2,7 @@
 
 > Complete martial arts school management software for dojos, karate schools, BJJ academies, and MMA gyms.
 
-BeltManager helps martial arts school owners automate scheduling, billing, and student tracking — saving 10+ hours per week. BeltManager is free for up to 25 students, with paid plans from £29 a month ($29 in the US): Club £29 (up to 75 students), School £49 (up to 150), Academy £79 (unlimited), every feature on every plan, no setup fee and no contract. Plans take effect 1 April 2027; founding schools are free until 31 March 2027. Sign up at https://app.beltmanager.com/signin.
+BeltManager helps martial arts school owners automate scheduling, billing, and student tracking — saving 10+ hours per week. BeltManager is free for up to 25 students, with paid plans from £29 a month ($29 in the US): Club £29 (up to 75 students), School £49 (up to 150), Academy £79 (unlimited), every feature on every plan, no setup fee and no contract. Plans take effect 1 April 2027; schools that join before then are free until 31 March 2027, then get 50% off a paid plan for 12 months. Sign up at https://app.beltmanager.com/signin.
 
 ## Core Pages
 
