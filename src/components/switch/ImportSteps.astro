@@ -58,7 +58,7 @@ const headings = [
       </li>
       <li>
         {us ? (
-          <><strong>Phone numbers need the country code.</strong> Write them as <code>+1 555 010 0123</code>. A number without <code>+1</code> is refused. If your phone column isn't in that format, set it to "Don't import" and add numbers later.</>
+          <><strong>Phone numbers can be in any usual US format.</strong> <code>(702) 555-0105</code>, <code>702-555-0105</code> and <code>+1 702 555 0105</code> all import.</>
         ) : (
           <><strong>Phone numbers must be mobiles.</strong> UK mobiles (07… or +44 7…) are accepted; landlines are refused. If your file has landlines, set that column to "Don't import" and add numbers later.</>
         )}
