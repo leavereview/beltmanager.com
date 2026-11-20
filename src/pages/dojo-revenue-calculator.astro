@@ -54,7 +54,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Review Your Financial Dashboard",
-      "text": "Analyze your comprehensive financial picture including current revenue, profitability, growth projections, and industry benchmark comparisons."
+      "text": "Analyze your comprehensive financial picture including current revenue, profitability, and growth projections."
     }
   ]
 };
@@ -80,7 +80,7 @@ const howToSchema = {
           Dojo Revenue & Growth Calculator
         </h1>
         <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-          Model your martial arts school's income, costs, and growth potential with real industry benchmarks
+          Model your martial arts school's income, costs, and growth potential from your own numbers
         </p>
       </div>
     </div>
@@ -95,7 +95,7 @@ const howToSchema = {
             Understanding your martial arts school's financial picture is crucial for sustainable growth. Whether you're planning to open a new dojo, evaluating your current school's performance, or exploring expansion opportunities, having clarity on your revenue and costs makes all the difference.
           </p>
           <p class="text-lg text-text-secondary leading-relaxed mb-6">
-            This free dojo revenue calculator helps you model realistic scenarios based on industry benchmarks drawn from successful martial arts schools across the US. Unlike generic business calculators, this tool understands the specific revenue streams and cost structures of martial arts schools—from tuition and belt testing to private lessons and summer camps.
+            This free dojo revenue calculator helps you model realistic scenarios from your own numbers. Unlike generic business calculators, this tool understands the specific revenue streams and cost structures of martial arts schools—from tuition and belt testing to private lessons and summer camps.
           </p>
 
           <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-4">What You'll Discover</h2>
@@ -122,12 +122,12 @@ const howToSchema = {
               <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span><strong>Actionable insights</strong> comparing your numbers to industry benchmarks and identifying opportunities to increase revenue or reduce costs</span>
+              <span><strong>Actionable insights</strong> showing how your own numbers fit together and identifying opportunities to increase revenue or reduce costs</span>
             </li>
           </ul>
 
           <p class="text-lg text-text-secondary leading-relaxed mb-8">
-            The calculator uses real-world data from successful martial arts schools. Average martial arts schools have 80-150 active students at $60-$100 monthly tuition, with profitable schools typically achieving 20-40% profit margins. Understanding where your school sits relative to these benchmarks helps you make informed decisions about pricing, marketing, and operational efficiency.
+            The calculator works from the numbers you enter: your student count, your monthly tuition, your costs and your extra income. For example, 100 students at $120 a month is $12,000 a month in tuition before any other income. Seeing how those inputs turn into revenue, costs and profit helps you make informed decisions about pricing, marketing, and operational efficiency.
           </p>
 
           <div class="bg-brand-red-light border-l-4 border-brand-red p-6 rounded-lg">
@@ -258,7 +258,7 @@ const howToSchema = {
             <!-- Step 2: Revenue Streams -->
             <div id="step-2" class="calculator-step hidden">
               <h2 class="text-3xl font-bold text-brand-navy mb-6">Revenue Streams</h2>
-              <p class="text-text-secondary mb-8">Enable additional revenue streams beyond core memberships.</p>
+              <p class="text-text-secondary mb-8">Enable additional revenue streams beyond core tuition.</p>
 
               <div class="space-y-4">
                 <!-- Grading fees -->
@@ -497,7 +497,7 @@ const howToSchema = {
                     <span class="text-text-tertiary font-normal">(1-20%)</span>
                   </label>
                   <input type="number" id="churn-rate" class="input" value="5" min="1" max="20" step="0.5">
-                  <p class="text-sm text-text-tertiary mt-2">Industry average is 5-8% monthly. Lower is better.</p>
+                  <p class="text-sm text-text-tertiary mt-2">The share of students who leave each month. Lower is better.</p>
                 </div>
 
                 <div>
@@ -588,7 +588,7 @@ const howToSchema = {
           <h3 class="text-2xl font-bold text-brand-navy mb-4">Revenue Diversification Strategies</h3>
 
           <p class="text-text-secondary mb-4">
-            Most martial arts schools generate 70-85% of revenue from core memberships, but the most profitable schools diversify their income streams. If your calculator results show you're heavily reliant on tuition alone, consider these proven revenue additions:
+            Tuition is the core of most martial arts schools' income, but schools that diversify their income streams are less exposed when enrollment dips. If your calculator results show you're heavily reliant on tuition alone, consider these revenue additions:
           </p>
 
           <ul class="space-y-3 text-text-secondary mb-6">
@@ -596,13 +596,13 @@ const howToSchema = {
               <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
-              <span><strong>Private lessons</strong> typically add 15-25% to total revenue and require minimal additional overhead. If you're not offering private training, you're leaving significant revenue on the table.</span>
+              <span><strong>Private lessons</strong> add revenue with little additional overhead, because they use space and instructors you already have. Enter your own lesson numbers in the calculator to see what they would add.</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
-              <span><strong>Belt testing fees</strong> are standard practice in martial arts and students value the formal progression. Belt testing fees typically account for 5-10% of annual revenue.</span>
+              <span><strong>Belt testing fees</strong> are common practice in martial arts and students value the formal progression. Enter your own test fee and testing frequency in the calculator to see how much they add over a year.</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -621,11 +621,11 @@ const howToSchema = {
           <h3 class="text-2xl font-bold text-brand-navy mb-4 mt-8">Student Retention: The Hidden Revenue Multiplier</h3>
 
           <p class="text-text-secondary mb-4">
-            The calculator asks about churn rate for a crucial reason—retention has an outsized impact on profitability. Acquiring a new student costs $50-$200+ in marketing and sales effort, while retaining existing students costs far less. Even small improvements in retention compound dramatically over time.
+            The calculator asks about churn rate for a crucial reason—retention has an outsized impact on profitability. Acquiring a new student takes marketing and sales effort, while keeping an existing student takes far less. Even small improvements in retention compound dramatically over time.
           </p>
 
           <p class="text-text-secondary mb-6">
-            If your calculator shows a churn rate above 8%, focus on retention before spending heavily on acquisition. A 2% improvement in monthly churn (from 8% to 6%) means retaining dozens of additional students annually, directly increasing annual revenue by thousands of pounds. Learn about <a href="/martial-arts-crm/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-crm" class="text-brand-red hover:underline">martial arts CRM systems</a> that help track and improve student engagement. Similar scheduling and retention challenges exist in
+            If your calculator shows a high churn rate, focus on retention before spending heavily on acquisition. Even a 2-point improvement in monthly churn (from 8% to 6%, for example) means keeping additional students every year, which directly increases annual revenue. Learn about <a href="/martial-arts-crm/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-crm" class="text-brand-red hover:underline">martial arts CRM systems</a> that help track and improve student engagement. Similar scheduling and retention challenges exist in
             <a href="https://petcare.software/pet-business-calculator/"
                rel="external"
                class="text-brand-red hover:underline">
@@ -636,18 +636,18 @@ const howToSchema = {
           <h3 class="text-2xl font-bold text-brand-navy mb-4 mt-8">Operational Efficiency and Cost Management</h3>
 
           <p class="text-text-secondary mb-4">
-            Profitable dojos don't just focus on revenue—they ruthlessly optimise costs without sacrificing quality. Your calculator's cost breakdown reveals where your money goes each month. Compare your numbers to these benchmarks:
+            Profitable dojos don't just focus on revenue—they ruthlessly optimise costs without sacrificing quality. Your calculator's cost breakdown reveals where your money goes each month. Look at each category as a share of your gross revenue:
           </p>
 
           <ul class="space-y-2 text-text-secondary mb-6">
-            <li><strong>Rent:</strong> Should be 15-25% of gross revenue. Higher than 30% makes profitability very difficult.</li>
-            <li><strong>Instructor costs:</strong> Typically 20-30% of revenue for schools with additional staff. Owner-operator models save significantly here.</li>
-            <li><strong>Marketing:</strong> 5-10% of revenue is healthy for growing schools; mature schools with strong referrals often operate at 3-5%.</li>
-            <li><strong>Software and admin:</strong> Modern <a href="/dojo-management-software/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-management" class="text-brand-red hover:underline">dojo management software</a> costs $50-$200 monthly but saves far more in administrative time and reduces billing errors.</li>
+            <li><strong>Rent:</strong> Often the largest fixed cost. If it takes a large share of your gross revenue, profitability gets very difficult.</li>
+            <li><strong>Instructor costs:</strong> Schools with additional staff carry this cost. Owner-operator models save significantly here.</li>
+            <li><strong>Marketing:</strong> Growing schools usually spend more here; mature schools with strong referrals often need less.</li>
+            <li><strong>Software and admin:</strong> Modern <a href="/dojo-management-software/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-management" class="text-brand-red hover:underline">dojo management software</a> saves administrative time and reduces billing errors.</li>
           </ul>
 
           <p class="text-text-secondary mb-6">
-            If your cost structure is significantly off these benchmarks, that's your opportunity. Sometimes the highest-impact change isn't growing revenue—it's renegotiating rent, improving scheduling efficiency, or automating billing with proper <a href="/martial-arts-billing-software/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-billing" class="text-brand-red hover:underline">martial arts billing software</a>.
+            If one cost category is out of proportion to the rest, that's your opportunity. Sometimes the highest-impact change isn't growing revenue—it's renegotiating rent, improving scheduling efficiency, or automating billing with proper <a href="/martial-arts-billing-software/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-billing" class="text-brand-red hover:underline">martial arts billing software</a>.
           </p>
 
           <h3 class="text-2xl font-bold text-brand-navy mb-4 mt-8">Growth Planning and Realistic Projections</h3>
@@ -657,13 +657,13 @@ const howToSchema = {
           </p>
 
           <p class="text-text-secondary mb-6">
-            Realistic monthly sign-up expectations vary by location and marketing investment, but 4-8 new students monthly is typical for small to medium schools. Successful schools use <a href="/martial-arts-scheduling-software/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-scheduling" class="text-brand-red hover:underline">martial arts scheduling software</a> to optimise class times and capacity, ensuring they can accommodate growth without sacrificing the student experience.
+            Realistic monthly sign-up expectations vary by location and marketing investment, so enter the number you actually see in your own school. Successful schools use <a href="/martial-arts-scheduling-software/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-scheduling" class="text-brand-red hover:underline">martial arts scheduling software</a> to optimise class times and capacity, ensuring they can accommodate growth without sacrificing the student experience.
           </p>
 
           <div class="bg-brand-red-light border-l-4 border-brand-red p-6 rounded-lg my-8">
             <h4 class="text-lg font-semibold text-brand-navy mb-2">Industry Insight</h4>
             <p class="text-text-secondary">
-              Schools that reach 150+ students often face a critical decision point. Growth beyond this requires either additional instructors (reducing profit margins), expanding space (increasing fixed costs), or capping enrollment and focusing on premium pricing and retention. There's no single right answer—it depends on your goals and market position.
+              Schools that grow past the size one team can handle often face a critical decision point. Further growth requires either additional instructors (reducing profit margins), expanding space (increasing fixed costs), or capping enrollment and focusing on premium pricing and retention. There's no single right answer—it depends on your goals and market position.
             </p>
           </div>
 
@@ -678,7 +678,7 @@ const howToSchema = {
                 </svg>
               </summary>
               <div class="p-6 pt-0 text-text-secondary">
-                <p>Owner income varies dramatically by school size and location. Small schools (under 100 students) typically generate $25,000-$60,000 in owner income annually. Medium schools (100-250 students) typically generate $50,000-$120,000. Large successful schools (250+ students) can generate $100,000-$250,000+ in owner income. These figures represent what the owner actually takes home after all expenses, not gross revenue. Many factors affect profitability including location, pricing, cost management, and whether the owner teaches most classes or employs additional instructors. See our detailed guide on <a href="/blog/gym-owner-salary-guide/" class="text-brand-red hover:underline">gym owner salaries</a>.</p>
+                <p>Owner income varies dramatically by school size and location, so there is no single number that fits every school. What the owner takes home is what is left after all expenses, not gross revenue. Many factors affect it, including location, pricing, cost management, and whether the owner teaches most classes or employs additional instructors. Enter your own tuition, student count and costs in the calculator to see your figure. See our detailed guide on <a href="/blog/gym-owner-salary-guide/" class="text-brand-red hover:underline">gym owner salaries</a>.</p>
               </div>
             </details>
 
@@ -690,7 +690,7 @@ const howToSchema = {
                 </svg>
               </summary>
               <div class="p-6 pt-0 text-text-secondary">
-                <p>Healthy martial arts schools typically achieve 20-40% profit margins (net income as a percentage of revenue). Schools below 15% margins struggle with long-term sustainability. Schools above 40% margins are exceptional and often involve owner-operator models with low overhead. Margins vary significantly by business model—schools where the owner teaches most classes achieve higher margins by avoiding instructor payroll costs, while schools employing multiple instructors trade margin for scale and owner time freedom. If your calculator shows margins below 15%, focus on cost optimisation or revenue enhancement. Use our calculator to model different scenarios and identify paths to healthier margins.</p>
+                <p>Profit margin is net income as a percentage of revenue, and what counts as good depends on your business model. Schools where the owner teaches most classes tend to have higher margins because they avoid instructor payroll costs, while schools employing multiple instructors trade margin for scale and owner time freedom. If your calculator shows a thin margin, focus on cost optimization or revenue enhancement. Use our calculator to model different scenarios and identify paths to healthier margins.</p>
               </div>
             </details>
 
@@ -702,7 +702,7 @@ const howToSchema = {
                 </svg>
               </summary>
               <div class="p-6 pt-0 text-text-secondary">
-                <p>Break-even student count depends entirely on your cost structure and pricing. A school with $5,000 monthly expenses and $100 average membership fees needs approximately 50 students to break even. Schools with lower rent and owner-operator models may break even at 30-40 students. Schools with high rent or significant instructor payroll may need 70-100+ students for profitability. The calculator helps you determine your specific break-even point by modelling your actual costs and pricing. As a general guideline, schools typically need 60-80 students to generate meaningful owner income beyond bare break-even. Learn more about <a href="/blog/cost-to-open-gym/" class="text-brand-red hover:underline">gym startup costs and break-even planning</a>.</p>
+                <p>Break-even student count depends entirely on your cost structure and pricing. As an example, a school with $5,000 in monthly expenses and $100 average monthly tuition needs 50 students to break even. Schools with lower rent and owner-operator models need fewer students, and schools with high rent or significant instructor payroll need more. The calculator helps you determine your specific break-even point by modeling your actual costs and pricing. Learn more about <a href="/blog/cost-to-open-gym/" class="text-brand-red hover:underline">gym startup costs and break-even planning</a>.</p>
               </div>
             </details>
 
@@ -714,7 +714,7 @@ const howToSchema = {
                 </svg>
               </summary>
               <div class="p-6 pt-0 text-text-secondary">
-                <p>The three largest cost categories for martial arts schools are typically: (1) Rent/facility costs—usually 15-25% of revenue and often the single largest fixed expense, (2) Instructor payroll—typically 20-30% of revenue for schools with additional instructors; owner-operator models avoid most of this cost, and (3) Marketing—5-10% of revenue for growing schools, though this varies significantly based on local competition and the school's maturity. Other significant costs include insurance ($2,000-$8,000+ annually), utilities, equipment maintenance, and software/admin tools. The calculator breaks down all these costs and compares your structure to industry benchmarks, helping identify if any category is disproportionately high.</p>
+                <p>The largest cost categories for martial arts schools are usually: (1) Rent and facility costs, often the single largest fixed expense, (2) Instructor payroll for schools with additional instructors; owner-operator models avoid most of this cost, and (3) Marketing, which varies significantly based on local competition and the school's maturity. Other significant costs include insurance, utilities, equipment maintenance, and software and admin tools. The calculator breaks down all these costs for your school, helping you see if any category is disproportionately high.</p>
               </div>
             </details>
           </div>
@@ -757,7 +757,7 @@ const howToSchema = {
       "name": "How much does the average martial arts school owner make?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Owner income varies dramatically by school size and location. Small schools (under 100 students) typically generate $25,000-$60,000 in owner income annually. Medium schools (100-250 students) typically generate $50,000-$120,000. Large successful schools (250+ students) can generate $100,000-$250,000+ in owner income."
+        "text": "Owner income varies dramatically by school size and location, so there is no single number that fits every school. What the owner takes home is what is left after all expenses, not gross revenue. Many factors affect it, including location, pricing, cost management, and whether the owner teaches most classes or employs additional instructors. Enter your own tuition, student count and costs in the calculator to see your figure."
       }
     },
     {
@@ -765,7 +765,7 @@ const howToSchema = {
       "name": "What is a good profit margin for a dojo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Healthy martial arts schools typically achieve 20-40% profit margins (net income as a percentage of revenue). Schools below 15% margins struggle with long-term sustainability."
+        "text": "Profit margin is net income as a percentage of revenue, and what counts as good depends on your business model. Schools where the owner teaches most classes tend to have higher margins because they avoid instructor payroll costs."
       }
     },
     {
@@ -773,7 +773,7 @@ const howToSchema = {
       "name": "How many students does a martial arts school need to be profitable?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Break-even student count depends entirely on your cost structure and pricing. A school with $5,000 monthly expenses and $100 average membership fees needs approximately 50 students to break even. As a general guideline, schools typically need 60-80 students to generate meaningful owner income beyond bare break-even."
+        "text": "Break-even student count depends entirely on your cost structure and pricing. As an example, a school with $5,000 in monthly expenses and $100 average monthly tuition needs 50 students to break even. Schools with lower rent and owner-operator models need fewer students, and schools with high rent or significant instructor payroll need more."
       }
     },
     {
@@ -781,7 +781,7 @@ const howToSchema = {
       "name": "What are the biggest costs for running a martial arts school?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The three largest cost categories are typically: (1) Rent/facility costs—usually 15-25% of revenue, (2) Instructor payroll—typically 20-30% of revenue for schools with additional instructors, and (3) Marketing—5-10% of revenue for growing schools."
+        "text": "The largest cost categories are usually: (1) Rent and facility costs, often the single largest fixed expense, (2) Instructor payroll for schools with additional instructors, and (3) Marketing, which varies with local competition and the school's maturity."
       }
     }
   ]
@@ -798,14 +798,13 @@ const howToSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Free calculator for martial arts school owners to model revenue, costs, and growth projections with industry benchmarks.",
+  "description": "Free calculator for martial arts school owners to model revenue, costs, and growth projections.",
   "operatingSystem": "Web Browser",
   "featureList": [
     "Revenue stream analysis",
     "Operating cost breakdown",
     "Growth projections",
-    "Profit margin calculation",
-    "Industry benchmark comparison"
+    "Profit margin calculation"
   ]
 })} />
 
@@ -1431,12 +1430,10 @@ const howToSchema = {
           <div>
             <div class="text-sm text-text-tertiary mb-1">Profit Margin</div>
             <div class="text-3xl font-bold ${profitMargin >= 20 ? 'text-green-600' : profitMargin >= 10 ? 'text-yellow-600' : 'text-red-600'}">${profitMargin.toFixed(1)}%</div>
-            <div class="text-xs text-text-tertiary mt-1">Target: 20-40%</div>
           </div>
           <div>
             <div class="text-sm text-text-tertiary mb-1">Revenue per Student</div>
             <div class="text-3xl font-bold text-brand-navy">${formatCurrency(revenuePerStudent)}</div>
-            <div class="text-xs text-text-tertiary mt-1">Industry: ${currencySymbol}80-120</div>
           </div>
           <div>
             <div class="text-sm text-text-tertiary mb-1">Cost per Student</div>
@@ -1623,14 +1620,14 @@ const howToSchema = {
     if (data.revenuePerStudent < 80) {
       insights.push({
         type: 'warning',
-        title: 'Revenue per student is below industry average',
-        message: `At ${formatCurrency(data.revenuePerStudent)} per student, you're below the typical ${currencySymbol}80-120 range. Consider adding revenue streams like private lessons, belt testing fees, or merchandise sales to increase this metric.`
+        title: 'Revenue per student is on the low side',
+        message: `At ${formatCurrency(data.revenuePerStudent)} per student, there may be room to grow it. Consider adding revenue streams like private lessons, belt testing fees, or merchandise sales to increase this metric.`
       });
     } else if (data.revenuePerStudent > 120) {
       insights.push({
         type: 'positive',
         title: 'Excellent revenue per student',
-        message: `At ${formatCurrency(data.revenuePerStudent)} per student, you're above industry average. This indicates strong revenue diversification or premium pricing—keep it up!`
+        message: `At ${formatCurrency(data.revenuePerStudent)} per student, that is a strong figure. This indicates strong revenue diversification or premium pricing—keep it up!`
       });
     }
 
@@ -1638,8 +1635,8 @@ const howToSchema = {
     if (data.churnRate > 8) {
       insights.push({
         type: 'warning',
-        title: 'Student churn rate is above average',
-        message: `At ${data.churnRate.toFixed(1)}% monthly churn, you're above the 5-8% industry average. Reducing churn by just 1-2% would significantly impact annual revenue. Focus on student engagement, progress tracking, and community building to improve retention.`
+        title: 'Student churn rate is high',
+        message: `At ${data.churnRate.toFixed(1)}% monthly churn, that is a high rate of students leaving. Reducing churn by just 1-2% would significantly impact annual revenue. Focus on student engagement, progress tracking, and community building to improve retention.`
       });
 
       // Calculate retention impact
@@ -1657,8 +1654,8 @@ const howToSchema = {
     } else if (data.churnRate < 5) {
       insights.push({
         type: 'positive',
-        title: 'Outstanding student retention',
-        message: `Your ${data.churnRate.toFixed(1)}% monthly churn is excellent—well below the industry average. This indicates strong student satisfaction and loyalty, which is crucial for long-term profitability.`
+        title: 'Strong student retention',
+        message: `Your ${data.churnRate.toFixed(1)}% monthly churn is low. This indicates strong student satisfaction and loyalty, which is crucial for long-term profitability.`
       });
     }
 
@@ -1667,7 +1664,7 @@ const howToSchema = {
       insights.push({
         type: 'info',
         title: 'Consider diversifying revenue streams',
-        message: `You're currently relying entirely on membership fees. Successful dojos typically generate 15-30% of revenue from additional sources. Private lessons, belt testing fees, and summer camps could add ${formatCurrency(data.totalRevenue * 0.2)} or more monthly.`
+        message: `You're currently relying entirely on tuition. Private lessons, belt testing fees, and summer camps could add ${formatCurrency(data.totalRevenue * 0.2)} or more monthly.`
       });
     } else {
       const additionalPct = (data.additionalRevenue / data.totalRevenue) * 100;
@@ -1675,7 +1672,7 @@ const howToSchema = {
         insights.push({
           type: 'positive',
           title: 'Well-diversified revenue',
-          message: `Additional revenue streams account for ${additionalPct.toFixed(0)}% of your total revenue, reducing dependence on membership fees alone. This diversity strengthens your business model.`
+          message: `Additional revenue streams account for ${additionalPct.toFixed(0)}% of your total revenue, reducing dependence on tuition alone. This diversity strengthens your business model.`
         });
       }
     }
@@ -1685,13 +1682,13 @@ const howToSchema = {
       insights.push({
         type: 'warning',
         title: 'Profit margin needs attention',
-        message: `At ${data.profitMargin.toFixed(1)}%, your margin is below healthy levels (20-40% target). Review your cost structure—particularly rent and instructor costs—or explore ways to increase revenue per student.`
+        message: `At ${data.profitMargin.toFixed(1)}%, your margin is thin. Review your cost structure—particularly rent and instructor costs—or explore ways to increase revenue per student.`
       });
     } else if (data.profitMargin >= 20 && data.profitMargin <= 40) {
       insights.push({
         type: 'positive',
         title: 'Healthy profit margin',
-        message: `Your ${data.profitMargin.toFixed(1)}% profit margin is within the healthy 20-40% range for martial arts schools. This indicates good cost management and sustainable pricing.`
+        message: `Your ${data.profitMargin.toFixed(1)}% profit margin is a healthy margin. This indicates good cost management and sustainable pricing.`
       });
     } else if (data.profitMargin > 40) {
       insights.push({
@@ -1707,7 +1704,7 @@ const howToSchema = {
       insights.push({
         type: 'warning',
         title: 'Rent is consuming significant revenue',
-        message: `Rent represents ${rentPct.toFixed(0)}% of your revenue (target: 15-25%). This high percentage makes profitability challenging. Consider negotiating rent, relocating, or focusing on revenue growth to improve this ratio.`
+        message: `Rent represents ${rentPct.toFixed(0)}% of your revenue. This high percentage makes profitability challenging. Consider negotiating rent, relocating, or focusing on revenue growth to improve this ratio.`
       });
     }
 
@@ -1750,12 +1747,12 @@ const howToSchema = {
     if (data.additionalRevenue === 0) {
       actions.push({
         title: 'Implement belt testing fees',
-        description: `Belt testing fees are standard practice and students value structured progression. Charging ${currencySymbol}25-40 per test for 70% of students testing twice annually could add ${currencySymbol}1,000+ monthly revenue.`
+        description: `Belt testing fees are standard practice and students value structured progression. Use the belt testing fee fields above to see what a fee per test would add each month.`
       });
 
       actions.push({
         title: 'Launch private lesson program',
-        description: `Private lessons typically generate 15-25% additional revenue with minimal overhead. Even 5 private sessions per week at ${currencySymbol}40 each adds ${currencySymbol}865+ monthly.`
+        description: `Private lessons add revenue with minimal overhead. Use the private lesson fields above to see what a few sessions a week would add each month.`
       });
     }
 
@@ -1783,7 +1780,7 @@ const howToSchema = {
     if (data.marketing === 0) {
       actions.push({
         title: 'Allocate marketing budget',
-        description: `Even a modest ${currencySymbol}150-300 monthly marketing budget can significantly accelerate student acquisition. Start with targeted Facebook/Instagram ads and track your cost per lead.`
+        description: `A dedicated monthly marketing budget can accelerate student acquisition. Start with targeted Facebook/Instagram ads and track your cost per lead.`
       });
     }
 
