@@ -46,7 +46,6 @@ export const PENDING_PAGES = [
   '/martial-arts-scheduling-software/',
   '/martial-arts-software/',
   '/mma-gym-software/',
-  '/pricing/',
   '/switch/',
   '/switch/kicksite/',
   '/switch/martialytics/',

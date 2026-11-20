@@ -14,7 +14,8 @@
 // of Stripe's fee); paid plans pay 0%; cash and standing orders never carry a fee.
 //
 // This site is static, so the visitor's country (Vercel x-vercel-ip-country) is not
-// readable. Show £ with "$29 / $49 / $79 in the US and elsewhere" beside it.
+// readable. Show $ as the main price, with the £ line in a data-uk element beneath it
+// (the US copy guard skips data-uk elements).
 // Keep the "30 days' notice" promise in step with terms.astro.
 import { appLink } from '../utils/appLink';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -26,7 +27,7 @@ const plans = [
   { id: 'free', name: 'Free', students: 'Up to 25 active students', gbp: 0, usd: 0, gbpYear: null, usdYear: null,
     blurb: 'Free forever. Every feature included.' },
   { id: 'club', name: 'Club', students: 'Up to 75 active students', gbp: 29, usd: 29, gbpYear: 290, usdYear: 290,
-    blurb: 'For growing clubs.' },
+    blurb: 'For growing schools.' },
   { id: 'school', name: 'School', students: 'Up to 150 active students', gbp: 49, usd: 49, gbpYear: 490, usdYear: 490,
     blurb: 'For established schools.', popular: true },
   { id: 'academy', name: 'Academy', students: 'Unlimited active students', gbp: 79, usd: 79, gbpYear: 790, usdYear: 790,
@@ -73,12 +74,12 @@ const featureGroups = [
   {
     icon: '🥋',
     title: 'Core Management',
-    features: ['Belt & rank tracking', 'Class timetable, term dates & closures', 'Unlimited locations', 'Unlimited staff users with roles', 'Help importing your students']
+    features: ['Belt & rank tracking', 'Class schedule, term dates & closures', 'Unlimited locations', 'Unlimited staff users with roles', 'Help importing your students']
   },
   {
     icon: '✅',
-    title: 'Registers & Check-In',
-    features: ['Register on your phone (works offline)', 'Walk-ins', 'Tablet kiosk mode', 'Attendance reports & CSV export', 'One-tap RSVP before class']
+    title: 'Attendance & Check-In',
+    features: ['Take attendance on your phone (works offline)', 'Walk-ins', 'Tablet kiosk mode', 'Attendance reports & CSV export', 'One-tap RSVP before class']
   },
   {
     icon: '📱',
@@ -87,8 +88,8 @@ const featureGroups = [
   },
   {
     icon: '🏅',
-    title: 'Gradings & Progress',
-    features: ['Grading eligibility from attendance', 'Grading sessions & results', 'Printable rank certificates', 'Kata readiness & report cards', 'Achievements & patches']
+    title: 'Belt Testing & Progress',
+    features: ['Belt test eligibility from attendance', 'Belt test sessions & results', 'Printable rank certificates', 'Kata readiness & report cards', 'Achievements & patches']
   },
   {
     icon: '📊',
@@ -97,8 +98,8 @@ const featureGroups = [
   },
   {
     icon: '💳',
-    title: 'Billing (card payments from April 2027)',
-    features: ['Set up memberships and record payments by hand today', 'Recurring card billing through Stripe (UK schools; US coming in 2027)', 'Family discounts', 'Failed payment recovery', 'Payment reminders']
+    title: 'Billing (US card billing is coming in 2027)',
+    features: ['Set up memberships and record payments by hand today', 'Recurring card billing through Stripe', 'Family discounts', 'Failed payment recovery', 'Payment reminders']
   }
 ];
 
@@ -113,7 +114,7 @@ const paidExtras = [
 const faqs = [
   {
     question: "Is there really a free plan?",
-    answer: "Yes. The Free plan is free forever for up to 25 active students, with every feature included and no credit card needed. Paid plans start at £29 a month (or $29 in the US and elsewhere) when you have more students.",
+    answer: "Yes. The Free plan is free forever for up to 25 active students, with every feature included and no credit card needed. Paid plans start at $29 a month when you have more students.",
     links: [{ text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }]
   },
   {
@@ -128,7 +129,7 @@ const faqs = [
   },
   {
     question: "Is there a fee on card payments?",
-    answer: "On the Free plan, BeltManager takes a 1% platform fee on card payments collected through BeltManager, on top of Stripe's own fee. Paid plans pay 0% platform fee. Cash and standing orders never carry a fee on any plan. Card billing switches on in April 2027 for UK schools and is coming to US schools in 2027.",
+    answer: "On the Free plan, BeltManager takes a 1% platform fee on card payments collected through BeltManager, on top of Stripe's own fee. Paid plans pay 0% platform fee. Cash and standing orders never carry a fee on any plan. US card billing is coming in 2027.",
     links: [{ text: 'Card billing', url: '/martial-arts-billing-software/' }]
   },
   {
@@ -145,26 +146,31 @@ const faqs = [
     ]
   },
   {
+    question: "Can US schools pay by card?",
+    answer: "US card billing is coming in 2027. Until then you can set up memberships and record payments by hand in BeltManager, and the Free plan needs no credit card.",
+    links: []
+  },
+  {
     question: "Which currency do I pay in?",
-    answer: "UK schools pay in pounds (£29 / £49 / £79 a month, or £290 / £490 / £790 a year). Schools in the US and everywhere else pay in US dollars ($29 / $49 / $79 a month, or $290 / $490 / $790 a year). The plans and limits are identical.",
+    answer: "Schools in the US and everywhere else pay in US dollars ($29 / $49 / $79 a month, or $290 / $490 / $790 a year). UK schools pay the same numbers in pounds, not a conversion. The plans and limits are identical.",
     links: []
   },
   {
     question: "I joined early. What do I pay?",
-    answer: "If you join on or before 31 March 2027, BeltManager is free with no student cap until 31 March 2027. After that you get 50% off a paid plan for 12 months, or you can stay on the Free plan if you have 25 or fewer active students.",
+    answer: "If you join on or before March 31, 2027, BeltManager is free with no student cap until March 31, 2027. After that you get 50% off a paid plan for 12 months, or you can stay on the Free plan if you have 25 or fewer active students.",
     links: [{ text: 'Get started free', url: appLink(Astro.url.pathname, 'faq-early-join') }]
   },
   {
     question: "Will you start charging me without warning?",
-    answer: "No. Paid plans take effect on 1 April 2027, and we will always give at least 30 days' notice before any change to your charges.",
+    answer: "No. Paid plans take effect on April 1, 2027, and we will always give at least 30 days' notice before any change to your charges.",
     links: [{ text: 'Read our terms', url: '/terms/' }]
   }
 ];
 ---
 
 <BaseLayout
-  title="Pricing — Free Plan and Plans from £29 a Month"
-  description="BeltManager is free for up to 25 students. Paid plans from £29 a month ($29 in the US): Club, School and Academy, every feature on every plan, no contract."
+  title="Pricing: Free Plan and Plans from $29 a Month | BeltManager"
+  description="BeltManager is free for up to 25 students. Paid plans from $29 a month: Club, School and Academy, every feature on every plan, no contract."
 >
   <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
 
@@ -186,9 +192,9 @@ const faqs = [
         <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Pricing</span>
         <h1 class="text-3xl md:text-5xl font-bold mb-4">Free for up to 25 students</h1>
         <p class="text-lg md:text-xl text-gray-300 mb-6">
-          Paid plans from £29 a month. Every feature on every plan, unlimited staff, no setup fee, no contract.
+          Paid plans from $29 a month. Every feature on every plan, unlimited staff, no setup fee, no contract.
         </p>
-        <p class="text-sm text-gray-400">Plans take effect 1 April 2027. Schools that join before then are free until 31 March 2027.</p>
+        <p class="text-sm text-gray-400">Plans take effect April 1, 2027. Schools that join before then are free until March 31, 2027.</p>
       </div>
     </div>
   </section>
@@ -209,14 +215,14 @@ const faqs = [
             <h2 class="text-xl font-bold text-brand-navy">{plan.name}</h2>
             <p class="text-sm text-gray-600 mb-4">{plan.students}</p>
             {plan.id === 'free' ? (
-              <p class="text-4xl font-bold text-brand-navy">£0<span class="block text-sm font-normal text-gray-600">free forever</span></p>
+              <p class="text-4xl font-bold text-brand-navy">$0<span class="block text-sm font-normal text-gray-600">free forever</span></p>
             ) : (
               <>
-                <p class="price-monthly text-4xl font-bold text-brand-navy">£{plan.gbp}<span class="text-base font-normal text-gray-600"> / month</span></p>
-                <p class="price-annual text-4xl font-bold text-brand-navy" hidden>£{plan.gbpYear}<span class="text-base font-normal text-gray-600"> / year</span></p>
+                <p class="price-monthly text-4xl font-bold text-brand-navy">${plan.usd}<span class="text-base font-normal text-gray-600"> / month</span></p>
+                <p class="price-annual text-4xl font-bold text-brand-navy" hidden>${plan.usdYear}<span class="text-base font-normal text-gray-600"> / year</span></p>
                 <p class="text-sm text-gray-600 mt-1">
-                  <span class="price-monthly">${plan.usd} / month in the US and elsewhere</span>
-                  <span class="price-annual" hidden>${plan.usdYear} / year in the US and elsewhere</span>
+                  <span class="price-monthly" data-uk>£{plan.gbp} / month for UK schools</span>
+                  <span class="price-annual" data-uk hidden>£{plan.gbpYear} / year for UK schools</span>
                 </p>
               </>
             )}
@@ -227,7 +233,7 @@ const faqs = [
       </div>
 
       <p class="text-center text-sm text-gray-600 mt-6 max-w-3xl mx-auto">
-        UK schools pay in £, schools in the US and everywhere else pay in $ (same numbers, not a conversion). No VAT to add.
+        Schools in the US and everywhere else pay in $. <span data-uk>UK schools pay in £ (same numbers, not a conversion).</span> No VAT to add.
         Free plan: 1% platform fee on card payments collected through BeltManager, on top of Stripe's fee. Paid plans: 0%. Cash and standing orders never carry a fee.
       </p>
     </div>
@@ -237,9 +243,9 @@ const faqs = [
   <section class="section bg-brand-red-light">
     <div class="container-custom">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-brand-navy mb-4">Joining before 1 April 2027?</h2>
+        <h2 class="text-3xl font-bold text-brand-navy mb-4">Joining before April 1, 2027?</h2>
         <p class="text-lg text-gray-700">
-          Join on or before <strong>31 March 2027</strong> and BeltManager is free with no student cap until then.
+          Join on or before <strong>March 31, 2027</strong> and BeltManager is free with no student cap until then.
           After that you get <strong>50% off a paid plan for 12 months</strong>, or stay on Free if you have 25 or fewer active students.
         </p>
       </div>
@@ -324,7 +330,7 @@ const faqs = [
       <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4">Ready to simplify your school?</h2>
         <p class="text-lg text-gray-300 mb-8">
-          Free for up to 25 students. Paid plans from £29 a month.
+          Free for up to 25 students. Paid plans from $29 a month.
         </p>
         <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary text-lg px-8 py-4">Get started free</a>
         <p class="mt-4 text-sm text-gray-400">No credit card • No contract • Every feature on every plan</p>
