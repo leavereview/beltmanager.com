@@ -27,7 +27,7 @@ BeltManager helps martial arts school owners run attendance, the class schedule,
 
 ## Tools
 
-- [Dojo Revenue Calculator](https://beltmanager.com/dojo-revenue-calculator/): Free calculator that models your school's revenue, operating costs, profit, break-even and student growth and churn from your own numbers
+- [Dojo Revenue Calculator](https://beltmanager.com/dojo-revenue-calculator/): Free calculator that models your school's revenue, operating costs, profit and margin, and student growth and churn from your own numbers
 
 ## Blog
 
