@@ -1,9 +1,26 @@
 ---
-// Homepage - index.astro
+// Home page, US English (the site went US-first in Nov 2026; the British copy lives at /uk/).
+// US wording: school, belt testing, attendance, schedule, tuition, program.
+//
+// Rules for this page (John, 7 Nov 2026, carried over from the retired /us/ page):
+// - Dollar prices ARE decided (issue #36, John 09/11/2026): Free up to 25 active students;
+//   Club $29 (75), School $49 (150), Academy $79 (unlimited); annual $290 / $490 / $790.
+//   Same numbers as GBP, not a conversion. Schools joining by March 31, 2027: free until then, then
+//   50% off a paid plan for 12 months. Keep in step with pricing.astro.
+// - The setup call is 30 minutes (the Calendly event length). Keep the copy in step.
+// - The parent app is live on iPhone and Android.
+// - No Daxko or "forced migration" claims, no competitor price claims, no user counts, no
+//   testimonials, no children in imagery (app screenshots of demo data only), no kiosk claims.
+// - Card billing is not available to US schools yet (the app creates GB Stripe accounts and
+//   bills in GBP). John (08/11/2026): say US card billing is coming in 2027, no firmer date.
+//
+// hreflang: this page and /uk/ list each other (en-US / en-GB / x-default).
 import { appLink } from '../utils/appLink';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 import { HOME_ALTERNATES } from '../utils/hreflang';
-import { Image } from 'astro:assets';
+
+const CALENDLY_URL = 'https://calendly.com/johnpowell-hey/30min?utm_source=home';
 
 // One Offer per plan per currency (same numbers in GBP and USD; John, 09/11/2026).
 // Free keeps price "0" for free-tier rich results and has no priceValidUntil.
@@ -34,15 +51,18 @@ const softwareApplicationSchema = {
   "@id": "https://beltmanager.com/#software",
   "name": "BeltManager",
   "alternateName": "BeltManager",
-  "description": "Martial arts management software for dojos, karate schools, BJJ academies, and MMA gyms. Class timetables, registers, student management, gradings and belt tracking in one platform.",
+  "description": "Martial arts school software for dojos, karate schools, BJJ academies and MMA gyms: class schedules, attendance that fills itself from program groups, belt testing from attendance, family accounts and a free parent app for iPhone and Android.",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web, iOS, Android",
+  "inLanguage": "en-US",
   "offers": planOffers,
   "featureList": [
-    "Class Timetables & RSVP",
+    "Class Schedules & RSVP",
     "Student Management & Profiles",
     "Belt & Rank Tracking",
-    "Membership Billing (card billing from April 2027)",
+    "Belt Testing Eligibility from Attendance",
+    "Family Accounts",
+    "Tuition Billing (US card billing is coming in 2027)",
     "Attendance Tracking",
     "Parent Portal & Free Parent App",
     "Staff Roles & Permissions",
@@ -69,7 +89,7 @@ const features = [
   {
     icon: 'calendar',
     title: 'Class Scheduling',
-    description: 'Recurring classes, venues and rooms, term dates and closures, with email and app reminders before each class.'
+    description: 'Recurring classes, locations and rooms, session dates and closures, with email and app reminders before each class.'
   },
   {
     icon: 'users',
@@ -79,7 +99,7 @@ const features = [
   {
     icon: 'credit-card',
     title: 'Billing & Payments',
-    description: 'Card billing through Stripe switches on in April 2027. Until then, record payments by hand.'
+    description: 'US card billing is coming in 2027. Until then, record tuition payments by hand.'
   },
   {
     icon: 'chart',
@@ -89,7 +109,7 @@ const features = [
   {
     icon: 'belt',
     title: 'Belt & Rank Tracking',
-    description: 'Manage belt progression, grading eligibility, gradings and printable certificates for any style.'
+    description: 'Manage belt progression, belt testing eligibility, belt tests and printable certificates for any style.'
   },
   {
     icon: 'mobile',
@@ -102,7 +122,7 @@ const features = [
 const howItWorks = [
   {
     title: 'Add your students once',
-    text: "Put each student in a group, like Kids Karate. From then on they're a regular, expected at every class that group runs.",
+    text: "Put each student in a program group, like Kids Karate. From then on they're a regular, expected at every class that group runs.",
     image: '/images/app/karate-belt-testing.webp',
     width: 1600,
     height: 1000,
@@ -112,7 +132,7 @@ const howItWorks = [
   },
   {
     title: 'Families tell you who\'s coming',
-    text: "Before class, parents answer Coming or Can't make it in one tap. You open the register on your phone, already filled in, and tap who's there.",
+    text: "Before class, parents answer Coming or Can't make it in one tap. You open attendance on your phone, already filled in, and tap who's there.",
     image: '/images/app/karate-parent-portal.webp',
     width: 1200,
     height: 1700,
@@ -121,26 +141,86 @@ const howItWorks = [
     caption: "The parent's view: one tap per class."
   },
   {
-    title: 'See who\'s ready to grade',
-    text: 'Attendance and time at belt build the Ready to grade list for you, so your next grading picks itself.',
+    title: 'See who\'s ready to test',
+    text: 'Attendance and time at belt build the list of students ready for belt testing, so your next belt test picks itself.',
     image: '/images/app/dojo-dashboard.webp',
     width: 1600,
     height: 1220,
     crop: 'width: 280%; transform: translate(0, -27%);',
-    alt: 'The dashboard: a Ready to grade list showing each student\'s current and next belt',
-    caption: 'The Ready to grade list on the dashboard.'
+    alt: 'The dashboard: students ready for their next belt test, showing each student\'s current and next belt',
+    caption: 'Students ready for their next belt test, on the dashboard.'
   }
 ];
 
 const stats = [
   { number: 'Unlimited', label: 'Staff & Classes' },
-  { number: '£0', label: 'Free up to 25 students' },
+  { number: '$0', label: 'Free up to 25 students' },
   { number: 'All styles', label: 'Karate, BJJ, TKD, MMA' },
   { number: '24/7', label: 'Parent Portal & App' }
 ];
+// The approved headline's three claims, from the retired /us/ page.
+const highlights = [
+  {
+    title: 'Attendance that fills itself',
+    text: "Put each student in a program group, like Kids Karate, once. From then on they're a regular, expected at every class that group runs. Parents tap Coming or Can't make it, and you open attendance on your phone already filled in.",
+  },
+  {
+    title: 'A parent app that works',
+    text: "Free on iPhone and Android. Parents answer for each class in one tap, see their child's belt and upcoming classes, sign waivers and get class reminders.",
+  },
+  {
+    title: 'Families grouped together',
+    text: 'Siblings sit under one family with their parents or guardians, so a parent with three kids signs in once and sees all three.',
+  },
+  {
+    title: 'Belt testing from attendance',
+    text: 'Set a minimum time at each belt and a minimum number of classes. BeltManager builds the list of students ready for belt testing, so your next test picks itself.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How much does BeltManager cost for a US school?',
+    answer:
+      "Schools that join before March 31, 2027 use BeltManager free until then, with every feature that's live and no credit card. After that, schools with up to 25 active students stay on a free plan, and larger schools pay $29 a month (Club, up to 75 active students), $49 (School, up to 150) or $79 (Academy, unlimited), with every feature on every plan. Schools that join before then get 50% off a paid plan for 12 months.",
+    links: [{ text: 'Pricing', url: '/pricing/' }],
+  },
+  {
+    question: 'Can I import my students from my current software?',
+    answer:
+      'Yes. BeltManager imports any CSV file: names, dates of birth, parents or guardians, program group and current belt. We have step-by-step guides for exporting from Martialytics, Kicksite and Zen Planner, and the setup call can cover your import.',
+    links: [
+      { text: 'Switching guides', url: '/switch/' },
+      { text: 'Export from Kicksite', url: '/switch/kicksite/' },
+    ],
+  },
+  {
+    question: 'Can BeltManager collect tuition by card in the US?',
+    answer:
+      'Not yet: US card billing is coming in 2027. Until then, keep your current tuition setup while you move attendance, belts and families across.',
+    links: [],
+  },
+  {
+    question: 'Is BeltManager a US company?',
+    answer:
+      "No. BeltManager is made in the UK by John Powell Ltd. Some screens still use UK wording for belt testing and show dates day first, and that's worth knowing before you sign up. The student import reads US month-first dates.",
+    links: [{ text: 'About BeltManager', url: '/about/' }],
+  },
+  {
+    question: 'What happens on the setup call?',
+    answer:
+      "It's a 30-minute video call with John, who builds BeltManager. Bring your student list and your class schedule, and we'll set up your school together: belts, program groups, classes and your first students.",
+    links: [],
+  },
+];
 ---
 
-<BaseLayout title="Home" description="Your register fills itself: add students once and every class knows who's coming, then see who's ready to grade. Free for up to 25 students; paid plans from £29 a month." alternates={HOME_ALTERNATES}>
+<BaseLayout
+  title="Martial Arts School Management Software | BeltManager"
+  description="Martial arts school software: attendance that fills itself, belt testing from attendance and a free parent app. Free for up to 25 students; plans from $29."
+  lang="en-US"
+  alternates={HOME_ALTERNATES}
+>
   <!-- Structured Data Schemas -->
   <script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
@@ -155,10 +235,10 @@ const stats = [
             Free for up to 25 students
           </span>
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Your register <span class="text-brand-red">fills itself.</span> Your gradings pick themselves.
+            A parent app that works. Families grouped. <span class="text-brand-red">Belt testing from attendance.</span>
           </h1>
           <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-            Add your students once. Every class knows who's coming, and BeltManager tells you who's ready to grade.
+            Software for martial arts schools. Add your students once, and every class knows who's coming. Free import from any spreadsheet.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href={appLink(Astro.url.pathname, 'hero')} class="btn-primary text-lg px-8 py-4" data-ph-capture-attribute-cta="hero-get-started" data-ph-capture-attribute-hero-version="aha-2026-11">
@@ -172,7 +252,7 @@ const stats = [
             </a>
           </div>
           <p class="mt-6 text-sm text-gray-400">
-            Free for up to 25 students. Paid plans from £29 a month ($29 in the US). • No credit card
+            Free for up to 25 students. Paid plans from $29 a month. • No credit card
           </p>
           <p class="mt-3 text-sm text-gray-300">
             Switching? <a href="/switch/" class="underline hover:text-white">Bring your students with you</a>
@@ -183,7 +263,7 @@ const stats = [
             src="/images/app/mma-timetable.webp"
             width="1600"
             height="1000"
-            alt="BeltManager's weekly timetable: each class shows how many regulars are expected and an Open register link (demo data)"
+            alt="BeltManager's weekly class schedule: each class shows how many regulars are expected and a link to open attendance (demo data)"
             class="w-full h-auto rounded-xl shadow-2xl ring-1 ring-white/10"
             fetchpriority="high"
             decoding="async"
@@ -204,16 +284,34 @@ const stats = [
     </div>
   </section>
 
+  <!-- Highlights: the headline's claims in full (carried over from the retired /us/ page) -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Less admin before class, after class and on test day</h2>
+        <p class="text-lg text-gray-600">Join a program group once and you're a regular. That one idea does most of the work.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {highlights.map((h) => (
+          <div class="card">
+            <h3 class="text-xl font-bold text-brand-navy mb-2">{h.title}</h3>
+            <p class="text-gray-600">{h.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- How it works: the aha moment in three real screens (#22) -->
   <section id="how-it-works" class="section bg-white scroll-mt-20">
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <span class="badge-primary mb-4">How it works</span>
         <h2 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6">
-          No more paper registers
+          No more paper attendance sheets
         </h2>
         <p class="text-xl text-gray-600">
-          Join a group once and you're a regular. That one idea does most of the admin for you.
+          Three screens, from adding a student to their next belt test.
         </p>
       </div>
       <ol class="grid md:grid-cols-3 gap-8">
@@ -253,7 +351,7 @@ const stats = [
   <!-- Trust Badges -->
   <section class="py-12 bg-gray-50 border-b border-gray-100">
     <div class="container-custom">
-      <p class="text-center text-sm text-gray-500 uppercase tracking-wider mb-8">Built to scale with your dojo</p>
+      <p class="text-center text-sm text-gray-500 uppercase tracking-wider mb-8">Built to scale with your school</p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         {stats.map((stat) => (
           <div>
@@ -318,7 +416,7 @@ const stats = [
             Built for Every Style and Discipline
           </h2>
           <p class="text-lg text-gray-600 mb-6">
-            Whether you run a karate dojo, BJJ academy, taekwondo school, or MMA gym, BeltManager adapts to your unique needs with customizable belt systems, class structures, and terminology.
+            Whether you run a karate dojo, BJJ academy, taekwondo school, or MMA gym, BeltManager adapts to your unique needs with customizable belt systems, class structures, and terminology. Running a traditional dojo? See our <a href="/dojo-management-software/" class="text-brand-red hover:underline">dojo management software</a>.
           </p>
           <ul class="space-y-4 mb-8">
             <li class="flex items-start gap-3">
@@ -403,7 +501,7 @@ const stats = [
             <svg class="w-5 h-5 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
           </div>
           <h3 class="font-bold text-brand-navy mb-1">Karate School Software</h3>
-          <p class="text-sm text-gray-600">Kyu/Dan tracking, gradings, and kata management</p>
+          <p class="text-sm text-gray-600">Kyu/Dan tracking, belt testing and kata management</p>
         </a>
         <a href="/mma-gym-software/" class="block p-6 rounded-xl border border-gray-200 hover:border-brand-red hover:shadow-md transition-all group">
           <div class="w-10 h-10 rounded-lg bg-brand-red-light flex items-center justify-center mb-3 group-hover:bg-brand-red transition-colors">
@@ -431,14 +529,14 @@ const stats = [
             <svg class="w-5 h-5 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
           </div>
           <h3 class="font-bold text-brand-navy mb-1">Martial Arts Billing Software</h3>
-          <p class="text-sm text-gray-600">Recurring card billing, switching on in April 2027</p>
+          <p class="text-sm text-gray-600">Tuition billing; US card billing is coming in 2027</p>
         </a>
         <a href="/martial-arts-scheduling-software/" class="block p-6 rounded-xl border border-gray-200 hover:border-brand-red hover:shadow-md transition-all group">
           <div class="w-10 h-10 rounded-lg bg-brand-red-light flex items-center justify-center mb-3 group-hover:bg-brand-red transition-colors">
             <svg class="w-5 h-5 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
           </div>
           <h3 class="font-bold text-brand-navy mb-1">Martial Arts Scheduling Software</h3>
-          <p class="text-sm text-gray-600">Class timetables, RSVPs, and grading event management</p>
+          <p class="text-sm text-gray-600">Class schedules, RSVPs and belt test events</p>
         </a>
       </div>
     </div>
@@ -466,7 +564,7 @@ const stats = [
                 <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span class="text-text-secondary">Calculate revenue across all streams—memberships, private lessons, grading fees, and more</span>
+                <span class="text-text-secondary">Calculate revenue across all streams—memberships, private lessons, belt testing fees, and more</span>
               </div>
               <div class="flex items-start gap-3">
                 <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -518,25 +616,25 @@ const stats = [
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <FAQEnhanced faqs={faqs} title="Questions from US schools" site="beltmanager" pageUrl="https://beltmanager.com/" />
+
+  <!-- Book a call (carried over from the retired /us/ page) -->
   <section class="section bg-gradient-to-r from-brand-red to-brand-red-dark text-white">
-    <div class="container-custom text-center">
-      <h2 class="text-3xl md:text-5xl font-bold mb-6">
-        Ready to Transform Your Dojo?
-      </h2>
-      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-        BeltManager is free for up to 25 students, with paid plans from £29 a month. See how it can streamline your operations and grow your school.
+    <div class="container-custom text-center max-w-2xl">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Set up your school on a 30-minute call</h2>
+      <p class="text-lg text-white/90 mb-8">
+        Bring your student list and class schedule. Or skip the call and set up on your own tonight. Free for up to 25 students, with paid plans from $29 a month.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href={appLink(Astro.url.pathname, 'bottom')} class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
-          Get started free
+        <a href={CALENDLY_URL} class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4" target="_blank" rel="noopener" data-ph-capture-attribute-cta="bottom-book-call">
+          Book a 30-minute call
         </a>
-        <a href="/pricing/" class="btn bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4">
-          View Pricing
+        <a href={appLink(Astro.url.pathname, 'bottom')} class="btn bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4" data-ph-capture-attribute-cta="bottom-get-started">
+          Get started free
         </a>
       </div>
       <p class="mt-6 text-sm text-white/90">
-        No credit card • Setup in 5 minutes
+        No credit card • <a href="/pricing/" class="underline hover:text-white">See pricing</a>
       </p>
     </div>
   </section>

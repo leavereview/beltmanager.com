@@ -40,7 +40,6 @@ export const PENDING_PAGES = [
   '/dojo-management-software/',
   '/dojo-revenue-calculator/',
   '/free-martial-arts-software/',
-  '/',
   '/karate-school-software/',
   '/martial-arts-billing-software/',
   '/martial-arts-crm/',
@@ -52,7 +51,6 @@ export const PENDING_PAGES = [
   '/switch/kicksite/',
   '/switch/martialytics/',
   '/switch/zen-planner/',
-  '/us/',
 ];
 
 const UK_PATTERNS = [

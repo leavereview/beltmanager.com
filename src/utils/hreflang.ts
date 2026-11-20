@@ -1,10 +1,10 @@
 /**
- * hreflang set for the home page and its US-English twin (#29). Both pages pass this same
- * list to BaseLayout, so the alternates are reciprocal, as Google requires. The UK home
- * page stays the default for every other English-speaking visitor.
+ * hreflang set for the home page (US English, the default) and its UK twin at /uk/. Both
+ * pages pass this same list to BaseLayout, so the alternates are reciprocal, as Google
+ * requires. The US home page is the default for every other visitor.
  */
 export const HOME_ALTERNATES = [
-  { hreflang: 'en-GB', href: '/' },
-  { hreflang: 'en-US', href: '/us/' },
+  { hreflang: 'en-US', href: '/' },
+  { hreflang: 'en-GB', href: '/uk/' },
   { hreflang: 'x-default', href: '/' },
 ];

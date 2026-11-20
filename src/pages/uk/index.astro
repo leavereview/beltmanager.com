@@ -1,0 +1,544 @@
+---
+// UK home page (/uk/): the British copy and pound prices that were the home page until
+// the site went US-first (Nov 2026). `/` is the US page; both pass HOME_ALTERNATES.
+import { appLink } from '../../utils/appLink';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { HOME_ALTERNATES } from '../../utils/hreflang';
+
+// One Offer per plan per currency (same numbers in GBP and USD; John, 09/11/2026).
+// Free keeps price "0" for free-tier rich results and has no priceValidUntil.
+// Keep in step with pricing.astro.
+const PLAN_OFFERS = [
+  { id: 'free', name: 'Free', price: '0', desc: 'Up to 25 active students. Every feature included.' },
+  { id: 'club', name: 'Club', price: '29', desc: 'Up to 75 active students. Every feature included.' },
+  { id: 'school', name: 'School', price: '49', desc: 'Up to 150 active students. Every feature included.' },
+  { id: 'academy', name: 'Academy', price: '79', desc: 'Unlimited active students. Every feature included.' }
+];
+const planOffers = PLAN_OFFERS.flatMap((plan) =>
+  ['GBP', 'USD'].map((cur) => ({
+    "@type": "Offer",
+    "@id": `https://beltmanager.com/uk/#${plan.id}-${cur.toLowerCase()}`,
+    "name": `BeltManager ${plan.name}`,
+    "description": plan.desc,
+    "price": plan.price,
+    "priceCurrency": cur,
+    "availability": "https://schema.org/InStock",
+    "url": "https://beltmanager.com/pricing/",
+    "seller": { "@type": "Organization", "name": "BeltManager" }
+  }))
+);
+// SoftwareApplication Schema
+const softwareApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://beltmanager.com/uk/#software",
+  "name": "BeltManager",
+  "alternateName": "BeltManager",
+  "description": "Martial arts management software for dojos, karate schools, BJJ academies, and MMA gyms. Class timetables, registers, student management, gradings and belt tracking in one platform.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, iOS, Android",
+  "offers": planOffers,
+  "featureList": [
+    "Class Timetables & RSVP",
+    "Student Management & Profiles",
+    "Belt & Rank Tracking",
+    "Membership Billing (card billing from April 2027)",
+    "Attendance Tracking",
+    "Parent Portal & Free Parent App",
+    "Staff Roles & Permissions",
+    "Tournament & Seminar Events",
+    "Membership Management",
+    "Attendance & Compliance Reports",
+    "Multi-location Support",
+    "Class Reminders (Email & App Push)"
+  ],
+  "url": "https://beltmanager.com/uk/",
+  "applicationSubCategory": "Martial Arts School Management",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Dojos, Karate Schools, BJJ Academies, MMA Gyms, Martial Arts Schools"
+  }
+};
+
+const offerSchema = {
+  "@context": "https://schema.org",
+  "@graph": planOffers
+};
+
+const features = [
+  {
+    icon: 'calendar',
+    title: 'Class Scheduling',
+    description: 'Recurring classes, venues and rooms, term dates and closures, with email and app reminders before each class.'
+  },
+  {
+    icon: 'users',
+    title: 'Student Management',
+    description: 'Track student progress, belt ranks, attendance, and performance with comprehensive profiles.'
+  },
+  {
+    icon: 'credit-card',
+    title: 'Billing & Payments',
+    description: 'Card billing through Stripe switches on in April 2027. Until then, record payments by hand.'
+  },
+  {
+    icon: 'chart',
+    title: 'Reports & Analytics',
+    description: 'Attendance reports with CSV export, at-risk student lists and insurance compliance checks.'
+  },
+  {
+    icon: 'belt',
+    title: 'Belt & Rank Tracking',
+    description: 'Manage belt progression, grading eligibility, gradings and printable certificates for any style.'
+  },
+  {
+    icon: 'mobile',
+    title: 'Free Parent App',
+    description: 'Parents RSVP to classes in one tap, follow their child\'s progress and get closure notices. Free on iPhone and Android.'
+  }
+];
+
+// "How it works" strip (#22). Real screenshots from the demo school, no real families.
+const howItWorks = [
+  {
+    title: 'Add your students once',
+    text: "Put each student in a group, like Kids Karate. From then on they're a regular, expected at every class that group runs.",
+    image: '/images/app/karate-belt-testing.webp',
+    width: 1600,
+    height: 1000,
+    crop: 'width: 170%; transform: translate(0, -4%);',
+    alt: 'The students list, showing each student\'s belt, groups and guardian',
+    caption: 'Students, their belts and the groups they train in.'
+  },
+  {
+    title: 'Families tell you who\'s coming',
+    text: "Before class, parents answer Coming or Can't make it in one tap. You open the register on your phone, already filled in, and tap who's there.",
+    image: '/images/app/karate-parent-portal.webp',
+    width: 1200,
+    height: 1700,
+    crop: 'width: 100%;',
+    alt: 'The parent portal: a child\'s upcoming classes with Attending and Not attending buttons',
+    caption: "The parent's view: one tap per class."
+  },
+  {
+    title: 'See who\'s ready to grade',
+    text: 'Attendance and time at belt build the Ready to grade list for you, so your next grading picks itself.',
+    image: '/images/app/dojo-dashboard.webp',
+    width: 1600,
+    height: 1220,
+    crop: 'width: 280%; transform: translate(0, -27%);',
+    alt: 'The dashboard: a Ready to grade list showing each student\'s current and next belt',
+    caption: 'The Ready to grade list on the dashboard.'
+  }
+];
+
+const stats = [
+  { number: 'Unlimited', label: 'Staff & Classes' },
+  { number: '£0', label: 'Free up to 25 students' },
+  { number: 'All styles', label: 'Karate, BJJ, TKD, MMA' },
+  { number: '24/7', label: 'Parent Portal & App' }
+];
+---
+
+<BaseLayout title="Martial Arts Club Software for UK Clubs | BeltManager" lang="en-GB" description="Your register fills itself: add students once and every class knows who's coming, then see who's ready to grade. Free for up to 25 students; paid plans from £29 a month." alternates={HOME_ALTERNATES}>
+  <!-- Structured Data Schemas -->
+  <script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
+
+  <!-- Hero Section: leads with the aha moment (#22). The visual is a real app screenshot
+       (demo school, no real families); swap it for John's screen-recording clip when it exists. -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
+    <div class="container-custom relative py-16 md:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="badge-primary mb-6">
+            Free for up to 25 students
+          </span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Your register <span class="text-brand-red">fills itself.</span> Your gradings pick themselves.
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+            Add your students once. Every class knows who's coming, and BeltManager tells you who's ready to grade.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href={appLink(Astro.url.pathname, 'hero')} class="btn-primary text-lg px-8 py-4" data-ph-capture-attribute-cta="hero-get-started" data-ph-capture-attribute-hero-version="aha-2026-11">
+              Get started free
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a href="#how-it-works" class="btn-secondary text-lg px-8 py-4" data-ph-capture-attribute-cta="hero-how-it-works" data-ph-capture-attribute-hero-version="aha-2026-11">
+              See how it works
+            </a>
+          </div>
+          <p class="mt-6 text-sm text-gray-400">
+            Free for up to 25 students. Paid plans from £29 a month ($29 in the US). • No credit card
+          </p>
+          <p class="mt-3 text-sm text-gray-300">
+            Switching? <a href="/switch/" class="underline hover:text-white">Bring your students with you</a>
+          </p>
+        </div>
+        <figure>
+          <img
+            src="/images/app/mma-timetable.webp"
+            width="1600"
+            height="1000"
+            alt="BeltManager's weekly timetable: each class shows how many regulars are expected and an Open register link (demo data)"
+            class="w-full h-auto rounded-xl shadow-2xl ring-1 ring-white/10"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <figcaption class="mt-3 text-sm text-gray-400 text-center">
+            This week's classes, each already expecting its regulars. Demo school data.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <!-- Decorative element -->
+    <div class="absolute -bottom-1 left-0 right-0">
+      <svg class="w-full h-12 text-white" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="currentColor" opacity=".25"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="currentColor" opacity=".5"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,googl172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- How it works: the aha moment in three real screens (#22) -->
+  <section id="how-it-works" class="section bg-white scroll-mt-20">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="badge-primary mb-4">How it works</span>
+        <h2 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6">
+          No more paper registers
+        </h2>
+        <p class="text-xl text-gray-600">
+          Join a group once and you're a regular. That one idea does most of the admin for you.
+        </p>
+      </div>
+      <ol class="grid md:grid-cols-3 gap-8">
+        {howItWorks.map((step, index) => (
+          <li class="card flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="w-10 h-10 rounded-full bg-brand-red text-white font-bold flex items-center justify-center flex-shrink-0">{index + 1}</span>
+              <h3 class="text-xl font-bold text-brand-navy">{step.title}</h3>
+            </div>
+            <p class="text-gray-600 mb-6">{step.text}</p>
+            <figure class="mt-auto">
+              <div class="relative aspect-[4/3] overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
+                <img
+                  src={step.image}
+                  width={step.width}
+                  height={step.height}
+                  alt={`${step.alt} (BeltManager screenshot, demo data)`}
+                  class="absolute left-0 top-0 h-auto max-w-none"
+                  style={step.crop}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <figcaption class="mt-2 text-sm text-gray-500">{step.caption}</figcaption>
+            </figure>
+          </li>
+        ))}
+      </ol>
+      <div class="text-center mt-12">
+        <a href={appLink(Astro.url.pathname, 'how-it-works')} class="btn-primary" data-ph-capture-attribute-cta="how-it-works-get-started" data-ph-capture-attribute-hero-version="aha-2026-11">
+          Get started free
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Badges -->
+  <section class="py-12 bg-gray-50 border-b border-gray-100">
+    <div class="container-custom">
+      <p class="text-center text-sm text-gray-500 uppercase tracking-wider mb-8">Built to scale with your dojo</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {stats.map((stat) => (
+          <div>
+            <div class="text-3xl md:text-4xl font-bold text-brand-navy">{stat.number}</div>
+            <div class="text-sm text-gray-600 mt-1">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="badge-primary mb-4">Features</span>
+        <h2 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6">
+          Everything You Need to Run Your Martial Arts School
+        </h2>
+        <p class="text-xl text-gray-600">
+          From class scheduling to student management, we've got you covered with powerful tools designed specifically for martial arts schools.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {features.map((feature) => (
+          <div class="card group">
+            <div class="w-12 h-12 rounded-xl bg-brand-red-light flex items-center justify-center mb-4 group-hover:bg-brand-red transition-colors">
+              <svg class="w-6 h-6 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {feature.icon === 'calendar' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />}
+                {feature.icon === 'users' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />}
+                {feature.icon === 'credit-card' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />}
+                {feature.icon === 'chart' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />}
+                {feature.icon === 'belt' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />}
+                {feature.icon === 'mobile' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />}
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-brand-navy mb-2">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="/martial-arts-software/" class="btn-outline">
+          See All Features
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Feature Section -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="badge-primary mb-4">For All Martial Arts</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+            Built for Every Style and Discipline
+          </h2>
+          <p class="text-lg text-gray-600 mb-6">
+            Whether you run a karate dojo, BJJ academy, taekwondo school, or MMA gym, BeltManager adapts to your unique needs with customizable belt systems, class structures, and terminology.
+          </p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700"><strong class="text-brand-navy">Karate & Traditional Arts:</strong> Kyu/Dan ranking, kata tracking, tournament and seminar events</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700"><strong class="text-brand-navy">BJJ & Grappling:</strong> IBJJF belt system, stripe tracking, competition achievements</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700"><strong class="text-brand-navy">MMA & Kickboxing:</strong> Multi-discipline belt tracking, competition achievements</span>
+            </li>
+          </ul>
+          <a href="/dojo-management-software/" class="btn-primary">
+            Explore Dojo Management Software
+          </a>
+        </div>
+        <div class="relative">
+          <img
+            src="/images/full-shot-asian-people-practicing-taekwondo.jpg"
+            alt="Martial arts students training"
+            class="rounded-2xl shadow-2xl"
+            loading="lazy"
+            width="600"
+            height="400"
+          />
+          <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 hidden md:block">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-full bg-brand-red-light flex items-center justify-center">
+                <svg class="w-6 h-6 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <div class="font-bold text-brand-navy">All Styles</div>
+                <div class="text-sm text-gray-500">One Platform</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions — All 8 Pillar Pages -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="badge-primary mb-4">Solutions</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">
+          Software Built for Every Martial Arts School
+        </h2>
+        <p class="text-lg text-gray-600">
+          Whether you run a traditional dojo, BJJ academy, MMA gym, or multi-discipline school, BeltManager has a tailored solution for you.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="/martial-arts-software/" class="block p-6 rounded-xl border border-gray-200 hover:border-brand-red hover:shadow-md transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-brand-red-light flex items-center justify-center mb-3 group-hover:bg-brand-red transition-colors">
+            <svg class="w-5 h-5 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" /></svg>
+          </div>
+          <h3 class="font-bold text-brand-navy mb-1">Martial Arts Software</h3>
+          <p class="text-sm text-gray-600">The all-in-one platform for any martial arts school</p>
+        </a>
+        <a href="/dojo-management-software/" class="block p-6 rounded-xl border border-gray-200 hover:border-brand-red hover:shadow-md transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-brand-red-light flex items-center justify-center mb-3 group-hover:bg-brand-red transition-colors">
+            <svg class="w-5 h-5 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+          </div>
+          <h3 class="font-bold text-brand-navy mb-1">Dojo Management Software</h3>
+          <p class="text-sm text-gray-600">Run your dojo operations from one dashboard</p>
+        </a>
+        <a href="/karate-school-software/" class="block p-6 rounded-xl border border-gray-200 hover:border-brand-red hover:shadow-md transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-brand-red-light flex items-center justify-center mb-3 group-hover:bg-brand-red transition-colors">
+            <svg class="w-5 h-5 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
+          </div>
+          <h3 class="font-bold text-brand-navy mb-1">Karate School Software</h3>
+          <p class="text-sm text-gray-600">Kyu/Dan tracking, gradings, and kata management</p>
+        </a>
+        <a href="/mma-gym-software/" class="block p-6 rounded-xl border border-gray-200 hover:border-brand-red hover:shadow-md transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-brand-red-light flex items-center justify-center mb-3 group-hover:bg-brand-red transition-colors">
+            <svg class="w-5 h-5 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          </div>
+          <h3 class="font-bold text-brand-navy mb-1">MMA Gym Software</h3>
+          <p class="text-sm text-gray-600">Multi-discipline management for combat sports gyms</p>
+        </a>
+        <a href="/bjj-gym-software/" class="block p-6 rounded-xl border border-gray-200 hover:border-brand-red hover:shadow-md transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-brand-red-light flex items-center justify-center mb-3 group-hover:bg-brand-red transition-colors">
+            <svg class="w-5 h-5 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          </div>
+          <h3 class="font-bold text-brand-navy mb-1">BJJ Gym Software</h3>
+          <p class="text-sm text-gray-600">Belt and stripe tracking for Brazilian Jiu-Jitsu academies</p>
+        </a>
+        <a href="/martial-arts-crm/" class="block p-6 rounded-xl border border-gray-200 hover:border-brand-red hover:shadow-md transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-brand-red-light flex items-center justify-center mb-3 group-hover:bg-brand-red transition-colors">
+            <svg class="w-5 h-5 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+          </div>
+          <h3 class="font-bold text-brand-navy mb-1">Martial Arts CRM</h3>
+          <p class="text-sm text-gray-600">Convert leads and retain members with built-in CRM</p>
+        </a>
+        <a href="/martial-arts-billing-software/" class="block p-6 rounded-xl border border-gray-200 hover:border-brand-red hover:shadow-md transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-brand-red-light flex items-center justify-center mb-3 group-hover:bg-brand-red transition-colors">
+            <svg class="w-5 h-5 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+          </div>
+          <h3 class="font-bold text-brand-navy mb-1">Martial Arts Billing Software</h3>
+          <p class="text-sm text-gray-600">Recurring card billing, switching on in April 2027</p>
+        </a>
+        <a href="/martial-arts-scheduling-software/" class="block p-6 rounded-xl border border-gray-200 hover:border-brand-red hover:shadow-md transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-brand-red-light flex items-center justify-center mb-3 group-hover:bg-brand-red transition-colors">
+            <svg class="w-5 h-5 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+          </div>
+          <h3 class="font-bold text-brand-navy mb-1">Martial Arts Scheduling Software</h3>
+          <p class="text-sm text-gray-600">Class timetables, RSVPs, and grading event management</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Revenue Calculator Callout -->
+  <section class="section bg-gradient-to-br from-gray-50 to-white">
+    <div class="container-custom">
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+          <!-- Left: Content -->
+          <div class="p-8 md:p-12">
+            <div class="badge bg-brand-red-light text-brand-red mb-4 inline-flex">
+              Free Tool
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">
+              Plan Your Dojo's Financial Future
+            </h2>
+            <p class="text-lg text-text-secondary mb-6">
+              Use our free revenue calculator to model your school's income, expenses, and growth projections with real industry benchmarks.
+            </p>
+
+            <div class="space-y-3 mb-8">
+              <div class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-text-secondary">Calculate revenue across all streams—memberships, private lessons, grading fees, and more</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-text-secondary">Project growth over 6-24 months factoring in new sign-ups and student churn</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-text-secondary">Compare your performance to industry benchmarks and identify opportunities</span>
+              </div>
+            </div>
+
+            <a href="/dojo-revenue-calculator/" class="btn-primary inline-flex items-center gap-2">
+              Try Free Calculator
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Right: Stats -->
+          <div class="bg-gradient-to-br from-brand-navy to-gray-900 p-8 md:p-12 text-white flex flex-col justify-center">
+            <h3 class="text-2xl font-bold mb-6">Industry Insights Built-In</h3>
+            <div class="space-y-6">
+              <div>
+                <div class="text-4xl font-bold text-brand-red mb-2">20-40%</div>
+                <p class="text-gray-300">Average profit margin for successful martial arts schools</p>
+              </div>
+              <div>
+                <div class="text-4xl font-bold text-brand-red mb-2">60-80</div>
+                <p class="text-gray-300">Students needed to reach break-even for typical dojo</p>
+              </div>
+              <div>
+                <div class="text-4xl font-bold text-brand-red mb-2">5-8%</div>
+                <p class="text-gray-300">Industry average monthly student churn rate</p>
+              </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700">
+              <p class="text-sm text-gray-400">
+                Used by martial arts school owners to plan openings, evaluate performance, and model expansion scenarios.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-gradient-to-r from-brand-red to-brand-red-dark text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">
+        Ready to Transform Your Dojo?
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        BeltManager is free for up to 25 students, with paid plans from £29 a month. See how it can streamline your operations and grow your school.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={appLink(Astro.url.pathname, 'bottom')} class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
+          Get started free
+        </a>
+        <a href="/pricing/" class="btn bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4">
+          View Pricing
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-white/90">
+        No credit card • Setup in 5 minutes
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>

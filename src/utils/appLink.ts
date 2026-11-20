@@ -8,7 +8,7 @@ const APP_ORIGIN = 'https://app.beltmanager.com';
 export interface AppLinkOptions {
   /** App path. Sign-up is the default; the same page creates an account and signs people in. */
   path?: string;
-  /** Overrides utm_source (a landing page that wants its own source, such as `us-landing`). */
+  /** Overrides utm_source (a page that wants its own source). */
   source?: string;
   /** Overrides utm_medium (a tool rather than the site itself). */
   medium?: string;
@@ -27,8 +27,8 @@ export function pageSlug(pathname: string): string {
  */
 export function appLink(pathname: string, cta: string, options: AppLinkOptions = {}): string {
   const url = new URL(options.path ?? '/signin', APP_ORIGIN);
-  // Every app link on the US landing page, nav and footer included, is attributed to it (#29).
-  const defaultSource = pathname.startsWith('/us/') || pathname === '/us' ? 'us-landing' : 'beltmanager.com';
+  // Every app link on the UK pages, nav and footer included, is attributed to them.
+  const defaultSource = pathname.startsWith('/uk/') || pathname === '/uk' ? 'uk-landing' : 'beltmanager.com';
   url.searchParams.set('utm_source', options.source ?? defaultSource);
   url.searchParams.set('utm_medium', options.medium ?? 'site');
   url.searchParams.set('utm_campaign', options.campaign ?? pageSlug(pathname));
