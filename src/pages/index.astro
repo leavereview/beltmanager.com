@@ -182,7 +182,7 @@ const faqs = [
   {
     question: 'How much does BeltManager cost for a US school?',
     answer:
-      "Schools that join before March 31, 2027 use BeltManager free until then, with every feature that's live and no credit card. After that, schools with up to 25 active students stay on a free plan, and larger schools pay $29 a month (Club, up to 75 active students), $49 (School, up to 150) or $79 (Academy, unlimited), with every feature on every plan. Schools that join before then get 50% off a paid plan for 12 months.",
+      "Schools that join on or before March 31, 2027 use BeltManager free until then, with every feature that's live and no credit card. After that, schools with up to 25 active students stay on a free plan, and larger schools pay $29 a month (Club, up to 75 active students), $49 (School, up to 150) or $79 (Academy, unlimited), with every feature on every plan. Schools that join before then get 50% off a paid plan for 12 months.",
     links: [{ text: 'Pricing', url: '/pricing/' }],
   },
   {
@@ -556,7 +556,7 @@ const faqs = [
               Plan Your Dojo's Financial Future
             </h2>
             <p class="text-lg text-text-secondary mb-6">
-              Use our free revenue calculator to model your school's income, expenses, and growth projections with real industry benchmarks.
+              Use our free revenue calculator to model your school's income, expenses, profit, break-even point and growth projections from your own numbers.
             </p>
 
             <div class="space-y-3 mb-8">
@@ -576,7 +576,7 @@ const faqs = [
                 <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span class="text-text-secondary">Compare your performance to industry benchmarks and identify opportunities</span>
+                <span class="text-text-secondary">See how your own numbers fit together and where you could increase revenue or cut costs</span>
               </div>
             </div>
 
@@ -588,27 +588,22 @@ const faqs = [
             </a>
           </div>
 
-          <!-- Right: Stats -->
+          <!-- Right: What it models -->
           <div class="bg-gradient-to-br from-brand-navy to-gray-900 p-8 md:p-12 text-white flex flex-col justify-center">
-            <h3 class="text-2xl font-bold mb-6">Industry Insights Built-In</h3>
+            <h3 class="text-2xl font-bold mb-6">What it models</h3>
             <div class="space-y-6">
               <div>
-                <div class="text-4xl font-bold text-brand-red mb-2">20-40%</div>
-                <p class="text-gray-300">Average profit margin for successful martial arts schools</p>
+                <div class="text-xl font-bold text-brand-red mb-1">Revenue and costs</div>
+                <p class="text-gray-300">Income from each stream, set against rent, instructor pay, insurance and other running costs</p>
               </div>
               <div>
-                <div class="text-4xl font-bold text-brand-red mb-2">60-80</div>
-                <p class="text-gray-300">Students needed to reach break-even for typical dojo</p>
+                <div class="text-xl font-bold text-brand-red mb-1">Profit and break-even</div>
+                <p class="text-gray-300">Your monthly profit and margin, and how many students you need to cover your costs</p>
               </div>
               <div>
-                <div class="text-4xl font-bold text-brand-red mb-2">5-8%</div>
-                <p class="text-gray-300">Industry average monthly student churn rate</p>
+                <div class="text-xl font-bold text-brand-red mb-1">Growth and churn</div>
+                <p class="text-gray-300">Projections over 6-24 months from your own sign-up and churn numbers</p>
               </div>
-            </div>
-            <div class="mt-8 pt-6 border-t border-gray-700">
-              <p class="text-sm text-gray-400">
-                Used by martial arts school owners to plan openings, evaluate performance, and model expansion scenarios.
-              </p>
             </div>
           </div>
         </div>

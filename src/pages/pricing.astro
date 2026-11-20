@@ -11,7 +11,7 @@
 // conversions. No VAT: John Powell Ltd is not VAT-registered, so these are full prices.
 // Only Active students count; going over gives 30 days' grace and never locks a school out.
 // Free plan pays a 1% platform fee on card payments collected through BeltManager (on top
-// of Stripe's fee); paid plans pay 0%; cash and standing orders never carry a fee.
+// of Stripe's fee); paid plans pay 0%; cash and bank transfers never carry a fee.
 //
 // This site is static, so the visitor's country (Vercel x-vercel-ip-country) is not
 // readable. Show $ as the main price, with the £ line in a data-uk element beneath it
@@ -129,7 +129,7 @@ const faqs = [
   },
   {
     question: "Is there a fee on card payments?",
-    answer: "On the Free plan, BeltManager takes a 1% platform fee on card payments collected through BeltManager, on top of Stripe's own fee. Paid plans pay 0% platform fee. Cash and standing orders never carry a fee on any plan. US card billing is coming in 2027.",
+    answer: "On the Free plan, BeltManager takes a 1% platform fee on card payments collected through BeltManager, on top of Stripe's own fee. Paid plans pay 0% platform fee. Cash and bank transfers never carry a fee on any plan. US card billing is coming in 2027.",
     links: [{ text: 'Card billing', url: '/martial-arts-billing-software/' }]
   },
   {
@@ -234,7 +234,7 @@ const faqs = [
 
       <p class="text-center text-sm text-gray-600 mt-6 max-w-3xl mx-auto">
         Schools in the US and everywhere else pay in $. <span data-uk>UK schools pay in £ (same numbers, not a conversion).</span> No VAT to add.
-        Free plan: 1% platform fee on card payments collected through BeltManager, on top of Stripe's fee. Paid plans: 0%. Cash and standing orders never carry a fee.
+        Free plan: 1% platform fee on card payments collected through BeltManager, on top of Stripe's fee. Paid plans: 0%. Cash and bank transfers never carry a fee.
       </p>
     </div>
   </section>

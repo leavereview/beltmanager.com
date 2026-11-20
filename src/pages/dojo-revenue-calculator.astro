@@ -636,7 +636,7 @@ const howToSchema = {
           <h3 class="text-2xl font-bold text-brand-navy mb-4 mt-8">Operational Efficiency and Cost Management</h3>
 
           <p class="text-text-secondary mb-4">
-            Profitable dojos don't just focus on revenue—they ruthlessly optimise costs without sacrificing quality. Your calculator's cost breakdown reveals where your money goes each month. Look at each category as a share of your gross revenue:
+            Profitable dojos don't just focus on revenue—they ruthlessly optimize costs without sacrificing quality. Your calculator's cost breakdown reveals where your money goes each month. Look at each category as a share of your gross revenue:
           </p>
 
           <ul class="space-y-2 text-text-secondary mb-6">
@@ -657,7 +657,7 @@ const howToSchema = {
           </p>
 
           <p class="text-text-secondary mb-6">
-            Realistic monthly sign-up expectations vary by location and marketing investment, so enter the number you actually see in your own school. Successful schools use <a href="/martial-arts-scheduling-software/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-scheduling" class="text-brand-red hover:underline">martial arts scheduling software</a> to optimise class times and capacity, ensuring they can accommodate growth without sacrificing the student experience.
+            Realistic monthly sign-up expectations vary by location and marketing investment, so enter the number you actually see in your own school. Successful schools use <a href="/martial-arts-scheduling-software/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-scheduling" class="text-brand-red hover:underline">martial arts scheduling software</a> to optimize class times and capacity, ensuring they can accommodate growth without sacrificing the student experience.
           </p>
 
           <div class="bg-brand-red-light border-l-4 border-brand-red p-6 rounded-lg my-8">
@@ -722,7 +722,7 @@ const howToSchema = {
           <div class="mt-12 p-8 bg-gradient-to-br from-brand-navy to-gray-900 rounded-xl text-white">
             <h3 class="text-2xl font-bold mb-4">Want to track these numbers in real-time?</h3>
             <p class="text-gray-300 mb-6 leading-relaxed">
-              BeltManager automatically monitors your student count, revenue, churn rate, and class utilisation—so you always know exactly where your dojo stands. No more spreadsheets or manual calculations. Get real-time insights that help you make informed business decisions.
+              BeltManager automatically monitors your student count, revenue, churn rate, and class utilization—so you always know exactly where your dojo stands. No more spreadsheets or manual calculations. Get real-time insights that help you make informed business decisions.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
               <a href={appLink(Astro.url.pathname, 'contact-cta', { source: 'calculator', medium: 'tool', campaign: 'dojo-revenue' })} class="btn-primary text-center">Get started free</a>
@@ -1718,22 +1718,22 @@ const howToSchema = {
       });
     }
 
-    // Class utilisation insight
+    // Class utilization insight
     const totalClassCapacity = data.classesPerWeek * data.studentsPerClass * 4.33;
     const currentMonthlyAttendance = data.students * 3; // Assume 3 classes per student per week
-    const utilisation = (currentMonthlyAttendance / totalClassCapacity) * 100;
+    const utilization = (currentMonthlyAttendance / totalClassCapacity) * 100;
 
-    if (utilisation < 50) {
+    if (utilization < 50) {
       insights.push({
         type: 'info',
         title: 'Class capacity underutilized',
-        message: `Your classes are running at approximately ${utilisation.toFixed(0)}% capacity. You have room to accommodate ${Math.floor((totalClassCapacity - currentMonthlyAttendance) / 13)} more students without adding class times, maximizing revenue from your existing schedule.`
+        message: `Your classes are running at approximately ${utilization.toFixed(0)}% capacity. You have room to accommodate ${Math.floor((totalClassCapacity - currentMonthlyAttendance) / 13)} more students without adding class times, maximizing revenue from your existing schedule.`
       });
-    } else if (utilisation > 85) {
+    } else if (utilization > 85) {
       insights.push({
         type: 'warning',
         title: 'Class capacity nearing limit',
-        message: `Your classes are running at ${utilisation.toFixed(0)}% capacity. You may soon need to add class times or expand your schedule to accommodate growth without overcrowding.`
+        message: `Your classes are running at ${utilization.toFixed(0)}% capacity. You may soon need to add class times or expand your schedule to accommodate growth without overcrowding.`
       });
     }
 
@@ -1764,15 +1764,15 @@ const howToSchema = {
       });
     }
 
-    // Low utilisation
+    // Low utilization
     const totalClassCapacity = data.classesPerWeek * data.studentsPerClass * 4.33;
     const currentMonthlyAttendance = data.students * 3;
-    const utilisation = (currentMonthlyAttendance / totalClassCapacity) * 100;
+    const utilization = (currentMonthlyAttendance / totalClassCapacity) * 100;
 
-    if (utilisation < 50) {
+    if (utilization < 50) {
       actions.push({
         title: 'Optimize class schedule',
-        description: `Your classes are underutilized (${utilisation.toFixed(0)}% capacity). You can accommodate more students without adding overhead. Focus marketing efforts on filling existing class times before expanding your schedule.`
+        description: `Your classes are underutilized (${utilization.toFixed(0)}% capacity). You can accommodate more students without adding overhead. Focus marketing efforts on filling existing class times before expanding your schedule.`
       });
     }
 
