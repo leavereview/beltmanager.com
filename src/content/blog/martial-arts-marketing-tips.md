@@ -1,6 +1,6 @@
 ---
 title: "Martial Arts Marketing Tips"
-description: "Martial arts marketing that fills your intro classes: Google Business, referral programmes, video content, and the 4-week sprint that doubled my pipeline."
+description: "Martial arts marketing that fills your intro classes: Google Business, referral programs, video content, and the 4-week sprint that doubled my pipeline."
 image: /images/blog-kids-class.jpg
 date: "2026-02-13"
 tags: ["Marketing"]

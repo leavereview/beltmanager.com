@@ -1,6 +1,6 @@
 ---
 title: "How Much Do Gym Owners Make?"
-description: "Martial arts school owner salaries: £25K-£85K annual breakdown by size. Revenue factors, profit margins, and 7 strategies to boost dojo profitability."
+description: "Martial arts school owner salaries: annual breakdown by size. Revenue factors, profit margins, and 7 strategies to boost dojo profitability."
 image: /images/blog-dojo-interior.jpg
 date: "2026-02-06"
 tags: ["Business"]

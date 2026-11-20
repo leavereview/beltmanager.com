@@ -13,7 +13,6 @@ import { pathToFileURL } from 'url';
 export const UK_PAGES = ['/uk/', '/switch/bmaba-club-manager/', '/terms/', '/privacy-policy/'];
 
 export const PENDING_PAGES = [
-  '/about/',
   '/blog/adult-karate-classes-guide/',
   '/blog/best-martial-arts-self-defense/',
   '/blog/best-martial-arts-software/',
@@ -23,7 +22,6 @@ export const PENDING_PAGES = [
   '/blog/gym-crm-software-guide/',
   '/blog/gym-management-software-comparison/',
   '/blog/gym-owner-salary-guide/',
-  '/blog/',
   '/blog/jiu-jitsu-belt-ranks/',
   '/blog/karate-belt-order-complete-guide/',
   '/blog/lead-generation-mma-gyms/',
@@ -32,15 +30,6 @@ export const PENDING_PAGES = [
   '/blog/member-retention-strategies/',
   '/blog/taekwondo-belts/',
   '/blog/types-of-martial-arts/',
-  '/compare/',
-  '/compare/kicksite/',
-  '/compare/zen-planner/',
-  '/contact/',
-  '/dojo-revenue-calculator/',
-  '/switch/',
-  '/switch/kicksite/',
-  '/switch/martialytics/',
-  '/switch/zen-planner/',
 ];
 
 const UK_PATTERNS = [

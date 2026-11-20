@@ -34,12 +34,12 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Enter Your Dojo Profile",
-      "text": "Input your martial arts style, currency, number of active students, monthly membership fee, classes per week, average students per class, and number of instructors."
+      "text": "Input your martial arts style, currency, number of active students, monthly tuition, classes per week, average students per class, and number of instructors."
     },
     {
       "@type": "HowToStep",
       "name": "Configure Revenue Streams",
-      "text": "Enable and configure additional revenue sources including grading fees, private lessons, merchandise sales, introductory courses, seminars, and summer camps."
+      "text": "Enable and configure additional revenue sources including belt testing fees, private lessons, merchandise sales, introductory courses, seminars, and summer camps."
     },
     {
       "@type": "HowToStep",
@@ -95,7 +95,7 @@ const howToSchema = {
             Understanding your martial arts school's financial picture is crucial for sustainable growth. Whether you're planning to open a new dojo, evaluating your current school's performance, or exploring expansion opportunities, having clarity on your revenue and costs makes all the difference.
           </p>
           <p class="text-lg text-text-secondary leading-relaxed mb-6">
-            This free dojo revenue calculator helps you model realistic scenarios based on industry benchmarks drawn from successful martial arts schools across the UK and US. Unlike generic business calculators, this tool understands the specific revenue streams and cost structures of martial arts schools—from membership fees and belt testing to private lessons and summer camps.
+            This free dojo revenue calculator helps you model realistic scenarios based on industry benchmarks drawn from successful martial arts schools across the US. Unlike generic business calculators, this tool understands the specific revenue streams and cost structures of martial arts schools—from tuition and belt testing to private lessons and summer camps.
           </p>
 
           <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-4">What You'll Discover</h2>
@@ -104,7 +104,7 @@ const howToSchema = {
               <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span><strong>Comprehensive revenue analysis</strong> across all your income streams—memberships, private lessons, grading fees, merchandise, and more</span>
+              <span><strong>Comprehensive revenue analysis</strong> across all your income streams—memberships, private lessons, belt testing fees, merchandise, and more</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,7 +127,7 @@ const howToSchema = {
           </ul>
 
           <p class="text-lg text-text-secondary leading-relaxed mb-8">
-            The calculator uses real-world data from successful martial arts schools. Average UK martial arts schools have 80-150 active students at £60-£100 monthly membership, with profitable schools typically achieving 20-40% profit margins. Understanding where your school sits relative to these benchmarks helps you make informed decisions about pricing, marketing, and operational efficiency.
+            The calculator uses real-world data from successful martial arts schools. Average martial arts schools have 80-150 active students at $60-$100 monthly tuition, with profitable schools typically achieving 20-40% profit margins. Understanding where your school sits relative to these benchmarks helps you make informed decisions about pricing, marketing, and operational efficiency.
           </p>
 
           <div class="bg-brand-red-light border-l-4 border-brand-red p-6 rounded-lg">
@@ -207,8 +207,8 @@ const howToSchema = {
                 <div>
                   <label for="currency" class="block text-sm font-semibold text-brand-navy mb-2">Currency</label>
                   <select id="currency" class="input">
-                    <option value="£">£ (GBP)</option>
                     <option value="$" selected>$ (USD)</option>
+                    <option value="£" data-uk>£ (GBP)</option>
                     <option value="€">€ (EUR)</option>
                   </select>
                 </div>
@@ -223,7 +223,7 @@ const howToSchema = {
 
                 <div>
                   <label for="monthly-fee" class="block text-sm font-semibold text-brand-navy mb-2">
-                    Monthly Membership Fee
+                    Monthly Tuition
                     <span class="text-text-tertiary font-normal" id="fee-range">($20-$500)</span>
                   </label>
                   <input type="number" id="monthly-fee" class="input" value="75" min="20" max="500">
@@ -265,7 +265,7 @@ const howToSchema = {
                 <div class="card">
                   <div class="flex items-center justify-between mb-4">
                     <div>
-                      <h3 class="text-lg font-semibold text-brand-navy">Grading / Belt Testing Fees</h3>
+                      <h3 class="text-lg font-semibold text-brand-navy">Belt Testing Fees</h3>
                       <p class="text-sm text-text-tertiary">Revenue from belt examinations and rank progression</p>
                     </div>
                     <label class="relative inline-flex items-center cursor-pointer">
@@ -275,7 +275,7 @@ const howToSchema = {
                   </div>
                   <div id="grading-inputs" class="space-y-4 hidden">
                     <div>
-                      <label for="grading-fee" class="block text-sm font-medium text-brand-navy mb-2">Average Fee Per Test</label>
+                      <label for="grading-fee" class="block text-sm font-medium text-brand-navy mb-2">Average Belt Testing Fee Per Test</label>
                       <input type="number" id="grading-fee" class="input" value="30" min="0">
                     </div>
                     <div>
@@ -283,7 +283,7 @@ const howToSchema = {
                       <input type="number" id="tests-per-year" class="input" value="2" min="0" max="6">
                     </div>
                     <div>
-                      <label for="students-grading-pct" class="block text-sm font-medium text-brand-navy mb-2">% of Students Who Grade Annually</label>
+                      <label for="students-grading-pct" class="block text-sm font-medium text-brand-navy mb-2">% of Students Who Test for Belts Annually</label>
                       <input type="number" id="students-grading-pct" class="input" value="70" min="0" max="100">
                     </div>
                   </div>
@@ -338,7 +338,7 @@ const howToSchema = {
                   <div class="flex items-center justify-between mb-4">
                     <div>
                       <h3 class="text-lg font-semibold text-brand-navy">Introductory / Trial Courses</h3>
-                      <p class="text-sm text-text-tertiary">Paid trial programmes for new students</p>
+                      <p class="text-sm text-text-tertiary">Paid trial programs for new students</p>
                     </div>
                     <label class="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" id="enable-intro" class="sr-only peer">
@@ -385,7 +385,7 @@ const howToSchema = {
                 <div class="card">
                   <div class="flex items-center justify-between mb-4">
                     <div>
-                      <h3 class="text-lg font-semibold text-brand-navy">Summer Camps / Holiday Programmes</h3>
+                      <h3 class="text-lg font-semibold text-brand-navy">Summer Camps / Holiday Programs</h3>
                       <p class="text-sm text-text-tertiary">Intensive training camps during school breaks</p>
                     </div>
                     <label class="relative inline-flex items-center cursor-pointer">
@@ -409,7 +409,7 @@ const howToSchema = {
                 <div class="bg-brand-red-light border-l-4 border-brand-red p-6 rounded-lg">
                   <h4 class="font-semibold text-brand-navy mb-2">Additional Monthly Revenue</h4>
                   <p class="text-3xl font-bold text-brand-red" id="additional-revenue-preview">$0</p>
-                  <p class="text-sm text-text-tertiary mt-2">Beyond core membership fees</p>
+                  <p class="text-sm text-text-tertiary mt-2">Beyond core tuition</p>
                 </div>
               </div>
             </div>
@@ -588,7 +588,7 @@ const howToSchema = {
           <h3 class="text-2xl font-bold text-brand-navy mb-4">Revenue Diversification Strategies</h3>
 
           <p class="text-text-secondary mb-4">
-            Most martial arts schools generate 70-85% of revenue from core memberships, but the most profitable schools diversify their income streams. If your calculator results show you're heavily reliant on membership fees alone, consider these proven revenue additions:
+            Most martial arts schools generate 70-85% of revenue from core memberships, but the most profitable schools diversify their income streams. If your calculator results show you're heavily reliant on tuition alone, consider these proven revenue additions:
           </p>
 
           <ul class="space-y-3 text-text-secondary mb-6">
@@ -602,13 +602,13 @@ const howToSchema = {
               <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
-              <span><strong>Belt testing fees</strong> are standard practice in martial arts and students value the formal progression. Grading fees typically account for 5-10% of annual revenue.</span>
+              <span><strong>Belt testing fees</strong> are standard practice in martial arts and students value the formal progression. Belt testing fees typically account for 5-10% of annual revenue.</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
-              <span><strong>Summer camps and holiday programmes</strong> leverage existing space during periods when regular classes may see lower attendance. These intensive programmes often have high margins.</span>
+              <span><strong>Summer camps and holiday programs</strong> leverage existing space during periods when regular classes may see lower attendance. These intensive programs often have high margins.</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -621,7 +621,7 @@ const howToSchema = {
           <h3 class="text-2xl font-bold text-brand-navy mb-4 mt-8">Student Retention: The Hidden Revenue Multiplier</h3>
 
           <p class="text-text-secondary mb-4">
-            The calculator asks about churn rate for a crucial reason—retention has an outsized impact on profitability. Acquiring a new student costs £50-£200+ in marketing and sales effort, while retaining existing students costs far less. Even small improvements in retention compound dramatically over time.
+            The calculator asks about churn rate for a crucial reason—retention has an outsized impact on profitability. Acquiring a new student costs $50-$200+ in marketing and sales effort, while retaining existing students costs far less. Even small improvements in retention compound dramatically over time.
           </p>
 
           <p class="text-text-secondary mb-6">
@@ -643,7 +643,7 @@ const howToSchema = {
             <li><strong>Rent:</strong> Should be 15-25% of gross revenue. Higher than 30% makes profitability very difficult.</li>
             <li><strong>Instructor costs:</strong> Typically 20-30% of revenue for schools with additional staff. Owner-operator models save significantly here.</li>
             <li><strong>Marketing:</strong> 5-10% of revenue is healthy for growing schools; mature schools with strong referrals often operate at 3-5%.</li>
-            <li><strong>Software and admin:</strong> Modern <a href="/dojo-management-software/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-management" class="text-brand-red hover:underline">dojo management software</a> costs £50-£200 monthly but saves far more in administrative time and reduces billing errors.</li>
+            <li><strong>Software and admin:</strong> Modern <a href="/dojo-management-software/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-management" class="text-brand-red hover:underline">dojo management software</a> costs $50-$200 monthly but saves far more in administrative time and reduces billing errors.</li>
           </ul>
 
           <p class="text-text-secondary mb-6">
@@ -663,7 +663,7 @@ const howToSchema = {
           <div class="bg-brand-red-light border-l-4 border-brand-red p-6 rounded-lg my-8">
             <h4 class="text-lg font-semibold text-brand-navy mb-2">Industry Insight</h4>
             <p class="text-text-secondary">
-              Schools that reach 150+ students often face a critical decision point. Growth beyond this requires either additional instructors (reducing profit margins), expanding space (increasing fixed costs), or capping enrolment and focusing on premium pricing and retention. There's no single right answer—it depends on your goals and market position.
+              Schools that reach 150+ students often face a critical decision point. Growth beyond this requires either additional instructors (reducing profit margins), expanding space (increasing fixed costs), or capping enrollment and focusing on premium pricing and retention. There's no single right answer—it depends on your goals and market position.
             </p>
           </div>
 
@@ -678,7 +678,7 @@ const howToSchema = {
                 </svg>
               </summary>
               <div class="p-6 pt-0 text-text-secondary">
-                <p>Owner income varies dramatically by school size and location. Small schools (under 100 students) typically generate £25,000-£60,000 in owner income annually. Medium schools (100-250 students) typically generate £50,000-£120,000. Large successful schools (250+ students) can generate £100,000-£250,000+ in owner income. These figures represent what the owner actually takes home after all expenses, not gross revenue. Many factors affect profitability including location, pricing, cost management, and whether the owner teaches most classes or employs additional instructors. See our detailed guide on <a href="/blog/gym-owner-salary-guide/" class="text-brand-red hover:underline">gym owner salaries</a>.</p>
+                <p>Owner income varies dramatically by school size and location. Small schools (under 100 students) typically generate $25,000-$60,000 in owner income annually. Medium schools (100-250 students) typically generate $50,000-$120,000. Large successful schools (250+ students) can generate $100,000-$250,000+ in owner income. These figures represent what the owner actually takes home after all expenses, not gross revenue. Many factors affect profitability including location, pricing, cost management, and whether the owner teaches most classes or employs additional instructors. See our detailed guide on <a href="/blog/gym-owner-salary-guide/" class="text-brand-red hover:underline">gym owner salaries</a>.</p>
               </div>
             </details>
 
@@ -702,7 +702,7 @@ const howToSchema = {
                 </svg>
               </summary>
               <div class="p-6 pt-0 text-text-secondary">
-                <p>Break-even student count depends entirely on your cost structure and pricing. A school with £5,000 monthly expenses and £100 average membership fees needs approximately 50 students to break even. Schools with lower rent and owner-operator models may break even at 30-40 students. Schools with high rent or significant instructor payroll may need 70-100+ students for profitability. The calculator helps you determine your specific break-even point by modelling your actual costs and pricing. As a general guideline, schools typically need 60-80 students to generate meaningful owner income beyond bare break-even. Learn more about <a href="/blog/cost-to-open-gym/" class="text-brand-red hover:underline">gym startup costs and break-even planning</a>.</p>
+                <p>Break-even student count depends entirely on your cost structure and pricing. A school with $5,000 monthly expenses and $100 average membership fees needs approximately 50 students to break even. Schools with lower rent and owner-operator models may break even at 30-40 students. Schools with high rent or significant instructor payroll may need 70-100+ students for profitability. The calculator helps you determine your specific break-even point by modelling your actual costs and pricing. As a general guideline, schools typically need 60-80 students to generate meaningful owner income beyond bare break-even. Learn more about <a href="/blog/cost-to-open-gym/" class="text-brand-red hover:underline">gym startup costs and break-even planning</a>.</p>
               </div>
             </details>
 
@@ -714,7 +714,7 @@ const howToSchema = {
                 </svg>
               </summary>
               <div class="p-6 pt-0 text-text-secondary">
-                <p>The three largest cost categories for martial arts schools are typically: (1) Rent/facility costs—usually 15-25% of revenue and often the single largest fixed expense, (2) Instructor payroll—typically 20-30% of revenue for schools with additional instructors; owner-operator models avoid most of this cost, and (3) Marketing—5-10% of revenue for growing schools, though this varies significantly based on local competition and the school's maturity. Other significant costs include insurance (£2,000-£8,000+ annually), utilities, equipment maintenance, and software/admin tools. The calculator breaks down all these costs and compares your structure to industry benchmarks, helping identify if any category is disproportionately high.</p>
+                <p>The three largest cost categories for martial arts schools are typically: (1) Rent/facility costs—usually 15-25% of revenue and often the single largest fixed expense, (2) Instructor payroll—typically 20-30% of revenue for schools with additional instructors; owner-operator models avoid most of this cost, and (3) Marketing—5-10% of revenue for growing schools, though this varies significantly based on local competition and the school's maturity. Other significant costs include insurance ($2,000-$8,000+ annually), utilities, equipment maintenance, and software/admin tools. The calculator breaks down all these costs and compares your structure to industry benchmarks, helping identify if any category is disproportionately high.</p>
               </div>
             </details>
           </div>
@@ -733,7 +733,7 @@ const howToSchema = {
           <div class="mt-8 p-8 bg-blue-50 rounded-xl border border-blue-200">
             <h3 class="text-xl font-bold text-brand-navy mb-4">Planning to grow?</h3>
             <p class="text-text-secondary mb-6">
-              BeltManager's built-in <a href="/martial-arts-crm/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-crm" class="text-brand-red hover:underline">CRM</a> and registers that fill themselves help you scale without the admin overhead. Spend less time on paperwork and more time teaching.
+              BeltManager's built-in <a href="/martial-arts-crm/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-crm" class="text-brand-red hover:underline">CRM</a> and attendance tracking that fills itself help you scale without the admin overhead. Spend less time on paperwork and more time teaching.
             </p>
             <a href="/martial-arts-crm/?utm_source=calculator&utm_medium=tool&utm_campaign=dojo-revenue&utm_content=pillar-link-crm" class="btn-primary">Explore Martial Arts CRM</a>
           </div>
@@ -757,7 +757,7 @@ const howToSchema = {
       "name": "How much does the average martial arts school owner make?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Owner income varies dramatically by school size and location. Small schools (under 100 students) typically generate £25,000-£60,000 in owner income annually. Medium schools (100-250 students) typically generate £50,000-£120,000. Large successful schools (250+ students) can generate £100,000-£250,000+ in owner income."
+        "text": "Owner income varies dramatically by school size and location. Small schools (under 100 students) typically generate $25,000-$60,000 in owner income annually. Medium schools (100-250 students) typically generate $50,000-$120,000. Large successful schools (250+ students) can generate $100,000-$250,000+ in owner income."
       }
     },
     {
@@ -773,7 +773,7 @@ const howToSchema = {
       "name": "How many students does a martial arts school need to be profitable?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Break-even student count depends entirely on your cost structure and pricing. A school with £5,000 monthly expenses and £100 average membership fees needs approximately 50 students to break even. As a general guideline, schools typically need 60-80 students to generate meaningful owner income beyond bare break-even."
+        "text": "Break-even student count depends entirely on your cost structure and pricing. A school with $5,000 monthly expenses and $100 average membership fees needs approximately 50 students to break even. As a general guideline, schools typically need 60-80 students to generate meaningful owner income beyond bare break-even."
       }
     },
     {
@@ -796,7 +796,7 @@ const howToSchema = {
   "offers": {
     "@type": "Offer",
     "price": "0",
-    "priceCurrency": "GBP"
+    "priceCurrency": "USD"
   },
   "description": "Free calculator for martial arts school owners to model revenue, costs, and growth projections with industry benchmarks.",
   "operatingSystem": "Web Browser",
@@ -1729,8 +1729,8 @@ const howToSchema = {
     if (utilisation < 50) {
       insights.push({
         type: 'info',
-        title: 'Class capacity underutilised',
-        message: `Your classes are running at approximately ${utilisation.toFixed(0)}% capacity. You have room to accommodate ${Math.floor((totalClassCapacity - currentMonthlyAttendance) / 13)} more students without adding class times, maximising revenue from your existing schedule.`
+        title: 'Class capacity underutilized',
+        message: `Your classes are running at approximately ${utilisation.toFixed(0)}% capacity. You have room to accommodate ${Math.floor((totalClassCapacity - currentMonthlyAttendance) / 13)} more students without adding class times, maximizing revenue from your existing schedule.`
       });
     } else if (utilisation > 85) {
       insights.push({
@@ -1749,13 +1749,13 @@ const howToSchema = {
     // No additional revenue streams
     if (data.additionalRevenue === 0) {
       actions.push({
-        title: 'Implement grading fees',
-        description: 'Belt testing fees are standard practice and students value structured progression. Charging £25-40 per test for 70% of students testing twice annually could add £1,000+ monthly revenue.'
+        title: 'Implement belt testing fees',
+        description: `Belt testing fees are standard practice and students value structured progression. Charging ${currencySymbol}25-40 per test for 70% of students testing twice annually could add ${currencySymbol}1,000+ monthly revenue.`
       });
 
       actions.push({
-        title: 'Launch private lesson programme',
-        description: 'Private lessons typically generate 15-25% additional revenue with minimal overhead. Even 5 private sessions per week at £40 each adds £865+ monthly.'
+        title: 'Launch private lesson program',
+        description: `Private lessons typically generate 15-25% additional revenue with minimal overhead. Even 5 private sessions per week at ${currencySymbol}40 each adds ${currencySymbol}865+ monthly.`
       });
     }
 
@@ -1763,7 +1763,7 @@ const howToSchema = {
     if (data.churnRate > 8) {
       actions.push({
         title: 'Focus on retention strategies',
-        description: 'With churn above average, prioritise student engagement. Implement progress tracking, regular check-ins, recognition programmes, and community-building events to reduce turnover.'
+        description: 'With churn above average, prioritize student engagement. Implement progress tracking, regular check-ins, recognition programs, and community-building events to reduce turnover.'
       });
     }
 
@@ -1774,8 +1774,8 @@ const howToSchema = {
 
     if (utilisation < 50) {
       actions.push({
-        title: 'Optimise class schedule',
-        description: `Your classes are underutilised (${utilisation.toFixed(0)}% capacity). You can accommodate more students without adding overhead. Focus marketing efforts on filling existing class times before expanding your schedule.`
+        title: 'Optimize class schedule',
+        description: `Your classes are underutilized (${utilisation.toFixed(0)}% capacity). You can accommodate more students without adding overhead. Focus marketing efforts on filling existing class times before expanding your schedule.`
       });
     }
 
@@ -1783,7 +1783,7 @@ const howToSchema = {
     if (data.marketing === 0) {
       actions.push({
         title: 'Allocate marketing budget',
-        description: 'Even a modest £150-300 monthly marketing budget can significantly accelerate student acquisition. Start with targeted Facebook/Instagram ads and track your cost per lead.'
+        description: `Even a modest ${currencySymbol}150-300 monthly marketing budget can significantly accelerate student acquisition. Start with targeted Facebook/Instagram ads and track your cost per lead.`
       });
     }
 

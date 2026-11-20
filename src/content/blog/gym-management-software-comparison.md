@@ -1,6 +1,6 @@
 ---
 title: "Martial Arts Gym Management Software Comparison (2026)"
-description: "Should a dojo run general gym software or a martial-arts-specific platform? Six options compared on grading support, published pricing and lock-in. Verified July 2026."
+description: "Should a dojo run general gym software or a martial-arts-specific platform? Six options compared on belt testing support, published pricing and lock-in. Verified July 2026."
 image: /images/blog-dojo-interior.jpg
 imageAlt: "Interior of a martial arts dojo showing training space and equipment"
 date: "2026-02-06"
