@@ -28,7 +28,7 @@ const comparisonData = [
     highlight: true
   },
   {
-    label: 'Recurring Weekly Timetable',
+    label: 'Recurring Weekly Schedule',
     values: [true, true, false]
   },
   {
@@ -56,7 +56,7 @@ const comparisonData = [
 const faqItems = [
   {
     question: "What is martial arts scheduling software?",
-    answer: "Martial arts scheduling software runs a school's class timetable: recurring classes, who belongs in each class, term dates and closures, reminders to families and the register. Unlike a generic booking tool, it understands groups, belt ranks and families with more than one child training.",
+    answer: "Martial arts scheduling software runs a school's class schedule: recurring classes, who belongs in each class, term dates and closures, reminders to families and attendance. Unlike a generic booking tool, it understands groups, belt ranks and families with more than one child training.",
     links: [
       { text: 'View all features', url: '/martial-arts-software/' },
       { text: 'See pricing', url: '/pricing/' }
@@ -64,7 +64,7 @@ const faqItems = [
   },
   {
     question: "How does BeltManager know who is coming to class?",
-    answer: "You put each student in a group once, for example Kids Karate. From then on they are expected at every class of that group, so the register is already filled in. The evening before, families can be asked whether their child is coming and answer Coming or Can't make it in one tap. If they can't make it, they give a reason, so you know before you open the doors.",
+    answer: "You put each student in a group once, for example Kids Karate. From then on they are expected at every class of that group, so attendance is already filled in. The evening before, families can be asked whether their child is coming and answer Coming or Can't make it in one tap. If they can't make it, they give a reason, so you know before you open the doors.",
     links: [
       { text: 'Dojo management', url: '/dojo-management-software/' },
       { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }
@@ -112,7 +112,7 @@ const faqItems = [
   },
   {
     question: "Can I schedule private lessons?",
-    answer: "Not yet. BeltManager runs group classes, gradings and events. Private lessons and lesson packages aren't available.",
+    answer: "Not yet. BeltManager runs group classes, belt tests and events. Private lessons and lesson packages aren't available.",
     links: [
       { text: 'Overview', url: '/martial-arts-software/' },
       { text: 'See pricing', url: '/pricing/' }
@@ -143,8 +143,8 @@ const breadcrumbItems = [
 ---
 
 <BaseLayout
-  title="Martial Arts Scheduling & Class Timetable Software"
-  description="A weekly timetable where students join a group once, families RSVP in one tap and reminders go out automatically. Built for martial arts schools. Free for up to 25 students. Paid plans from £29 a month."
+  title="Martial Arts Class Scheduling Software"
+  description="A weekly schedule where students join a group once, families RSVP in one tap and reminders go automatically. Free for up to 25 students. Paid from $29 a month."
 >
   <BreadcrumbsEnhanced site="beltmanager" items={breadcrumbItems} />
 
@@ -158,7 +158,7 @@ const breadcrumbItems = [
           Martial Arts Scheduling Software
         </h1>
         <p class="text-xl text-gray-600 mb-8">
-          Students join a group once and every class knows who's coming. Families RSVP in one tap, reminders and closure notices go out automatically, and you take the register on your phone.
+          Students join a group once and every class knows who's coming. Families RSVP in one tap, reminders and closure notices go out automatically, and you take attendance on your phone.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
           <a href={appLink(Astro.url.pathname, 'hero')} class="btn-primary">Get started free</a>
@@ -169,7 +169,7 @@ const breadcrumbItems = [
   </section>
 
   <FeaturedAnswer question="What is martial arts scheduling software?">
-    Martial arts scheduling software runs a school's weekly timetable: recurring classes, who belongs in each group, term dates and closures, reminders to families and the register. In BeltManager, students join a group once and are expected at every class, families answer Coming or Can't make it in one tap, and reminders go out by email and app push.
+    Martial arts scheduling software runs a school's weekly schedule: recurring classes, who belongs in each group, term dates and closures, reminders to families and attendance. In BeltManager, students join a group once and are expected at every class, families answer Coming or Can't make it in one tap, and reminders go out by email and app push.
   </FeaturedAnswer>
 
   <section class="section bg-white">
@@ -177,15 +177,15 @@ const breadcrumbItems = [
       <div class="max-w-4xl mx-auto prose prose-lg">
         <h2>Why Martial Arts Schools Need Specialized Scheduling</h2>
         <p>
-          A martial arts timetable isn't a gym's open booking calendar. Most of your students train in the same group every week: the Monday and Wednesday kids' class, the adult beginners, the squad. What you need to know before each class is simple: who should be here, who isn't coming, and whether you have enough instructors on the mat for the numbers.
+          A martial arts schedule isn't a gym's open booking calendar. Most of your students train in the same group every week: the Monday and Wednesday kids' class, the adult beginners, the squad. What you need to know before each class is simple: who should be here, who isn't coming, and whether you have enough instructors on the mat for the numbers.
         </p>
         <p>
-          Paper registers and group chats answer those questions badly. Names get missed, parents message at the last minute, and you only find out who was absent when you count heads. BeltManager is built around the way dojos already run.
+          Paper attendance sheets and group chats answer those questions badly. Names get missed, parents message at the last minute, and you only find out who was absent when you count heads. BeltManager is built around the way dojos already run.
         </p>
 
         <h2>Join a Group Once, Expected at Every Class</h2>
         <p>
-          Add a student to a group once and they are a regular. Every class of that group already knows who is coming, so the register fills itself. You open the class on your phone and tap who's there. Walk-ins can be added on the spot, and the register keeps working if the hall's signal drops.
+          Add a student to a group once and they are a regular. Every class of that group already knows who is coming, so attendance fills itself. You open the class on your phone and tap who's there. Walk-ins can be added on the spot, and attendance keeps working if the hall's signal drops.
         </p>
 
         <h2>One-Tap RSVP and Reminders</h2>
@@ -196,7 +196,7 @@ const breadcrumbItems = [
           You can also switch on class-day reminders, sent by email and as a push notification in the parent app a few hours before the class starts. BeltManager doesn't send text messages.
         </p>
 
-        <h2>Recurring Timetable, Venues and Rooms</h2>
+        <h2>Recurring Schedule, Venues and Rooms</h2>
         <p>
           Set each class to run on the same days and time every week, at a venue and room. BeltManager creates each week's classes for you. Run as many venues and rooms as you like at no extra cost, and filter the dashboard by venue.
         </p>
@@ -221,9 +221,9 @@ const breadcrumbItems = [
           Parents sign in once and see each child's belt and their classes for the next two weeks, with one-tap attending or not attending. They can subscribe to a calendar feed so classes appear in their phone's calendar, and the free iPhone app sends push notifications for reminders and notices.
         </p>
 
-        <h2>Gradings and Events</h2>
+        <h2>Belt Tests and Events</h2>
         <p>
-          Gradings, tournaments, seminars and socials sit alongside the weekly timetable. Attendance feeds grading eligibility, so BeltManager can show who is ready to grade based on time at their belt and sessions attended.
+          Belt tests, tournaments, seminars and socials sit alongside the weekly schedule. Attendance feeds testing eligibility, so BeltManager can show who is ready to test based on time at their belt and sessions attended.
         </p>
 
         <h2>Attendance Reporting</h2>
@@ -238,7 +238,7 @@ const breadcrumbItems = [
 
         <h2>Getting Started with BeltManager Scheduling</h2>
         <p>
-          Sign up, add your classes, venues and term dates, add your students (or send us your list and we'll help import it) and put them in their groups. Your first register is ready as soon as the first class comes round.
+          Sign up, add your classes, venues and term dates, add your students (or send us your list and we'll help import it) and put them in their groups. Your first attendance sheet is ready as soon as the first class comes round.
         </p>
       </div>
     </div>
@@ -264,7 +264,7 @@ const breadcrumbItems = [
           Ready to Stop Chasing Who's Coming?
         </h2>
         <p class="text-xl mb-8 text-gray-300">
-          A register that fills itself, one-tap RSVPs and automatic closure notices. Free for up to 25 students. Paid plans from £29 a month. Get started free today.
+          Attendance that fills itself, one-tap RSVPs and automatic closure notices. Free for up to 25 students. Paid plans from $29 a month. Get started free today.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
           <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary">Get started free</a>

@@ -9,7 +9,7 @@ import AppScreenshot from '../components/AppScreenshot.astro';
 
 const comparisonData = [
   {
-    label: 'Multi-Discipline Timetable',
+    label: 'Multi-Discipline Schedule',
     values: [true, false, false],
     highlight: true
   },
@@ -41,14 +41,14 @@ const comparisonData = [
   },
   {
     label: 'Monthly Price',
-    values: ['Free', '£120', '£0']
+    values: ['Free', '$120', '$0']
   }
 ];
 
 const faqItems = [
   {
     question: "What is MMA gym software?",
-    answer: "MMA gym software is a management platform for mixed martial arts facilities. It handles a timetable across several disciplines (BJJ, Muay Thai, wrestling, boxing, MMA), progression in each art, memberships, attendance and communication for gyms serving both recreational members and competitors.",
+    answer: "MMA gym software is a management platform for mixed martial arts facilities. It handles a schedule across several disciplines (BJJ, Muay Thai, wrestling, boxing, MMA), progression in each art, memberships, attendance and communication for gyms serving both recreational members and competitors.",
     links: [
       { text: 'View all features', url: '/martial-arts-software/' },
       { text: 'See pricing', url: '/pricing/' }
@@ -56,7 +56,7 @@ const faqItems = [
   },
   {
     question: "How does BeltManager handle multiple disciplines?",
-    answer: "Each discipline is a style with its own belt or grade ladder, and each class is a group on the weekly timetable. A student can train in several disciplines and see every progression on one profile. Disciplines without formal ranks, like wrestling, can simply run classes without a ladder.",
+    answer: "Each discipline is a style with its own belt or rank ladder, and each class is a group on the weekly schedule. A student can train in several disciplines and see every progression on one profile. Disciplines without formal ranks, like wrestling, can simply run classes without a ladder.",
     links: [
       { text: 'Multi-discipline features', url: '/martial-arts-software/' },
       { text: 'BJJ belt tracking', url: '/bjj-gym-software/' }
@@ -71,7 +71,7 @@ const faqItems = [
   },
   {
     question: "What membership options does BeltManager support?",
-    answer: "You can set up all-access memberships covering every discipline alongside single-discipline plans, with sibling discounts for families. Card billing switches on in April 2027; until then you record payments by hand. BeltManager doesn't prorate mid-cycle changes, sell punch cards or sell private coaching packages yet.",
+    answer: "You can set up all-access memberships covering every discipline alongside single-discipline plans, with sibling discounts for families. US card billing is coming in 2027; until then you record payments by hand. BeltManager doesn't prorate mid-cycle changes, sell punch cards or sell private coaching packages yet.",
     links: [
       { text: 'Membership management', url: '/martial-arts-software/' },
       { text: 'Billing features', url: '/martial-arts-billing-software/' }
@@ -79,7 +79,7 @@ const faqItems = [
   },
   {
     question: "How is MMA software different from BJJ software?",
-    answer: "While both handle grappling needs like belt and stripe tracking, MMA software also has to run striking classes (Muay Thai, boxing, kickboxing), wrestling and integrated MMA training on one timetable, and show attendance across every discipline in the gym.",
+    answer: "While both handle grappling needs like belt and stripe tracking, MMA software also has to run striking classes (Muay Thai, boxing, kickboxing), wrestling and integrated MMA training on one schedule, and show attendance across every discipline in the gym.",
     links: [
       { text: 'MMA vs BJJ software', url: '/martial-arts-software/' },
       { text: 'BJJ-specific features', url: '/bjj-gym-software/' }
@@ -87,7 +87,7 @@ const faqItems = [
   },
   {
     question: "Does BeltManager track BJJ belt ranks?",
-    answer: "Yes. BJJ belts from white through black with stripes on each belt, minimum time and sessions at each belt, a ready-to-grade list and promotion history. Striking disciplines can have their own grade ladder alongside.",
+    answer: "Yes. BJJ belts from white through black with stripes on each belt, minimum time and sessions at each belt, a ready-to-test list and promotion history. Striking disciplines can have their own rank ladder alongside.",
     links: [
       { text: 'Belt tracking', url: '/bjj-gym-software/' },
       { text: 'BJJ belt guide', url: '/blog/bjj-belts-order-complete-guide/' }
@@ -102,7 +102,7 @@ const faqItems = [
   },
   {
     question: "How much does MMA gym software cost?",
-    answer: "MMA gym software typically costs £80-200 per month depending on gym size and features. Pricing models include flat-rate (unlimited members) or per-member (£1-3 per active member). BeltManager is free for up to 25 students, with paid plans at £29, £49 and £79 a month and every feature on every plan.",
+    answer: "MMA gym software typically costs $80-200 per month depending on gym size and features. Pricing models include flat-rate (unlimited members) or per-member ($1-3 per active member). BeltManager is free for up to 25 students, with paid plans at $29, $49 and $79 a month and every feature on every plan.",
     links: [
       { text: 'View pricing', url: '/pricing/' },
       { text: 'Feature comparison', url: '/martial-arts-software/' }
@@ -110,7 +110,7 @@ const faqItems = [
   },
   {
     question: "Can recreational members and competitors use the same system?",
-    answer: "Yes. Everyone sits in one student database. Put your competition team in its own group, and you can message just that group while general timetable changes reach everyone.",
+    answer: "Yes. Everyone sits in one student database. Put your competition team in its own group, and you can message just that group while general schedule changes reach everyone.",
     links: [
       { text: 'Member management', url: '/martial-arts-software/' },
       { text: 'CRM features', url: '/martial-arts-crm/' }
@@ -118,7 +118,7 @@ const faqItems = [
   },
   {
     question: "What reports does BeltManager include for MMA gyms?",
-    answer: "An attendance report by class and by student with CSV export, a list of members who have missed their recent classes, and an insurance compliance report. Revenue reporting comes with card billing in April 2027.",
+    answer: "An attendance report by class and by student with CSV export, a list of members who have missed their recent classes, and an insurance compliance report. Revenue reporting comes with US card billing, coming in 2027.",
     links: [
       { text: 'Reporting features', url: '/martial-arts-software/' },
       { text: 'CRM analytics', url: '/martial-arts-crm/' }
@@ -129,7 +129,7 @@ const faqItems = [
 
 <BaseLayout
   title="MMA Gym Software (2026)"
-  description="Run your MMA gym with a multi-discipline timetable, a belt ladder per discipline and flexible memberships. Free for up to 25 students. Paid plans from £29 a month."
+  description="Run your MMA gym with a multi-discipline schedule, a belt ladder per discipline and flexible memberships. Free for up to 25 students. Paid from $29 a month."
 >
   <!-- Breadcrumbs -->
   <BreadcrumbsEnhanced
@@ -147,7 +147,7 @@ const faqItems = [
         <span class="inline-block px-4 py-2 mb-4 text-sm font-semibold text-brand-red bg-brand-red-light rounded-full">Complete Guide</span>
         <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">MMA Gym Software</h1>
         <p class="text-xl text-gray-600">
-          Management software for mixed martial arts gyms. A multi-discipline timetable, progression in every art, registers on your phone and flexible membership options for MMA facilities.
+          Management software for mixed martial arts gyms. A multi-discipline schedule, progression in every art, attendance on your phone and flexible membership options for MMA facilities.
         </p>
       </div>
     </div>
@@ -155,7 +155,7 @@ const faqItems = [
 
   <!-- Featured Answer -->
   <FeaturedAnswer question="What is MMA gym software?">
-    MMA gym software is a management platform for mixed martial arts facilities. It handles a timetable across several disciplines (BJJ, Muay Thai, wrestling, boxing, MMA), progression in each art, memberships, attendance and communication for gyms serving both recreational members and competitors.
+    MMA gym software is a management platform for mixed martial arts facilities. It handles a schedule across several disciplines (BJJ, Muay Thai, wrestling, boxing, MMA), progression in each art, memberships, attendance and communication for gyms serving both recreational members and competitors.
   </FeaturedAnswer>
 
   <!-- Main Content -->
@@ -170,10 +170,10 @@ const faqItems = [
         </p>
 
         <p>
-          This dual mission—developing competitive athletes alongside recreational members—creates operational complexity that single-discipline schools rarely encounter. MMA gym software addresses these challenges with a timetable, progression tracking and memberships designed for multi-discipline environments.
+          This dual mission—developing competitive athletes alongside recreational members—creates operational complexity that single-discipline schools rarely encounter. MMA gym software addresses these challenges with a schedule, progression tracking and memberships designed for multi-discipline environments.
         </p>
 
-        <AppScreenshot src="/images/app/mma-timetable.webp" width={1600} height={1000} caption="The weekly timetable for one venue: Muay Thai, Wrestling, MMA, BJJ and karate classes with their expected regulars" />
+        <AppScreenshot src="/images/app/mma-timetable.webp" width={1600} height={1000} caption="The weekly schedule for one venue: Muay Thai, Wrestling, MMA, BJJ and karate classes with their expected regulars" />
 
         <h3>Multi-Discipline Training Structure</h3>
 
@@ -235,7 +235,7 @@ const faqItems = [
         <ul>
           <li>Separate class groups by discipline (BJJ, striking, wrestling, MMA)</li>
           <li>Belt and age ranges per group</li>
-          <li>One weekly timetable across every discipline, per venue</li>
+          <li>One weekly schedule across every discipline, per venue</li>
           <li>Open mat and sparring sessions as regular groups</li>
           <li>Expected regulars shown on every class</li>
           <li>Instructor-to-student ratio warnings</li>
@@ -258,7 +258,7 @@ const faqItems = [
           <li>Stripe tracking for interim BJJ achievements</li>
           <li>Striking grades (for example beginner, intermediate, advanced)</li>
           <li>Kids program ranks across disciplines</li>
-          <li>Ready-to-grade list from attendance and time at grade</li>
+          <li>Ready-to-test list from attendance and time at belt</li>
           <li>Custom progression tracks per discipline</li>
         </ul>
 
@@ -269,7 +269,7 @@ const faqItems = [
           <li>Competition team memberships</li>
           <li>Family memberships with sibling discounts</li>
           <li>Membership freezes for injuries</li>
-          <li>Card billing from April 2027; record payments by hand until then</li>
+          <li>US card billing is coming in 2027; record payments by hand until then</li>
         </ul>
 
         <h2>Operational Considerations</h2>
@@ -277,8 +277,8 @@ const faqItems = [
         <h3>Check-In and Attendance</h3>
         <p>MMA facilities need flexible check-in accommodating various training patterns:</p>
         <ul>
-          <li>A register for every session, so members training twice a day are counted twice</li>
-          <li>Walk-ins added to the register on the spot</li>
+          <li>Attendance for every session, so members training twice a day are counted twice</li>
+          <li>Walk-ins added to the attendance list on the spot</li>
           <li>Tablet kiosk mode with a PIN</li>
           <li>Trial class tracking for prospects</li>
         </ul>
@@ -320,13 +320,13 @@ const faqItems = [
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4">Ready to Streamline Your MMA Gym?</h2>
         <p class="text-xl mb-8 opacity-95">
-          One timetable across every discipline, a belt ladder for each and flexible membership options. Free for up to 25 students. Paid plans from £29 a month.
+          One schedule across every discipline, a belt ladder for each and flexible membership options. Free for up to 25 students. Paid plans from $29 a month.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>
           <a href="/pricing/" class="btn-secondary-large border-white text-white hover:bg-white hover:bg-opacity-10">View Pricing</a>
         </div>
-        <p class="mt-6 text-sm opacity-90">Free for up to 25 students. Paid plans from £29 a month. • No credit card • No contract</p>
+        <p class="mt-6 text-sm opacity-90">Free for up to 25 students. Paid plans from $29 a month. • No credit card • No contract</p>
       </div>
     </div>
   </section>

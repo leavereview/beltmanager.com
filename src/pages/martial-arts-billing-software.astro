@@ -9,7 +9,7 @@ import AppScreenshot from '../components/AppScreenshot.astro';
 
 const comparisonData = [
   {
-    label: 'Recurring Card Billing (from April 2027)',
+    label: 'Recurring Card Billing (US card billing is coming in 2027)',
     values: [true, true, false],
     highlight: true
   },
@@ -57,7 +57,7 @@ const comparisonData = [
 const faqItems = [
   {
     question: "Is BeltManager billing available now?",
-    answer: "Not yet for card payments. BeltManager has a free plan for up to 25 students, and card billing switches on in April 2027 (the Free plan pays a 1% platform fee on card payments; paid plans pay 0%). Until then you can set up memberships and families and record cash or bank-transfer payments by hand, so your records are ready when card billing starts.",
+    answer: "Not yet for card payments. BeltManager has a free plan for up to 25 students, and US card billing is coming in 2027 (the Free plan pays a 1% platform fee on card payments; paid plans pay 0%). Until then you can set up memberships and families and record cash or bank-transfer payments by hand, so your records are ready when US card billing arrives.",
     links: [
       { text: 'See pricing', url: '/pricing/' },
       { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }
@@ -65,7 +65,7 @@ const faqItems = [
   },
   {
     question: "What is martial arts billing software?",
-    answer: "Martial arts billing software collects membership fees for a school: recurring charges, family invoices, sibling discounts, failed-payment follow-up and revenue reporting. Unlike a generic payment processor, it knows which students belong to which family and membership.",
+    answer: "Martial arts billing software collects tuition and membership payments for a school: recurring charges, family invoices, sibling discounts, failed-payment follow-up and revenue reporting. Unlike a generic payment processor, it knows which students belong to which family and membership.",
     links: [
       { text: 'View all features', url: '/martial-arts-software/' },
       { text: 'See pricing', url: '/pricing/' }
@@ -73,7 +73,7 @@ const faqItems = [
   },
   {
     question: "How will automated billing work in BeltManager?",
-    answer: "From April 2027, you save a family's card through Stripe and BeltManager charges their membership on the due date. Each family gets one invoice covering all their children. Card details are held by Stripe, never by BeltManager.",
+    answer: "With US card billing, coming in 2027, you save a family's card through Stripe and BeltManager charges their membership on the due date. Each family gets one invoice covering all their children. Card details are held by Stripe, never by BeltManager.",
     links: [
       { text: 'Scheduling features', url: '/martial-arts-scheduling-software/' },
       { text: 'Contact us', url: '/contact/' }
@@ -81,7 +81,7 @@ const faqItems = [
   },
   {
     question: "What happens when a payment fails?",
-    answer: "BeltManager retries the card two days after the due date and again on day five. On day seven the family gets one friendly email. You're only told on day fourteen if it's still unpaid, and the invoice stays on the Overdue tab. Nothing in this process stops a child from training. You can choose to add a late fee, which the reminder names in advance.",
+    answer: "Once US card billing arrives in 2027, BeltManager retries the card two days after the due date and again on day five. On day seven the family gets one friendly email. You're only told on day fourteen if it's still unpaid, and the invoice stays on the Overdue tab. Nothing in this process stops a child from training. You can choose to add a late fee, which the reminder names in advance.",
     links: [
       { text: 'CRM features', url: '/martial-arts-crm/' },
       { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }
@@ -97,7 +97,7 @@ const faqItems = [
   },
   {
     question: "What payment methods are supported?",
-    answer: "Card payments through Stripe from April 2027, plus cash and bank transfers recorded by hand at any time. Direct debit isn't available yet.",
+    answer: "US card billing through Stripe is coming in 2027, plus cash and bank transfers recorded by hand at any time. Direct debit isn't available yet.",
     links: [
       { text: 'Overview', url: '/martial-arts-software/' },
       { text: 'Contact us', url: '/contact/' }
@@ -112,8 +112,8 @@ const faqItems = [
     ]
   },
   {
-    question: "Can BeltManager handle grading fees?",
-    answer: "You can raise a one-off invoice for a grading fee. Grading fees aren't added to the family invoice automatically yet.",
+    question: "Can BeltManager handle belt test fees?",
+    answer: "You can raise a one-off invoice for a belt test fee. Belt test fees aren't added to the family invoice automatically yet.",
     links: [
       { text: 'Karate features', url: '/karate-school-software/' },
       { text: 'BJJ features', url: '/bjj-gym-software/' }
@@ -129,7 +129,7 @@ const faqItems = [
   },
   {
     question: "Is my payment data secure?",
-    answer: "Card payments run through Stripe, which is PCI DSS compliant. BeltManager never sees or stores full card numbers.",
+    answer: "When US card billing arrives in 2027, card payments will run through Stripe, which is PCI DSS compliant. BeltManager never sees or stores full card numbers.",
     links: [
       { text: 'Overview', url: '/martial-arts-software/' },
       { text: 'Contact us', url: '/contact/' }
@@ -145,7 +145,7 @@ const breadcrumbItems = [
 
 <BaseLayout
   title="Recurring Billing for Martial Arts Schools"
-  description="Family invoices, sibling discounts, freezes and polite failed-payment follow-up. Card billing switches on April 2027; record payments by hand until then. Free for up to 25 students. Paid plans from £29 a month."
+  description="Family invoices, sibling discounts and polite failed-payment follow-up. US card billing is coming in 2027. Free for up to 25 students. Paid from $29 a month."
 >
   <BreadcrumbsEnhanced site="beltmanager" items={breadcrumbItems} />
 
@@ -159,7 +159,7 @@ const breadcrumbItems = [
           Martial Arts Billing Software
         </h1>
         <p class="text-xl text-gray-600 mb-8">
-          One invoice per family, sibling discounts, freezes and polite failed-payment follow-up. Card billing switches on in April 2027; until then, record payments by hand.
+          One invoice per family, sibling discounts, freezes and polite failed-payment follow-up. US card billing is coming in 2027; until then, record payments by hand.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
           <a href={appLink(Astro.url.pathname, 'hero')} class="btn-primary">Get started free</a>
@@ -170,7 +170,7 @@ const breadcrumbItems = [
   </section>
 
   <FeaturedAnswer question="What is martial arts billing software?">
-    Martial arts billing software collects membership fees for a school: recurring charges, one invoice per family, sibling discounts, failed-payment follow-up and revenue reporting. In BeltManager, card billing through Stripe switches on in April 2027; until then, schools record payments by hand.
+    Martial arts billing software collects tuition and membership payments for a school: recurring charges, one invoice per family, sibling discounts, failed-payment follow-up and revenue reporting. In BeltManager, US card billing through Stripe is coming in 2027; until then, schools record payments by hand.
   </FeaturedAnswer>
 
   <section class="section bg-white">
@@ -178,24 +178,24 @@ const breadcrumbItems = [
       <div class="max-w-4xl mx-auto prose prose-lg">
         <h2>Billing in BeltManager: What's Live and What's Coming</h2>
         <p>
-          BeltManager is free for up to 25 students, with paid plans from £29 a month. Card billing is built, and it switches on in April 2027. When it does, the Free plan pays a 1% platform fee on card payments collected through BeltManager, on top of Stripe's fee; paid plans pay 0%, and cash and standing orders never carry a fee. Until then you can set up memberships and families and record cash or bank-transfer payments by hand. We'd rather say that plainly than have you sign up expecting to take card payments next week.
+          BeltManager is free for up to 25 students, with paid plans from $29 a month. US card billing is coming in 2027. When it does, the Free plan pays a 1% platform fee on card payments collected through BeltManager, on top of Stripe's fee; paid plans pay 0%, and cash and bank transfers never carry a fee. Until then you can set up memberships and families and record cash or bank-transfer payments by hand. We'd rather say that plainly than have you sign up expecting to take card payments next week.
         </p>
         <p>
           Martial arts pricing is rarely one flat fee. Families have two or three children training, memberships pause for injuries and exams, and a few people always pay late. BeltManager's billing is built around families and memberships, not single transactions.
         </p>
 
-        <AppScreenshot src="/images/app/billing-revenue.webp" width={1600} height={1108} caption="The revenue report: what was collected by month and by membership, with CSV export (switches on with card billing in April 2027)" />
+        <AppScreenshot src="/images/app/billing-revenue.webp" width={1600} height={1108} caption="The revenue report: what was collected by month and by membership, with CSV export (arrives with US card billing in 2027)" />
 
         <h2>Recurring Card Billing</h2>
         <p>
-          From April 2027, you save a family's card through Stripe once and BeltManager charges their membership on the due date. Card details are held by Stripe, never by BeltManager or by you.
+          With US card billing, coming in 2027, you save a family's card through Stripe once and BeltManager charges their membership on the due date. Card details are held by Stripe, never by BeltManager or by you.
         </p>
 
-        <AppScreenshot src="/images/app/billing-overdue.webp" width={1600} height={769} caption="Overdue invoices: automatic card retries, a failed-card alert and an optional late fee (switches on with card billing in April 2027)" />
+        <AppScreenshot src="/images/app/billing-overdue.webp" width={1600} height={769} caption="Overdue invoices: automatic card retries, a failed-card alert and an optional late fee (arrives with US card billing in 2027)" />
 
         <h2>Failed Payments, Handled Politely</h2>
         <p>
-          When a card fails, BeltManager retries it two days after the due date and again on day five. On day seven the family gets one friendly email. You are only pulled in on day fourteen if it's still unpaid, and the invoice stays on the Overdue tab until it's settled.
+          When US card billing arrives in 2027 and a card fails, BeltManager retries it two days after the due date and again on day five. On day seven the family gets one friendly email. You are only pulled in on day fourteen if it's still unpaid, and the invoice stays on the Overdue tab until it's settled.
         </p>
         <p>
           Nothing in that process stops a child from training. It escalates the conversation, never access. If you want, you can switch on a late fee as a percentage of the invoice; the reminder email names it before it is ever applied.
@@ -215,7 +215,7 @@ const breadcrumbItems = [
 
         <h2>Recording Payments by Hand</h2>
         <p>
-          Some families will always pay cash or by bank transfer. Record those payments against the invoice so your records stay complete. This works today, before card billing switches on.
+          Some families will always pay cash or by bank transfer. Record those payments against the invoice so your records stay complete. This works today, before US card billing arrives in 2027.
         </p>
 
         <h2>Contracts and Waivers</h2>
@@ -225,17 +225,17 @@ const breadcrumbItems = [
 
         <h2>Revenue Reporting</h2>
         <p>
-          The revenue report shows what was collected by month and by membership, and exports to CSV for your accountant. It fills in once card billing switches on in April 2027.
+          The revenue report shows what was collected by month and by membership, and exports to CSV for your accountant. It fills in once US card billing arrives in 2027.
         </p>
 
         <h2>What BeltManager Billing Doesn't Do Yet</h2>
         <p>
-          Direct debit isn't available. Grading fees aren't added to family invoices automatically (you can raise a one-off invoice instead). BeltManager doesn't prorate mid-cycle changes, and there's no point of sale for uniforms or equipment.
+          Direct debit isn't available. Belt test fees aren't added to family invoices automatically (you can raise a one-off invoice instead). BeltManager doesn't prorate mid-cycle changes, and there's no point of sale for uniforms or equipment.
         </p>
 
         <h2>Getting Ready for Card Billing</h2>
         <p>
-          You don't have to wait until April to get your records straight. Add your families, set up memberships and sibling discounts, and record payments by hand now. When card billing switches on, you save each family's card and BeltManager takes it from there.
+          You don't have to wait for US card billing to get your records straight. Add your families, set up memberships and sibling discounts, and record payments by hand now. When US card billing arrives in 2027, you save each family's card and BeltManager takes it from there.
         </p>
       </div>
     </div>
@@ -284,7 +284,7 @@ const breadcrumbItems = [
           Get Your Billing Records Ready
         </h2>
         <p class="text-xl mb-8 text-gray-300">
-          Set up families and memberships now and record payments by hand. Card billing switches on in April 2027. Get started free today.
+          Set up families and memberships now and record payments by hand. US card billing is coming in 2027. Get started free today.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
           <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary">Get started free</a>

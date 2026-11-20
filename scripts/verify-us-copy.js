@@ -14,7 +14,6 @@ export const UK_PAGES = ['/uk/', '/switch/bmaba-club-manager/', '/terms/', '/pri
 
 export const PENDING_PAGES = [
   '/about/',
-  '/bjj-gym-software/',
   '/blog/adult-karate-classes-guide/',
   '/blog/best-martial-arts-self-defense/',
   '/blog/best-martial-arts-software/',
@@ -37,15 +36,7 @@ export const PENDING_PAGES = [
   '/compare/kicksite/',
   '/compare/zen-planner/',
   '/contact/',
-  '/dojo-management-software/',
   '/dojo-revenue-calculator/',
-  '/free-martial-arts-software/',
-  '/karate-school-software/',
-  '/martial-arts-billing-software/',
-  '/martial-arts-crm/',
-  '/martial-arts-scheduling-software/',
-  '/martial-arts-software/',
-  '/mma-gym-software/',
   '/switch/',
   '/switch/kicksite/',
   '/switch/martialytics/',
