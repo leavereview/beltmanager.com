@@ -1,0 +1,644 @@
+---
+import { appLink } from '../utils/appLink';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+
+const days = Array.from({ length: 31 }, (_, i) => i + 1);
+const blankRows = Array.from({ length: 25 }, (_, i) => i + 1);
+
+const MONTHLY_CSV = '/downloads/martial-arts-attendance-sheet-monthly.csv';
+const SIGN_IN_CSV = '/downloads/martial-arts-class-sign-in-sheet.csv';
+
+const faqItems = [
+  {
+    question: "Is this attendance sheet template free?",
+    answer: "Yes. The printable sheet and both spreadsheet files are free to print, download, copy and change. There is no sign-up and no email address needed.",
+    links: [
+      { text: 'Free plan', url: '/free-martial-arts-software/' }
+    ]
+  },
+  {
+    question: "How do I print the attendance sheet?",
+    answer: "Press the Print button above the sheet. Only the sheet prints, in landscape, on one page of Letter or A4 paper. The site menu, the text on this page and the footer are left off. If your browser's print window has a 'Headers and footers' option, turn it off for a cleaner page.",
+  },
+  {
+    question: "How do I open the CSV file in Excel or Google Sheets?",
+    answer: "In Excel, double-click the downloaded file, then choose Save As and pick Excel Workbook so your formatting is kept. In Google Sheets, choose File, Import, Upload and pick the file. Both files are a header row followed by blank rows, so the columns line up without any setup.",
+  },
+  {
+    question: "What should a martial arts attendance sheet record?",
+    answer: "At minimum: the student's name, their current belt, and a mark for each class they came to. Add the class name, the month and the instructor at the top of the sheet. If you run more than one program, keep one sheet per class group so the totals mean something when you check who is ready to test.",
+    links: [
+      { text: 'Belt testing guide', url: '/blog/belt-testing-how-often-what-to-charge/' }
+    ]
+  },
+  {
+    question: "Should I use the monthly sheet or the class sign-in sheet?",
+    answer: "Use the monthly sheet when an instructor takes attendance: one row per student, one column per day, and a total at the end of the month. Use the class sign-in sheet at the front desk when students or parents sign themselves in: one line per visit, with the date, class and time.",
+  },
+  {
+    question: "How do I use attendance to decide who is ready for a belt test?",
+    answer: "Set a minimum number of classes and a minimum time at each belt, then add up each student's classes since their last promotion. Students who meet both minimums go on the list for your instructors to assess. Attendance makes a student eligible to test; it does not replace your judgment of their skill.",
+    links: [
+      { text: 'How often to test and what to charge', url: '/blog/belt-testing-how-often-what-to-charge/' }
+    ]
+  },
+  {
+    question: "When should a school move from paper to attendance software?",
+    answer: "When adding up the sheets takes longer than you can spare, when more than one instructor takes attendance, or when a parent asks a question you cannot answer from the binder. BeltManager is free for up to 25 students, so a small school can move without a budget decision.",
+    links: [
+      { text: 'Martial arts software', url: '/martial-arts-software/' },
+      { text: 'Pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "Can BeltManager import my student list from a spreadsheet?",
+    answer: "Yes. You can add students yourself, or send us your list and we will help import it. Start with names, guardian contact details, current belt and the date of the last promotion.",
+    links: [
+      { text: 'Dojo management software', url: '/dojo-management-software/' }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Free Attendance Sheet Template for Martial Arts (Printable + CSV)"
+  description="Print a monthly attendance sheet in one click, or download it as a CSV for Excel and Google Sheets. Free, no sign-up. Includes a class sign-in sheet."
+>
+  <div class="no-print">
+    <BreadcrumbsEnhanced
+      site="beltmanager"
+      items={[
+        { label: 'Home', href: '/' },
+        { label: 'Attendance Sheet Template', href: '/attendance-sheet-template/' }
+      ]}
+    />
+
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto text-center">
+          <span class="inline-block px-4 py-2 mb-4 text-sm font-semibold text-brand-red bg-brand-red-light rounded-full">Free template, no sign-up</span>
+          <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Free Attendance Sheet Template for Martial Arts Schools</h1>
+          <p class="text-xl text-gray-600">
+            A printable monthly attendance sheet with a row for each student, a column for each day and a belt column, plus the same sheet and a class sign-in sheet as spreadsheet files.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <button type="button" class="btn-primary" data-print-sheet>Print the sheet</button>
+            <a href={MONTHLY_CSV} download class="btn-secondary">Download the CSV</a>
+          </div>
+          <p class="mt-4 text-sm text-gray-500">Works in Excel, Google Sheets and Numbers. Prints on one landscape page.</p>
+        </div>
+      </div>
+    </section>
+
+    <FeaturedAnswer question="What is an attendance sheet template?">
+      An attendance sheet template is a ready-made grid for recording who came to class. This one has a row for each student, a column for their belt, a column for each day of the month and a total. Print it for the clipboard at the door, or download the CSV and keep it in Excel or Google Sheets.
+    </FeaturedAnswer>
+
+    <section class="section bg-white pb-0">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto prose prose-lg">
+          <h2>Printable Monthly Attendance Sheet</h2>
+          <p>
+            This is the sheet that prints. Write the class, month and instructor at the top, list your students once, and mark each day they train. Add up the row at the end of the month. If you would rather skip the adding up, <a href="/martial-arts-software/">martial arts software</a> does it for you, and the last section of this page covers how to move over.
+          </p>
+          <p>
+            <button type="button" class="btn-primary" data-print-sheet>Print the sheet</button>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="bg-white py-8" id="sheet-section">
+    <div class="container-custom">
+      <div class="sheet-scroll">
+        <div id="attendance-sheet" class="sheet">
+          <div class="sheet-head">
+            <div class="sheet-title">Monthly Attendance Sheet</div>
+            <div class="sheet-fields">
+              <span>School: <i></i></span>
+              <span>Class: <i></i></span>
+              <span>Month: <i></i></span>
+              <span>Instructor: <i></i></span>
+            </div>
+          </div>
+          <table class="sheet-table">
+            <thead>
+              <tr>
+                <th class="col-num">#</th>
+                <th class="col-name">Student</th>
+                <th class="col-belt">Belt</th>
+                {days.map((d) => <th class="col-day">{d}</th>)}
+                <th class="col-total">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {blankRows.map((n) => (
+                <tr>
+                  <td class="col-num">{n}</td>
+                  <td class="col-name"></td>
+                  <td class="col-belt"></td>
+                  {days.map(() => <td class="col-day"></td>)}
+                  <td class="col-total"></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div class="sheet-foot">Mark each class attended with a check. Total the row at the end of the month. Template from beltmanager.com</div>
+        </div>
+      </div>
+      <p class="no-print mt-3 text-sm text-gray-500 text-center md:hidden">Swipe sideways to see the whole sheet. It prints on one landscape page.</p>
+    </div>
+  </section>
+
+  <div class="no-print">
+    <section class="section bg-white pt-0">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto prose prose-lg">
+
+          <h2>Download the Attendance Sheet as a Spreadsheet</h2>
+
+          <p>
+            Both files are plain CSV: a header row and 30 blank rows, nothing else. They open in Excel, Google Sheets and Apple Numbers, and you can add rows, rename columns or add your school name as you like.
+          </p>
+
+          <div class="overflow-x-auto">
+            <table>
+              <thead>
+                <tr><th>File</th><th>Columns</th><th>Use it when</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href={MONTHLY_CSV} download>Monthly attendance sheet (CSV)</a></td>
+                  <td>Student, Belt, days 1 to 31, Total</td>
+                  <td>An instructor takes attendance for a class group and you want a monthly total for each student</td>
+                </tr>
+                <tr>
+                  <td><a href={SIGN_IN_CSV} download>Class sign-in sheet (CSV)</a></td>
+                  <td>Date, Class, Student, Belt, Time in, Signed in by, Notes</td>
+                  <td>Students or parents sign in at the front desk, one line per visit</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Opening the file</h3>
+
+          <ol>
+            <li><strong>Excel:</strong> open the file, then choose Save As and pick Excel Workbook, so column widths and formulas are kept.</li>
+            <li><strong>Google Sheets:</strong> choose File, Import, Upload, pick the file, and import it as a new sheet.</li>
+            <li><strong>Numbers:</strong> double-click the file. It opens as a table.</li>
+          </ol>
+
+          <h3>Two formulas worth adding</h3>
+
+          <p>
+            In the monthly sheet, mark each class attended with an <code>x</code>. Then the Total column can count for you. In row 2, where the day columns run from C to AG, the total is:
+          </p>
+
+          <p><code>=COUNTA(C2:AG2)</code></p>
+
+          <p>
+            Copy it down the column. To see how many students came on a given day, put <code>=COUNTA(C2:C31)</code> under the first day column and copy it across. Both formulas work the same way in Excel and Google Sheets.
+          </p>
+
+          <h2>What to Record on a Martial Arts Attendance Sheet</h2>
+
+          <p>
+            A school's attendance sheet does more than a gym's door count. It is the record you use to decide who is ready for their next belt, so it needs a little more on it.
+          </p>
+
+          <ul>
+            <li><strong>Student name,</strong> written the same way every month so sheets can be added together</li>
+            <li><strong>Current belt,</strong> so the instructor can see at a glance who is in the wrong class or close to a test</li>
+            <li><strong>One mark per class attended,</strong> not per day, if a student can train twice in a day</li>
+            <li><strong>Class or program</strong> at the top of the sheet: one sheet per class group, not one for the whole school</li>
+            <li><strong>Month and instructor,</strong> so a sheet found in a drawer a year later still means something</li>
+            <li><strong>Trial students and visitors</strong> on their own lines at the bottom, so they don't get lost and someone follows up</li>
+          </ul>
+
+          <p>Three habits keep the sheet useful:</p>
+
+          <ol>
+            <li>Take attendance at the same point in every class, such as the bow-in, so nobody is missed.</li>
+            <li>Have one person total the sheets, on the same day each month.</li>
+            <li>Keep finished sheets together in date order. Your insurer or your association may ask who was on the mat on a given day, so ask them how long they want records kept.</li>
+          </ol>
+
+          <h2>Using the Sheet for Belt Test Eligibility</h2>
+
+          <p>
+            A common way to decide who may test is to set two minimums for each belt: a number of classes and a length of time at the current belt. The attendance sheet gives you the first number, and your promotion records give you the second. The numbers themselves are yours to set, unless your association sets them for you.
+          </p>
+
+          <ol>
+            <li><strong>Write down the minimums for each belt.</strong> For example, a school might ask for 24 classes and three months at white belt. That figure is an illustration, not a recommendation.</li>
+            <li><strong>Note each student's last promotion date.</strong> Count classes from that date, not from the start of the year.</li>
+            <li><strong>Add the monthly totals</strong> for every month since that date.</li>
+            <li><strong>List everyone who meets both minimums.</strong> That list is who your instructors assess, not who passes.</li>
+            <li><strong>Talk to the students who are just short</strong> before the test is announced, not after.</li>
+          </ol>
+
+          <p>
+            The slow part is step three. With 60 students and a test every three months, that is 180 monthly totals to find and add for each test. Our guide to <a href="/blog/belt-testing-how-often-what-to-charge/">how often to hold belt tests and what to charge</a> covers minimums published by the major bodies and what to do with students who fall short.
+          </p>
+
+          <h2>Where Paper and Spreadsheets Stop Working</h2>
+
+          <p>
+            Paper is a fine place to start. It stops working at predictable points:
+          </p>
+
+          <ul>
+            <li><strong>Adding up takes an evening.</strong> Every test cycle means going back through months of sheets, student by student.</li>
+            <li><strong>Two instructors, two sheets.</strong> A student who trains with both ends up with two partial counts.</li>
+            <li><strong>Nobody notices who stopped coming.</strong> A blank row looks the same as a student on vacation. By the time anyone looks, they may have been gone for weeks.</li>
+            <li><strong>Parents can't see it.</strong> When a parent asks why their child is not testing, the answer is in a binder at the school.</li>
+            <li><strong>One copy.</strong> A lost clipboard or a spreadsheet saved over is a lost record.</li>
+            <li><strong>A spreadsheet has one editor at a time,</strong> or several people changing the same cells from their phones between classes.</li>
+          </ul>
+
+          <p>
+            If none of that has happened to you yet, keep using the sheet. If two or three have, it is time to look at software built for the job. Here is how the three approaches compare:
+          </p>
+
+          <div class="overflow-x-auto">
+            <table>
+              <thead>
+                <tr><th></th><th>Paper sheet</th><th>Spreadsheet</th><th>BeltManager</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Taking attendance</td><td>Pen on a clipboard</td><td>Typed up after class</td><td>On your phone in class (works offline), or a tablet kiosk at the door</td></tr>
+                <tr><td>Totals per student</td><td>Added by hand</td><td>Formula you maintain</td><td>Automatic</td></tr>
+                <tr><td>Who is ready to test</td><td>Worked out by hand</td><td>Worked out by hand</td><td>Ready list from attendance and time at belt, against the minimums you set</td></tr>
+                <tr><td>Who has stopped coming</td><td>If someone notices</td><td>If someone checks</td><td>List of members who have missed their recent classes</td></tr>
+                <tr><td>What parents see</td><td>Nothing</td><td>Nothing</td><td>Their child's belt and upcoming classes in the parent portal</td></tr>
+                <tr><td>Cost</td><td>Paper</td><td>Free</td><td>Free up to 25 students, then from $29 a month</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Moving From a Spreadsheet to Software: What to Import First</h2>
+
+          <p>
+            You don't have to move everything at once. The switch is easier if you bring over a small amount of clean data and start recording from there. In order:
+          </p>
+
+          <ol>
+            <li><strong>Students and guardians.</strong> Name, date of birth, and for children the parent or guardian's name, email and phone. Tidy duplicates and old members out of the spreadsheet first.</li>
+            <li><strong>Current belt and last promotion date.</strong> This is what makes time at belt correct from day one.</li>
+            <li><strong>Your belt ladder and minimums.</strong> The belts in your order, with the classes and time you ask for at each.</li>
+            <li><strong>Class groups and the weekly schedule.</strong> Then put each student in their group, so every class shows who is expected.</li>
+            <li><strong>Attendance since the last promotion, for students close to a test.</strong> Keep the old sheets beside you for the first test cycle and check those students by hand. After that, the new record covers everyone.</li>
+          </ol>
+
+          <p>
+            Leave old history where it is. A folder of past sheets is a good enough archive, and typing in three years of check marks helps nobody.
+          </p>
+
+          <p>
+            In BeltManager you can add students yourself, or send us your list and we will help import it. From there, instructors take attendance on a phone, a tablet at the door works as a sign-in kiosk with a PIN, visitors can be added on the spot, and the attendance report can be exported back to CSV whenever you want a copy. It is free for up to 25 students with every feature included. Paid plans are Club at $29, School at $49 and Academy at $79 a month. US card billing is coming in 2027; until then you record payments by hand. The <a href="/dojo-management-software/">dojo management software</a> page shows how it fits together, and <a href="/pricing/">pricing</a> has the plan limits.
+          </p>
+
+          <h2>Related Resources</h2>
+
+          <ul>
+            <li><a href="/blog/belt-testing-how-often-what-to-charge/">Belt Testing: How Often, and What to Charge</a>: published minimums by art and a way to set fees</li>
+            <li><a href="/martial-arts-scheduling-software/">Martial Arts Scheduling Software</a>: class groups, the weekly schedule and attendance</li>
+            <li><a href="/free-martial-arts-software/">Free Martial Arts Software</a>: what the free plan includes</li>
+            <li><a href="/karate-school-software/">Karate School Software</a> · <a href="/taekwondo-school-software/">Taekwondo School Software</a> · <a href="/judo-club-software/">Judo Club Software</a></li>
+            <li><a href="/bjj-gym-software/">BJJ Gym Software</a> · <a href="/kickboxing-gym-software/">Kickboxing and Muay Thai Gym Software</a></li>
+            <li><a href="/dojo-revenue-calculator/">Dojo Revenue Calculator</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </section>
+
+    <FAQEnhanced
+      site="beltmanager"
+      pageUrl="https://beltmanager.com/attendance-sheet-template/"
+      title="Frequently Asked Questions About the Attendance Sheet Template"
+      faqs={faqItems}
+    />
+
+    <section class="section bg-brand-red text-white">
+      <div class="container-custom">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-4">Done Adding Up Attendance Sheets?</h2>
+          <p class="text-xl mb-8 opacity-95">
+            Take attendance on your phone and let BeltManager keep the totals and the ready-to-test list. Free for up to 25 students. Paid plans from $29 a month.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>
+            <a href="/pricing/" class="btn-secondary-large border-white text-white hover:bg-white hover:bg-opacity-10">View Pricing</a>
+          </div>
+          <p class="mt-6 text-sm opacity-90">Free for up to 25 students. Paid plans from $29 a month. • No credit card • No contract</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</BaseLayout>
+
+<script>
+  document.querySelectorAll('[data-print-sheet]').forEach((btn) => {
+    btn.addEventListener('click', () => window.print());
+  });
+</script>
+
+<style is:global>
+  @media print {
+    @page {
+      size: landscape;
+      margin: 0.4in;
+    }
+
+    body > nav,
+    body > footer,
+    body > a,
+    #cookie-consent,
+    .no-print {
+      display: none !important;
+    }
+
+    html,
+    body {
+      background: #fff !important;
+    }
+
+    body {
+      display: block !important;
+      min-height: 0 !important;
+    }
+
+    main#main-content {
+      padding: 0 !important;
+    }
+
+    #sheet-section {
+      padding: 0 !important;
+    }
+
+    #sheet-section .container-custom {
+      max-width: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    #sheet-section .sheet-scroll {
+      overflow: visible !important;
+    }
+
+    #attendance-sheet {
+      min-width: 0 !important;
+      width: 100% !important;
+      border: 0 !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+      break-inside: avoid;
+    }
+
+    #attendance-sheet th,
+    #attendance-sheet td {
+      border-color: #000 !important;
+      color: #000 !important;
+      height: 0.255in !important;
+    }
+  }
+</style>
+
+<style>
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section.pb-0 {
+    padding-bottom: 0;
+  }
+
+  .section.pt-0 {
+    padding-top: 0;
+  }
+
+  .sheet-scroll {
+    overflow-x: auto;
+  }
+
+  .sheet {
+    min-width: 1040px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    color: #1a1a2e;
+  }
+
+  .sheet-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .sheet-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .sheet-fields {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 0.8rem;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .sheet-fields span {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 0.35rem;
+    white-space: nowrap;
+  }
+
+  .sheet-fields i {
+    display: inline-block;
+    width: 8.5rem;
+    border-bottom: 1px solid #334155;
+  }
+
+  .sheet-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 0.7rem;
+  }
+
+  .sheet-table th,
+  .sheet-table td {
+    border: 1px solid #475569;
+    height: 1.55rem;
+    padding: 0 0.2rem;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .sheet-table th {
+    font-weight: 600;
+    background: #f1f5f9;
+  }
+
+  .sheet-table .col-num {
+    width: 2.6%;
+    color: #64748b;
+  }
+
+  .sheet-table .col-name {
+    width: 17%;
+    text-align: left;
+  }
+
+  .sheet-table .col-belt {
+    width: 8%;
+    text-align: left;
+  }
+
+  .sheet-table .col-total {
+    width: 5%;
+  }
+
+  .sheet-foot {
+    margin-top: 0.5rem;
+    font-size: 0.65rem;
+    color: #64748b;
+  }
+
+  .prose {
+    max-width: none;
+  }
+
+  .prose h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose p {
+    margin-bottom: 1.5rem;
+    color: #475569;
+    line-height: 1.7;
+  }
+
+  .prose ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    list-style: disc;
+  }
+
+  .prose ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    list-style: decimal;
+  }
+
+  .prose li {
+    margin-bottom: 0.5rem;
+    color: #475569;
+  }
+
+  .prose strong {
+    color: var(--brand-navy);
+    font-weight: 600;
+  }
+
+  .prose a {
+    color: var(--brand-red);
+    text-decoration: none;
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+  }
+
+  .prose code {
+    background: #f1f5f9;
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+    font-size: 0.9em;
+    color: var(--brand-navy);
+  }
+
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .prose th,
+  .prose td {
+    border: 1px solid #e2e8f0;
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    color: #475569;
+    vertical-align: top;
+  }
+
+  .prose th {
+    background: #f8fafc;
+    color: var(--brand-navy);
+    font-weight: 600;
+  }
+
+  .btn-primary-large,
+  .btn-secondary-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary-large:hover,
+  .btn-secondary-large:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary-large {
+    border: 2px solid;
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 3rem 0;
+    }
+
+    .prose h2 {
+      font-size: 1.5rem;
+    }
+
+    .prose h3 {
+      font-size: 1.25rem;
+    }
+  }
+</style>
