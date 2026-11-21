@@ -84,6 +84,23 @@ Every row was opened by a research pass and the figures marked ✔ were re-read 
 | ✔ Beneficial ownership reports: US companies are exempt and "no longer required to file BOI reports"; final rule effective August 14, 2026. | FinCEN, https://www.fincen.gov/boi |
 | Federal licenses only for federally regulated activities; states and localities set their own licenses and permits. | SBA, https://www.sba.gov/business-guide/launch-your-business/apply-licenses-permits |
 
+### Further quotes from the same pages (added after the review pass)
+
+The research pass read these on the pages listed above; the articles use them, so they are recorded here.
+
+| Fact used | Source |
+| --- | --- |
+| SBA definitions: professional liability "protects against financial loss as a result of malpractice, errors, and negligence"; commercial property "protects your business against loss and damage to company property due to a wide variety of events"; a business owner's policy "is an insurance package that combines all of the typical coverage options into one bundle". The SBA structure page still showed the March 21, 2025 BOI deadline when checked. | SBA pages above |
+| Sadler: five options; limits table lists each occurrence, general aggregate, bodily injury to participants and professional liability; exclusions include "Use of Sharpened/Bladed Weapons", "Abuse, Molestation, Harassment, or Sexual Conduct" and "Operation, Ownership, or Management of any Facility"; eligible instructors "work on an independent contract basis". | Sadler page above |
+| K&K: PDF application needed if "The martial arts school is over 3,000 square feet in total" or activities other than martial arts are offered; coverage "subject to underwriting". | K&K page above |
+| Thimble: covers "Third-party, non-employee bodily injury", "Third-party Property Damage" and "Defense Costs"; says multiple instructors need a separate workers' compensation policy and equipment needs a commercial property policy. Markel: eligibility "depending on curriculum". | Thimble and Markel pages above |
+| Texas: employers without coverage "must report to the state that they do not have coverage". | TDI page above |
+| III: "the CGL policy in effect at the time the alleged injury or property damage occurred is the policy that covers that event." | III page above |
+| Florida 744.301(3)(a): a participant "does not include the activity provider or its owners, affiliates, employees, or agents." | Florida statute above |
+| FinCEN: alert updated August 11, 2026; US companies "are exempt" and "are no longer required to file BOI reports". | FinCEN page above |
+| IRS: financial control, "Are the business aspects of the worker's job controlled by the payer?"; relationship, written contracts or employee-type benefits, whether the relationship will continue and whether the work is a key aspect of the business. Form W-4 lets the employer "withhold the correct federal income tax". | IRS pages above |
+| Fact Sheet #22: "The amount employees should receive cannot be determined without knowing the number of hours worked." Fact Sheet #71: seven factors, including no expectation of compensation and work that "complements, rather than displaces, the work of paid employees". Fact Sheet #43: limited exceptions under 14; many states require work permits. | DOL fact sheets above |
+
 **Dropped because the primary text could not be opened:** Louisiana Civil Code art. 2004, Virginia (Hiett), Ohio (Zivich), Washington (Scott), Utah (Hawkins, described by a later case as superseded by statute), DOL's statement on volunteers at for-profit businesses, any neutral definition of "additional insured" or "aggregate limit", ZipRecruiter. Do not mention them.
 
 ## Review Focus

@@ -8,26 +8,26 @@ tags: ["Business", "Starting a Gym"]
 author: "BeltManager Team"
 faqs:
   - question: "How much do martial arts instructors make?"
-    answer: "There is no official figure for martial arts instructors, because the Bureau of Labor Statistics has no separate occupation for them. The nearest official category, fitness trainers and instructors, had a median wage of $22.67 an hour, or $47,160 a year, in May 2025. The lowest 10 percent earned less than $28,800 and the highest 10 percent more than $83,100. Figures checked on November 21, 2026."
+    answer: "The Bureau of Labor Statistics publishes no wage for martial arts instructors, because it has no separate occupation for them. The nearest official category, fitness trainers and instructors, had a median wage of $22.67 an hour, or $47,160 a year, in May 2025. The lowest 10 percent earned less than $28,800 and the highest 10 percent more than $83,100. Figures checked on November 21, 2026."
   - question: "Should I pay a martial arts instructor per class or per hour?"
-    answer: "Either can work, but if the instructor is an employee, the pay for the week still has to cover every hour worked at no less than the minimum wage that applies to you. A per-class rate that looks fine for one hour on the mat can fall under the minimum once set-up, clean-up and meetings are counted. Hourly pay is the simplest to get right."
+    answer: "Either can work. If the instructor is an employee, compare the week's pay with the week's hours: the Department of Labor counts work you know about and allow as work time, and a per-class rate that looks fine for one hour on the mat can fall under your minimum wage once the other hours are added. Hourly pay is the simplest to check. Confirm the rule with your state labor agency."
   - question: "Can I pay my instructor as an independent contractor?"
-    answer: "Only if the working relationship really is independent. The IRS looks at behavioral control, financial control and the relationship of the parties. The Department of Labor uses its own test under the Fair Labor Standards Act and announced a new final rule on November 19, 2026. Some states are stricter: California presumes a worker is an employee unless three conditions are all met. The label in your contract does not decide it."
+    answer: "Only if the working relationship really is independent. The IRS looks at behavioral control, financial control and the relationship of the parties. The Department of Labor uses its own test under the Fair Labor Standards Act and announced a new final rule on November 19, 2026. Your state may apply its own test: California treats a worker as an employee unless three conditions are all met."
   - question: "What does an employee cost on top of wages?"
     answer: "For 2026, an employer pays 6.2 percent Social Security tax and 1.45 percent Medicare tax on wages, plus federal unemployment (FUTA) tax of 6.0 percent on the first $7,000 paid to each employee, which falls to 0.6 percent with the full credit for state unemployment tax. State unemployment tax and workers' compensation insurance come on top and depend on your state."
   - question: "Can a student teach classes in exchange for free tuition?"
-    answer: "Be careful. The Department of Labor says the Fair Labor Standards Act requires for-profit employers to pay employees for their work, and that any promise of compensation, express or implied, suggests that an intern or student is an employee. Free tuition in return for teaching is a promise of something of value. Ask your state labor agency or an employment attorney before you set up an arrangement like this."
+    answer: "Be careful. The Department of Labor says the Fair Labor Standards Act requires for-profit employers to pay employees for their work, and that any promise of compensation, express or implied, suggests that an intern or student is an employee. Free tuition in return for teaching raises exactly that question. Ask your state labor agency or an employment attorney before you set up an arrangement like this."
   - question: "Does BeltManager run payroll for instructors?"
-    answer: "No. BeltManager handles students, belts, attendance, class schedules and family communication. It does not calculate instructor pay, track staff hours for wages or file payroll taxes. You would use a payroll service or an accountant for that."
+    answer: "No. BeltManager handles students, belts, attendance, class schedules and notices to families. It does not calculate instructor pay, track staff hours for wages or file payroll taxes. You would use a payroll service or an accountant for that."
 ---
 
-How much do martial arts instructors make, and what should you pay the first one you hire? The honest answer starts with a gap: no government agency publishes a wage for "martial arts instructor". This guide gives you the nearest official figures, explains why job sites show something different, and then walks through the decisions a school owner has to make: when to hire, how to structure the pay, whether the person is an employee or a contractor, and what an employee costs on top of the wage.
+How much do martial arts instructors make, and what should you pay the first one you hire? The honest answer starts with a gap: the Bureau of Labor Statistics, which publishes official US wage data, has no figure for "martial arts instructor". This guide gives you the nearest official figures, explains why job sites show something different, and then walks through the decisions a school owner has to make: when to hire, how to structure the pay, whether the person is an employee or a contractor, and what an employee costs on top of the wage.
 
 Every wage, tax rate and rule below is linked in the sources at the end, with the date we checked it. This is general information, not legal or tax advice. Rules differ by state, so check with your state labor agency, a CPA or an employment attorney before you hire. If you are still setting up the school itself, our [martial arts software](/martial-arts-software/) page shows how BeltManager handles students, belts and attendance so your new instructor has a class list from day one.
 
 ## The Short Answer: What the Official Data Says
 
-The Bureau of Labor Statistics (BLS) sorts instructors by the main purpose of the instruction, not by the activity. Its occupation definitions never mention martial arts, karate, judo or taekwondo [1]. A martial arts instructor could be counted in any of three groups:
+The Bureau of Labor Statistics (BLS) sorts instructors by the main purpose of the instruction, not by the activity. Its occupation definitions and its list of matching job titles do not mention martial arts, karate, judo or taekwondo [1]. By those definitions, these three groups are the candidates:
 
 | BLS occupation | Covers instruction "for the primary purpose of" | Median hourly | Median annual | Source |
 |---|---|---|---|---|
@@ -46,11 +46,11 @@ The BLS Occupational Outlook Handbook gives more detail for the first group, whi
 - **In educational services:** median $45,350
 - **Outlook:** employment projected to grow 7 percent from 2025 to 2035
 
-Three cautions before you use these numbers. They cover every kind of fitness instructor, not martial arts alone. They are for employees, so they leave out school owners and self-employed instructors. And an annual figure assumes year-round, full-time work, which many instructors who teach a few evening classes do not have.
+Three cautions before you use these numbers. They cover every kind of fitness instructor, not martial arts alone. They come from a survey of employers, so they describe wages paid to staff, not what a school owner takes home. And an annual figure is of little use for an instructor who teaches a few evening classes a week; use the hourly figure for that.
 
 ### Why job sites show different numbers
 
-Search for martial arts instructor salaries and you will find job boards quoting averages well above or below the BLS median. They are measuring something else. A job board builds its figure from the pay shown in job postings or from salaries that users type in, where the BLS runs a survey of employers. We have not quoted job-board averages here because we cannot check how they were put together. If you use one, look for the sample size and the date on the page.
+Search for martial arts instructor salaries and you will find job boards quoting averages that differ from the BLS median. They are measuring something else. A job board builds its figure from the pay shown in job postings or from salaries that users type in, where the BLS runs a survey of employers. We have not quoted job-board averages here because we cannot check how they were put together. If you use one, look for the sample size and the date on the page.
 
 ## When to Hire Your First Instructor
 
@@ -63,24 +63,24 @@ There is no student count at which every school should hire. These are the signs
 
 Before you hire, work out what the extra classes would bring in and what the instructor would cost. Our [dojo revenue calculator](/dojo-revenue-calculator/) covers the income side. The rest of this guide covers the cost side.
 
-A senior student who already knows your curriculum is a natural place to look. Hiring someone you know does not change any of the pay rules below.
+A senior student who already knows your curriculum is a natural place to look.
 
 ## Four Ways to Pay an Instructor
 
 | Method | How it works | Good for | Watch out for |
 |---|---|---|---|
 | Hourly | A rate for every hour worked, on or off the mat | Part-time instructors; simplest to get right | You need a record of hours |
-| Per class | A flat amount per class taught | Simple to explain and budget | For an employee, pay still has to cover all hours worked at minimum wage or more |
+| Per class | A flat amount per class taught | Simple to explain and budget | For an employee, check the week's pay against the week's hours and your minimum wage |
 | Salary | A fixed amount per week or month | A full-time head instructor | Overtime applies unless the employee is exempt, and exemption has its own tests |
-| Revenue share | A percentage of tuition from the classes they teach | Instructors who bring in and keep students | Pay swings with enrollment; for an employee the minimum wage still applies |
+| Revenue share | A percentage of tuition from the classes they teach | Instructors who bring in and keep students | Pay swings with enrollment; for an employee, make the same minimum wage check |
 
 Two federal rules sit under all four methods when the instructor is an employee.
 
-**Minimum wage.** The federal minimum wage is $7.25 an hour, and many states set a higher one. On the Department of Labor's state table, updated November 5, 2026, California shows $16.90, Florida $15.00 and Texas $7.25 [4].
+**Minimum wage.** The federal minimum wage is $7.25 an hour, and some states set a higher one. On the Department of Labor's state table, updated November 5, 2026, California shows $16.90, Florida $15.00 and Texas $7.25 [4].
 
-**Hours worked.** The Department of Labor says that "work not requested but suffered or permitted to be performed is work time that must be paid for by the employer" [6]. Time at meetings and training counts too, unless it is outside normal hours, voluntary, not job related and no other work is done during it [6]. So if an instructor arrives early to lay out mats or stays to talk with parents, and you know about it, treat that time as hours worked.
+**Hours worked.** The Department of Labor's fact sheet on hours worked says: "Work not requested but suffered or permitted to be performed is work time that must be paid for by the employer" [6]. Time at meetings and training counts too, unless it is outside normal hours, voluntary, not job related and no other work is done during it [6]. The fact sheet does not list set-up or clean-up by name. The careful reading is that if an instructor arrives early to lay out mats or stays to talk with parents, and you know about it, that time counts. Confirm with your state labor agency.
 
-**Overtime.** Unless exempt, employees must receive overtime pay for hours over 40 in a workweek, at no less than time and one-half their regular rate [5]. That rarely matters for a part-time instructor. It can matter for a full-time one who also covers events and belt tests.
+**Overtime.** Unless exempt, employees must receive overtime pay for hours over 40 in a workweek, at no less than time and one-half their regular rate [5].
 
 ### Worked comparison
 
@@ -93,7 +93,7 @@ Say you want an instructor to take six one-hour classes a week. With set-up, cle
 | Hourly | 9 hours at $22.67 | $204.03 |
 | Per class, set to match | $204.03 divided by 6 classes is $34.01 a class | $204.06 |
 | Per class at $25 | 6 classes at $25 | $150.00 |
-| Revenue share | 30 percent of $3,000 monthly tuition from those classes is $900 a month | $207.69 |
+| Revenue share | 30 percent of $3,000 monthly tuition from those classes is $900 a month; times 12, divided by 52 | $207.69 |
 
 Look at the third row. $150 for nine hours of work is $16.67 an hour. That is above the federal minimum wage, but it is below California's $16.90 [4]. A per-class rate that sounds generous for an hour on the mat can fall short once all the hours are counted. If you pay per class, divide the week's pay by the week's real hours and compare the result with the minimum wage that applies to you.
 
@@ -101,23 +101,21 @@ The revenue share row has the same issue in a slow month. If tuition from those 
 
 ## Employee or Independent Contractor?
 
-It is tempting to pay an instructor as an independent contractor because it is less paperwork. Whether that is allowed depends on the facts of the working relationship. What you call the person in a contract does not settle it. Three sets of rules can apply at once.
+It is tempting to pay an instructor as an independent contractor because it is less paperwork. Whether that is allowed depends on the facts of the working relationship, and more than one set of rules can apply.
 
 **The IRS (federal taxes).** The IRS groups the evidence into three categories [8]:
 
 - **Behavioral control:** does the business control, or have the right to control, what the worker does and how?
-- **Financial control:** does the business control the business side of the job, such as how the worker is paid and who provides tools and supplies?
+- **Financial control:** are the business aspects of the worker's job controlled by the payer?
 - **Relationship of the parties:** are there written contracts or employee-type benefits, will the relationship continue, and is the work a key aspect of the business?
 
-Think about a typical instructor. You set the schedule, the curriculum and the uniform. The classes happen at your school, with your students, on your mats. Teaching classes is the core of what a martial arts school does. Those facts point toward an employee. If you are unsure, either side can file Form SS-8 and ask the IRS to decide [8].
+Think about a typical instructor. You set the schedule, the curriculum and the uniform. The classes happen at your school, with your students, on your mats. Teaching classes is the core of what a martial arts school does. Those are the facts the three categories look at. If you are unsure, Form SS-8 asks the IRS to decide a worker's status [8].
 
 **The Department of Labor (minimum wage and overtime).** The Fair Labor Standards Act has its own test, and it is changing. On November 19, 2026, the Department of Labor announced a final rule that takes effect 60 days after it is published in the Federal Register and rescinds the rule published in January 2024 [7]. The new test has five factors. Two are "core" factors: the nature and degree of control over the work, and the worker's opportunity for profit or loss. The other three are the skill required, the permanence of the relationship, and whether the work is part of an integrated unit of production [7]. The rule was two days old when we checked, so read the Department's page for its current status before you rely on it.
 
-**Your state.** State tests can be stricter than either federal one. In California, a worker is an employee unless the hiring business shows all three of the following: (A) the worker is free from its control and direction, (B) the work is outside the usual course of its business, and (C) the worker is customarily engaged in an independently established trade or business of the same kind [10]. Teaching classes at a martial arts school is hard to describe as outside the usual course of that school's business. California has exemptions for some occupations, so check how the rule applies to you.
+**Your state.** Your state may apply its own test. In California, a worker is an employee unless the hiring business shows all three of the following: (A) the worker is free from its control and direction, (B) the work is outside the usual course of its business, and (C) the worker is customarily engaged in an independently established trade or business of the same kind [10]. Ask yourself whether teaching classes at a martial arts school is outside the usual course of that school's business. California has exemptions for some occupations, so check how the rule applies to you.
 
 **Why it matters.** IRS Publication 15-A says: "If you classify an employee as an independent contractor and you have no reasonable basis for doing so, you're liable for employment taxes for that worker" [9].
-
-A real contractor arrangement does exist. A guest instructor who runs a weekend seminar at several schools, sets their own price and content, and invoices you is a different case from someone on your weekly schedule.
 
 ## What an Employee Costs on Top of Wages
 
@@ -155,19 +153,19 @@ In this example the federal employer taxes add about 8 percent to the wage bill.
 1. **Get an EIN.** You need an Employer Identification Number if you have employees. The IRS issues it free; in its words, "You never have to pay a fee for an EIN" [13].
 2. **Form I-9.** Every US employer must complete Form I-9 for each person hired, to verify identity and permission to work [14].
 3. **Form W-4.** Ask each new employee to complete the 2026 Form W-4 so you can withhold the right federal income tax [11].
-4. **Set up state accounts.** Open your state unemployment tax account and arrange workers' compensation cover if your state requires it.
+4. **Set up state accounts.** Open your state unemployment tax account and arrange workers' compensation coverage if your state requires it.
 5. **Keep a record of hours.** The Department of Labor's point is simple: the pay due cannot be worked out without knowing the number of hours worked [6].
 6. **Year end.** Employees get a Form W-2. A real independent contractor gets a Form 1099-NEC if you paid them $2,000 or more in 2026. The threshold was $600 for payments made before 2026 [12].
 
-A payroll service or an accountant can run steps 3 to 6 for you. For a first hire that is usually money well spent.
+A payroll service or an accountant can run steps 3 to 6 for you.
 
 ## Unpaid Helpers and Teen Assistants
 
-Martial arts schools have a long tradition of senior students helping with classes. Two federal rules are worth knowing before you formalize that.
+If senior students help with your classes, two federal rules are worth knowing.
 
 **Students who help without pay.** The Department of Labor's fact sheet on interns says: "The FLSA requires 'for-profit' employers to pay employees for their work" [15]. Interns and students may fall outside that when they, not the business, are the primary beneficiary of the arrangement. Courts weigh seven factors, and the first is whether both sides clearly understand there is no expectation of compensation. The fact sheet adds: "Any promise of compensation, express or implied, suggests that the intern is an employee" [15]. Another factor is whether the intern's work complements, and does not displace, the work of paid employees [15].
 
-The fact sheet does not mention martial arts schools or tuition. But an arrangement where a student teaches scheduled classes in return for free tuition has two features it warns about: a promise of something of value, and work a paid instructor would otherwise do. A black belt candidate who assists a class as part of their own training is a different picture from an unpaid person running your Tuesday beginners' class. Get advice before you rely on unpaid help for regular classes.
+The fact sheet does not mention martial arts schools or tuition, so it does not answer the question for you. But if a student teaches scheduled classes in return for free tuition, both of those factors are in play. Get advice from your state labor agency or an employment attorney before you rely on unpaid help for regular classes.
 
 **Teen assistant instructors.** Federal child labor rules for non-agricultural jobs set these limits [16]:
 
@@ -177,7 +175,7 @@ The fact sheet does not mention martial arts schools or tuition. But an arrangem
 | 14 and 15 | Outside school hours only. No more than 3 hours on a school day, 8 hours on a non-school day, 18 hours in a school week and 40 hours in a non-school week. Between 7 a.m. and 7 p.m., extended to 9 p.m. from June 1 to Labor Day |
 | 16 and 17 | Unlimited hours in any job not declared hazardous |
 
-Note the 7 p.m. limit: a 15-year-old employee cannot work a 7:30 p.m. class during the school year. Many states add their own rules, such as work permits, and when state and federal rules differ, the stricter one applies [16].
+Note the 7 p.m. limit: a 15-year-old employee cannot work a 7:30 p.m. class during the school year. The same fact sheet notes that many states require work permits, and that when state and federal rules differ, the stricter one applies [16].
 
 ## Where BeltManager Fits
 
@@ -185,10 +183,10 @@ BeltManager does not run payroll. It does not calculate instructor pay, track st
 
 What it does is take class administration off the instructor you are paying:
 
-- Class schedules, so everyone knows who teaches what
+- Class schedule, term dates and closures
 - Attendance taken on a phone, or by students checking in at a tablet kiosk
-- A ready-to-test list built from attendance and time at belt, which feeds your [belt testing](/blog/belt-testing-how-often-what-to-charge/) calendar
-- Messages to families by email and in the parent app
+- A ready-to-test list built from attendance and time at belt, for [belt testing](/blog/belt-testing-how-often-what-to-charge/)
+- Class reminders and belt promotion notices by email and in the parent app
 
 US card billing is coming in 2027; until then you record payments by hand. BeltManager is free for up to 25 students; paid plans are $29, $49 and $79 a month. See [pricing](/pricing/) for what each plan includes.
 
@@ -196,7 +194,7 @@ US card billing is coming in 2027; until then you record payments by hand. BeltM
 
 All sources checked on November 21, 2026. Wage data, tax rates and labor rules change, so read the current page before you rely on a figure.
 
-1. Bureau of Labor Statistics, [2018 Standard Occupational Classification definitions](https://www.bls.gov/soc/2018/soc_2018_definitions.pdf): codes 39-9031, 25-3021 and 27-2022.
+1. Bureau of Labor Statistics, [2018 Standard Occupational Classification definitions](https://www.bls.gov/soc/2018/soc_2018_definitions.pdf), codes 39-9031, 25-3021 and 27-2022, and the [Direct Match Title File](https://www.bls.gov/soc/2018/soc_2018_direct_match_title_file.pdf).
 2. Bureau of Labor Statistics, Occupational Outlook Handbook, [Fitness Trainers and Instructors](https://www.bls.gov/ooh/personal-care-and-service/fitness-trainers-and-instructors.htm), last modified August 27, 2026.
 3. Bureau of Labor Statistics, [Occupational Employment and Wage Statistics](https://data.bls.gov/oes/#/area/0000000/2025), May 2025 national estimates, released May 15, 2026.
 4. US Department of Labor, [State Minimum Wage Laws](https://www.dol.gov/agencies/whd/minimum-wage/state), updated November 5, 2026.
