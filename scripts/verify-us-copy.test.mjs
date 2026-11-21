@@ -20,5 +20,5 @@ test('flags registration and registered as well as register', () => {
   assert.deepEqual(findUkTerms('<p>Registering takes a minute.</p>'), ['register']);
 });
 test('accepts the allowed company-law phrases', () => {
-  assert.deepEqual(findUkTerms('<p>Your LLC needs a registered agent. We are a UK-registered company and not VAT-registered. Registered Office: London.</p>'), []);
+  assert.deepEqual(findUkTerms('<p>Your LLC needs a registered agent. We are a UK-registered company and not VAT-registered. Registered Office: London. Published in the Federal Register.</p>'), []);
 });

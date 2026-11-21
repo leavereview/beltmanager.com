@@ -44,8 +44,8 @@ const UK_PATTERNS = [
   [/\bprogrammes?\b/i, 'programme'],
 ];
 
-// Company-law phrases that are correct in US copy and are not the UK attendance "register".
-const ALLOWED_PHRASES = /\bregistered (?:agents?|office)\b|\b(?:UK|VAT)-registered\b/gi;
+// Company-law phrases and proper names that are correct in US copy and are not the UK attendance "register".
+const ALLOWED_PHRASES = /\bregistered (?:agents?|office)\b|\bFederal Register\b|\b(?:UK|VAT)-registered\b/gi;
 
 function stripDataUk(html) {
   // Simple non-nested match on the same tag name; data-uk is only used on leaf elements.

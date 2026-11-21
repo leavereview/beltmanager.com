@@ -103,7 +103,7 @@ Two things stand out. The black belt fees here are several times the kyu test fe
 We are not going to quote a "typical" fee for color belt tests, because we have no sourced figure for one. A fee you can explain is better than one you copied. Build it from your costs:
 
 1. **List the direct costs per student:** the new belt, the certificate, boards or other materials.
-2. **List the shared costs for the day:** instructor and examiner hours, room rental if you rent extra space, and any fee your association charges you.
+2. **List the shared costs for the day:** instructor and examiner hours (see our guide to [instructor pay](/blog/martial-arts-instructor-pay/)), room rental if you rent extra space, and any fee your association charges you.
 3. **Divide the shared costs by the number of students you expect to test.**
 4. **Add the two together.** That is your break-even fee.
 5. **Decide on a margin,** if any, and round to a sensible number.
