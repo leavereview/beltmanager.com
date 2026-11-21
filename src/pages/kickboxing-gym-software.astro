@@ -1,0 +1,430 @@
+---
+import { appLink } from '../utils/appLink';
+import AppScreenshot from '../components/AppScreenshot.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+
+const comparisonData = [
+  { label: 'Classes grouped by level and age', values: [true, 'Varies', 'By hand'], highlight: true },
+  { label: 'Optional level or rank ladder you define', values: [true, 'Rarely', 'By hand'], highlight: true },
+  { label: 'Ready-to-test list from attendance and time at level', values: [true, false, false], highlight: true },
+  { label: 'Technique lists with video links', values: [true, false, false] },
+  { label: 'Attendance for every session, twice a day if needed', values: [true, true, 'By hand'] },
+  { label: 'Kiosk check-in on a tablet', values: [true, 'Varies', false] },
+  { label: 'Parent app for kids classes', values: [true, 'Varies', false] },
+  { label: 'Fight team in its own message group', values: [true, 'Varies', false] }
+];
+
+const faqItems = [
+  {
+    question: "What is kickboxing gym software?",
+    answer: "Kickboxing gym software is a management system for kickboxing and Muay Thai gyms. It keeps the member list, the weekly class schedule, attendance, memberships, waivers and messages in one place. Software built for martial arts also handles levels or ranks, for gyms that use them, and the technique lists that go with each level.",
+    links: [
+      { text: 'All features', url: '/martial-arts-software/' },
+      { text: 'Pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "Our gym has no belts. Can we still use BeltManager?",
+    answer: "Yes. A discipline can simply run classes without a rank ladder. You still get the schedule, attendance, trial tracking, family accounts, waivers and messaging. If you decide later to add levels, you can add a ladder then.",
+    links: [
+      { text: 'Scheduling', url: '/martial-arts-scheduling-software/' }
+    ]
+  },
+  {
+    question: "Can we set up our own levels for Muay Thai or kickboxing?",
+    answer: "Yes. Each discipline is a style with its own ladder, and you name the steps. Some gyms use beginner, intermediate and advanced; some use numbered levels; some use colored armbands or shorts. You set the minimum time and minimum sessions for each level, and BeltManager shows who has met them.",
+    links: [
+      { text: 'Belt and level tracking', url: '/martial-arts-software/' }
+    ]
+  },
+  {
+    question: "We run fitness kickboxing and fight training. Can both live in one system?",
+    answer: "Yes. Everyone sits in one member list. Fitness classes, technical classes, sparring and fight team are separate groups on the same weekly schedule. You can message just the fight team while schedule changes reach everyone.",
+    links: [
+      { text: 'MMA gym software', url: '/mma-gym-software/' }
+    ]
+  },
+  {
+    question: "Does BeltManager track fight records or weight cuts?",
+    answer: "No. You can record competition results such as medals and wins as achievements, keep notes on a member after each session and list fight nights as events. BeltManager doesn't track fight records, sparring logs or weight cuts.",
+    links: [
+      { text: 'MMA gym features', url: '/mma-gym-software/' }
+    ]
+  },
+  {
+    question: "What membership options does it support?",
+    answer: "You can set up all-access memberships alongside single-discipline plans, with sibling discounts for families and membership freezes for injuries. US card billing is coming in 2027; until then you record payments by hand. BeltManager doesn't prorate mid-cycle changes or sell punch cards.",
+    links: [
+      { text: 'Billing', url: '/martial-arts-billing-software/' }
+    ]
+  },
+  {
+    question: "How do members check in?",
+    answer: "Instructors take attendance for each session from the class list, which shows the expected regulars, and add walk-ins on the spot. A tablet at the front desk can run in kiosk mode with a PIN. Members who train twice in a day are counted twice.",
+    links: [
+      { text: 'Free attendance sheet template', url: '/attendance-sheet-template/' }
+    ]
+  },
+  {
+    question: "How much does kickboxing gym software cost?",
+    answer: "BeltManager is free for up to 25 students. Paid plans are Club at $29, School at $49 and Academy at $79 a month, with every feature on every plan, no setup fee and no contract. When you compare other systems, check whether the price is flat, per member or by member-count band, and whether there is a setup fee or a contract.",
+    links: [
+      { text: 'View pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "Does it sell gloves, wraps and gear at the front desk?",
+    answer: "No. BeltManager has no point of sale or inventory. You can raise a one-off invoice for an item or a fee, and that is as far as it goes.",
+    links: [
+      { text: 'Pricing and plans', url: '/pricing/' }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Kickboxing & Muay Thai Gym Software (2026)"
+  description="Class schedules, attendance, optional levels and a parent app for kickboxing and Muay Thai gyms. Free for up to 25 students. Paid plans from $29 a month."
+>
+  <BreadcrumbsEnhanced
+    site="beltmanager"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Kickboxing Gym Software', href: '/kickboxing-gym-software/' }
+    ]}
+  />
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block px-4 py-2 mb-4 text-sm font-semibold text-brand-red bg-brand-red-light rounded-full">For kickboxing and Muay Thai gyms</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Kickboxing and Muay Thai Gym Software</h1>
+        <p class="text-xl text-gray-600">
+          One schedule for fitness kickboxing, technical classes, sparring and fight team. Attendance for every session, levels if you use them, and no belts if you don't.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={appLink(Astro.url.pathname, 'hero')} class="btn-primary">Get started free</a>
+          <a href="/pricing/" class="btn-secondary">View pricing</a>
+        </div>
+        <p class="mt-4 text-sm text-gray-500">Free for up to 25 students. No credit card. No contract.</p>
+      </div>
+    </div>
+  </section>
+
+  <FeaturedAnswer question="What is kickboxing gym software?">
+    Kickboxing gym software is a management system for kickboxing and Muay Thai gyms. It keeps members, the weekly class schedule, attendance, memberships, waivers and messages in one place. Martial arts software also tracks levels or ranks for gyms that use them, alongside technique lists for each level.
+  </FeaturedAnswer>
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <h2>What a Striking Gym Needs From Its Software</h2>
+
+        <p>
+          A kickboxing or Muay Thai gym is two businesses under one roof. One is a fitness business: people who come for a hard hour on the bags and never plan to spar. The other is a martial arts school: people learning technique in a set order, some of whom will fight. The same coaches teach both, on the same mats, in the same week.
+        </p>
+
+        <p>
+          Fitness software handles the first group well and ignores the second. It counts check-ins. It doesn't know that a member has moved from the beginner class to intermediate, which techniques they have been shown, or whether a coach has cleared them to spar.
+        </p>
+
+        <p>
+          BeltManager is <a href="/martial-arts-software/">martial arts software</a>, so it starts from the school side and handles the schedule and attendance that both groups need. If your gym also teaches grappling or runs a full MMA program, see the <a href="/mma-gym-software/">MMA gym software</a> page.
+        </p>
+
+        <AppScreenshot src="/images/app/mma-timetable.webp" width={1600} height={1000} caption="The weekly schedule for one venue: Muay Thai, Wrestling, MMA, BJJ and karate classes with their expected regulars" />
+
+        <h2>Ranks Are Optional: Levels, Armbands or Nothing</h2>
+
+        <p>
+          Unlike karate or taekwondo, kickboxing and Muay Thai have no single belt system that every gym follows. Many gyms have no ranks at all. Others use levels, colored armbands or shorts to mark progress, or follow the rank system of an association they belong to. All of these are normal.
+        </p>
+
+        <p>BeltManager works with each approach:</p>
+
+        <ul>
+          <li><strong>No ranks.</strong> A discipline can run classes without a ladder. You still get scheduling, attendance and everything else on this page.</li>
+          <li><strong>Simple levels.</strong> Set up a ladder such as beginner, intermediate and advanced, and group classes by level.</li>
+          <li><strong>Your own rank system.</strong> Name each step and choose its color, add stripes between steps, and set the minimum time and minimum sessions for each.</li>
+          <li><strong>More than one discipline.</strong> Each is its own style with its own ladder, and a member's profile shows every progression in one place.</li>
+        </ul>
+
+        <p>
+          If you do use levels, BeltManager keeps a ready-to-test list built from attendance and time at level. You add members to a test session and record pass or not passed with one tap. A pass moves the member up and tells them, or their family, by email and in the app. For how to pace tests and set a fee, see <a href="/blog/belt-testing-how-often-what-to-charge/">how often to hold belt tests and what to charge</a>.
+        </p>
+
+        <h2>One Schedule for Fitness, Technique, Sparring and Fight Team</h2>
+
+        <p>
+          Each class is a group on the weekly schedule. Groups can have a level range and an age range, so the class list shows the members who belong there.
+        </p>
+
+        <ul>
+          <li>Separate groups for fitness kickboxing, fundamentals, intermediate and advanced classes</li>
+          <li>Sparring and open mat as regular groups</li>
+          <li>Fight team as its own group, so you can message only the team</li>
+          <li>Kids and teens classes with age ranges</li>
+          <li>One weekly schedule per venue, across every discipline</li>
+          <li>Expected regulars shown on every class</li>
+          <li>Instructor-to-student ratio warnings</li>
+          <li>Automatic notices when a class is canceled, moved or closed</li>
+        </ul>
+
+        <p>
+          The <a href="/martial-arts-scheduling-software/">scheduling software</a> page covers the schedule in more detail.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <ComparisonTable
+          title="Kickboxing Gym Software vs Generic Gym Software vs Spreadsheets"
+          headers={['BeltManager', 'Generic gym software', 'Spreadsheets']}
+          rows={comparisonData}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <h2>Attendance and Check-In</h2>
+
+        <p>
+          Attendance is the record everything else rests on. It tells you who is training, who has drifted away, and, if you use levels, who has put in the sessions to move up.
+        </p>
+
+        <ul>
+          <li>Attendance for every session, so members training twice a day are counted twice</li>
+          <li>Walk-ins added to the attendance list on the spot</li>
+          <li>Tablet kiosk mode with a PIN at the front desk</li>
+          <li>Trial class tracking for prospects</li>
+          <li>An attendance report by class and by member, with CSV export</li>
+          <li>A list of members who have missed their recent classes, so a coach can reach out before they quit</li>
+        </ul>
+
+        <p>
+          If you are still on a clipboard, our free <a href="/attendance-sheet-template/">attendance sheet template</a> gives you a printable sheet and a CSV you can import later.
+        </p>
+
+        <h2>Technique Lists and Coaching Notes</h2>
+
+        <p>
+          Striking is taught in a sequence: stance and footwork before combinations, checks before sparring, clinch work when the basics hold up. Writing that sequence down makes classes consistent between coaches.
+        </p>
+
+        <ul>
+          <li>A technique list for each level, with an optional video link for each item</li>
+          <li>Readiness marked per member: Ready, Almost or Not ready</li>
+          <li>Per-member notes after each session</li>
+          <li>Competition results recorded as achievements</li>
+          <li>Fight nights, tournaments and seminars listed as events</li>
+        </ul>
+
+        <h2>Memberships and Families</h2>
+
+        <ul>
+          <li>All-access memberships alongside single-discipline plans</li>
+          <li>Family memberships with sibling discounts</li>
+          <li>Membership freezes for injuries</li>
+          <li>Family accounts linking guardians and children</li>
+          <li>A parent portal and a free iPhone app: each child's classes, attending or not attending, and waivers signed by the parent</li>
+          <li>Whole-gym announcements by email and app push</li>
+        </ul>
+
+        <AppScreenshot src="/images/app/mma-memberships.webp" width={1600} height={1000} caption="Memberships: an all-access plan covering every adult discipline alongside single-discipline plans" />
+
+        <p>
+          US card billing is coming in 2027; until then you record payments by hand. The <a href="/martial-arts-billing-software/">billing page</a> explains what works today.
+        </p>
+
+        <h2>What BeltManager Does Not Do</h2>
+
+        <ul>
+          <li><strong>No fight records.</strong> It doesn't track fight records, sparring logs or weight cuts.</li>
+          <li><strong>No point of sale.</strong> No gear sales, inventory or punch cards.</li>
+          <li><strong>No proration.</strong> Mid-cycle membership changes are not prorated.</li>
+          <li><strong>No US card billing yet.</strong> Coming in 2027.</li>
+          <li><strong>No link to sanctioning bodies.</strong> It doesn't connect to any federation or handle fight licensing.</li>
+        </ul>
+
+        <h2>Pricing for Kickboxing and Muay Thai Gyms</h2>
+
+        <p>
+          BeltManager is free for up to 25 students, with every feature included and no credit card. Paid plans are Club at $29, School at $49 and Academy at $79 a month. There is no setup fee and no contract. See the <a href="/pricing/">pricing page</a> for which plan fits your member count.
+        </p>
+
+        <h2>Related Resources</h2>
+
+        <ul>
+          <li><a href="/mma-gym-software/">MMA Gym Software</a>: striking, grappling and MMA on one schedule</li>
+          <li><a href="/bjj-gym-software/">BJJ Gym Software</a>: belts and stripes for jiu-jitsu</li>
+          <li><a href="/taekwondo-school-software/">Taekwondo School Software</a>: geup, poom and dan tracking</li>
+          <li><a href="/judo-club-software/">Judo Club Software</a>: kyu and dan tracking for judo clubs</li>
+          <li><a href="/attendance-sheet-template/">Free Attendance Sheet Template</a>: printable sheet and CSV</li>
+          <li><a href="/blog/belt-testing-how-often-what-to-charge/">Belt Testing: How Often, and What to Charge</a></li>
+          <li><a href="/blog/types-of-martial-arts/">Types of Martial Arts</a>: how the disciplines compare</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <FAQEnhanced
+    site="beltmanager"
+    pageUrl="https://beltmanager.com/kickboxing-gym-software/"
+    title="Frequently Asked Questions About Kickboxing Gym Software"
+    faqs={faqItems}
+  />
+
+  <section class="section bg-brand-red text-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Put Your Gym on One Schedule?</h2>
+        <p class="text-xl mb-8 opacity-95">
+          Classes, attendance and optional levels for kickboxing and Muay Thai. Free for up to 25 students. Paid plans from $29 a month.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>
+          <a href="/pricing/" class="btn-secondary-large border-white text-white hover:bg-white hover:bg-opacity-10">View Pricing</a>
+        </div>
+        <p class="mt-6 text-sm opacity-90">Free for up to 25 students. Paid plans from $29 a month. • No credit card • No contract</p>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 4rem 0;
+  }
+
+  .prose {
+    max-width: none;
+  }
+
+  .prose h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose p {
+    margin-bottom: 1.5rem;
+    color: #475569;
+    line-height: 1.7;
+  }
+
+  .prose ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .prose li {
+    margin-bottom: 0.5rem;
+    color: #475569;
+  }
+
+  .prose strong {
+    color: var(--brand-navy);
+    font-weight: 600;
+  }
+
+  .prose a {
+    color: var(--brand-red);
+    text-decoration: none;
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+  }
+
+  .btn-primary-large,
+  .btn-secondary-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary-large:hover,
+  .btn-secondary-large:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary-large {
+    border: 2px solid;
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 3rem 0;
+    }
+
+    .prose h2 {
+      font-size: 1.5rem;
+    }
+
+    .prose h3 {
+      font-size: 1.25rem;
+    }
+  }
+
+  .prose ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    list-style: decimal;
+  }
+
+  .prose ul {
+    list-style: disc;
+  }
+
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .prose th,
+  .prose td {
+    border: 1px solid #e2e8f0;
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    color: #475569;
+  }
+
+  .prose th {
+    background: #f8fafc;
+    color: var(--brand-navy);
+    font-weight: 600;
+  }
+</style>

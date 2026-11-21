@@ -1,0 +1,480 @@
+---
+import { appLink } from '../utils/appLink';
+import AppScreenshot from '../components/AppScreenshot.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+
+const comparisonData = [
+  { label: 'Geup, poom and dan ladder with your own belt colors', values: [true, 'Rarely', 'By hand'], highlight: true },
+  { label: 'Stripes and tips between belts', values: [true, 'Rarely', 'By hand'], highlight: true },
+  { label: 'Poomsae or pattern list for each belt', values: [true, false, 'By hand'], highlight: true },
+  { label: 'Ready-to-test list from attendance and time at belt', values: [true, false, false] },
+  { label: 'Belt test sessions with one-tap results', values: [true, false, false] },
+  { label: 'Printable rank certificates', values: [true, false, 'By hand'] },
+  { label: 'Family accounts with a parent app', values: [true, 'Varies', false] },
+  { label: 'Attendance for every class', values: [true, true, 'By hand'] }
+];
+
+const faqItems = [
+  {
+    question: "What is taekwondo school software?",
+    answer: "Taekwondo school software is a management system built around how a taekwondo school runs: a student list, a belt ladder from 10th geup to black belt, the forms each belt has to learn, class schedules, attendance, belt tests and messages to families. It replaces paper attendance cards and spreadsheets, and it tells you who is ready to test without counting classes by hand.",
+    links: [
+      { text: 'All features', url: '/martial-arts-software/' },
+      { text: 'Pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "Can BeltManager handle our belt colors and stripes?",
+    answer: "Yes. You build your own ladder: the belts, their order and their colors, with stripes or tips between belts. Schools that use half belts, camo belts or a separate Little Tigers ladder for preschoolers set those up as their own belts or their own style. Nothing is fixed to one organization's color order.",
+    links: [
+      { text: 'Taekwondo belt order', url: '/blog/taekwondo-belts/' }
+    ]
+  },
+  {
+    question: "Does it track poomsae or patterns for each belt?",
+    answer: "Yes. You build a technique list for each belt, with an optional video link for each item. For a Kukkiwon-style school that is usually the Taegeuk poomsae; for an ITF-style school, the patterns from Chon-Ji onward. Kicks, one-step sparring, self-defense and board breaks can go on the same list. Each student's record shows their readiness on every item as Ready, Almost or Not ready.",
+    links: [
+      { text: 'Curriculum features', url: '/martial-arts-software/' }
+    ]
+  },
+  {
+    question: "How does belt testing work?",
+    answer: "BeltManager uses attendance and time at belt to show who is ready to test, against the minimums you set for each belt. You add students to a belt test session and record pass or not passed with one tap. A pass updates the student's belt, families are told by email and in the parent app, and you can print a rank certificate. Belt test fees can be raised as a one-off invoice; online belt test sign-up isn't available yet.",
+    links: [
+      { text: 'How often to test and what to charge', url: '/blog/belt-testing-how-often-what-to-charge/' }
+    ]
+  },
+  {
+    question: "Does BeltManager submit Kukkiwon or federation applications?",
+    answer: "No. You can set your minimum time and sessions for each belt, poom and dan to match your organization's rules, and keep each student's promotion history. BeltManager doesn't connect to Kukkiwon, USA Taekwondo, the ATA, the ITF or any other governing body, and it doesn't track federation licenses or handle tournament entry.",
+    links: [
+      { text: 'Belt testing features', url: '/martial-arts-software/' }
+    ]
+  },
+  {
+    question: "Can parents see their child's progress?",
+    answer: "Yes. Parents sign in once to the parent portal or the free iPhone app and see every child's belt and upcoming classes, answer whether each child is coming, sign waivers, and get promotion and achievement notices. Children's own email addresses are never used; messages go to their guardians.",
+    links: [
+      { text: 'Family features', url: '/dojo-management-software/' }
+    ]
+  },
+  {
+    question: "We run after-school and Little Tigers classes. Does that fit?",
+    answer: "Yes. Each class is a group on the weekly schedule with its own belt range and age range, so a Little Tigers class, a kids' color belt class, a black belt class and an adult class sit side by side. You can message one class or the whole school. BeltManager doesn't handle after-school pickup routes or transportation.",
+    links: [
+      { text: 'Scheduling', url: '/martial-arts-scheduling-software/' }
+    ]
+  },
+  {
+    question: "How much does taekwondo school software cost?",
+    answer: "BeltManager is free for up to 25 students. Paid plans are Club at $29, School at $49 and Academy at $79 a month, with every feature on every plan, no setup fee and no contract. When you compare other systems, check whether the price is flat, per student or by student-count band, and whether there is a setup fee or a contract.",
+    links: [
+      { text: 'View pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "Can US schools take tuition by card in BeltManager?",
+    answer: "Not yet. US card billing is coming in 2027. Until then you can set up memberships and record payments by hand, and raise one-off invoices such as belt test fees.",
+    links: [
+      { text: 'Billing', url: '/martial-arts-billing-software/' }
+    ]
+  },
+  {
+    question: "How do we move our students in?",
+    answer: "Setup is self-serve. Add your belt ladder, technique lists and classes, then add your students or send us your list to import. Put students into their classes and take attendance at your next class. If you are coming from paper, our printable attendance sheet is a simple way to get a clean list first.",
+    links: [
+      { text: 'Attendance sheet template', url: '/attendance-sheet-template/' },
+      { text: 'Contact us', url: '/contact/' }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Taekwondo School Software (2026)"
+  description="Geup, poom and dan tracking, poomsae lists per belt, belt tests and attendance for taekwondo schools. Free for up to 25 students. Paid plans from $29 a month."
+>
+  <BreadcrumbsEnhanced
+    site="beltmanager"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Taekwondo School Software', href: '/taekwondo-school-software/' }
+    ]}
+  />
+
+  <!-- Hero Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block px-4 py-2 mb-4 text-sm font-semibold text-brand-red bg-brand-red-light rounded-full">For taekwondo schools</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Taekwondo School Software</h1>
+        <p class="text-xl text-gray-600">
+          Run your taekwondo school from one place: your belt ladder from white belt to black belt, the forms each belt has to learn, a ready-to-test list built from attendance, and a free app for parents.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={appLink(Astro.url.pathname, 'hero')} class="btn-primary">Get started free</a>
+          <a href="/pricing/" class="btn-secondary">View pricing</a>
+        </div>
+        <p class="mt-4 text-sm text-gray-500">Free for up to 25 students. No credit card. No contract.</p>
+      </div>
+    </div>
+  </section>
+
+  <FeaturedAnswer question="What is taekwondo school software?">
+    Taekwondo school software is a management system for taekwondo schools. It keeps the student list, the geup, poom and dan belt ladder, the forms and techniques for each belt, class schedules, attendance, belt tests and family messages in one place, and shows which students have met your requirements to test.
+  </FeaturedAnswer>
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <h2>What a Taekwondo School Needs From Its Software</h2>
+
+        <p>
+          A taekwondo school has a lot of moving parts. There are several belt levels on the floor at once, a testing calendar that never stops, families with two or three children at different belts, and a head instructor who would rather be teaching than counting attendance cards.
+        </p>
+
+        <p>
+          General gym software is built around memberships and check-ins. It can tell you who paid and who walked in. It usually cannot tell you that a green belt has been to enough classes, has held the belt long enough and knows the form for blue belt. That question, asked for every student before every test, is the one a taekwondo school asks most often.
+        </p>
+
+        <p>
+          BeltManager is <a href="/martial-arts-software/">martial arts software</a> built around that question. This page explains how it fits a taekwondo school, where it stops, and what it costs. If you teach more than one art, the <a href="/dojo-management-software/">dojo management software</a> page covers how several styles share one student list.
+        </p>
+
+        <AppScreenshot src="/images/app/dojo-dashboard.webp" width={1600} height={1220} caption="The BeltManager dashboard: active and trial students, who is ready for their next belt, and attendance over the last 30 days" />
+
+        <h2>Geup, Poom and Dan: Your Belt Ladder, Your Colors</h2>
+
+        <p>
+          Taekwondo color belt ranks are called geup (also written gup or kup) and count down toward black belt. Black belt ranks are dan and count up. Under Kukkiwon rules, students under 15 hold a poom rank, the junior black belt, in place of a dan.
+        </p>
+
+        <p>
+          The structure is shared. The colors are not. Belt colors and their order differ from one organization to the next, and from one school to the next inside the same organization. Some schools add half belts or tips between colors; some run a separate ladder for preschoolers. Our <a href="/blog/taekwondo-belts/">taekwondo belt order guide</a> walks through the common orders.
+        </p>
+
+        <p>In BeltManager you build the ladder you teach:</p>
+
+        <ul>
+          <li><strong>Belts in your order,</strong> with your colors, from white belt through the geup ranks to poom and dan</li>
+          <li><strong>Stripes and tips</strong> shown on the belt badge, for schools that mark progress between tests</li>
+          <li><strong>A separate ladder for a separate program,</strong> such as a preschool class with its own belts, set up as its own style</li>
+          <li><strong>Minimum time and minimum sessions for each belt,</strong> set by you</li>
+          <li><strong>Promotion history</strong> on every student's record</li>
+        </ul>
+
+        <AppScreenshot src="/images/app/dojo-belt-progression.webp" width={840} height={1560} caption="A student's training record: readiness for the next belt (days at belt, sessions and techniques), the technique checklist and promotion history" />
+
+        <h2>Poomsae, Patterns and Test Requirements for Each Belt</h2>
+
+        <p>
+          Every belt has a list of things a student must show before testing. In a Kukkiwon-style school the backbone is usually the Taegeuk poomsae. In an ITF-style school it is the patterns, starting with Chon-Ji. Around the form sit kicks, one-step sparring, self-defense, sparring, board breaking and terminology.
+        </p>
+
+        <p>
+          In BeltManager you build a technique list for each belt and add an optional video link to each item, so students and parents can check the form they are practicing at home. Each student's record shows readiness on every item as Ready, Almost or Not ready, and instructors can add a note on a student after class.
+        </p>
+
+        <ul>
+          <li>One list per belt, in your words: forms, kicks, breaks, sparring, self-defense, terminology</li>
+          <li>Optional video link for each item</li>
+          <li>Readiness marked per student: Ready, Almost or Not ready</li>
+          <li>Per-student notes after each class</li>
+          <li>Report cards and achievements that parents can see</li>
+        </ul>
+
+        <h2>Belt Tests: From "Who Is Ready?" to Certificates</h2>
+
+        <p>
+          Before a test, someone has to work out who is eligible. On paper that means going through attendance cards one by one. BeltManager keeps a ready-to-test list built from each student's attendance and time at belt, checked against the minimums you set for that belt.
+        </p>
+
+        <ol>
+          <li><strong>Check the ready-to-test list.</strong> It shows who has met your minimum sessions and time at belt.</li>
+          <li><strong>Create a belt test session</strong> and add the students you choose. The list advises; you decide.</li>
+          <li><strong>Record results with one tap:</strong> pass or not passed.</li>
+          <li><strong>A pass updates the student's belt.</strong> Families are told by email and in the parent app.</li>
+          <li><strong>Print rank certificates</strong> for the students who passed.</li>
+        </ol>
+
+        <p>
+          Belt test fees can be raised as a one-off invoice. Online belt test sign-up isn't available yet. For help deciding how often to test and how to set the fee, see <a href="/blog/belt-testing-how-often-what-to-charge/">how often to hold belt tests and what to charge</a>.
+        </p>
+
+        <AppScreenshot src="/images/app/dojo-grading-event.webp" width={1600} height={1200} caption="A belt test session with a one-tap pass or not-passed result for each student (demo data from a karate school; a taekwondo school sees its own geup belts)" />
+
+        <h3>Black belt timing under Kukkiwon rules</h3>
+
+        <p>
+          For color belts, your school or organization sets the pace. For black belts certified through Kukkiwon, there are minimum periods between certificates. The table below is taken from the UK Kukkiwon Office's dan process guide, which reproduces the Kukkiwon rule. Check the current rule with your own national body before you promise a student a test date.
+        </p>
+
+        <div class="overflow-x-auto">
+          <table>
+            <thead>
+              <tr><th>Promotion</th><th>Minimum time between certificates</th><th>Minimum age</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1st poom to 2nd poom</td><td>1 year</td><td>Up to and including 15</td></tr>
+              <tr><td>2nd poom to 3rd poom</td><td>2 years</td><td>Up to and including 15</td></tr>
+              <tr><td>1st dan to 2nd dan</td><td>1 year</td><td>16 (15 if starting from poom)</td></tr>
+              <tr><td>2nd dan to 3rd dan</td><td>2 years</td><td>18 (15 if starting from poom)</td></tr>
+              <tr><td>3rd dan to 4th dan</td><td>3 years</td><td>21 (18 if starting from poom)</td></tr>
+              <tr><td>4th dan to 5th dan</td><td>4 years</td><td>25 (22 if starting from poom)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-sm">
+          Source: <a href="https://www.britishtaekwondo.org.uk/wp-content/uploads/2024/07/UK-Kukkiwon-Office-Dan-Grading-process-guide.pdf" rel="noopener nofollow" target="_blank">UK Kukkiwon Office Dan process guide, British Taekwondo</a> (July 2024), checked November 21, 2026. In BeltManager you enter these, or your own organization's, as the minimum time for each belt. BeltManager doesn't connect to Kukkiwon or submit applications.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <ComparisonTable
+          title="Taekwondo School Software vs Generic Gym Software vs Spreadsheets"
+          headers={['BeltManager', 'Generic gym software', 'Spreadsheets']}
+          rows={comparisonData}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <h2>Classes, Attendance and the Weekly Schedule</h2>
+
+        <p>
+          Each class is a group on the weekly schedule, with a belt range and an age range. A typical taekwondo week has a preschool class, kids' color belt classes split by level, a black belt class, an adult class, and often sparring or demo team practice.
+        </p>
+
+        <ul>
+          <li>Class groups with belt and age ranges, so the right students appear in the right class</li>
+          <li>Expected regulars shown on every class, with walk-ins added on the spot</li>
+          <li>Attendance taken for every session, feeding straight into test eligibility</li>
+          <li>Tablet kiosk mode with a PIN for check-in at the front desk</li>
+          <li>Trial class tracking for prospects</li>
+          <li>Instructor-to-student ratio warnings</li>
+          <li>Automatic notices when a class is canceled, moved or closed</li>
+          <li>An attendance report by class and by student, with CSV export, and a list of students who have missed their recent classes</li>
+        </ul>
+
+        <p>
+          Sparring team and demo team work the same way as any other class: put the team in its own group and you can message just that group. The <a href="/martial-arts-scheduling-software/">scheduling software</a> page has the details. If you are still on paper, start with our free <a href="/attendance-sheet-template/">attendance sheet template</a>.
+        </p>
+
+        <h2>Families and the Parent App</h2>
+
+        <p>
+          Taekwondo schools teach a lot of children, and children come with parents who want to know three things: when is class, is my child ready to test, and what do I need to sign.
+        </p>
+
+        <ul>
+          <li>Family accounts linking guardians and children, with siblings on one account</li>
+          <li>A parent portal and a free iPhone app showing each child's belt and upcoming classes</li>
+          <li>One-tap attending or not attending for each class</li>
+          <li>Waivers signed by the parent in the portal</li>
+          <li>Promotion and achievement notices</li>
+          <li>Messages to a single class or the whole school, by email and app push</li>
+          <li>A sibling discount on the family invoice</li>
+        </ul>
+
+        <p>
+          Children's own email addresses are never used. Messages go to their guardians.
+        </p>
+
+        <AppScreenshot src="/images/app/karate-parent-portal.webp" width={1200} height={1700} caption="The parent portal: each child's belt and their classes for the next two weeks, with one-tap attending or not attending" />
+
+        <h2>What BeltManager Does Not Do</h2>
+
+        <p>It is better to know the limits before you sign up than after.</p>
+
+        <ul>
+          <li><strong>No link to governing bodies.</strong> BeltManager doesn't connect to Kukkiwon, USA Taekwondo, the ATA or the ITF, and doesn't track federation licenses or submit dan applications.</li>
+          <li><strong>No tournament management.</strong> You can list tournaments as events and record medals as achievements. Brackets, scoring and entry are not part of it.</li>
+          <li><strong>No online belt test sign-up yet.</strong> You add students to a test session yourself.</li>
+          <li><strong>No US card billing yet.</strong> US card billing is coming in 2027; until then you record payments by hand.</li>
+          <li><strong>No after-school transportation or pickup routing.</strong></li>
+        </ul>
+
+        <h2>Pricing for Taekwondo Schools</h2>
+
+        <p>
+          BeltManager is free for up to 25 students, with every feature included and no credit card. Paid plans are Club at $29, School at $49 and Academy at $79 a month. There is no setup fee and no contract. The <a href="/pricing/">pricing page</a> shows which plan fits your student count.
+        </p>
+
+        <h2>Related Resources</h2>
+
+        <ul>
+          <li><a href="/blog/taekwondo-belts/">Taekwondo Belts in Order</a>: the belt system explained</li>
+          <li><a href="/blog/belt-testing-how-often-what-to-charge/">Belt Testing: How Often, and What to Charge</a>: published minimums and a way to set fees</li>
+          <li><a href="/attendance-sheet-template/">Free Attendance Sheet Template</a>: printable sheet and CSV</li>
+          <li><a href="/karate-school-software/">Karate School Software</a>: kyu and dan tracking with kata lists</li>
+          <li><a href="/kickboxing-gym-software/">Kickboxing and Muay Thai Gym Software</a>: for striking gyms with or without ranks</li>
+          <li><a href="/judo-club-software/">Judo Club Software</a>: kyu and dan tracking for judo clubs</li>
+          <li><a href="/martial-arts-software/">Martial Arts Software Overview</a>: every feature in one place</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <FAQEnhanced
+    site="beltmanager"
+    pageUrl="https://beltmanager.com/taekwondo-school-software/"
+    title="Frequently Asked Questions About Taekwondo School Software"
+    faqs={faqItems}
+  />
+
+  <section class="section bg-brand-red text-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Run Your Taekwondo School From One Place?</h2>
+        <p class="text-xl mb-8 opacity-95">
+          Your belt ladder, forms for each belt and a ready-to-test list built from your attendance records. Free for up to 25 students. Paid plans from $29 a month.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>
+          <a href="/pricing/" class="btn-secondary-large border-white text-white hover:bg-white hover:bg-opacity-10">View Pricing</a>
+        </div>
+        <p class="mt-6 text-sm opacity-90">Free for up to 25 students. Paid plans from $29 a month. • No credit card • No contract</p>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 4rem 0;
+  }
+
+  .prose {
+    max-width: none;
+  }
+
+  .prose h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose p {
+    margin-bottom: 1.5rem;
+    color: #475569;
+    line-height: 1.7;
+  }
+
+  .prose ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .prose li {
+    margin-bottom: 0.5rem;
+    color: #475569;
+  }
+
+  .prose strong {
+    color: var(--brand-navy);
+    font-weight: 600;
+  }
+
+  .prose a {
+    color: var(--brand-red);
+    text-decoration: none;
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+  }
+
+  .btn-primary-large,
+  .btn-secondary-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary-large:hover,
+  .btn-secondary-large:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary-large {
+    border: 2px solid;
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 3rem 0;
+    }
+
+    .prose h2 {
+      font-size: 1.5rem;
+    }
+
+    .prose h3 {
+      font-size: 1.25rem;
+    }
+  }
+
+  .prose ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    list-style: decimal;
+  }
+
+  .prose ul {
+    list-style: disc;
+  }
+
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .prose th,
+  .prose td {
+    border: 1px solid #e2e8f0;
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    color: #475569;
+  }
+
+  .prose th {
+    background: #f8fafc;
+    color: var(--brand-navy);
+    font-weight: 600;
+  }
+</style>
