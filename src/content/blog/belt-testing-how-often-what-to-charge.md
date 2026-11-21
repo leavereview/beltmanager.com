@@ -1,8 +1,8 @@
 ---
 title: "Belt Testing: How Often to Test and What to Charge"
 description: "Set a belt testing calendar and a fair test fee. Published minimums and fees from IBJJF, USA Judo, USA Karate and Kukkiwon, plus a cost-based fee method."
-image: /images/blog-belt-ceremony.jpg
-imageAlt: "Students lined up at a martial arts belt ceremony"
+image: /images/blog-kids-class.jpg
+imageAlt: "Rows of martial arts students in white uniforms and colored belts kneeling outdoors"
 date: "2026-11-21"
 tags: ["Belts", "Business"]
 author: "BeltManager Team"
