@@ -1,6 +1,6 @@
 ---
 title: "Martial Arts Belt Order Guide"
-description: "Martial arts belt orders compared: karate (10-colour kyu/dan), BJJ (5 belts, 4 stripes), TKD (10 gup), and judo. Typical timelines and what each rank signals."
+description: "Martial arts belt orders compared: karate (10-color kyu/dan), BJJ (5 belts, 4 stripes), TKD (10 gup), and judo. Typical timelines and what each rank signals."
 date: "2026-01-16"
 image: "/images/close-up-female-karate-fighter.jpg"
 tags: ["Belts", "Martial Arts"]

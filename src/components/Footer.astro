@@ -2,6 +2,8 @@
 import { appLink } from '../utils/appLink';
 // Footer.astro
 const currentYear = new Date().getFullYear();
+// The UK pages quote pounds; every other page is US English and quotes dollars.
+const fromPrice = Astro.url.pathname.startsWith('/uk/') ? '£29' : '$29';
 
 const footerLinks = {
   software: [
@@ -30,6 +32,7 @@ const footerLinks = {
     { label: 'Pricing', href: '/pricing/' },
     { label: 'About', href: '/about/' },
     { label: 'Contact', href: '/contact/' },
+    { label: 'UK', href: '/uk/' },
   ],
   legal: [
     { label: 'Privacy Policy', href: '/privacy-policy/' },
@@ -47,7 +50,7 @@ const footerLinks = {
           <img src="/logo.svg" alt="BeltManager" class="h-10 brightness-0 invert" />
         </a>
         <p class="text-gray-400 text-sm leading-relaxed mb-6">
-          The complete martial arts management platform. Streamline your dojo operations with powerful scheduling, billing, and student management tools.
+          The complete martial arts management platform. Streamline your dojo operations with powerful scheduling, attendance and student management tools.
         </p>
         <div class="flex gap-4">
           <a href="https://www.linkedin.com/company/beltmanager" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
@@ -119,7 +122,7 @@ const footerLinks = {
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-wider mb-4">Get Started</h3>
         <p class="text-gray-400 text-sm mb-4">
-          Ready to transform your martial arts school? BeltManager is free for up to 25 students, with paid plans from £29 a month.
+          Ready to transform your martial arts school? BeltManager is free for up to 25 students, with paid plans from {fromPrice} a month.
         </p>
         <a href={appLink(Astro.url.pathname, 'footer')} class="btn-primary text-sm">
           Get started free

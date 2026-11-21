@@ -42,10 +42,6 @@ const comparisonData = [
   {
     label: 'Printable Rank Certificates',
     values: [true, true, false]
-  },
-  {
-    label: 'Monthly Price',
-    values: ['Free', '£120', '£0']
   }
 ];
 
@@ -68,7 +64,7 @@ const faqItems = [
   },
   {
     question: "How does belt testing work in karate software?",
-    answer: "BeltManager uses attendance and time at belt to show who is ready to grade, against the minimums you set for each belt. You add students to a grading session and record pass or not passed with one tap. A pass updates their belt, families are told by email and in the parent app, and you can print a rank certificate. Grading fees can be raised as a one-off invoice; online grading registration isn't available yet.",
+    answer: "BeltManager uses attendance and time at belt to show who is ready to test, against the minimums you set for each belt. You add students to a belt test session and record pass or not passed with one tap. A pass updates their belt, families are told by email and in the parent app, and you can print a rank certificate. Belt test fees can be raised as a one-off invoice; online belt testing registration isn't available yet.",
     links: [
       { text: 'Testing management', url: '/martial-arts-software/' },
       { text: 'Belt system explained', url: '/blog/karate-belt-order-complete-guide/' }
@@ -91,7 +87,7 @@ const faqItems = [
   },
   {
     question: "How much does karate school software cost?",
-    answer: "Most karate software costs £50-150 per month depending on student count and features. Smaller schools (under 75 students) typically find options at £50-80 monthly. Mid-size schools (75-200 students) pay £80-120. Larger academies or multi-location operations pay £120-200. Pricing models include flat-rate (unlimited students) or per-student (£1-2 per active student). BeltManager is free for up to 25 students, with paid plans at £29, £49 and £79 a month and every feature on every plan.",
+    answer: "Karate school software is usually priced as a flat monthly plan, a price per active student, or plans set by student-count bands, sometimes with paid add-ons, a setup fee or a contract. Check what is included at each level, not only the headline price. BeltManager is free for up to 25 students. Paid plans are Club at $29, School at $49 and Academy at $79 a month, with every feature on every plan, no setup fee and no contract. See the pricing page for the full details.",
     links: [
       { text: 'View pricing', url: '/pricing/' },
       { text: 'Compare features', url: '/martial-arts-software/' }
@@ -114,15 +110,15 @@ const faqItems = [
     ]
   },
   {
-    question: "Can I follow my association's grading rules?",
-    answer: "You can set your own kyu and dan ladder, belt colours, minimum time at each belt and minimum sessions to match your association's (JKA, SKA, WKF, ISKF and so on) rules. BeltManager doesn't connect to governing bodies, track federation licences or handle competition registration.",
+    question: "Can I follow my association's belt test rules?",
+    answer: "You can set your own kyu and dan ladder, belt colors, minimum time at each belt and minimum sessions to match your association's (JKA, SKA, WKF, ISKF and so on) rules. BeltManager doesn't connect to governing bodies, track federation licenses or handle competition registration.",
     links: [
-      { text: 'Grading features', url: '/martial-arts-software/' }
+      { text: 'Belt testing features', url: '/martial-arts-software/' }
     ]
   },
   {
     question: "How long does it take to set up BeltManager?",
-    answer: "Setup is self-serve. Add your kyu and dan ladder, kata lists and classes, add your students (or send us your list to import), put them into their groups and take your first register.",
+    answer: "Setup is self-serve. Add your kyu and dan ladder, kata lists and classes, add your students (or send us your list to import), put them into their groups and take attendance at your first class.",
     links: [
       { text: 'Implementation guide', url: '/martial-arts-software/' },
       { text: 'Contact support', url: '/contact/' }
@@ -133,7 +129,7 @@ const faqItems = [
 
 <BaseLayout
   title="Karate School Software (2026)"
-  description="Kyu/dan belt tracking, kata readiness, gradings and registers built for karate dojos. Free for up to 25 students. Paid plans from £29 a month."
+  description="Kyu/dan belt tracking, kata readiness, belt tests and attendance built for karate dojos. Free for up to 25 students. Paid plans from $29 a month."
 >
   <!-- Breadcrumbs -->
   <BreadcrumbsEnhanced
@@ -178,7 +174,11 @@ const faqItems = [
           Karate school software bridges this divide by handling administrative complexity while respecting the pedagogical structures that define karate education. From tracking students through the kyu ranks to managing kihon, kata, and kumite curriculum requirements, purpose-built software supports rather than disrupts the training methodology you have established.
         </p>
 
-        <AppScreenshot src="/images/app/karate-dashboard.webp" width={1600} height={1000} caption="The dashboard filtered to one dojo: tonight's classes, students ready to grade, and attendance over the last 30 days" />
+        <p>
+          Many karate schools also look at broader <a href="/dojo-management-software/">dojo management software</a> to see how attendance, belt testing and family accounts fit together before choosing a system.
+        </p>
+
+        <AppScreenshot src="/images/app/karate-dashboard.webp" width={1600} height={1000} caption="The dashboard filtered to one dojo: tonight's classes, students ready to test, and attendance over the last 30 days" />
 
         <h3>The Kyu-Dan Ranking System</h3>
 
@@ -256,7 +256,7 @@ const faqItems = [
           <li>Your association's minimums, set per belt</li>
         </ul>
 
-        <AppScreenshot src="/images/app/karate-belt-testing.webp" width={1600} height={1000} caption="Students filtered to those eligible for their next grading, with current belt and group" />
+        <AppScreenshot src="/images/app/karate-belt-testing.webp" width={1600} height={1000} caption="Students filtered to those eligible for their next belt test, with current belt and group" />
 
         <h3>2. Kata Library and Progress</h3>
         <ul>
@@ -268,10 +268,10 @@ const faqItems = [
           <li>Per-student notes after each class</li>
         </ul>
 
-        <h3>3. Testing and Grading Management</h3>
+        <h3>3. Belt Testing Management</h3>
         <ul>
-          <li>Ready-to-grade list from attendance and time at belt</li>
-          <li>Grading sessions with the students you choose</li>
+          <li>Ready-to-test list from attendance and time at belt</li>
+          <li>Belt test sessions with the students you choose</li>
           <li>One-tap pass or not-passed results</li>
           <li>Printable rank certificates</li>
           <li>Belt updated automatically on a pass</li>
@@ -299,7 +299,7 @@ const faqItems = [
 
         <h3>Organization Requirements</h3>
         <p>
-          Many karate schools affiliate with larger organizations (JKA, SKA, WKF, ISKF, etc.) that impose specific testing requirements. In BeltManager you set the minimum time and sessions for each belt to match your association's rules. BeltManager doesn't connect to governing bodies or track federation licences.
+          Many karate schools affiliate with larger organizations (JKA, SKA, WKF, ISKF, etc.) that impose specific testing requirements. In BeltManager you set the minimum time and sessions for each belt to match your association's rules. BeltManager doesn't connect to governing bodies or track federation licenses.
         </p>
 
         <h2>Related Resources</h2>
@@ -330,13 +330,13 @@ const faqItems = [
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4">Ready to Streamline Your Karate Dojo?</h2>
         <p class="text-xl mb-8 opacity-95">
-          Belt tracking, kata readiness and a ready-to-grade list built from your registers. Free for up to 25 students. Paid plans from £29 a month.
+          Belt tracking, kata readiness and a ready-to-test list built from your attendance records. Free for up to 25 students. Paid plans from $29 a month.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>
           <a href="/pricing/" class="btn-secondary-large border-white text-white hover:bg-white hover:bg-opacity-10">View Pricing</a>
         </div>
-        <p class="mt-6 text-sm opacity-90">Free for up to 25 students. Paid plans from £29 a month. • No credit card • No contract</p>
+        <p class="mt-6 text-sm opacity-90">Free for up to 25 students. Paid plans from $29 a month. • No credit card • No contract</p>
       </div>
     </div>
   </section>

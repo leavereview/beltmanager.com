@@ -10,10 +10,10 @@ const lastmod = buildLastmodMap(dirname(fileURLToPath(import.meta.url)));
 export default defineConfig({
   site: 'https://beltmanager.com',
   redirects: {
-    '/blog/karate-belt-colors-guide': '/blog/karate-belt-order-complete-guide',
-    '/blog/karate-belt-ranking-system-guide': '/blog/karate-belt-order-complete-guide',
-    '/blog/karate-belts-ranking-system-guide': '/blog/karate-belt-order-complete-guide',
-    '/blog/karate-belts': '/blog/karate-belt-order-complete-guide',
+    '/blog/karate-belt-colors-guide': '/blog/karate-belt-order-complete-guide/',
+    '/blog/karate-belt-ranking-system-guide': '/blog/karate-belt-order-complete-guide/',
+    '/blog/karate-belts-ranking-system-guide': '/blog/karate-belt-order-complete-guide/',
+    '/blog/karate-belts': '/blog/karate-belt-order-complete-guide/',
   },
   integrations: [
     sitemap({

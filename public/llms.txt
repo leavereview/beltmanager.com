@@ -1,36 +1,37 @@
 # BeltManager
 
-> Complete martial arts school management software for dojos, karate schools, BJJ academies, and MMA gyms.
+> Martial arts school management software for dojos, karate schools, BJJ academies, and MMA gyms.
 
-BeltManager helps martial arts school owners automate scheduling, billing, and student tracking — saving 10+ hours per week. BeltManager is free for up to 25 students, with paid plans from £29 a month ($29 in the US): Club £29 (up to 75 students), School £49 (up to 150), Academy £79 (unlimited), every feature on every plan, no setup fee and no contract. Plans take effect 1 April 2027; schools that join before then are free until 31 March 2027, then get 50% off a paid plan for 12 months. Sign up at https://app.beltmanager.com/signin.
+BeltManager helps martial arts school owners run attendance, the class schedule, belt testing and student records in one place. BeltManager is free for up to 25 students, with paid plans from $29 a month: Club $29 (up to 75 students), School $49 (up to 150), Academy $79 (unlimited), every feature on every plan, no setup fee and no contract. UK schools pay the same numbers in pounds; see https://beltmanager.com/uk/. Plans take effect April 1, 2027; schools that join on or before March 31, 2027 are free with no student cap until then, then get 50% off a paid plan for 12 months. US card billing is coming in 2027; until then you can set up memberships and record tuition payments by hand. Sign up at https://app.beltmanager.com/signin.
 
 ## Core Pages
 
 - [Home](https://beltmanager.com/): Product overview, key features, and how to get started free
-- [Dojo Management Software](https://beltmanager.com/dojo-management-software/): Full product overview covering class scheduling, student management, belt tracking, and billing
-- [Pricing](https://beltmanager.com/pricing/): Free up to 25 students; Club, School and Academy plans from £29 a month; every feature on every plan
-- [About](https://beltmanager.com/about/): Founder story and product mission
+- [Dojo Management Software](https://beltmanager.com/dojo-management-software/): Product overview covering attendance, the class schedule, student management, belt testing, and the free parent app
+- [Pricing](https://beltmanager.com/pricing/): Free up to 25 students; Club $29, School $49 and Academy $79 a month; every feature on every plan
+- [UK](https://beltmanager.com/uk/): BeltManager for UK clubs, with prices in pounds
+- [About](https://beltmanager.com/about/): Who builds BeltManager and what we make for martial arts schools
 - [Contact](https://beltmanager.com/contact/): Get in touch with the team
 
 ## Feature Pages
 
-- [Martial Arts Scheduling Software](https://beltmanager.com/martial-arts-scheduling-software/): Class and instructor scheduling with conflict detection
-- [Martial Arts Billing Software](https://beltmanager.com/martial-arts-billing-software/): Automated invoicing, payment recording, and overdue reminders
-- [Martial Arts CRM](https://beltmanager.com/martial-arts-crm/): Student and prospect management, attendance tracking, and communication tools
+- [Martial Arts Scheduling Software](https://beltmanager.com/martial-arts-scheduling-software/): A weekly class schedule where students join a group once, with one-tap RSVP, reminders, and instructor ratio and insurance warnings
+- [Martial Arts Billing Software](https://beltmanager.com/martial-arts-billing-software/): Family invoices, sibling discounts and payments recorded by hand today; US card billing is coming in 2027
+- [Martial Arts CRM](https://beltmanager.com/martial-arts-crm/): Leads from first inquiry to joining, attendance and belt history per student, and at-risk student lists
 
 ## Vertical Pages
 
-- [Karate School Software](https://beltmanager.com/karate-school-software/): Management tools tailored for karate dojos and schools
-- [BJJ Gym Software](https://beltmanager.com/bjj-gym-software/): Software for Brazilian jiu-jitsu gyms and academies
-- [MMA Gym Software](https://beltmanager.com/mma-gym-software/): Software for mixed martial arts gyms and fight teams
+- [Karate School Software](https://beltmanager.com/karate-school-software/): Kyu/dan belt tracking, kata readiness, belt tests and attendance for karate schools
+- [BJJ Gym Software](https://beltmanager.com/bjj-gym-software/): Belt and stripe tracking, belt tests and attendance for Brazilian jiu-jitsu academies
+- [MMA Gym Software](https://beltmanager.com/mma-gym-software/): A multi-discipline schedule and a belt ladder per discipline for mixed martial arts gyms
 
 ## Tools
 
-- [Dojo Revenue Calculator](https://beltmanager.com/dojo-revenue-calculator/): Free calculator to model gym revenue, class profitability, instructor costs, and growth projections using UK industry benchmarks
+- [Dojo Revenue Calculator](https://beltmanager.com/dojo-revenue-calculator/): Free calculator that models your school's revenue, operating costs, profit and margin, and student growth and churn from your own numbers
 
 ## Blog
 
-- [Blog](https://beltmanager.com/blog/): 17 guides covering martial arts school management, training methodology, student retention, and business growth
+- [Blog](https://beltmanager.com/blog/): 17 guides covering martial arts school management, belt systems, student retention, and business growth
 
 ## Legal
 

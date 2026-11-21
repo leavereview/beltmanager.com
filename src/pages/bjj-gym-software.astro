@@ -14,7 +14,7 @@ const breadcrumbs = [
 const faqItems = [
   {
     question: 'What is BJJ gym software?',
-    answer: 'BJJ gym software is a specialized management platform designed for Brazilian Jiu-Jitsu academies. It handles student databases with IBJJF belt tracking, stripe management, class scheduling, competition achievements, gradings and attendance, specifically tailored for BJJ instruction rather than generic gym management.',
+    answer: 'BJJ gym software is a specialized management platform designed for Brazilian Jiu-Jitsu academies. It handles student databases with IBJJF belt tracking, stripe management, class scheduling, competition achievements, belt tests and attendance, specifically tailored for BJJ instruction rather than generic gym management.',
     links: [
       { text: 'Martial Arts Software Overview', url: '/martial-arts-software/' },
       { text: 'BJJ Belt Guide', url: '/blog/bjj-belts-order-complete-guide/' }
@@ -22,14 +22,14 @@ const faqItems = [
   },
   {
     question: 'How much does BJJ gym management software cost?',
-    answer: "BJJ gym software typically costs £50-200 per month depending on your student count. Most platforms use per-student pricing (£1-3 per active student) or tiered plans. BeltManager is free for up to 25 students, with paid plans at £29, £49 and £79 a month and every feature on every plan.",
+    answer: "BJJ gym software is usually priced per active student, as tiered plans by student count, or as a flat monthly plan, sometimes with add-ons, a setup fee or a contract. BeltManager is free for up to 25 students. Paid plans are Club at $29, School at $49 and Academy at $79 a month, with every feature on every plan, no setup fee and no contract. See the pricing page for the full details.",
     links: [
       { text: 'View Pricing', url: '/pricing/' }
     ]
   },
   {
     question: 'Can BJJ software track belt promotions and stripes?',
-    answer: 'Yes, dedicated BJJ software includes IBJJF-compliant belt progression tracking from white through black belt, stripe management (4 stripes per belt), promotion history with dates, time-in-grade calculations, and a list of who is ready for their next promotion.',
+    answer: 'Yes, dedicated BJJ software includes IBJJF-compliant belt progression tracking from white through black belt, stripe management (4 stripes per belt), promotion history with dates, time-in-rank calculations, and a list of who is ready for their next promotion.',
     links: [
       { text: 'BJJ Belt System Guide', url: '/blog/bjj-belts-order-complete-guide/' }
     ]
@@ -48,7 +48,7 @@ const faqItems = [
   },
   {
     question: 'Can I schedule private lessons?',
-    answer: 'Not yet. BeltManager runs group classes, gradings and events. Private lessons and lesson packages are not available.',
+    answer: 'Not yet. BeltManager runs group classes, belt tests and events. Private lessons and lesson packages are not available.',
   },
   {
     question: 'Does the software handle both kids and adult belt systems?',
@@ -56,7 +56,7 @@ const faqItems = [
   },
   {
     question: 'How does billing work for BJJ gym software?',
-    answer: 'Card billing through Stripe switches on in April 2027: recurring memberships, sibling discounts on one family invoice, and polite retries and reminders when a card fails. Until then you can set up memberships and record payments by hand. Direct debit is not available yet.',
+    answer: 'US card billing through Stripe is coming in 2027: recurring memberships, sibling discounts on one family invoice, and polite retries and reminders when a card fails. Until then you can set up memberships and record payments by hand. Direct debit is not available yet.',
     links: [
       { text: 'Billing features', url: '/martial-arts-billing-software/' },
       { text: 'View pricing', url: '/pricing/' }
@@ -96,11 +96,6 @@ const comparisonData = [
     label: 'Team Scheduling',
     values: [true, true, false],
     highlight: false
-  },
-  {
-    label: 'Monthly Price',
-    values: ['Free', '£99', '£59'],
-    highlight: false
   }
 ];
 
@@ -108,7 +103,7 @@ const comparisonData = [
 
 <BaseLayout
   title="BJJ Gym Software"
-  description="BJJ academy software with IBJJF belt and stripe tracking, gradings, registers and a free parent app. Free for up to 25 students. Paid plans from £29 a month."
+  description="BJJ academy software with IBJJF belt and stripe tracking, belt tests, attendance and a free parent app. Free for up to 25 students. Paid plans from $29 a month."
 >
   <div class="container-custom">
     <BreadcrumbsEnhanced items={breadcrumbs} site="beltmanager" />
@@ -121,7 +116,7 @@ const comparisonData = [
       <h1 class="hero-title">BJJ Gym Software</h1>
       <p class="hero-description">
         Management software for Brazilian Jiu-Jitsu academies. IBJJF belt tracking, stripe management,
-        gradings, registers and member management built specifically for BJJ schools.
+        belt tests, attendance and member management built specifically for BJJ schools.
       </p>
     </div>
   </section>
@@ -133,7 +128,7 @@ const comparisonData = [
         <FeaturedAnswer question="What is BJJ gym software?">
           BJJ gym software is a specialized management platform designed for Brazilian Jiu-Jitsu academies.
           It handles student databases with IBJJF belt tracking, stripe management, class scheduling,
-          competition achievements, gradings and attendance, specifically tailored for BJJ instruction
+          competition achievements, belt tests and attendance, specifically tailored for BJJ instruction
           rather than generic gym management.
         </FeaturedAnswer>
 
@@ -173,7 +168,7 @@ const comparisonData = [
         <ul>
           <li>White → Blue → Purple → Brown → Black</li>
           <li>4 stripes per belt (except black belt)</li>
-          <li>Minimum time-in-grade requirements</li>
+          <li>Minimum time-in-rank requirements</li>
           <li>Age restrictions for certain promotions</li>
         </ul>
 
@@ -190,7 +185,7 @@ const comparisonData = [
 
         <ul>
           <li>Track individual stripe awards with dates</li>
-          <li>A ready-to-grade list when students meet your minimums</li>
+          <li>A ready-to-test list when students meet your minimums</li>
           <li>Visual stripe displays on the belt badge</li>
           <li>Notes on each promotion</li>
           <li>Promotion notices to families by email and app push</li>
@@ -212,7 +207,7 @@ const comparisonData = [
 
         <p>In BeltManager:</p>
         <ul>
-          <li>Each class type is its own group with a weekly timetable</li>
+          <li>Each class type is its own group with a weekly schedule</li>
           <li>Each group can have a belt range and an age range (BeltManager warns you before adding a student outside it)</li>
           <li>Gi and no-gi classes are separate groups</li>
           <li>Students join a group once and are expected at every session</li>
@@ -298,14 +293,14 @@ const comparisonData = [
 
         <p><strong>Per-Student Pricing:</strong></p>
         <ul>
-          <li>£1-3 per active student per month</li>
+          <li>A set price for each active student per month</li>
           <li>Scales with academy growth</li>
           <li>Predictable per-member cost</li>
         </ul>
 
         <p><strong>Flat-Rate Pricing:</strong></p>
         <ul>
-          <li>£50-200 per month regardless of student count</li>
+          <li>One monthly price regardless of student count</li>
           <li>Predictable budgeting</li>
           <li>Better for larger academies</li>
         </ul>
@@ -320,7 +315,7 @@ const comparisonData = [
         <h3>Hidden Costs to Consider</h3>
 
         <ul>
-          <li>Payment processing fees (2-3%)</li>
+          <li>Payment processing fees</li>
           <li>SMS notification credits</li>
           <li>Additional staff accounts</li>
           <li>Competition module add-ons</li>
@@ -358,7 +353,7 @@ const comparisonData = [
         <p>
           <strong>Ready to see the difference?</strong> <a href={appLink(Astro.url.pathname, 'body')} class="link">Get started free</a> and
           experience software designed specifically for Brazilian Jiu-Jitsu academies. No credit card required. Free for up to 25
-          students, with paid plans from £29 a month.
+          students, with paid plans from $29 a month.
         </p>
       </div>
     </div>
@@ -370,14 +365,14 @@ const comparisonData = [
       <div class="cta-card">
         <h2>Ready to Streamline Your BJJ Academy?</h2>
         <p>
-          Belts and stripes, a ready-to-grade list built from your registers and a free parent app.
-          Free for up to 25 students. Paid plans from £29 a month.
+          Belts and stripes, a ready-to-test list built from your attendance records and a free parent app.
+          Free for up to 25 students. Paid plans from $29 a month.
         </p>
         <div class="cta-buttons">
           <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary-large">Get started free</a>
           <a href="/pricing/" class="btn-secondary-large">View Pricing</a>
         </div>
-        <p class="cta-note">Free for up to 25 students. Paid plans from £29 a month. • No credit card • No contract</p>
+        <p class="cta-note">Free for up to 25 students. Paid plans from $29 a month. • No credit card • No contract</p>
       </div>
     </div>
   </section>
