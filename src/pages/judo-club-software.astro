@@ -1,0 +1,441 @@
+---
+import { appLink } from '../utils/appLink';
+import AppScreenshot from '../components/AppScreenshot.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+
+const comparisonData = [
+  { label: 'Kyu and dan ladder with your own belt colors', values: [true, 'Rarely', 'By hand'], highlight: true },
+  { label: 'Separate junior and senior ladders', values: [true, false, 'By hand'], highlight: true },
+  { label: 'Throws, holds and kata listed for each belt', values: [true, false, 'By hand'], highlight: true },
+  { label: 'Ready-to-test list from attendance and time in grade', values: [true, false, false] },
+  { label: 'Promotion sessions with one-tap results', values: [true, false, false] },
+  { label: 'Printable rank certificates', values: [true, false, 'By hand'] },
+  { label: 'Family accounts with a parent app', values: [true, 'Varies', false] },
+  { label: 'Attendance for every practice', values: [true, true, 'By hand'] }
+];
+
+const faqItems = [
+  {
+    question: "What is judo club software?",
+    answer: "Judo club software is a management system for judo clubs and dojos. It keeps the member list, the kyu and dan belt ladder, the throws and kata for each belt, practice schedules, attendance, promotions and messages to families in one place, and shows which judoka have met your requirements for their next belt.",
+    links: [
+      { text: 'All features', url: '/martial-arts-software/' },
+      { text: 'Pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "Can BeltManager handle junior and senior judo ranks?",
+    answer: "Yes. You build your own ladders: the belts, their order and their colors, with stripes between belts if you use them. Junior and senior ranks can be set up as separate ladders, each with its own minimum time and minimum sessions per belt. Nothing is fixed to one organization's rank chart.",
+    links: [
+      { text: 'Belt tracking', url: '/martial-arts-software/' }
+    ]
+  },
+  {
+    question: "Does it track throws and kata for each belt?",
+    answer: "Yes. You build a technique list for each belt, with an optional video link for each item: throws, holds, chokes, armlocks, falls and kata. Each judoka's record shows readiness on every item as Ready, Almost or Not ready, and coaches can add a note after each practice.",
+    links: [
+      { text: 'Curriculum features', url: '/dojo-management-software/' }
+    ]
+  },
+  {
+    question: "Does BeltManager count USA Judo promotion points?",
+    answer: "No. You can record tournament results as achievements and keep notes on each judoka, but BeltManager doesn't calculate promotion points and doesn't connect to USA Judo, the USJF or the USJA. Dan applications stay with your state organization or national body.",
+    links: [
+      { text: 'How often to test and what to charge', url: '/blog/belt-testing-how-often-what-to-charge/' }
+    ]
+  },
+  {
+    question: "How do promotions work in BeltManager?",
+    answer: "BeltManager uses attendance and time at belt to show who is ready, against the minimums you set for each belt. You add judoka to a promotion session and record pass or not passed with one tap. A pass updates their belt, families are told by email and in the parent app, and you can print a rank certificate.",
+    links: [
+      { text: 'Belt testing features', url: '/martial-arts-software/' }
+    ]
+  },
+  {
+    question: "We are a small club in a community center. Is this too much?",
+    answer: "It is built for small clubs. BeltManager is free for up to 25 students with every feature included and no credit card. Setup is self-serve: add your belts and practices, add your members or send us your list to import, and take attendance at your next practice.",
+    links: [
+      { text: 'Free plan', url: '/free-martial-arts-software/' },
+      { text: 'Attendance sheet template', url: '/attendance-sheet-template/' }
+    ]
+  },
+  {
+    question: "Can parents see practices and sign waivers?",
+    answer: "Yes. Parents sign in once to the parent portal or the free iPhone app and see every child's belt and upcoming practices, answer whether each child is coming, sign waivers, and get promotion and achievement notices. Children's own email addresses are never used; messages go to their guardians.",
+    links: [
+      { text: 'Family features', url: '/dojo-management-software/' }
+    ]
+  },
+  {
+    question: "Does it handle tournament entry or weigh-ins?",
+    answer: "No. You can list tournaments and clinics as events, message your competition team as its own group and record results as achievements. Tournament entry, brackets and weigh-ins are not part of BeltManager.",
+    links: [
+      { text: 'Scheduling', url: '/martial-arts-scheduling-software/' }
+    ]
+  },
+  {
+    question: "How much does judo club software cost?",
+    answer: "BeltManager is free for up to 25 students. Paid plans are Club at $29, School at $49 and Academy at $79 a month, with every feature on every plan, no setup fee and no contract. US card billing is coming in 2027; until then you record dues by hand.",
+    links: [
+      { text: 'View pricing', url: '/pricing/' }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Judo Club Software (2026)"
+  description="Kyu and dan tracking, throws and kata per belt, promotions and attendance for judo clubs. Free for up to 25 students. Paid plans from $29 a month."
+>
+  <BreadcrumbsEnhanced
+    site="beltmanager"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Judo Club Software', href: '/judo-club-software/' }
+    ]}
+  />
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block px-4 py-2 mb-4 text-sm font-semibold text-brand-red bg-brand-red-light rounded-full">For judo clubs and dojos</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Judo Club Software</h1>
+        <p class="text-xl text-gray-600">
+          Keep your judo club's members, kyu and dan ranks, practices and promotions in one place, with a ready-for-promotion list built from attendance and a free app for parents.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={appLink(Astro.url.pathname, 'hero')} class="btn-primary">Get started free</a>
+          <a href="/pricing/" class="btn-secondary">View pricing</a>
+        </div>
+        <p class="mt-4 text-sm text-gray-500">Free for up to 25 students. No credit card. No contract.</p>
+      </div>
+    </div>
+  </section>
+
+  <FeaturedAnswer question="What is judo club software?">
+    Judo club software is a management system for judo clubs and dojos. It keeps the member list, the kyu and dan belt ladder, the throws and kata for each belt, practice schedules, attendance, promotions and family messages in one place, and shows which judoka have met your requirements for their next belt.
+  </FeaturedAnswer>
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <h2>What a Judo Club Needs From Its Software</h2>
+
+        <p>
+          Many judo clubs are run by volunteers, out of a community center, a school gym or a shared dojo, a few evenings a week. The head sensei is often also the treasurer, the membership secretary and the person who remembers which junior is due for a yellow belt.
+        </p>
+
+        <p>
+          That work is usually spread across a sign-in sheet, a spreadsheet and somebody's memory. It holds until the club grows, the person who kept the spreadsheet moves away, or a parent asks why their child has not been promoted and nobody can show the attendance.
+        </p>
+
+        <p>
+          BeltManager is <a href="/martial-arts-software/">martial arts software</a> built around belts and attendance, which is what a judo club tracks most. This page explains how it fits a judo club, where it stops, and what it costs. Clubs that share a building with other arts can read how several styles share one member list on the <a href="/dojo-management-software/">dojo management software</a> page.
+        </p>
+
+        <AppScreenshot src="/images/app/dojo-dashboard.webp" width={1600} height={1220} caption="The BeltManager dashboard: active and trial students, who is ready for their next belt, and attendance over the last 30 days" />
+
+        <h2>Kyu and Dan Ranks, Junior and Senior</h2>
+
+        <p>
+          Judo ranks run through the kyu grades to black belt, then through the dan grades. In the United States there are three national organizations, USA Judo, the United States Judo Federation (USJF) and the United States Judo Association (USJA), and junior rank charts and belt colors differ between them and between clubs.
+        </p>
+
+        <p>So BeltManager does not ship one fixed chart. You build the ladders your club uses:</p>
+
+        <ul>
+          <li><strong>Belts in your order,</strong> with your colors, for kyu and dan ranks</li>
+          <li><strong>Separate junior and senior ladders,</strong> each set up as its own style</li>
+          <li><strong>Stripes</strong> shown on the belt badge, for clubs that use them between junior belts</li>
+          <li><strong>Minimum time in grade and minimum sessions</strong> for each belt, set by you</li>
+          <li><strong>Promotion history</strong> on every judoka's record</li>
+        </ul>
+
+        <AppScreenshot src="/images/app/dojo-belt-progression.webp" width={840} height={1560} caption="A student's training record: readiness for the next belt (days at belt, sessions and techniques), the technique checklist and promotion history" />
+
+        <h2>Throws, Holds and Kata for Each Belt</h2>
+
+        <p>
+          Each belt has its requirements: falls, throws, holds, chokes and armlocks at the right age, and kata toward black belt. Writing the list down per belt means every coach in the club teaches and tests to the same standard.
+        </p>
+
+        <ul>
+          <li>A technique list for each belt, with an optional video link for each item</li>
+          <li>Readiness marked per judoka: Ready, Almost or Not ready</li>
+          <li>Per-student notes after each practice</li>
+          <li>Tournament results recorded as achievements</li>
+          <li>Report cards and achievements that parents can see</li>
+        </ul>
+
+        <h2>Promotions and Time in Grade</h2>
+
+        <p>
+          For kyu ranks, the club runs the promotion. BeltManager keeps a ready list built from each judoka's attendance and time at belt, checked against the minimums you set. You add judoka to a promotion session and record pass or not passed with one tap. A pass updates the belt, families are told by email and in the parent app, and you can print a rank certificate.
+        </p>
+
+        <p>
+          For dan ranks, your national body sets the rules. As an example, USA Judo publishes these guidelines for the first three dan ranks. Applications go through your state organization's promotion committee.
+        </p>
+
+        <div class="overflow-x-auto">
+          <table>
+            <thead>
+              <tr><th>Rank</th><th>Minimum age</th><th>Time in grade, non-competitor</th><th>Time in grade, competitor with 20 points</th><th>USA Judo fee</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Shodan (1st dan)</td><td>15</td><td>3 years</td><td>6 months</td><td>$150</td></tr>
+              <tr><td>Nidan (2nd dan)</td><td>16</td><td>4 years</td><td>6 months</td><td>$200</td></tr>
+              <tr><td>Sandan (3rd dan)</td><td>18</td><td>6 years</td><td>1 year</td><td>$250</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-sm">
+          Source: <a href="https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt5298108bb39336d5/68daa06b4f6236c8bd762ecc/PromotionRecommendationProcedures-USA_Judo-CURRENT_7.30.2025.pdf" rel="noopener nofollow" target="_blank">USA Judo Promotion Recommendation Procedures</a>, dated July 30, 2025, checked November 21, 2026. The same document says time in grade is "a minimum benchmark" and that "promotion is not automatic even with time-in-grade". The USJF and USJA publish their own requirements. Fees and rules change, so check the current document.
+        </p>
+
+        <p>
+          BeltManager helps with the club's side of this: the attendance record, the time at belt and the notes that back up a recommendation. It doesn't calculate promotion points, and it doesn't connect to USA Judo, the USJF or the USJA. For how other arts pace their tests, see <a href="/blog/belt-testing-how-often-what-to-charge/">how often to hold belt tests and what to charge</a>.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <ComparisonTable
+          title="Judo Club Software vs Generic Gym Software vs Spreadsheets"
+          headers={['BeltManager', 'Generic gym software', 'Spreadsheets']}
+          rows={comparisonData}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <h2>Practices, Attendance and the Weekly Schedule</h2>
+
+        <p>
+          Each practice is a group on the weekly schedule, with a belt range and an age range: juniors, seniors, a competition team, a kata session, open randori.
+        </p>
+
+        <ul>
+          <li>Practice groups with belt and age ranges</li>
+          <li>Expected regulars shown on every practice, with visitors added on the spot</li>
+          <li>Attendance for every session, feeding straight into promotion eligibility</li>
+          <li>Tablet kiosk mode with a PIN for sign-in at the door</li>
+          <li>Trial class tracking for newcomers</li>
+          <li>Instructor-to-student ratio warnings</li>
+          <li>Automatic notices when a practice is canceled, moved or closed</li>
+          <li>An attendance report by class and by student, with CSV export, and a list of members who have missed their recent practices</li>
+          <li>One schedule per venue, for clubs that train in more than one place</li>
+        </ul>
+
+        <p>
+          Clubs still on a paper sign-in sheet can start with our free <a href="/attendance-sheet-template/">attendance sheet template</a>. The <a href="/martial-arts-scheduling-software/">scheduling software</a> page covers the schedule in more detail.
+        </p>
+
+        <h2>Families, Waivers and the Parent App</h2>
+
+        <ul>
+          <li>Family accounts linking guardians and children, with siblings on one account</li>
+          <li>A parent portal and a free iPhone app showing each child's belt and upcoming practices</li>
+          <li>One-tap attending or not attending</li>
+          <li>Waivers signed by the parent in the portal</li>
+          <li>Promotion and achievement notices</li>
+          <li>Messages to one practice group, the competition team or the whole club, by email and app push</li>
+          <li>An insurance compliance report</li>
+        </ul>
+
+        <p>Children's own email addresses are never used. Messages go to their guardians.</p>
+
+        <AppScreenshot src="/images/app/karate-parent-portal.webp" width={1200} height={1700} caption="The parent portal: each child's belt and their classes for the next two weeks, with one-tap attending or not attending" />
+
+        <h2>What BeltManager Does Not Do</h2>
+
+        <ul>
+          <li><strong>No link to national bodies.</strong> It doesn't connect to USA Judo, the USJF or the USJA, check membership cards or submit dan applications.</li>
+          <li><strong>No promotion points.</strong> Results are recorded as achievements; points are not calculated.</li>
+          <li><strong>No tournament management.</strong> No entry, brackets or weigh-ins.</li>
+          <li><strong>No US card billing yet.</strong> US card billing is coming in 2027; until then you record dues by hand.</li>
+        </ul>
+
+        <h2>Pricing for Judo Clubs</h2>
+
+        <p>
+          BeltManager is free for up to 25 students, with every feature included and no credit card, which covers many small clubs outright. Paid plans are Club at $29, School at $49 and Academy at $79 a month. There is no setup fee and no contract. See the <a href="/pricing/">pricing page</a> or read more about the <a href="/free-martial-arts-software/">free plan</a>.
+        </p>
+
+        <h2>Related Resources</h2>
+
+        <ul>
+          <li><a href="/blog/belt-testing-how-often-what-to-charge/">Belt Testing: How Often, and What to Charge</a>: published minimums and a way to set fees</li>
+          <li><a href="/attendance-sheet-template/">Free Attendance Sheet Template</a>: printable sheet and CSV</li>
+          <li><a href="/bjj-gym-software/">BJJ Gym Software</a>: belts and stripes for jiu-jitsu</li>
+          <li><a href="/karate-school-software/">Karate School Software</a>: kyu and dan tracking with kata lists</li>
+          <li><a href="/taekwondo-school-software/">Taekwondo School Software</a>: geup, poom and dan tracking</li>
+          <li><a href="/kickboxing-gym-software/">Kickboxing and Muay Thai Gym Software</a></li>
+          <li><a href="/martial-arts-software/">Martial Arts Software Overview</a>: every feature in one place</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <FAQEnhanced
+    site="beltmanager"
+    pageUrl="https://beltmanager.com/judo-club-software/"
+    title="Frequently Asked Questions About Judo Club Software"
+    faqs={faqItems}
+  />
+
+  <section class="section bg-brand-red text-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Get Your Judo Club Off the Spreadsheet?</h2>
+        <p class="text-xl mb-8 opacity-95">
+          Kyu and dan tracking, techniques for each belt and a ready list built from your attendance records. Free for up to 25 students. Paid plans from $29 a month.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>
+          <a href="/pricing/" class="btn-secondary-large border-white text-white hover:bg-white hover:bg-opacity-10">View Pricing</a>
+        </div>
+        <p class="mt-6 text-sm opacity-90">Free for up to 25 students. Paid plans from $29 a month. • No credit card • No contract</p>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 4rem 0;
+  }
+
+  .prose {
+    max-width: none;
+  }
+
+  .prose h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose p {
+    margin-bottom: 1.5rem;
+    color: #475569;
+    line-height: 1.7;
+  }
+
+  .prose ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .prose li {
+    margin-bottom: 0.5rem;
+    color: #475569;
+  }
+
+  .prose strong {
+    color: var(--brand-navy);
+    font-weight: 600;
+  }
+
+  .prose a {
+    color: var(--brand-red);
+    text-decoration: none;
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+  }
+
+  .btn-primary-large,
+  .btn-secondary-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary-large:hover,
+  .btn-secondary-large:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary-large {
+    border: 2px solid;
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 3rem 0;
+    }
+
+    .prose h2 {
+      font-size: 1.5rem;
+    }
+
+    .prose h3 {
+      font-size: 1.25rem;
+    }
+  }
+
+  .prose ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    list-style: decimal;
+  }
+
+  .prose ul {
+    list-style: disc;
+  }
+
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .prose th,
+  .prose td {
+    border: 1px solid #e2e8f0;
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    color: #475569;
+  }
+
+  .prose th {
+    background: #f8fafc;
+    color: var(--brand-navy);
+    font-weight: 600;
+  }
+</style>
