@@ -109,7 +109,15 @@ Sources 1 to 17 are listed on the page. Federation documents: IJF culture and ru
 - [x] Browser check: calculator exercised with every rule set; no page overflow at 390px or 1280px.
 - [x] Push the branch and open a PR. Do not merge. Do not run `deploy.sh`.
 - [x] Notion: three "New page" rows and one "Rewrite" row in 📝 BM SEO change log (Link = PR; Date = build date, to be corrected at deploy); idea rows 8, 9 and 11 set to "In progress".
-- [ ] After John's OK and deploy: correct the change log dates, set the three idea rows to "Live", run `tools/gsc-client` `enhanced-report.js --log-change` (commit `changes.json` with `git add -f`), request indexing through Search Console in Chrome (`/u/1/`).
+- [x] After John's OK and deploy: correct the change log dates, set the three idea rows to "Live", run `tools/gsc-client` `enhanced-report.js --log-change` (commit `changes.json` with `git add -f`), request indexing through Search Console in Chrome (`/u/1/`).
+
+## Outcome (22 Nov 2026)
+
+- John OK'd the batch on 22 Nov 2026 and kept the four named commercial schools in the tuition guide.
+- PR #52 merged and deployed with `./deploy.sh beltmanager.com` on 22 Nov 2026, one day ahead of the contractor rule's Federal Register publication date (John asked for the run that day; the article gives the publication date as November 23, 2026, and the Federal Register API already listed the document with that date and citation). Live sitemap 53 URLs, matching the build; the three new URLs return 200.
+- Notion: the four change log rows keep the date 22 Nov 2026 (the deploy date) and now say "live"; idea rows 8, 9 and 11 set to "Live".
+- `changes.json` entry merged in `multi-site-documentation` PR #20.
+- Indexing requested in Search Console on 22 Nov 2026 for `/black-belt-timeline-calculator/` and `/blog/martial-arts-pricing/`. `/martial-arts-terms/` hit the daily quota ("Quota Exceeded"); request it again on 23 Nov 2026.
 
 ## Re-check later
 
