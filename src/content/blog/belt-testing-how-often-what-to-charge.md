@@ -62,6 +62,8 @@ A few notes on reading the table:
 - **Kukkiwon awards a poom, not a dan, to younger students.** The guide we used lists poom ranks for ages up to and including 15.
 - **These documents cover black belt ranks** for judo, karate and taekwondo. For color belts in those arts, your school or your organization sets the pace.
 
+To see how these periods add up from white belt to black belt for one student, try the [black belt timeline calculator](/black-belt-timeline-calculator/). If any of the rank words here are new to you, the [martial arts terms glossary](/martial-arts-terms/) explains kyu, dan, poom and time in rank.
+
 If you teach an art with no belts, as many kickboxing and Muay Thai gyms do, none of this binds you. Some gyms add their own levels; our [kickboxing and Muay Thai gym software](/kickboxing-gym-software/) page covers how that works.
 
 ## How to Pick a Testing Cycle
@@ -127,6 +129,8 @@ In this example, a $20 fee covers the test and nothing more. With 10 students te
 - **Separate fee.** Tuition stays lower and only students who test pay. You need to explain what it covers.
 - **Included in tuition.** Simpler for families, and no one feels they are buying a belt. Your tuition has to carry the cost.
 - **Cost only.** Charge for the belt and certificate and absorb the rest.
+
+If you fold it into tuition, our guide to [martial arts pricing](/blog/martial-arts-pricing/) shows how to build the monthly rate from your costs.
 
 Whichever you choose, put it in writing when a student enrolls, and never let the fee decide who passes. A student who is not ready should not test, paid or not.
 

@@ -1,0 +1,879 @@
+---
+import { appLink } from '../utils/appLink';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+
+const CHECKED = 'November 22, 2026';
+
+const sources = [
+  {
+    n: 1,
+    label: 'International Brazilian Jiu-Jitsu Federation, General System of Graduation',
+    href: 'https://ibjjf.com/graduation-system',
+    note: 'June 2026 edition (page footers read version 3.1). Articles 1 to 4 and the belt information poster on the same page.',
+  },
+  {
+    n: 2,
+    label: 'USA Judo, Promotion Recommendation Procedures',
+    href: 'https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt5298108bb39336d5/68daa06b4f6236c8bd762ecc/PromotionRecommendationProcedures-USA_Judo-CURRENT_7.30.2025.pdf',
+    note: 'dated July 30, 2025. Covers dan ranks only.',
+  },
+  {
+    n: 3,
+    label: 'United States Judo Federation, Rank Requirement Recommendations (Handbook Section VI)',
+    href: 'https://www.usjf.com/wp-content/uploads/2022/02/RRR-19.pdf',
+    note: 'file dated 2022. The document says its requirements "serve as guidelines" and that local black belt associations may modify them, so check the current rule with yours.',
+  },
+  {
+    n: 4,
+    label: 'Kukkiwon, Standard Table of Time and Age Limits for Promotion',
+    href: 'https://www.kukkiwon.or.kr/eng/board/read?boardManagementNo=51&boardNo=1390&menuLevel=2&menuNo=97',
+    note: 'and The Regulations of Taekwondo Promotion Test, last amended June 8, 2016, on the same regulations board.',
+  },
+  {
+    n: 5,
+    label: 'International Shotokan Karate Federation, Qualifications for Dan Rank Examinations',
+    href: 'https://iskf.com/pdfs/dan_qualifications.pdf',
+    note: 'file dated 2017, linked from the ISKF qualifications page. The ISKF kyu examination guidelines list techniques only, with no time minimums.',
+  },
+  {
+    n: 6,
+    label: 'United States Aikido Federation, Kyu/Dan Test Requirements 2024',
+    href: 'https://www.usaikifed.com/_files/ugd/71299c_1e177ca3aae541b2945cacb3d7c977fa.pdf',
+    note: 'The unit is practice days, not calendar days.',
+  },
+  {
+    n: 7,
+    label: 'Aikikai Foundation (Hombu Dojo), Examination Guidelines',
+    href: 'https://aikikai.or.jp/eng/hombudojo/grading/',
+    note: 'These are the headquarters dojo\'s own rules in Tokyo.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'How long does it take to get a black belt?',
+    answer: 'There is no single answer, because each art and each school sets its own pace. The published minimums differ widely. The International Brazilian Jiu-Jitsu Federation requires at least 4.5 years above white belt for an adult. The Aikikai headquarters dojo in Tokyo asks for 300 days of practice in total. Kukkiwon sets no minimum time to a first-degree taekwondo black belt, only a minimum age of 15. These are floors, not typical times. Checked on November 22, 2026.',
+  },
+  {
+    question: 'How long does it take to get a black belt in jiu-jitsu?',
+    answer: 'Under International Brazilian Jiu-Jitsu Federation rules, an adult must spend at least 2 years at blue belt, 1.5 years at purple belt and 1 year at brown belt, which is 4.5 years, plus whatever time the professor requires at white belt, which has no minimum. The federation says the time from white belt to black belt is at the professor\'s discretion, as long as those minimums are met.',
+    links: [{ text: 'BJJ belts in order', url: '/blog/bjj-belts-order-complete-guide/' }],
+  },
+  {
+    question: 'How long does it take to get a black belt in taekwondo?',
+    answer: 'Kukkiwon, which issues taekwondo black belt certificates, publishes no minimum time for a first dan or first poom and none between color belt tests, which are run by the school\'s own master. So the timeline is your school\'s. Kukkiwon does set ages: a dan is awarded at 15 or older, and younger students receive a poom instead.',
+    links: [{ text: 'Taekwondo belts', url: '/blog/taekwondo-belts/' }],
+  },
+  {
+    question: 'How long does it take to get a black belt in karate?',
+    answer: 'It depends on the organization and the school. As one published example, the International Shotokan Karate Federation sets no time between color belt (kyu) exams in its kyu guidelines. For the black belt exam it asks adults for a minimum of 3 to 6 months after receiving 3rd, 2nd or 1st kyu, and under-18s for a minimum of 1 year after 1st kyu. Use the calculator with your own school\'s time at each belt.',
+    links: [{ text: 'Karate belt order', url: '/blog/karate-belt-order-complete-guide/' }],
+  },
+  {
+    question: 'What is the youngest age for a black belt?',
+    answer: 'It varies by body. Kukkiwon awards a taekwondo dan at 15 or older and a poom below that age. USA Judo lists a minimum age of 15 for first-degree black belt. The Aikikai headquarters dojo sets 15 for first dan. The International Brazilian Jiu-Jitsu Federation requires 16 for blue and purple belt and 18 for brown belt; its age chart shows black belt from 19, or 18 for an athlete who has won the adult world championship at brown belt.',
+  },
+  {
+    question: 'Does meeting the minimum time mean a student gets the belt?',
+    answer: 'No. Minimum time makes a student eligible to be assessed. USA Judo says time in grade is "a minimum benchmark" and that "promotion is not automatic even with time-in-grade". The International Brazilian Jiu-Jitsu Federation says its periods are demanded minimums and each professor decides how long a student stays at each belt.',
+  },
+  {
+    question: 'How does the calculator work out the dates?',
+    answer: 'For each belt it takes the longer of two things: the calendar time you require at the belt before it, and the time it takes to reach the required number of classes at the training frequency you entered. It adds those up from your start date. If you choose fixed test dates, each promotion moves to the next test date on or after the day the student becomes eligible.',
+  },
+  {
+    question: 'Can I use the calculator to plan belt tests for my school?',
+    answer: 'Yes. Enter your own belt ladder, the months and classes you require at each belt, and how often you hold tests. The result shows which test each belt falls on for a student who never misses a class, and the total of test fees along the way if you enter a fee. It is a planning aid, not a record of real students.',
+    links: [{ text: 'Belt testing: how often, and what to charge', url: '/blog/belt-testing-how-often-what-to-charge/' }],
+  },
+  {
+    question: 'Does BeltManager track time at belt for each student?',
+    answer: 'Yes. BeltManager keeps a ready-to-test list built from each student\'s attendance and time at belt, checked against the minimums you set. It does not connect to any governing body or submit rank applications, and it does not take online test sign-ups.',
+    links: [{ text: 'Martial arts software', url: '/martial-arts-software/' }],
+  },
+];
+---
+
+<BaseLayout
+  title="Black Belt Timeline Calculator: How Long to Get a Black Belt"
+  description="See the earliest date for each belt from published time-in-rank rules for BJJ, judo, aikido, karate and taekwondo, or enter your own school's belt ladder. Free."
+>
+  <BreadcrumbsEnhanced
+    site="beltmanager"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Black Belt Timeline Calculator', href: '/black-belt-timeline-calculator/' }
+    ]}
+  />
+
+  <section class="section bg-white pb-0">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block px-4 py-2 mb-4 text-sm font-semibold text-brand-red bg-brand-red-light rounded-full">Free calculator, no sign-up</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Black Belt Timeline Calculator</h1>
+        <p class="text-xl text-gray-600">
+          How long does it take to get a black belt? Pick an art to load the minimums its governing body publishes, or enter your own school's belt ladder, and see the earliest date for each belt.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FeaturedAnswer question="How long does it take to get a black belt?">
+    It depends on the art and the school. The published minimums range from 300 days of practice at the Aikikai headquarters dojo to at least 4.5 years above white belt under International Brazilian Jiu-Jitsu Federation rules. Kukkiwon sets no minimum time for a first-degree taekwondo black belt, only a minimum age of 15. These are floors set by each body, not typical times.
+  </FeaturedAnswer>
+
+  <section class="bg-white pb-12" id="calculator">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto calc">
+        <div class="calc-grid">
+          <label class="calc-field">
+            <span>Art and rule set</span>
+            <select id="bb-preset">
+              <option value="bjj">Brazilian jiu-jitsu: IBJJF, adult</option>
+              <option value="judo">Judo: USJF handbook, non-competitor</option>
+              <option value="aikido-usaf">Aikido: US Aikido Federation</option>
+              <option value="aikido-hombu">Aikido: Aikikai Hombu Dojo</option>
+              <option value="taekwondo">Taekwondo: Kukkiwon (your school's times)</option>
+              <option value="karate">Karate: your school's kyu ladder, ISKF black belt step</option>
+              <option value="custom">My own belt ladder</option>
+            </select>
+          </label>
+          <label class="calc-field">
+            <span>Start date</span>
+            <input type="date" id="bb-start" />
+          </label>
+          <label class="calc-field">
+            <span>Classes a week</span>
+            <input type="number" id="bb-perweek" min="0.5" max="14" step="0.5" value="2" inputmode="decimal" />
+          </label>
+        </div>
+
+        <p class="calc-note" id="bb-preset-note"></p>
+
+        <div class="calc-scroll">
+          <table class="calc-table">
+            <thead>
+              <tr>
+                <th scope="col">Promotion to</th>
+                <th scope="col">Months at the belt before</th>
+                <th scope="col">Classes or practice days</th>
+                <th scope="col">Earliest date</th>
+                <th scope="col"><span class="sr-only">Remove</span></th>
+              </tr>
+            </thead>
+            <tbody id="bb-rows"></tbody>
+          </table>
+        </div>
+        <p class="calc-actions">
+          <button type="button" class="calc-link" id="bb-add">+ Add a belt</button>
+          <button type="button" class="calc-link" id="bb-reset">Reset to the published values</button>
+        </p>
+
+        <fieldset class="calc-owner">
+          <legend>Test dates and fees (optional, for school owners)</legend>
+          <div class="calc-grid">
+            <label class="calc-field">
+              <span>How you promote</span>
+              <select id="bb-cycle-mode">
+                <option value="ready">When the student is ready</option>
+                <option value="fixed">On fixed test dates</option>
+              </select>
+            </label>
+            <label class="calc-field">
+              <span>A test every (months)</span>
+              <input type="number" id="bb-cycle" min="1" max="24" step="1" value="3" inputmode="numeric" disabled />
+            </label>
+            <label class="calc-field">
+              <span>Test fee per belt ($, optional)</span>
+              <input type="number" id="bb-fee" min="0" step="1" placeholder="Your fee" inputmode="decimal" />
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="calc-result" aria-live="polite">
+          <p class="calc-result-main" id="bb-result"></p>
+          <p class="calc-result-sub" id="bb-result-sub"></p>
+        </div>
+        <p class="calc-note">
+          The result assumes a student who never misses a class and is promoted the first day they are eligible. Real students take longer. Nothing you type here is sent anywhere.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white pt-0">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <h2>How to Use the Calculator</h2>
+
+        <ol>
+          <li><strong>Pick an art.</strong> The table fills with the belt ladder and the minimum time each body publishes. Where a body publishes no minimum, the box is empty and marked, because that time is set by the school.</li>
+          <li><strong>Enter a start date and how many classes a week</strong> the student trains.</li>
+          <li><strong>Fill in or change any row.</strong> Months is the calendar time required at the belt before. Classes is the number of classes, or practice days, required at that belt. The calculator uses whichever takes longer.</li>
+          <li><strong>Read the earliest date</strong> for each belt, and the total at the bottom.</li>
+        </ol>
+
+        <p>
+          If you run a school, switch "How you promote" to fixed test dates. Each promotion then lands on your next test after the student becomes eligible, which is how a calendar works in practice. Our guide to <a href="/blog/belt-testing-how-often-what-to-charge/">how often to hold belt tests and what to charge</a> covers how to choose that cycle, and <a href="/martial-arts-software/">martial arts software</a> can keep the count for every student once you have real attendance to work from.
+        </p>
+
+        <h2>Published Minimums to Black Belt, by Art</h2>
+
+        <p>
+          These are the rules as each body publishes them, checked on {CHECKED}. They apply if you rank through that body. The units are the body's own: some count calendar time, some count days of practice, and some set no time at all.
+        </p>
+
+        <div class="overflow-x-auto">
+          <table>
+            <thead>
+              <tr><th>Art and body</th><th>What it publishes for the steps to first black belt</th><th>Total</th><th>Source</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Brazilian jiu-jitsu, International Brazilian Jiu-Jitsu Federation (IBJJF), adults from 18</td>
+                <td>White belt: no minimum time. Blue belt: 2 years. Purple belt: 1 year and a half. Brown belt: 1 year.</td>
+                <td>4.5 years above white belt</td>
+                <td>[1]</td>
+              </tr>
+              <tr>
+                <td>Brazilian jiu-jitsu, IBJJF, ages 4 to 15</td>
+                <td>No minimum period at any of the 13 kids' belts (white, then the grey, yellow, orange and green groups). Black belt is not a kids' belt.</td>
+                <td>None set</td>
+                <td>[1]</td>
+              </tr>
+              <tr>
+                <td>Judo, USA Judo</td>
+                <td>No requirements for kyu (color belt) ranks in this document. Shodan: time in grade of 3 years for a non-competitor, down to 6 months for a competitor with 20 points.</td>
+                <td>Black belt step only</td>
+                <td>[2]</td>
+              </tr>
+              <tr>
+                <td>Judo, United States Judo Federation (USJF), non-competitor</td>
+                <td>Gokyu: 12 classes or 1 month. Yonkyu: 24 classes or 2 months. Sankyu: 5 months. Nikyu: 9 months. Ikkyu: 1 year. Shodan: 2 years.</td>
+                <td>53 months (4 years 5 months)</td>
+                <td>[3]</td>
+              </tr>
+              <tr>
+                <td>Taekwondo, Kukkiwon</td>
+                <td>No minimum time for 1st dan or 1st poom. Color belt (gup) tests are run by the school's master, with no interval set.</td>
+                <td>None set</td>
+                <td>[4]</td>
+              </tr>
+              <tr>
+                <td>Karate, International Shotokan Karate Federation (ISKF)</td>
+                <td>No time minimums in its kyu exam guidelines. 1st dan, adults: "Minimum 3-6 months after receiving 3rd, 2nd or 1st Kyu". 1st dan, under 18: "Minimum 1 year after 1st Kyu".</td>
+                <td>Black belt step only</td>
+                <td>[5]</td>
+              </tr>
+              <tr>
+                <td>Aikido, United States Aikido Federation (USAF)</td>
+                <td>Practice days: 20 to 6th kyu, then 40, 80, 100, 200 and 300 for each kyu after it. Shodan: 300 practice days after 1st kyu and not less than 1 year.</td>
+                <td>1,040 practice days</td>
+                <td>[6]</td>
+              </tr>
+              <tr>
+                <td>Aikido, Aikikai Hombu Dojo</td>
+                <td>Days of practice: 30 to 5th kyu, then 40, 50, 50 and 60 for each kyu after it. 1st dan: 70 days of practice after 1st kyu.</td>
+                <td>300 days of practice</td>
+                <td>[7]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The totals are our arithmetic on the published steps: 2 + 1.5 + 1 = 4.5 years; 1 + 2 + 5 + 9 + 12 + 24 = 53 months; 20 + 40 + 80 + 100 + 200 + 300 + 300 = 1,040 practice days; 30 + 40 + 50 + 50 + 60 + 70 = 300 days of practice.</p>
+
+        <h3>What the table does not tell you</h3>
+
+        <ul>
+          <li><strong>A minimum is not a typical time.</strong> We have no sourced figure for how long students actually take, so this page does not give one. The calculator shows the fastest route the numbers allow.</li>
+          <li><strong>The instructor decides.</strong> The IBJJF says "The time taken to graduate the athlete from White Belt to Black Belt is at the professor's discretion", provided its minimums are met [1]. USA Judo calls time in grade "a minimum benchmark" and adds that "promotion is not automatic even with time-in-grade" [2].</li>
+          <li><strong>Practice days are not calendar days.</strong> The two aikido bodies count days on the mat. How long that takes depends on how often you train, which is why the calculator asks for classes a week.</li>
+          <li><strong>The IBJJF shortens some periods</strong> for adults who held kids' or juvenile belts and for adult world champions. The periods above are the standard ones [1].</li>
+          <li><strong>Most color belt pacing is local.</strong> Kukkiwon, the ISKF and USA Judo publish rules for black belt ranks and leave the color belts to the school or the regional body [2][4][5].</li>
+        </ul>
+
+        <h2>From Practice Days to Years: A Worked Example</h2>
+
+        <p>
+          <em>The training frequencies below are made up to show the arithmetic. The practice-day totals are the published ones.</em>
+        </p>
+
+        <div class="overflow-x-auto">
+          <table>
+            <thead>
+              <tr><th>Rule set</th><th>Published total</th><th>At 2 practice days a week</th><th>At 3 practice days a week</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Aikikai Hombu Dojo [7]</td>
+                <td>300 days of practice</td>
+                <td>150 weeks, about 2.9 years</td>
+                <td>100 weeks, about 1.9 years</td>
+              </tr>
+              <tr>
+                <td>US Aikido Federation [6]</td>
+                <td>1,040 practice days</td>
+                <td>520 weeks, 10 years</td>
+                <td>About 347 weeks, about 6.7 years</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          The same sum works for any school that sets a class minimum. If you ask for 40 classes at a belt and a student trains twice a week, that belt takes 20 weeks. If the student trains once a week, it takes 40. This is why two students who start on the same day reach black belt years apart.
+        </p>
+
+        <h2>Minimum Ages for Black Belt</h2>
+
+        <p>Time is not the only limit. Several bodies also publish a minimum age.</p>
+
+        <div class="overflow-x-auto">
+          <table>
+            <thead>
+              <tr><th>Body</th><th>Published age rule</th><th>Source</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>IBJJF (Brazilian jiu-jitsu)</td>
+                <td>Blue and purple belt: 16 or older. Brown belt: 18 or older. Black belt: the age chart starts at 19, and the June 2026 edition allows 18 only for an athlete who has won the adult world championship at brown belt.</td>
+                <td>[1]</td>
+              </tr>
+              <tr>
+                <td>Kukkiwon (taekwondo)</td>
+                <td>A dan is awarded "at or above the age of 15". Under 15, the student receives a poom.</td>
+                <td>[4]</td>
+              </tr>
+              <tr>
+                <td>USA Judo</td>
+                <td>Shodan: minimum age 15.</td>
+                <td>[2]</td>
+              </tr>
+              <tr>
+                <td>USJF (judo)</td>
+                <td>Shodan: minimum age 14.</td>
+                <td>[3]</td>
+              </tr>
+              <tr>
+                <td>ISKF (Shotokan karate)</td>
+                <td>Adult 1st dan: 18 and older. Youth 1st dan: 9 and older, under 18.</td>
+                <td>[5]</td>
+              </tr>
+              <tr>
+                <td>Aikikai Hombu Dojo (aikido)</td>
+                <td>"Minimum age for 1st Dan is 15 years".</td>
+                <td>[7]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>For School Owners: Turning a Belt Ladder Into Test Dates</h2>
+
+        <p>
+          The calculator doubles as a planning sheet for your own curriculum. Choose "My own belt ladder", name your belts, and enter the months and classes you require at each one. Then:
+        </p>
+
+        <ol>
+          <li><strong>Check the total.</strong> If your ladder adds up to less time than you tell families a black belt takes, one of the two numbers is wrong.</li>
+          <li><strong>Try two training frequencies.</strong> Run it at one class a week and at three. If the class minimum never changes the dates, it is not doing any work and the calendar minimum is your real rule.</li>
+          <li><strong>Switch to fixed test dates.</strong> See how many months a student waits between becoming eligible and the next test. A long wait at the lower belts is a common reason to test more often, or to add stripes between belts.</li>
+          <li><strong>Enter your test fee.</strong> The total shows what a family pays in test fees from the first belt to black belt. Put that number in writing when a student enrolls. We do not suggest a fee here, because we have no sourced figure for a typical one; the <a href="/blog/belt-testing-how-often-what-to-charge/">belt testing guide</a> shows a cost-based way to set yours.</li>
+        </ol>
+
+        <p>
+          A plan like this describes a student who never misses a class. To know who is really eligible this month you need each student's attendance since their last promotion. On paper, that is the job of an <a href="/attendance-sheet-template/">attendance sheet with a belt column</a>.
+        </p>
+
+        <h2>Where BeltManager Fits, and Where It Does Not</h2>
+
+        <p>
+          BeltManager is martial arts software built around belts and attendance. You set the minimums for each belt, and it keeps a ready-to-test list built from each student's attendance and time at belt. You add students to a promotion session, record the result with one tap, and the belt is updated and the family is told by email and in the parent app. It prints a rank certificate.
+        </p>
+
+        <p>
+          It does not connect to the IBJJF, Kukkiwon, USA Judo or any other governing body, and it does not submit rank applications or check a federation's rules for you. It does not take online test sign-ups. US card billing is coming in 2027; until then you record payments by hand. BeltManager is free for up to 25 students; paid plans are $29, $49 and $79 a month. See <a href="/pricing/">pricing</a>.
+        </p>
+
+        <h2>Related Resources</h2>
+
+        <ul>
+          <li><a href="/blog/belt-testing-how-often-what-to-charge/">Belt Testing: How Often, and What to Charge</a></li>
+          <li><a href="/martial-arts-terms/">Martial Arts Terms: A Glossary</a>: kyu, dan, poom, stripes and time in rank explained</li>
+          <li><a href="/blog/martial-arts-pricing/">Martial Arts Pricing: Setting Tuition and Contracts</a></li>
+          <li><a href="/blog/bjj-belts-order-complete-guide/">BJJ Belts in Order</a> · <a href="/blog/karate-belt-order-complete-guide/">Karate Belt Order</a> · <a href="/blog/taekwondo-belts/">Taekwondo Belts</a></li>
+          <li><a href="/bjj-gym-software/">BJJ Gym Software</a> · <a href="/karate-school-software/">Karate School Software</a> · <a href="/taekwondo-school-software/">Taekwondo School Software</a> · <a href="/judo-club-software/">Judo Club Software</a></li>
+          <li><a href="/attendance-sheet-template/">Free Attendance Sheet Template</a> · <a href="/dojo-revenue-calculator/">Dojo Revenue Calculator</a></li>
+        </ul>
+
+        <h2>Sources</h2>
+
+        <p>All sources checked on {CHECKED}. Federations revise their rules, so read the current document before you rely on a figure.</p>
+
+        <ol>
+          {sources.map((s) => (
+            <li><a href={s.href} rel="noopener">{s.label}</a>, {s.note}</li>
+          ))}
+        </ol>
+
+      </div>
+    </div>
+  </section>
+
+  <FAQEnhanced
+    site="beltmanager"
+    pageUrl="https://beltmanager.com/black-belt-timeline-calculator/"
+    title="Frequently Asked Questions About Black Belt Timelines"
+    faqs={faqItems}
+  />
+
+  <section class="section bg-brand-red text-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Know Who Is Ready to Test</h2>
+        <p class="text-xl mb-8 opacity-95">
+          Set your minimums once. BeltManager counts attendance and time at belt for every student and keeps the ready-to-test list for you.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>
+          <a href="/pricing/" class="btn-secondary-large border-white text-white hover:bg-white hover:bg-opacity-10">View Pricing</a>
+        </div>
+        <p class="mt-6 text-sm opacity-90">Free for up to 25 students. Paid plans from $29 a month. • No credit card • No contract</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  type Step = { to: string; months: number | null; classes: number | null; note?: string };
+  type Preset = { note: string; steps: Step[] };
+
+  const NO_MIN = 'No published minimum: enter your school\'s';
+
+  const PRESETS: Record<string, Preset> = {
+    bjj: {
+      note: 'IBJJF minimums for an adult who starts at white belt. The white belt row is empty because the IBJJF sets no minimum time at white belt.',
+      steps: [
+        { to: 'Blue belt', months: null, classes: null, note: NO_MIN },
+        { to: 'Purple belt', months: 24, classes: null },
+        { to: 'Brown belt', months: 18, classes: null },
+        { to: 'Black belt', months: 12, classes: null },
+      ],
+    },
+    judo: {
+      note: 'USJF handbook time in grade for a non-competitor. The handbook calls these guidelines; competitors with points need less time at the higher ranks.',
+      steps: [
+        { to: 'Gokyu (5th kyu)', months: 1, classes: null },
+        { to: 'Yonkyu (4th kyu)', months: 2, classes: null },
+        { to: 'Sankyu (3rd kyu)', months: 5, classes: null },
+        { to: 'Nikyu (2nd kyu)', months: 9, classes: null },
+        { to: 'Ikkyu (1st kyu)', months: 12, classes: null },
+        { to: 'Shodan (1st dan)', months: 24, classes: null },
+      ],
+    },
+    'aikido-usaf': {
+      note: 'US Aikido Federation 2024 requirements, in practice days. Shodan also needs not less than 1 year after 1st kyu.',
+      steps: [
+        { to: '6th kyu', months: null, classes: 20 },
+        { to: '5th kyu', months: null, classes: 40 },
+        { to: '4th kyu', months: null, classes: 80 },
+        { to: '3rd kyu', months: null, classes: 100 },
+        { to: '2nd kyu', months: null, classes: 200 },
+        { to: '1st kyu', months: null, classes: 300 },
+        { to: 'Shodan (1st dan)', months: 12, classes: 300 },
+      ],
+    },
+    'aikido-hombu': {
+      note: 'Aikikai Hombu Dojo examination guidelines, in days of practice. Minimum age for 1st dan is 15.',
+      steps: [
+        { to: '5th kyu', months: null, classes: 30 },
+        { to: '4th kyu', months: null, classes: 40 },
+        { to: '3rd kyu', months: null, classes: 50 },
+        { to: '2nd kyu', months: null, classes: 50 },
+        { to: '1st kyu', months: null, classes: 60 },
+        { to: '1st dan', months: null, classes: 70 },
+      ],
+    },
+    taekwondo: {
+      note: 'Kukkiwon publishes no minimum time for color belt tests or for 1st dan or poom, so every row is your school\'s to fill in. A dan needs a minimum age of 15; younger students receive a poom.',
+      steps: [
+        ...['9th', '8th', '7th', '6th', '5th', '4th', '3rd', '2nd', '1st'].map((g) => ({
+          to: `${g} geup`, months: null, classes: null, note: NO_MIN,
+        })),
+        { to: '1st dan or poom', months: null, classes: null, note: NO_MIN },
+      ],
+    },
+    karate: {
+      note: 'Kyu ladders differ from school to school, so add or remove rows to match yours. The last row is the ISKF adult minimum of 3 to 6 months before the 1st dan exam; for under-18s the ISKF minimum is 1 year after 1st kyu.',
+      steps: [
+        ...['9th', '8th', '7th', '6th', '5th', '4th', '3rd', '2nd', '1st'].map((k) => ({
+          to: `${k} kyu`, months: null, classes: null, note: NO_MIN,
+        })),
+        { to: 'Shodan (1st dan)', months: 3, classes: null },
+      ],
+    },
+    custom: {
+      note: 'Name your belts and enter the months and classes your school requires at each one.',
+      steps: [
+        { to: 'Belt 2', months: null, classes: null },
+        { to: 'Belt 3', months: null, classes: null },
+        { to: 'Belt 4', months: null, classes: null },
+        { to: 'Belt 5', months: null, classes: null },
+        { to: 'Black belt', months: null, classes: null },
+      ],
+    },
+  };
+
+  const DAYS_PER_MONTH = 365.25 / 12;
+  const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+
+  const presetEl = $<HTMLSelectElement>('bb-preset');
+  const startEl = $<HTMLInputElement>('bb-start');
+  const perWeekEl = $<HTMLInputElement>('bb-perweek');
+  const rowsEl = $<HTMLTableSectionElement>('bb-rows');
+  const noteEl = $<HTMLParagraphElement>('bb-preset-note');
+  const modeEl = $<HTMLSelectElement>('bb-cycle-mode');
+  const cycleEl = $<HTMLInputElement>('bb-cycle');
+  const feeEl = $<HTMLInputElement>('bb-fee');
+  const resultEl = $<HTMLParagraphElement>('bb-result');
+  const subEl = $<HTMLParagraphElement>('bb-result-sub');
+
+  let steps: Step[] = [];
+
+  const num = (v: string): number | null => {
+    const n = parseFloat(v);
+    return Number.isFinite(n) && n > 0 ? n : null;
+  };
+
+  const addMonths = (d: Date, months: number): Date => {
+    const out = new Date(d);
+    out.setMonth(out.getMonth() + months);
+    return out;
+  };
+
+  const fmtDate = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+  const fmtSpan = (days: number): string => {
+    const totalMonths = Math.round(days / DAYS_PER_MONTH);
+    const y = Math.floor(totalMonths / 12);
+    const m = totalMonths % 12;
+    const parts: string[] = [];
+    if (y) parts.push(`${y} year${y === 1 ? '' : 's'}`);
+    if (m || !y) parts.push(`${m} month${m === 1 ? '' : 's'}`);
+    return parts.join(' ');
+  };
+
+  function loadPreset() {
+    const p = PRESETS[presetEl.value];
+    steps = p.steps.map((s) => ({ ...s }));
+    noteEl.textContent = p.note;
+    renderRows();
+  }
+
+  function renderRows() {
+    rowsEl.innerHTML = '';
+    steps.forEach((s, i) => {
+      const tr = document.createElement('tr');
+
+      const tdName = document.createElement('td');
+      const name = document.createElement('input');
+      name.type = 'text';
+      name.value = s.to;
+      name.setAttribute('aria-label', `Belt ${i + 1} name`);
+      name.addEventListener('input', () => { s.to = name.value; calc(); });
+      tdName.appendChild(name);
+      if (s.note) {
+        const n = document.createElement('small');
+        n.textContent = s.note;
+        tdName.appendChild(n);
+      }
+
+      const mk = (value: number | null, label: string, onChange: (v: number | null) => void) => {
+        const td = document.createElement('td');
+        const inp = document.createElement('input');
+        inp.type = 'number';
+        inp.min = '0';
+        inp.step = 'any';
+        inp.inputMode = 'decimal';
+        inp.value = value === null ? '' : String(value);
+        inp.placeholder = '0';
+        inp.setAttribute('aria-label', label);
+        inp.addEventListener('input', () => { onChange(num(inp.value)); calc(); });
+        td.appendChild(inp);
+        return td;
+      };
+
+      const tdDate = document.createElement('td');
+      tdDate.className = 'calc-date';
+      tdDate.dataset.i = String(i);
+
+      const tdDel = document.createElement('td');
+      const del = document.createElement('button');
+      del.type = 'button';
+      del.className = 'calc-del';
+      del.textContent = '×';
+      del.setAttribute('aria-label', `Remove ${s.to}`);
+      del.addEventListener('click', () => {
+        if (steps.length > 1) { steps.splice(i, 1); renderRows(); }
+      });
+      tdDel.appendChild(del);
+
+      tr.append(
+        tdName,
+        mk(s.months, `Months before ${s.to}`, (v) => { s.months = v; }),
+        mk(s.classes, `Classes before ${s.to}`, (v) => { s.classes = v; }),
+        tdDate,
+        tdDel,
+      );
+      rowsEl.appendChild(tr);
+    });
+    calc();
+  }
+
+  function calc() {
+    const start = startEl.value ? new Date(`${startEl.value}T12:00:00`) : new Date();
+    const perWeek = num(perWeekEl.value);
+    const fixed = modeEl.value === 'fixed';
+    const cycle = Math.max(1, Math.round(num(cycleEl.value) ?? 3));
+    cycleEl.disabled = !fixed;
+
+    let cursor = new Date(start);
+    let empty = 0;
+    let needFrequency = false;
+
+    steps.forEach((s, i) => {
+      let days = 0;
+      if (s.months === null && s.classes === null) empty++;
+      if (s.months !== null) days = s.months * DAYS_PER_MONTH;
+      if (s.classes !== null) {
+        if (perWeek) days = Math.max(days, (s.classes / perWeek) * 7);
+        else needFrequency = true;
+      }
+      let date = new Date(cursor.getTime() + days * 86400000);
+      if (fixed) {
+        // Test dates fall every `cycle` months counted from the start date.
+        let test = addMonths(start, cycle);
+        while (test < date) test = addMonths(test, cycle);
+        date = test;
+      }
+      cursor = date;
+      const cell = rowsEl.querySelector<HTMLTableCellElement>(`td[data-i="${i}"]`);
+      if (cell) cell.textContent = fmtDate(date);
+    });
+
+    if (needFrequency) {
+      resultEl.textContent = 'Enter how many classes a week the student trains.';
+      subEl.textContent = '';
+      return;
+    }
+
+    const totalDays = (cursor.getTime() - start.getTime()) / 86400000;
+    const last = steps[steps.length - 1]?.to || 'the last belt';
+    if (totalDays <= 0) {
+      resultEl.textContent = 'Enter the time your school requires at each belt to see a date.';
+    } else {
+      resultEl.textContent = `Earliest date for ${last}: ${fmtDate(cursor)}, which is ${fmtSpan(totalDays)} from the start date.`;
+    }
+
+    const notes: string[] = [];
+    if (empty > 0 && totalDays > 0) {
+      notes.push(`${empty} belt${empty === 1 ? ' has' : 's have'} no time set, so this counts only the rows with a number. Add your school's time to those rows.`);
+    }
+    const fee = num(feeEl.value);
+    if (fee) {
+      const total = fee * steps.length;
+      notes.push(`Test fees along the way: ${steps.length} tests at $${fee.toLocaleString('en-US')} is $${total.toLocaleString('en-US')}.`);
+    }
+    if (fixed) notes.push(`Tests are counted every ${cycle} month${cycle === 1 ? '' : 's'} from the start date.`);
+    subEl.textContent = notes.join(' ');
+  }
+
+  const today = new Date();
+  startEl.value = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+
+  presetEl.addEventListener('change', loadPreset);
+  $('bb-reset').addEventListener('click', loadPreset);
+  $('bb-add').addEventListener('click', () => {
+    steps.push({ to: `Belt ${steps.length + 2}`, months: null, classes: null });
+    renderRows();
+  });
+  [startEl, perWeekEl, modeEl, cycleEl, feeEl].forEach((el) => {
+    el.addEventListener('input', calc);
+    el.addEventListener('change', calc);
+  });
+
+  loadPreset();
+</script>
+
+<style>
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section.pb-0 {
+    padding-bottom: 0;
+  }
+
+  .section.pt-0 {
+    padding-top: 0;
+  }
+
+  .calc {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: #1a1a2e;
+  }
+
+  .calc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .calc-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .calc :global(input),
+  .calc :global(select) {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0.55rem 0.7rem;
+    font-size: 1rem;
+    font-weight: 400;
+    background: #fff;
+    color: #1a1a2e;
+  }
+
+  .calc :global(input:disabled) {
+    background: #f1f5f9;
+    color: #94a3b8;
+  }
+
+  .calc-note {
+    margin: 0.9rem 0;
+    font-size: 0.875rem;
+    color: #475569;
+  }
+
+  .calc-scroll {
+    overflow-x: auto;
+  }
+
+  .calc-table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .calc-table th {
+    text-align: left;
+    font-weight: 600;
+    padding: 0.5rem 0.4rem;
+    border-bottom: 2px solid #cbd5e1;
+  }
+
+  .calc-table :global(td) {
+    padding: 0.4rem;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+
+  .calc-table :global(td small) {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.75rem;
+    color: #b45309;
+  }
+
+  .calc-table :global(td.calc-date) {
+    white-space: nowrap;
+    font-weight: 600;
+    padding-top: 0.95rem;
+  }
+
+  .calc-table :global(.calc-del) {
+    border: 0;
+    background: none;
+    font-size: 1.25rem;
+    line-height: 1;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .calc-table :global(.calc-del:hover) {
+    color: #e94560;
+  }
+
+  .calc-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+
+  .calc-link {
+    border: 0;
+    background: none;
+    padding: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #e94560;
+    cursor: pointer;
+  }
+
+  .calc-link:hover {
+    text-decoration: underline;
+  }
+
+  .calc-owner {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #fff;
+  }
+
+  .calc-owner legend {
+    padding: 0 0.4rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .calc-result {
+    margin-top: 1.25rem;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid #e94560;
+    border-radius: 8px;
+    background: #fff;
+  }
+
+  .calc-result-main {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .calc-result-sub {
+    margin: 0.4rem 0 0;
+    font-size: 0.9rem;
+    color: #475569;
+  }
+
+  .calc-result-sub:empty {
+    display: none;
+  }
+</style>

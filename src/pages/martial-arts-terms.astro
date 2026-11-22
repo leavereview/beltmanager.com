@@ -1,0 +1,627 @@
+---
+import { appLink } from '../utils/appLink';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+
+const CHECKED = 'November 22, 2026';
+const PAGE_URL = 'https://beltmanager.com/martial-arts-terms/';
+
+interface Term {
+  id: string;
+  term: string;
+  lang?: string;
+  /** HTML allowed (links, em). */
+  def: string;
+  /** Source numbers, or empty for a term described from common usage. */
+  src: number[];
+}
+
+interface Group {
+  id: string;
+  title: string;
+  intro: string;
+  terms: Term[];
+}
+
+const groups: Group[] = [
+  {
+    id: 'rank-terms',
+    title: 'Rank Terms: Kyu, Dan, Geup and Poom',
+    intro: 'Most Japanese and Korean arts split ranks into two sets: student ranks below black belt, and black belt ranks. The words differ by language, and the numbering runs in opposite directions.',
+    terms: [
+      {
+        id: 'kyu', term: 'Kyu', lang: 'Japanese',
+        def: 'A student rank below black belt in judo, karate, aikido and kendo. Kyu ranks count down: the highest number is the beginner and 1st kyu is the last rank before black belt. The International Judo Federation describes the white to brown belts as corresponding to "grades called kyu, ranging from the highest numbered for the white belt, to the \'1st kyu\' for the brown belt". How many kyu there are depends on the organization: the US Aikido Federation tests from 6th kyu, the Aikikai headquarters dojo from 5th kyu, and the International Shotokan Karate Federation starts children under 7 at 10th kyu.',
+        src: [1, 8, 10],
+      },
+      {
+        id: 'dan', term: 'Dan', lang: 'Japanese; also used in Korean arts',
+        def: 'A black belt rank. Dan ranks count up from 1st dan. The word comes from Japanese and, before that, a Chinese word meaning "step" or "grade". The top of the scale depends on the body: Aikikai dan ranks run from 1st to 8th dan, Kukkiwon taekwondo dan ranks from 1st to 9th, and USA Karate certifies ranks from shodan (1st dan) to 9th dan. In English, "first-degree black belt" means 1st dan.',
+        src: [1, 5, 8, 9, 15],
+      },
+      {
+        id: 'shodan', term: 'Shodan, nidan, sandan, yondan, godan', lang: 'Japanese',
+        def: 'The names of the first five dan ranks: shodan (1st), nidan (2nd), sandan (3rd), yondan (4th) and godan (5th). The International Judo Federation lists these five as the ranks that wear a black belt in judo. Shodan is the first black belt rank, so it is a starting point in the dan ranks, not the top.',
+        src: [1],
+      },
+      {
+        id: 'mudansha-yudansha', term: 'Mudansha and yudansha', lang: 'Japanese',
+        def: 'Mudansha are students without a dan rank, that is, everyone below black belt. Yudansha are dan holders. The International Judo Federation quotes judo\'s founder, Jigoro Kano, as naming beginners "mudan-sha", which it glosses as people without dan. USA Judo uses yudansha for black belt rank students.',
+        src: [1, 2],
+      },
+      {
+        id: 'black-belt', term: 'Black belt',
+        def: 'The belt worn by dan holders, and by extension the rank itself. In judo, 1st to 5th dan wear a black belt. Higher judo ranks wear other belts: USA Judo records that the Kodokan introduced a red and white belt and later a red belt for its highest degrees. In Brazilian jiu-jitsu the black belt is itself divided into six degrees.',
+        src: [1, 2, 7],
+      },
+      {
+        id: 'geup', term: 'Geup (also spelled gup or kup)', lang: 'Korean',
+        def: 'A taekwondo color belt rank, the Korean counterpart of kyu. Kukkiwon\'s promotion test regulations define gup as "a rank awarded to general trainees" who do not hold a poom or dan, and say gup promotion tests are run by taekwondo masters, meaning the school. Kukkiwon sets no time between gup tests. Like kyu, geup ranks are usually counted down toward 1st geup.',
+        src: [4],
+      },
+      {
+        id: 'poom', term: 'Poom', lang: 'Korean',
+        def: 'The junior black belt rank in Kukkiwon taekwondo. Kukkiwon\'s regulations define poom as the "certification awarded to persons under the age of 15" and dan as the certification for those "at or above the age of 15". There are four poom ranks. World Taekwondo\'s identification guidelines show a black and red belt as the poom belt and a black belt as the dan belt.',
+        src: [4, 5, 6],
+      },
+      {
+        id: 'degree', term: 'Degree',
+        def: 'The English word for a step within the black belt ranks ("second-degree black belt" is 2nd dan). In Brazilian jiu-jitsu, the federation also uses "degree" for the steps inside each colored belt. See <a href="#stripe">stripe</a>.',
+        src: [7],
+      },
+    ],
+  },
+  {
+    id: 'bjj-terms',
+    title: 'Brazilian Jiu-Jitsu Rank Terms',
+    intro: 'These follow the International Brazilian Jiu-Jitsu Federation (IBJJF) graduation system, June 2026 edition. Schools outside the IBJJF may do things differently.',
+    terms: [
+      {
+        id: 'stripe', term: 'Stripe (degree)',
+        def: 'A step within a belt. The IBJJF divides each of the white, blue, purple and brown belts "by 4 degrees", and says that up to brown belt "the adoption of the IBJJF Degree System is at the professor\'s discretion". In schools, a degree is usually shown as a stripe of tape on the bar at the end of the belt, which is why most students call them stripes.',
+        src: [7],
+      },
+      {
+        id: 'bjj-black-belt-degrees', term: 'Black belt degrees',
+        def: 'The IBJJF divides the black belt into six degrees. The first degree can be requested after a minimum of 3 years of proven activity as a black belt under the IBJJF.',
+        src: [7],
+      },
+      {
+        id: 'coral-belt', term: 'Coral belt and red belt',
+        def: 'The belts above black. In the IBJJF system, the red and black belt represents the seventh degree and the red and white belt the eighth degree; both are commonly called coral belts. The red belt represents the ninth degree. The tenth degree was given only to the pioneers of Brazilian jiu-jitsu.',
+        src: [7],
+      },
+      {
+        id: 'kids-belts', term: 'Kids\' belts',
+        def: 'The IBJJF belts for ages 4 to 15: white, then three belts each in the grey, yellow, orange and green groups (for example grey and white, grey, grey and black). There is no minimum period at any kids\' belt. Blue belt needs a minimum age of 16.',
+        src: [7],
+      },
+      {
+        id: 'professor', term: 'Professor',
+        def: 'The IBJJF\'s word for a black belt instructor. A promotion to black belt can only be signed by a black belt professor who has at least two degrees certified by the IBJJF.',
+        src: [7],
+      },
+      {
+        id: 'tap', term: 'Tap',
+        def: 'The signal that a student gives up to a submission hold. The IBJJF rule book describes it as when an athlete "taps twice with his/her hand on the opponent, ground, or his/herself in a clear and apparent manner".',
+        src: [7],
+      },
+      {
+        id: 'rolling', term: 'Rolling',
+        def: 'The everyday word in Brazilian jiu-jitsu schools for live sparring on the mat.',
+        src: [],
+      },
+    ],
+  },
+  {
+    id: 'testing-terms',
+    title: 'Testing and Promotion Terms',
+    intro: 'These are the words school owners use when they plan belt tests. Several are plain school language with no official definition; those are marked "common usage".',
+    terms: [
+      {
+        id: 'belt-test', term: 'Belt test (promotion test)',
+        def: 'An assessment a student takes to move up a rank. Kukkiwon describes its dan and poom promotion test as "a process that evaluates the technical and training level" of the student. Japanese arts often use the word shinsa for a rank examination; the All United States Kendo Federation uses it for its own exams. See our guide to <a href="/blog/belt-testing-how-often-what-to-charge/">how often to hold belt tests and what to charge</a>.',
+        src: [5, 11],
+      },
+      {
+        id: 'time-in-rank', term: 'Time in rank (time in grade)',
+        def: 'How long a student has held their current rank, and the minimum a body or school requires before the next test. USA Judo says time-in-grade requirements "are intended as a minimum benchmark for review of a candidate" and that "promotion is not automatic even with time-in-grade". The published minimums differ widely by art. Our <a href="/black-belt-timeline-calculator/">black belt timeline calculator</a> lists them and adds them up.',
+        src: [3],
+      },
+      {
+        id: 'practice-days', term: 'Practice days',
+        def: 'A way of setting a minimum by days on the mat, not by the calendar. Both aikido bodies we checked use it: the Aikikai headquarters dojo asks for 30 days of practice before the 5th kyu exam, and the US Aikido Federation asks for 20 practice days before 6th kyu. A class minimum at a school works the same way.',
+        src: [8],
+      },
+      {
+        id: 'minimum-age', term: 'Minimum age',
+        def: 'The youngest age at which a body will award a rank. Examples: Kukkiwon awards a dan at 15 or older, USA Judo lists 15 for shodan, and USA Karate lists 16 for shodan with a junior shodan for ages 12 to 15.',
+        src: [3, 4, 9],
+      },
+      {
+        id: 'promotion-points', term: 'Promotion points',
+        def: 'In USA Judo, points earned by winning contests, which reduce the time in grade needed for the next dan rank. A win against an opponent of the same rank is credited as 1.0 point. For shodan, the time in grade falls from 3 years for a non-competitor to 6 months for a competitor with 20 points.',
+        src: [3],
+      },
+      {
+        id: 'rank-certificate', term: 'Rank certificate',
+        def: 'The document that proves a rank. Some are issued by the school and some by a national or world body. The All United States Kendo Federation calls its certificate a menjo and tells members to keep it "as it is your proof of rank". Kukkiwon issues poom and dan certificates, and says only holders of Kukkiwon-certified ranks are eligible for international competitions run by World Taekwondo.',
+        src: [5, 11],
+      },
+      {
+        id: 'testing-cycle', term: 'Testing cycle',
+        def: 'How often a school holds belt tests, for example every three months. Common usage; no body defines it.',
+        src: [],
+      },
+      {
+        id: 'belt-ladder', term: 'Belt ladder',
+        def: 'The ordered list of belts or ranks a school uses, from beginner to black belt, with what is required at each step. Common usage. Schools in the same art often use different ladders.',
+        src: [],
+      },
+      {
+        id: 'ready-to-test', term: 'Ready-to-test list',
+        def: 'The list of students who have met a school\'s minimum classes and time at their belt, and so can be assessed at the next test. Common usage. Being on the list makes a student eligible; it does not mean they pass.',
+        src: [],
+      },
+    ],
+  },
+  {
+    id: 'people-places-gear',
+    title: 'People, Places and Gear',
+    intro: 'The everyday words for who teaches, where, and in what.',
+    terms: [
+      {
+        id: 'sensei', term: 'Sensei', lang: 'Japanese',
+        def: 'Teacher. The International Judo Federation explains that the word is written with characters that literally mean "born first", and describes a sensei as "the one who was there before me, who is the guarantor of knowledge". Dictionaries define it as a teacher of karate, judo or another martial art.',
+        src: [14, 15],
+      },
+      {
+        id: 'senpai', term: 'Senpai (sempai)', lang: 'Japanese',
+        def: 'A senior student. The dictionary sense is "a senior or experienced person who mentors a less experienced or junior person".',
+        src: [15],
+      },
+      {
+        id: 'master', term: 'Master and sabomnim', lang: 'Korean',
+        def: 'Kukkiwon\'s English regulations call the people who run color belt tests "Taekwondo masters". In class, taekwondo students commonly address the instructor as sabomnim, the Korean title. The second sentence is common usage; we found no official definition to quote.',
+        src: [4],
+      },
+      {
+        id: 'dojo', term: 'Dojo', lang: 'Japanese',
+        def: 'The training hall in Japanese arts. The International Judo Federation says that "etymologically the dojo is therefore the place where one studies the way". The dictionary sense is "a school or practice hall where karate, judo, or other martial arts are taught".',
+        src: [14, 15],
+      },
+      {
+        id: 'dojang', term: 'Dojang', lang: 'Korean',
+        def: 'The training hall in taekwondo and other Korean arts; the counterpart of dojo. Common usage.',
+        src: [],
+      },
+      {
+        id: 'gi', term: 'Gi (keikogi, judogi, karategi)', lang: 'Japanese',
+        def: 'The training uniform. The International Judo Federation traces the judo uniform to the keikogi, from keiko (practice) and gi (clothing), and lists its parts as a jacket (uwagi), trousers (zubon) and a belt (obi). World Karate Federation rules call the karate uniform a karategi and require a white one in competition.',
+        src: [12, 14],
+      },
+      {
+        id: 'obi', term: 'Obi', lang: 'Japanese',
+        def: 'The belt. In everyday Japanese it is the sash worn with a kimono; in a martial art it is the belt that closes the jacket and shows rank.',
+        src: [1, 15],
+      },
+      {
+        id: 'dobok', term: 'Dobok', lang: 'Korean',
+        def: 'The taekwondo uniform. World Taekwondo uses the word in its uniform guidelines.',
+        src: [6],
+      },
+      {
+        id: 'tatami', term: 'Tatami', lang: 'Japanese',
+        def: 'The mat. A tatami is originally a thick rectangular mat of woven straw used in Japanese rooms; the International Judo Federation uses the word for the competition mat.',
+        src: [14, 15],
+      },
+    ],
+  },
+  {
+    id: 'training-terms',
+    title: 'Training Terms',
+    intro: 'What happens in class, in the words students hear most.',
+    terms: [
+      {
+        id: 'kihon', term: 'Kihon', lang: 'Japanese',
+        def: 'Basics. The International Shotokan Karate Federation lists "Kihon (Basics)" as the first part of a rank exam, where technique "must demonstrate stability, focus, correct form, and proper breathing".',
+        src: [10],
+      },
+      {
+        id: 'kata', term: 'Kata', lang: 'Japanese',
+        def: 'A form: a set sequence of movements practiced alone or with a partner. The word means "shape" or "pattern". The International Shotokan Karate Federation glosses it as "Kata (Forms)", and World Karate Federation rules say that kata "is not a dance or theatrical performance".',
+        src: [10, 12, 15],
+      },
+      {
+        id: 'bunkai', term: 'Bunkai', lang: 'Japanese',
+        def: 'The application of a kata. World Karate Federation rules describe it as "a demonstration of the meaning of the Kata".',
+        src: [12],
+      },
+      {
+        id: 'kumite', term: 'Kumite', lang: 'Japanese',
+        def: 'Sparring in karate. The International Shotokan Karate Federation glosses it as "Kumite (Sparring)", judged on "control, distancing, timing, and awareness".',
+        src: [10, 15],
+      },
+      {
+        id: 'randori', term: 'Randori and shiai', lang: 'Japanese',
+        def: 'In judo, randori is free practice with a partner and shiai is a contest. The International Judo Federation uses the two words side by side. The one-line definitions here are common usage.',
+        src: [14],
+      },
+      {
+        id: 'poomsae', term: 'Poomsae', lang: 'Korean',
+        def: 'Taekwondo forms. Kukkiwon\'s textbook has a volume on poomsae, and World Taekwondo runs poomsae competition under its own rules. Taegeuk 1 Jang is one of the Kukkiwon poomsae.',
+        src: [6, 17],
+      },
+      {
+        id: 'gyeorugi', term: 'Gyeorugi (kyorugi)', lang: 'Korean',
+        def: 'Sparring in taekwondo. Kukkiwon\'s textbook lists "Gyeorugi (Sparring)" as its own volume.',
+        src: [17],
+      },
+      {
+        id: 'gyeokpa', term: 'Gyeokpa (kyokpa)', lang: 'Korean',
+        def: 'Breaking, as in board breaking. Kukkiwon\'s textbook lists "Gyeokpa (Breaking)".',
+        src: [17],
+      },
+      {
+        id: 'kihap', term: 'Kihap and kiai', lang: 'Korean and Japanese',
+        def: 'The shout made with a technique. World Taekwondo\'s poomsae rules gloss kihap as "yelling" and deduct for a kihap that is missing or at the wrong moment. Kiai is the Japanese word for the same thing (common usage).',
+        src: [6],
+      },
+      {
+        id: 'rei', term: 'Rei', lang: 'Japanese',
+        def: 'The bow. World Karate Federation rules set out a bow to the front (shomen ni rei) and a bow to each other (otagai ni rei) and call a quick nod "both discourteous and insufficient". The International Judo Federation says the bow is "first of all to show respect".',
+        src: [12, 14],
+      },
+      {
+        id: 'sparring', term: 'Sparring',
+        def: 'Practicing attack and defense against a partner with control. The dictionary sense is "training by practicing the motions of attack and defense".',
+        src: [15],
+      },
+    ],
+  },
+  {
+    id: 'scoring-terms',
+    title: 'Competition Scoring Terms',
+    intro: 'The same Japanese words mean different things in judo and karate, and the judo rules changed in 2025. Check the current rule book before a tournament.',
+    terms: [
+      {
+        id: 'ippon', term: 'Ippon', lang: 'Japanese',
+        def: 'The top score. In judo, an ippon ends the contest; the International Judo Federation awards it for a throw onto the back with speed, force and control, or a hold-down of 20 seconds. In World Karate Federation kumite, ippon is worth 3 points and is awarded for kicks to the head or for scoring on an opponent who is down.',
+        src: [12, 13],
+      },
+      {
+        id: 'waza-ari', term: 'Waza-ari', lang: 'Japanese',
+        def: 'The score below ippon. In judo, it is given when the ippon criteria are not fully met, and two waza-ari equal one ippon. In World Karate Federation kumite, waza-ari is worth 2 points and is awarded for kicks to the body.',
+        src: [12, 13],
+      },
+      {
+        id: 'yuko', term: 'Yuko', lang: 'Japanese',
+        def: 'The smallest score. In World Karate Federation kumite, yuko is 1 point for a punch or strike. In judo, yuko was dropped and then brought back in the rules introduced in 2025, for a landing on the side or a hold-down of 5 to 9 seconds.',
+        src: [12, 13],
+      },
+      {
+        id: 'osaekomi', term: 'Osaekomi', lang: 'Japanese',
+        def: 'A hold-down in judo. Under the rules USA Judo published for 2025, 20 seconds scores ippon, 10 to 19 seconds waza-ari and 5 to 9 seconds yuko.',
+        src: [13],
+      },
+    ],
+  },
+];
+
+const sources = [
+  { n: 1, html: 'International Judo Federation, <a href="https://www.ijf.org/history/judo-culture/2250" rel="noopener">judo culture: the belt and the ranks</a>.' },
+  { n: 2, html: 'USA Judo, <a href="https://www.usajudo.com/membership/promotions/philosophy-of-black-belt-promotions" rel="noopener">Philosophy of Black Belt Promotions</a>.' },
+  { n: 3, html: 'USA Judo, <a href="https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt5298108bb39336d5/68daa06b4f6236c8bd762ecc/PromotionRecommendationProcedures-USA_Judo-CURRENT_7.30.2025.pdf" rel="noopener">Promotion Recommendation Procedures</a>, dated July 30, 2025.' },
+  { n: 4, html: 'Kukkiwon, <a href="https://www.kukkiwon.or.kr/eng/board/list?boardManagementNo=51&menuLevel=2&menuNo=97" rel="noopener">regulations board</a>: The Regulations of Taekwondo Promotion Test, last amended June 8, 2016, and the Standard Table of Time and Age Limits for Promotion.' },
+  { n: 5, html: 'Kukkiwon, <a href="https://www.kukkiwon.or.kr/eng/contents/view?contentsNo=83&menuLevel=3&menuNo=67" rel="noopener">Poom and Dan promotion test</a>.' },
+  { n: 6, html: 'World Taekwondo, <a href="https://www.worldtaekwondo.org/att_file_up/partners_suppliers/2022/2022_WT_Guidelines_of_Identifications.pdf" rel="noopener">Guidelines of Identifications</a>, March 1, 2022, and <a href="https://www.worldtaekwondo.org/att_file/documents/Poomsae%20Competition%20Rules%20and%20Interpretation%20(In%20force%20as%20of%20September%2030%202024).pdf" rel="noopener">Poomsae Competition Rules and Interpretation</a>, in force September 30, 2024.' },
+  { n: 7, html: 'International Brazilian Jiu-Jitsu Federation, <a href="https://ibjjf.com/graduation-system" rel="noopener">General System of Graduation</a>, June 2026 edition, and the IBJJF <a href="https://ibjjf.com/books-videos" rel="noopener">Rules Book</a>, June 2024, Article 2.1.1.' },
+  { n: 8, html: 'Aikikai Foundation, <a href="https://aikikai.or.jp/images/image_from_db/138/International+Regulations.pdf" rel="noopener">International Regulations</a> and <a href="https://aikikai.or.jp/eng/hombudojo/grading/" rel="noopener">Examination Guidelines</a>; United States Aikido Federation, <a href="https://www.usaikifed.com/_files/ugd/71299c_1e177ca3aae541b2945cacb3d7c977fa.pdf" rel="noopener">Kyu/Dan Test Requirements 2024</a>.' },
+  { n: 9, html: 'USA Karate, <a href="https://www.usankf.org/member-resources/dan-certification-recipients/dan-certification-requirements" rel="noopener">Dan Certification Requirements</a>.' },
+  { n: 10, html: 'International Shotokan Karate Federation, <a href="https://www.iskf.com/exam-guidelines.html" rel="noopener">exam guidelines</a> and <a href="https://iskf.com/pdfs/dan_qualifications.pdf" rel="noopener">Qualifications for Dan Rank Examinations</a>.' },
+  { n: 11, html: 'All United States Kendo Federation, <a href="https://www.auskf.org/info" rel="noopener">information for members</a> and <a href="https://www.auskf.org/department/iaido/iaido-shinsa-questions" rel="noopener">iaido shinsa questions</a>.' },
+  { n: 12, html: 'World Karate Federation, <a href="https://archive.teamusa.com/usa-karate/officials-and-coaches/-/media/wkf_competition%20rules_2020_en.pdf" rel="noopener">Karate Competition Rules</a>, effective January 1, 2020 (copy on the USA Karate archive), and <a href="https://karateliitto.fi/app/uploads/2024/02/WKF_Kumite_Competition_Rules_2024.pdf" rel="noopener">Kumite Competition Rules</a>, valid from January 1, 2024 (copy on the Finnish Karate Federation site).' },
+  { n: 13, html: 'International Judo Federation, <a href="https://rules.ijf.org/page-5" rel="noopener">rules explanation: scores</a> and <a href="https://www.ijf.org/news/show/new-rules-what-to-remember" rel="noopener">New rules: what to remember</a> (2025); USA Judo Referee Committee, <a href="https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt4220f47827131ba0/67d331a818b08424e2aad545/IJF_Technical_Seminar_Rules_As_Edited_by_USA_Judo_Referee_Committee.pdf" rel="noopener">IJF technical seminar rules</a>.' },
+  { n: 14, html: 'International Judo Federation, history and culture pages: <a href="https://www.ijf.org/page/history-and-culture/22/sensei-the-key-figure" rel="noopener">Sensei, the key figure</a>; <a href="https://www.ijf.org/page/history-and-culture/22/the-dojo-a-place-of-study-and-practice" rel="noopener">The dojo, a place of study and practice</a>; <a href="https://www.ijf.org/page/history-and-culture/22/judogi-much-more-than-armour" rel="noopener">Judogi, much more than armour</a>; <a href="https://www.ijf.org/page/history-and-culture/22/why-do-judoka-bow" rel="noopener">Why do judoka bow?</a>' },
+  { n: 15, html: 'Dictionary.com entries for <a href="https://www.dictionary.com/browse/dan" rel="noopener">dan</a>, <a href="https://www.dictionary.com/browse/sensei" rel="noopener">sensei</a>, <a href="https://www.dictionary.com/browse/senpai" rel="noopener">senpai</a>, <a href="https://www.dictionary.com/browse/dojo" rel="noopener">dojo</a>, <a href="https://www.dictionary.com/browse/obi" rel="noopener">obi</a>, <a href="https://www.dictionary.com/browse/tatami" rel="noopener">tatami</a>, <a href="https://www.dictionary.com/browse/kata" rel="noopener">kata</a>, <a href="https://www.dictionary.com/browse/kumite" rel="noopener">kumite</a> and <a href="https://www.dictionary.com/browse/sparring" rel="noopener">sparring</a>; Cambridge Dictionary entry for <a href="https://dictionary.cambridge.org/dictionary/english/sensei" rel="noopener">sensei</a>.' },
+  { n: 16, html: 'Columbia University, Asia for Educators, <a href="https://afe.easia.columbia.edu/japan/japanworkbook/language/kanji.htm" rel="noopener">Japanese numbers</a>.' },
+  { n: 17, html: 'Kukkiwon news: <a href="https://kukkiwon.or.kr/eng/board/read?boardManagementNo=49&boardNo=1688&menuLevel=2&menuNo=91" rel="noopener">Kukkiwon Taekwondo Textbook volumes</a>, January 28, 2022.' },
+];
+
+const japaneseNumbers = [
+  ['1', 'ichi'], ['2', 'ni'], ['3', 'san'], ['4', 'shi or yon'], ['5', 'go'],
+  ['6', 'roku'], ['7', 'shichi or nana'], ['8', 'hachi'], ['9', 'kyu or ku'], ['10', 'ju'],
+];
+
+const stripTags = (html: string) => html.replace(/<[^>]*>/g, '');
+
+const termSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  '@id': `${PAGE_URL}#glossary`,
+  name: 'Martial Arts Terms: A Glossary for Students, Parents and School Owners',
+  url: PAGE_URL,
+  inLanguage: 'en-US',
+  hasDefinedTerm: groups.flatMap((g) => g.terms.map((t) => ({
+    '@type': 'DefinedTerm',
+    '@id': `${PAGE_URL}#${t.id}`,
+    name: t.term,
+    description: stripTags(t.def),
+    url: `${PAGE_URL}#${t.id}`,
+    inDefinedTermSet: `${PAGE_URL}#glossary`,
+  }))),
+};
+
+const termCount = groups.reduce((n, g) => n + g.terms.length, 0);
+
+const faqItems = [
+  {
+    question: 'What does kyu mean?',
+    answer: 'Kyu is the Japanese word for a student rank below black belt, used in judo, karate, aikido and kendo. Kyu ranks count down, so the highest number is the beginner and 1st kyu is the last rank before black belt. The number of kyu ranks depends on the organization.',
+  },
+  {
+    question: 'What is a dan rank?',
+    answer: 'A dan is a black belt rank. Dan ranks count up from 1st dan, which is also called shodan or first-degree black belt. How high the scale goes depends on the body: Aikikai aikido ranks run to 8th dan and Kukkiwon taekwondo ranks to 9th dan.',
+  },
+  {
+    question: 'What is the difference between kyu and dan?',
+    answer: 'Kyu ranks are the student ranks below black belt and count down toward 1st kyu. Dan ranks are the black belt ranks and count up from 1st dan. A student passes from 1st kyu to 1st dan, so the two scales meet in the middle.',
+  },
+  {
+    question: 'What is a poom in taekwondo?',
+    answer: 'A poom is the junior black belt rank in Kukkiwon taekwondo. Kukkiwon\'s regulations define poom as the certification awarded to people under the age of 15, and dan as the certification for those aged 15 or older. World Taekwondo shows the poom belt as black and red.',
+  },
+  {
+    question: 'What do the stripes on a BJJ belt mean?',
+    answer: 'Each stripe marks a degree within the belt. The International Brazilian Jiu-Jitsu Federation divides the white, blue, purple and brown belts into four degrees each, and says that up to brown belt the use of its degree system is at the professor\'s discretion. So the number of stripes and how they are earned is the school\'s decision.',
+    links: [{ text: 'BJJ belts in order', url: '/blog/bjj-belts-order-complete-guide/' }],
+  },
+  {
+    question: 'What does time in rank mean?',
+    answer: 'Time in rank, also called time in grade, is how long a student has held their current rank, and the minimum required before the next test. USA Judo calls it "a minimum benchmark" and adds that "promotion is not automatic even with time-in-grade".',
+    links: [{ text: 'Black belt timeline calculator', url: '/black-belt-timeline-calculator/' }],
+  },
+  {
+    question: 'What is the difference between a dojo and a dojang?',
+    answer: 'Both mean the training hall. Dojo is the Japanese word, used in karate, judo and aikido. Dojang is the Korean word, used in taekwondo and other Korean arts.',
+  },
+  {
+    question: 'How were these definitions checked?',
+    answer: 'Each definition that rests on a rule or an official meaning cites the governing body\'s own document or a dictionary, listed in the sources at the end of the page and checked on November 22, 2026. Words that are plain school language with no official definition are marked as common usage.',
+  },
+];
+---
+
+<BaseLayout
+  title="Martial Arts Terms: Kyu, Dan, Poom, Stripes and More Explained"
+  description="A sourced glossary of martial arts terms: kyu and dan ranks, geup and poom, BJJ stripes, time in rank, kata, kumite and more. Each definition names its source."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(termSchema)} />
+
+  <BreadcrumbsEnhanced
+    site="beltmanager"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Martial Arts Terms', href: '/martial-arts-terms/' }
+    ]}
+  />
+
+  <section class="section bg-white pb-0">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block px-4 py-2 mb-4 text-sm font-semibold text-brand-red bg-brand-red-light rounded-full">{termCount} terms, each with its source</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Martial Arts Terms: A Glossary</h1>
+        <p class="text-xl text-gray-600">
+          Plain-English definitions of the karate terms, taekwondo terms, judo terms and Brazilian jiu-jitsu terms that students, parents and school owners meet most, from kyu and dan to stripes and time in rank.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FeaturedAnswer question="What do kyu and dan mean?">
+    Kyu and dan are the two sets of ranks used in Japanese martial arts. Kyu ranks are the student ranks below black belt and count down, so 1st kyu is the last rank before black belt. Dan ranks are the black belt ranks and count up from 1st dan. Taekwondo uses geup for color belts and dan, or poom under age 15, for black belts.
+  </FeaturedAnswer>
+
+  <section class="section bg-white pt-0">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <p>
+          Martial arts terminology comes from several languages, and the same idea often has a different name in each art. This glossary groups the terms by what they are for. Where a word has an official meaning, the definition quotes the governing body that sets it and gives a source number; the sources are listed at the end and were checked on {CHECKED}. If you run a school, <a href="/martial-arts-software/">martial arts software</a> such as BeltManager uses the same words for your belt ladder, so it helps to pin them down first.
+        </p>
+
+        <p><strong>Jump to:</strong>{' '}
+          {groups.map((g, i) => (
+            <>{i > 0 && ' · '}<a href={`#${g.id}`}>{g.title}</a></>
+          ))}
+          {' · '}<a href="#numbers">Counting to Ten in Japanese</a>
+        </p>
+
+        <h2>Kyu and Dan at a Glance</h2>
+
+        <div class="overflow-x-auto">
+          <table>
+            <thead>
+              <tr><th></th><th>Below black belt</th><th>Black belt</th><th>Source</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Japanese arts (judo, karate, aikido, kendo)</td>
+                <td>Kyu, counted down to 1st kyu</td>
+                <td>Dan, counted up from 1st dan (shodan)</td>
+                <td>[1]</td>
+              </tr>
+              <tr>
+                <td>Taekwondo (Kukkiwon)</td>
+                <td>Geup, also spelled gup</td>
+                <td>Dan from age 15; poom under 15</td>
+                <td>[4]</td>
+              </tr>
+              <tr>
+                <td>Brazilian jiu-jitsu (IBJJF)</td>
+                <td>White, blue, purple and brown belts, each with four degrees</td>
+                <td>Black belt with six degrees, then red and black, red and white, and red belts</td>
+                <td>[7]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {groups.map((g) => (
+          <>
+            <h2 id={g.id}>{g.title}</h2>
+            <p>{g.intro}</p>
+            <dl class="glossary">
+              {g.terms.map((t) => (
+                <div class="glossary-item" id={t.id}>
+                  <dt>
+                    <dfn>{t.term}</dfn>
+                    {t.lang && <span class="glossary-lang">{t.lang}</span>}
+                  </dt>
+                  <dd>
+                    <span set:html={t.def} />{' '}
+                    <span class="glossary-src">
+                      {t.src.length > 0
+                        ? `Source${t.src.length > 1 ? 's' : ''}: ${t.src.map((n) => `[${n}]`).join(' ')}`
+                        : 'Common usage; no official source.'}
+                    </span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </>
+        ))}
+
+        <h2 id="numbers">Counting to Ten in Japanese</h2>
+
+        <p>Karate, judo and aikido classes often count repetitions in Japanese. These are the readings listed by Columbia University's Asia for Educators program [16]. We have left out a Korean table because we could not open a university or federation page to check one against.</p>
+
+        <div class="overflow-x-auto">
+          <table>
+            <thead>
+              <tr>{japaneseNumbers.map(([n]) => <th>{n}</th>)}</tr>
+            </thead>
+            <tbody>
+              <tr>{japaneseNumbers.map(([, w]) => <td>{w}</td>)}</tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>How These Terms Show Up When You Run a School</h2>
+
+        <p>
+          For a school owner, a handful of these words turn into settings. Your belt ladder is the list of ranks. Time in rank and a class minimum decide who goes on the ready-to-test list. Your testing cycle decides when they test. If any of those is vague, instructors apply it differently and parents notice.
+        </p>
+
+        <ul>
+          <li>To see how published time-in-rank rules add up, use the <a href="/black-belt-timeline-calculator/">black belt timeline calculator</a>.</li>
+          <li>To choose a testing cycle and a test fee, read <a href="/blog/belt-testing-how-often-what-to-charge/">Belt Testing: How Often, and What to Charge</a>.</li>
+          <li>To count classes on paper, print the <a href="/attendance-sheet-template/">attendance sheet template</a>.</li>
+          <li>To set tuition and decide on agreements, read <a href="/blog/martial-arts-pricing/">Martial Arts Pricing: Setting Tuition and Contracts</a>.</li>
+        </ul>
+
+        <p>
+          BeltManager lets you build your own belt ladder, set the minimum classes and time at each belt, and keeps the ready-to-test list from your attendance records. It does not connect to any governing body or check a federation's rules for you. It is free for up to 25 students; paid plans are $29, $49 and $79 a month. See how it fits your art: <a href="/karate-school-software/">karate school software</a>, <a href="/taekwondo-school-software/">taekwondo school software</a>, <a href="/judo-club-software/">judo club software</a> and <a href="/bjj-gym-software/">BJJ gym software</a>.
+        </p>
+
+        <h2>Belt Guides by Art</h2>
+
+        <ul>
+          <li><a href="/blog/karate-belt-order-complete-guide/">Karate Belt Order</a></li>
+          <li><a href="/blog/taekwondo-belts/">Taekwondo Belts</a></li>
+          <li><a href="/blog/bjj-belts-order-complete-guide/">BJJ Belts in Order</a> and <a href="/blog/jiu-jitsu-belt-ranks/">Jiu-Jitsu Belt Ranks</a></li>
+          <li><a href="/blog/martial-arts-belt-order-complete-guide/">Martial Arts Belt Order</a></li>
+        </ul>
+
+        <h2>Sources</h2>
+
+        <p>All sources checked on {CHECKED}. Federations revise their rules and competition scoring changes, so read the current document before you rely on a definition for a test or a tournament.</p>
+
+        <ol>
+          {sources.map((s) => <li set:html={s.html} />)}
+        </ol>
+
+      </div>
+    </div>
+  </section>
+
+  <FAQEnhanced
+    site="beltmanager"
+    pageUrl={PAGE_URL}
+    title="Frequently Asked Questions About Martial Arts Terms"
+    faqs={faqItems}
+  />
+
+  <section class="section bg-brand-red text-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Put Your Belt Ladder in One Place</h2>
+        <p class="text-xl mb-8 opacity-95">
+          Kyu, geup, stripes or your own levels: set the ranks and the minimums once, and BeltManager tracks attendance and time at belt for every student.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={appLink(Astro.url.pathname, 'bottom')} class="btn-primary-large bg-white text-brand-red hover:bg-gray-100">Get started free</a>
+          <a href="/pricing/" class="btn-secondary-large border-white text-white hover:bg-white hover:bg-opacity-10">View Pricing</a>
+        </div>
+        <p class="mt-6 text-sm opacity-90">Free for up to 25 students. Paid plans from $29 a month. • No credit card • No contract</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section.pb-0 {
+    padding-bottom: 0;
+  }
+
+  .section.pt-0 {
+    padding-top: 0;
+  }
+
+  .glossary {
+    margin: 1.5rem 0 2.5rem;
+  }
+
+  .glossary-item {
+    padding: 1rem 0;
+    border-top: 1px solid #e2e8f0;
+    scroll-margin-top: 6rem;
+  }
+
+  .glossary dt {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin: 0;
+  }
+
+  .glossary dfn {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #1a1a2e;
+  }
+
+  .glossary-lang {
+    font-size: 0.8rem;
+    color: #64748b;
+  }
+
+  .glossary dd {
+    margin: 0.35rem 0 0;
+    padding: 0;
+  }
+
+  .glossary-src {
+    font-size: 0.85rem;
+    color: #64748b;
+    white-space: nowrap;
+  }
+</style>
