@@ -1,7 +1,7 @@
 ---
 title: "Martial Arts Retention Strategies"
 description: "Martial arts retention strategies that work. Onboarding plays, communication cadences, and community tactics that lift retention 15-25% within 90 days."
-image: /images/blog-belt-ceremony.jpg
+image: /images/full-shot-asian-people-practicing-taekwondo-2.jpg
 date: "2026-02-13"
 tags: ["Membership", "Business"]
 author: "BeltManager Team"

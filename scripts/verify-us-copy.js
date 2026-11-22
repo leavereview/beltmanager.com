@@ -35,7 +35,7 @@ export const PENDING_PAGES = [
 const UK_PATTERNS = [
   [/£/i, '£'],
   [/\bgradings?\b/i, 'grading'],
-  [/\bregisters?\b/i, 'register'],
+  [/\bregist(?:ers?|ered|ering|rations?)\b/i, 'register'],
   [/\btimetabl\w*/i, 'timetable'],
   [/\bcolour\w*/i, 'colour'],
   [/\borganis\w*/i, 'organise'],
@@ -43,6 +43,9 @@ const UK_PATTERNS = [
   [/\benrol(?!l)\w*/i, 'enrol'],
   [/\bprogrammes?\b/i, 'programme'],
 ];
+
+// Company-law phrases and proper names that are correct in US copy and are not the UK attendance "register".
+const ALLOWED_PHRASES = /\bregistered (?:agents?|office)\b|\bFederal Register\b|\b(?:UK|VAT)-registered\b/gi;
 
 function stripDataUk(html) {
   // Simple non-nested match on the same tag name; data-uk is only used on leaf elements.
@@ -62,7 +65,7 @@ export function findUkTerms(html) {
     const m = tag.match(/\bcontent=(?:"([^"]*)"|'([^']*)')/i);
     return m ? ' ' + (m[1] ?? m[2]) + ' ' : ' ';
   });
-  text = text.replace(/<[^>]*>/g, ' ');
+  text = text.replace(/<[^>]*>/g, ' ').replace(ALLOWED_PHRASES, ' ');
   return UK_PATTERNS.filter(([re]) => re.test(text)).map(([, term]) => term);
 }
 
