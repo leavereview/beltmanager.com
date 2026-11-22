@@ -161,7 +161,7 @@ const faqItems = [
                 <th scope="col">Months at the belt before</th>
                 <th scope="col">Classes or practice days</th>
                 <th scope="col">Earliest date</th>
-                <th scope="col"><span class="sr-only">Remove</span></th>
+                <th scope="col" aria-label="Remove"></th>
               </tr>
             </thead>
             <tbody id="bb-rows"></tbody>
@@ -676,13 +676,15 @@ const faqItems = [
     const last = steps[steps.length - 1]?.to || 'the last belt';
     if (totalDays <= 0) {
       resultEl.textContent = 'Enter the time your school requires at each belt to see a date.';
+    } else if (empty > 0) {
+      resultEl.textContent = `At least ${fmtSpan(totalDays)} to ${last}: ${fmtDate(cursor)} at the earliest, counting only the rows with a number.`;
     } else {
       resultEl.textContent = `Earliest date for ${last}: ${fmtDate(cursor)}, which is ${fmtSpan(totalDays)} from the start date.`;
     }
 
     const notes: string[] = [];
     if (empty > 0 && totalDays > 0) {
-      notes.push(`${empty} belt${empty === 1 ? ' has' : 's have'} no time set, so this counts only the rows with a number. Add your school's time to those rows.`);
+      notes.push(`${empty} belt${empty === 1 ? ' has' : 's have'} no time set. Add your school's time to ${empty === 1 ? 'that row' : 'those rows'} for a full timeline.`);
     }
     const fee = num(feeEl.value);
     if (fee) {
