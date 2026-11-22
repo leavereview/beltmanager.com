@@ -131,11 +131,11 @@ The research pass read these on the pages listed above; the articles use them, s
 - Create: `src/content/blog/martial-arts-instructor-pay.md`
 - Modify: `src/content/blog/belt-testing-how-often-what-to-charge.md` (one contextual link in "A cost-based way to set your own fee"), `src/components/Footer.astro` (resources list)
 
-- [ ] Front matter: title "How Much Do Martial Arts Instructors Make? Pay and Payroll Costs", image `/images/blog-instructor.jpg` with `imageAlt`, date `2026-11-21`, tags `["Business", "Starting a Gym"]`, 6 `faqs`.
-- [ ] 1,800+ words. Sections: the short answer (BLS has no martial arts category; nearest figures, table with source numbers); why job-board numbers differ; when to hire (signs, not statistics); four ways to pay (hourly, per class, salary, revenue share) with a worked comparison labelled as an example; employee or contractor (IRS categories, DOL rule status as of November 21, 2026, California ABC); what an employee costs on top of wages (2026 rates, worked example); paperwork for a first hire (EIN, W-4, I-9, W-2 or 1099-NEC at $2,000); unpaid helpers and teen assistants (Fact Sheets #71 and #43 only); where BeltManager fits and does not (no payroll); Sources.
-- [ ] Link to `/martial-arts-software/` in the first 200 words; link to `/blog/martial-arts-insurance/`, `/dojo-revenue-calculator/`, `/blog/belt-testing-how-often-what-to-charge/`, `/pricing/`.
-- [ ] Run `npm run build`. Expected: `astro check` 0 errors, SEO verification passed, US copy check passed.
-- [ ] Commit.
+- [x] Front matter: title "How Much Do Martial Arts Instructors Make? Pay and Payroll Costs", image `/images/blog-instructor.jpg` with `imageAlt`, date `2026-11-21`, tags `["Business", "Starting a Gym"]`, 6 `faqs`.
+- [x] 1,800+ words. Sections: the short answer (BLS has no martial arts category; nearest figures, table with source numbers); why job-board numbers differ; when to hire (signs, not statistics); four ways to pay (hourly, per class, salary, revenue share) with a worked comparison labelled as an example; employee or contractor (IRS categories, DOL rule status as of November 21, 2026, California ABC); what an employee costs on top of wages (2026 rates, worked example); paperwork for a first hire (EIN, W-4, I-9, W-2 or 1099-NEC at $2,000); unpaid helpers and teen assistants (Fact Sheets #71 and #43 only); where BeltManager fits and does not (no payroll); Sources.
+- [x] Link to `/martial-arts-software/` in the first 200 words; link to `/blog/martial-arts-insurance/`, `/dojo-revenue-calculator/`, `/blog/belt-testing-how-often-what-to-charge/`, `/pricing/`.
+- [x] Run `npm run build`. Expected: `astro check` 0 errors, SEO verification passed, US copy check passed.
+- [x] Commit.
 
 ### Task 3: Insurance, waivers and LLC article
 
@@ -143,17 +143,23 @@ The research pass read these on the pages listed above; the articles use them, s
 - Create: `src/content/blog/martial-arts-insurance.md`
 - Modify: `src/components/Footer.astro` (resources list), `src/pages/judo-club-software.astro` or another batch 1 page only if the build shows fewer than two inbound links
 
-- [ ] Front matter: title "Martial Arts Insurance, Waivers and LLC Basics for a New School", image `/images/blog-dojo-interior.jpg` with `imageAlt`, date `2026-11-21`, tags `["Business", "Starting a Gym"]`, 6 `faqs`.
-- [ ] 1,800+ words. Sections: three layers of protection (insurance, waiver, business structure) and what each does not do; the coverages a school is offered (SBA definitions plus what the four programs list); what programs publish about limits and price (table: program, what the page publishes, valid dates, source); exclusions to ask about (MMA events, tournaments, weapons, staff injuries, equipment); workers' compensation by state (Texas, Florida, California); occurrence or claims-made; questions to ask an agent; waivers: five state examples in a table, then what follows from them; LLC basics (SBA wording, IRS default tax treatment, four state fee examples, EIN free, BOI exemption, licenses); a start-up checklist; where BeltManager fits and does not; Sources.
-- [ ] Link to `/martial-arts-software/` in the first 200 words; link to `/blog/martial-arts-instructor-pay/`, `/blog/cost-to-open-gym/`, `/attendance-sheet-template/`, `/pricing/`.
-- [ ] Run `npm run build`. Expected: all three checks pass.
-- [ ] Commit.
+- [x] Front matter: title "Martial Arts Insurance, Waivers and LLC Basics for a New School", image `/images/blog-dojo-interior.jpg` with `imageAlt`, date `2026-11-21`, tags `["Business", "Starting a Gym"]`, 6 `faqs`.
+- [x] 1,800+ words. Sections: three layers of protection (insurance, waiver, business structure) and what each does not do; the coverages a school is offered (SBA definitions plus what the four programs list); what programs publish about limits and price (table: program, what the page publishes, valid dates, source); exclusions to ask about (MMA events, tournaments, weapons, staff injuries, equipment); workers' compensation by state (Texas, Florida, California); occurrence or claims-made; questions to ask an agent; waivers: five state examples in a table, then what follows from them; LLC basics (SBA wording, IRS default tax treatment, four state fee examples, EIN free, BOI exemption, licenses); a start-up checklist; where BeltManager fits and does not; Sources.
+- [x] Link to `/martial-arts-software/` in the first 200 words; link to `/blog/martial-arts-instructor-pay/`, `/blog/cost-to-open-gym/`, `/attendance-sheet-template/`, `/pricing/`.
+- [x] Run `npm run build`. Expected: all three checks pass.
+- [x] Commit.
 
 ### Task 4: Verify, push, hand over
 
-- [ ] `npm test`, then `npm run build` clean from `rm -rf dist .astro`; sitemap lists the two new URLs; each has at least two inbound links.
-- [ ] Check every figure in both built pages against the source tables above.
-- [ ] Preview both posts in a browser at desktop and phone width (tables scroll, no overflow).
-- [ ] Push the branch and open a PR. Do not merge. Do not run `deploy.sh`.
-- [ ] Notion: add rows to 📝 BM SEO change log (two "New page", Link = PR; Date = build date, to be corrected to the deploy date at merge); set idea rows 6 and 7 to "In progress".
-- [ ] After John's UAT and deploy: correct the change log dates, set the two idea rows to "Live", run `tools/gsc-client` `enhanced-report.js --log-change`, request indexing through Search Console in Chrome (`/u/1/`).
+- [x] `npm test`, then `npm run build` clean from `rm -rf dist .astro`; sitemap lists the two new URLs; each has at least two inbound links.
+- [x] Check every figure in both built pages against the source tables above.
+- [x] Preview both posts in a browser at desktop and phone width (tables scroll, no overflow).
+- [x] Push the branch and open a PR. Do not merge. Do not run `deploy.sh`.
+- [x] Notion: add rows to 📝 BM SEO change log (two "New page", Link = PR; Date = build date, to be corrected to the deploy date at merge); set idea rows 6 and 7 to "In progress".
+- [x] After John's UAT and deploy: correct the change log dates, set the two idea rows to "Live", run `tools/gsc-client` `enhanced-report.js --log-change`, request indexing through Search Console in Chrome (`/u/1/`).
+
+## Outcome
+
+Merged as PR #50 and deployed on 22 Nov 2026 on John's instruction ("push all live"), without a separate UAT pass. Both posts were checked live at desktop width and from the build at 390px (no page overflow; wide tables scroll inside their own box). Indexing requested for both URLs on 22 Nov 2026.
+
+Re-check later: the Labor Department contractor rule (edit the instructor pay article once it is published in the Federal Register and has an effective date); 2026 tax rates in January 2027; Sadler rates expire 31 Dec 2026; K&K brochure runs to 28 Feb 2027.
