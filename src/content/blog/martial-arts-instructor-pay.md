@@ -4,6 +4,7 @@ description: "What martial arts instructors make, from official BLS wage data, p
 image: /images/blog-instructor.jpg
 imageAlt: "An instructor in a white uniform and black belt demonstrates a movement to a group of students outdoors"
 date: "2026-11-21"
+updatedDate: "2026-11-22"
 tags: ["Business", "Starting a Gym"]
 author: "BeltManager Team"
 faqs:
@@ -12,7 +13,7 @@ faqs:
   - question: "Should I pay a martial arts instructor per class or per hour?"
     answer: "Either can work. If the instructor is an employee, compare the week's pay with the week's hours: the Department of Labor counts work you know about and allow as work time, and a per-class rate that looks fine for one hour on the mat can fall under your minimum wage once the other hours are added. Hourly pay is the simplest to check. Confirm the rule with your state labor agency."
   - question: "Can I pay my instructor as an independent contractor?"
-    answer: "Only if the working relationship really is independent. The IRS looks at behavioral control, financial control and the relationship of the parties. The Department of Labor uses its own test under the Fair Labor Standards Act and announced a new final rule on November 19, 2026. Your state may apply its own test: California treats a worker as an employee unless three conditions are all met."
+    answer: "Only if the working relationship really is independent. The IRS looks at behavioral control, financial control and the relationship of the parties. The Department of Labor uses its own test under the Fair Labor Standards Act and issued a new final rule (Federal Register publication date November 23, 2026) that takes effect on January 22, 2027. Your state may apply its own test: California treats a worker as an employee unless three conditions are all met."
   - question: "What does an employee cost on top of wages?"
     answer: "For 2026, an employer pays 6.2 percent Social Security tax and 1.45 percent Medicare tax on wages, plus federal unemployment (FUTA) tax of 6.0 percent on the first $7,000 paid to each employee, which falls to 0.6 percent with the full credit for state unemployment tax. State unemployment tax and workers' compensation insurance come on top and depend on your state."
   - question: "Can a student teach classes in exchange for free tuition?"
@@ -111,7 +112,7 @@ It is tempting to pay an instructor as an independent contractor because it is l
 
 Think about a typical instructor. You set the schedule, the curriculum and the uniform. The classes happen at your school, with your students, on your mats. Teaching classes is the core of what a martial arts school does. Those are the facts the three categories look at. If you are unsure, Form SS-8 asks the IRS to decide a worker's status [8].
 
-**The Department of Labor (minimum wage and overtime).** The Fair Labor Standards Act has its own test, and it is changing. On November 19, 2026, the Department of Labor announced a final rule that takes effect 60 days after it is published in the Federal Register and rescinds the rule published in January 2024 [7]. The new test has five factors. Two are "core" factors: the nature and degree of control over the work, and the worker's opportunity for profit or loss. The other three are the skill required, the permanence of the relationship, and whether the work is part of an integrated unit of production [7]. The rule was two days old when we checked, so read the Department's page for its current status before you rely on it.
+**The Department of Labor (minimum wage and overtime).** The Fair Labor Standards Act has its own test, and it is changing. On November 19, 2026, the Department of Labor announced a final rule that rescinds the rule published in January 2024 [7]. Its Federal Register publication date is November 23, 2026 (91 FR 75646), and it takes effect on January 22, 2027 [17]. Until that date the new rule is not in force. The new test has five factors. Two are "core" factors: the nature and degree of control over the work, and the worker's opportunity for profit or loss. The other three are the skill required, the permanence of the relationship, and whether the work is part of an integrated unit of production [7]. We checked the dates on November 22, 2026; read the Department's page for the current status before you rely on it.
 
 **Your state.** Your state may apply its own test. In California, a worker is an employee unless the hiring business shows all three of the following: (A) the worker is free from its control and direction, (B) the work is outside the usual course of its business, and (C) the worker is customarily engaged in an independently established trade or business of the same kind [10]. Ask yourself whether teaching classes at a martial arts school is outside the usual course of that school's business. California has exemptions for some occupations, so check how the rule applies to you.
 
@@ -200,7 +201,7 @@ All sources checked on November 21, 2026. Wage data, tax rates and labor rules c
 4. US Department of Labor, [State Minimum Wage Laws](https://www.dol.gov/agencies/whd/minimum-wage/state), updated November 5, 2026.
 5. US Department of Labor, [Overtime Pay](https://www.dol.gov/agencies/whd/overtime).
 6. US Department of Labor, [Fact Sheet #22: Hours Worked Under the FLSA](https://www.dol.gov/agencies/whd/fact-sheets/22-flsa-hours-worked), revised July 2008.
-7. US Department of Labor, [Employee or Independent Contractor Classification Under the FLSA](https://www.dol.gov/agencies/whd/flsa/misclassification). Final rule announced November 19, 2026.
+7. US Department of Labor, [Employee or Independent Contractor Classification Under the FLSA](https://www.dol.gov/agencies/whd/flsa/misclassification). Final rule announced November 19, 2026. Checked again on November 22, 2026.
 8. Internal Revenue Service, [Independent contractor (self-employed) or employee?](https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee), reviewed May 19, 2026, and [About Form SS-8](https://www.irs.gov/forms-pubs/about-form-ss-8).
 9. Internal Revenue Service, [Publication 15-A, Employer's Supplemental Tax Guide](https://www.irs.gov/publications/p15a), 2026.
 10. California Labor and Workforce Development Agency, [ABC Test](https://www.labor.ca.gov/employmentstatus/abctest/).
@@ -210,3 +211,4 @@ All sources checked on November 21, 2026. Wage data, tax rates and labor rules c
 14. US Citizenship and Immigration Services, [Form I-9, Employment Eligibility Verification](https://www.uscis.gov/i-9).
 15. US Department of Labor, [Fact Sheet #71: Internship Programs Under the FLSA](https://www.dol.gov/agencies/whd/fact-sheets/71-flsa-internships), updated January 2018.
 16. US Department of Labor, [Fact Sheet #43: Child Labor Provisions of the FLSA for Nonagricultural Occupations](https://www.dol.gov/agencies/whd/fact-sheets/43-child-labor-non-agriculture), revised December 2016.
+17. Federal Register, [Employee or Independent Contractor Status Under the Fair Labor Standards Act, Family and Medical Leave Act, and Migrant and Seasonal Agricultural Worker Protection Act](https://www.federalregister.gov/d/2026-23777), final rule, 91 FR 75646, publication date November 23, 2026, effective January 22, 2027. Checked November 22, 2026.
