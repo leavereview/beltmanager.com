@@ -117,7 +117,7 @@ Sources 1 to 17 are listed on the page. Federation documents: IJF culture and ru
 - PR #52 merged and deployed with `./deploy.sh beltmanager.com` on 22 Nov 2026, one day ahead of the contractor rule's Federal Register publication date (John asked for the run that day; the article gives the publication date as November 23, 2026, and the Federal Register API already listed the document with that date and citation). Live sitemap 53 URLs, matching the build; the three new URLs return 200.
 - Notion: the four change log rows keep the date 22 Nov 2026 (the deploy date) and now say "live"; idea rows 8, 9 and 11 set to "Live".
 - `changes.json` entry merged in `multi-site-documentation` PR #20.
-- Indexing requested in Search Console on 22 Nov 2026 for `/black-belt-timeline-calculator/` and `/blog/martial-arts-pricing/`. `/martial-arts-terms/` hit the daily quota ("Quota Exceeded"); request it again on 23 Nov 2026.
+- Indexing requested in Search Console on 22 Nov 2026 for `/black-belt-timeline-calculator/` and `/blog/martial-arts-pricing/`. `/martial-arts-terms/` hit the daily quota ("Quota Exceeded") three times that day, so no request was made. It needed none: on 23 Nov 2026 Search Console showed "URL is on Google" (crawled 23 Nov 03:18 by Googlebot smartphone, found through the link from `/blog/martial-arts-pricing/`).
 
 ## Re-check later
 
