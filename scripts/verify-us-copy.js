@@ -25,7 +25,6 @@ export const PENDING_PAGES = [
   '/blog/jiu-jitsu-belt-ranks/',
   '/blog/karate-belt-order-complete-guide/',
   '/blog/lead-generation-mma-gyms/',
-  '/blog/martial-arts-belt-order-complete-guide/',
   '/blog/martial-arts-marketing-tips/',
   '/blog/member-retention-strategies/',
   '/blog/taekwondo-belts/',
