@@ -1,7 +1,8 @@
 ---
-title: "Martial Arts Belt Order Guide"
-description: "Martial arts belt orders compared: karate (10-color kyu/dan), BJJ (5 belts, 4 stripes), TKD (10 gup), and judo. Typical timelines and what each rank signals."
+title: "Martial Arts Belt Order and the MMA Belt Ranking System"
+description: "Belt orders for karate, BJJ, taekwondo and judo, plus how MMA schools build a belt ranking system when there is no official one. Example MMA belt order inside."
 date: "2026-01-16"
+updatedDate: "2026-11-24"
 image: "/images/close-up-female-karate-fighter.jpg"
 tags: ["Belts", "Martial Arts"]
 author: "BeltManager Team"
@@ -100,7 +101,9 @@ As the originator of modern belt systems, judo maintains a relatively simple pro
 - Red (9th-10th Dan)
 
 Judo's promotion system emphasizes competition results, technical knowledge, and teaching ability, particularly at higher dan grades. The International Judo Federation sets global standards, though national federations may modify requirements for local programs.
-## Mixed Martial Arts and Modern Systems
+## MMA Belt Ranking System: Mixed Martial Arts Belts in Order
+
+There is no single, official MMA belt ranking system. Mixed martial arts grew out of competition rather than a founding style, and no MMA governing body publishes a belt order for schools. So when a student asks "what are the MMA belts in order?", the honest answer is "the ones your school sets."
 
 [MMA gym software](https://beltmanager.com/mma-gym-software/) users often face unique challenges since mixed martial arts doesn't follow a traditional belt system. Many MMA schools adapt existing systems or create hybrid approaches:
 
@@ -112,6 +115,16 @@ Some schools use a simplified system:
 - Black (Instructor)
 
 Others focus on skill-based certifications in specific areas like striking, grappling, and fight strategy, rather than overall belt ranks. This approach allows students to progress at different rates in various aspects of MMA training.
+
+### How to set up an MMA belt ranking system for your school
+
+1. **Pick the order and write it down.** The five-belt example above is common because students already recognize the colors from BJJ. Kids' programs often add more colors so children have something to aim for every few months.
+2. **Decide what each belt requires.** Write the techniques for striking, wrestling and ground work that a student must show at each rank, so every instructor tests the same things.
+3. **Set a minimum time and class count.** A minimum number of months and classes at each belt keeps promotions consistent and gives students a clear target.
+4. **Run belt tests on a schedule.** Regular test dates let families plan, and you can announce who is eligible ahead of time.
+5. **Use stripes between belts if your gaps are long.** Stripes give adults visible progress during a year or more at one belt.
+
+In BeltManager you can set up your MMA belts as their own ladder with your own names, colors and stripes, separate from a BJJ or kickboxing ladder at the same school. Each student's attendance at their current belt shows you who is ready for the next belt test.
 ## Managing Belt Systems in Your School
 
 Effective belt system management requires consistent standards, clear requirements, and accurate record-keeping. Modern martial arts schools benefit from digital solutions that track student progress, manage promotion requirements, and maintain historical records.
