@@ -115,7 +115,10 @@ const faqs = [
   {
     question: "Is there really a free plan?",
     answer: "Yes. The Free plan is free forever for up to 25 active students, with every feature included and no credit card needed. Paid plans start at $29 a month when you have more students.",
-    links: [{ text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') }]
+    links: [
+      { text: 'Get started free', url: appLink(Astro.url.pathname, 'faq') },
+      { text: 'Free martial arts software compared', url: '/free-martial-arts-software/' }
+    ]
   },
   {
     question: "What counts as an active student?",
