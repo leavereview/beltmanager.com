@@ -1,0 +1,78 @@
+---
+/**
+ * Click-to-play YouTube embed for the 70-second product demo.
+ * Shows a local poster image; the youtube-nocookie iframe only loads when a visitor presses play,
+ * so no YouTube scripts or cookies touch the page until then and the hero stays fast (LCP is the poster).
+ */
+interface Props {
+  /** Where the video sits, sent to PostHog with the play click. */
+  placement: string;
+  /** Load the poster eagerly (above the fold). */
+  priority?: boolean;
+}
+
+const { placement, priority = false } = Astro.props;
+const VIDEO_ID = 'xfVpSUjJu1I';
+const TITLE = 'BeltManager: martial arts school software, 90-second demo';
+
+const videoSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: TITLE,
+  description:
+    'A 70-second tour of BeltManager: import students from a spreadsheet, add them to a group once so every class knows who is coming, take the register, run a grading and check kids in with the parent app.',
+  thumbnailUrl: 'https://beltmanager.com/images/app/demo-video-poster.webp',
+  uploadDate: '2026-11-27',
+  duration: 'PT1M10S',
+  embedUrl: `https://www.youtube-nocookie.com/embed/${VIDEO_ID}`,
+  contentUrl: `https://www.youtube.com/watch?v=${VIDEO_ID}`,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />
+
+<figure>
+  <div class="demo-video relative w-full aspect-video overflow-hidden rounded-xl shadow-2xl ring-1 ring-white/10 bg-gray-900" data-video-id={VIDEO_ID} data-video-title={TITLE}>
+    <button
+      type="button"
+      class="demo-video-play group absolute inset-0 w-full h-full"
+      aria-label={`Play video: ${TITLE}`}
+      data-ph-capture-attribute-cta="demo-video-play"
+      data-ph-capture-attribute-placement={placement}
+    >
+      <img
+        src="/images/app/demo-video-poster.webp"
+        width="1600"
+        height="900"
+        alt="Opening frame of the BeltManager demo: the app on a phone next to the line 'Martial arts school software that runs from your phone'"
+        class="w-full h-full object-cover"
+        fetchpriority={priority ? 'high' : 'auto'}
+        loading={priority ? 'eager' : 'lazy'}
+        decoding="async"
+      />
+      <span class="absolute inset-y-0 left-[29%] -translate-x-1/2 flex items-center">
+        <span class="flex items-center justify-center w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-brand-red shadow-xl transition-transform group-hover:scale-110 group-focus-visible:scale-110">
+          <svg class="w-7 h-7 sm:w-9 sm:h-9 text-white ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+        </span>
+      </span>
+    </button>
+  </div>
+  <figcaption class="mt-3 text-sm text-gray-400 text-center">
+    See BeltManager in 70 seconds. Demo school data.
+  </figcaption>
+</figure>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.demo-video').forEach((box) => {
+    const button = box.querySelector<HTMLButtonElement>('.demo-video-play');
+    button?.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${box.dataset.videoId}?autoplay=1&rel=0&modestbranding=1`;
+      iframe.title = box.dataset.videoTitle ?? 'BeltManager demo video';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.className = 'absolute inset-0 w-full h-full';
+      button.replaceWith(iframe);
+    }, { once: true });
+  });
+</script>
