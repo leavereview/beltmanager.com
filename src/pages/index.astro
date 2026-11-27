@@ -17,6 +17,7 @@
 // hreflang: this page and /uk/ list each other (en-US / en-GB / x-default).
 import { appLink } from '../utils/appLink';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import DemoVideo from '../components/DemoVideo.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 import { HOME_ALTERNATES } from '../utils/hreflang';
 
@@ -225,8 +226,8 @@ const faqs = [
   <script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
 
-  <!-- Hero Section: leads with the aha moment (#22). The visual is a real app screenshot
-       (demo school, no real families); swap it for John's screen-recording clip when it exists. -->
+  <!-- Hero Section: leads with the aha moment (#22). The visual is the 70-second demo video
+       (click-to-play YouTube, demo school, no real families). -->
   <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
     <div class="container-custom relative py-16 md:py-24">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -258,20 +259,7 @@ const faqs = [
             Switching? <a href="/switch/" class="underline hover:text-white">Bring your students with you</a>
           </p>
         </div>
-        <figure>
-          <img
-            src="/images/app/mma-timetable.webp"
-            width="1600"
-            height="1000"
-            alt="BeltManager's weekly class schedule: each class shows how many regulars are expected and a link to open attendance (demo data)"
-            class="w-full h-auto rounded-xl shadow-2xl ring-1 ring-white/10"
-            fetchpriority="high"
-            decoding="async"
-          />
-          <figcaption class="mt-3 text-sm text-gray-400 text-center">
-            This week's classes, each already expecting its regulars. Demo school data.
-          </figcaption>
-        </figure>
+        <DemoVideo placement="hero-us" priority />
       </div>
     </div>
     <!-- Decorative element -->
